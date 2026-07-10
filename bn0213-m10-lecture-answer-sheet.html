@@ -78,8 +78,41 @@
   .kwhy{font-size:12.5px;color:var(--textDim);margin-top:4px;line-height:1.5}
   .kmeta{font-family:var(--mono);font-size:10px;color:var(--textDim);margin-top:3px}
   footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--lineSoft);font-family:var(--mono);font-size:10.5px;color:var(--textDim);line-height:1.6}
+
+  .opts{display:flex;flex-direction:column;gap:9px;margin-top:4px}
+  .opt{text-align:left;cursor:pointer;border:1.5px solid var(--line);background:var(--bg2);border-radius:11px;padding:12px 14px;display:flex;gap:11px;align-items:flex-start;font-size:14.5px;color:var(--text);line-height:1.4;transition:.15s}
+  .opt .lt{flex:0 0 24px;width:24px;height:24px;border-radius:7px;display:grid;place-items:center;font-family:var(--mono);font-size:12px;font-weight:600;border:1px solid var(--line);color:var(--textMid)}
+  .opt.correct{border-color:var(--good);background:rgba(95,208,138,.12)} .opt.correct .lt{border-color:var(--good);color:var(--good)}
+  .opt.wrong{border-color:var(--bad);background:rgba(240,115,111,.12)} .opt.wrong .lt{border-color:var(--bad);color:var(--bad)}
+  .opt.dim{color:var(--textDim)}
+  .dnav{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 16px}
+  .ncell{width:30px;height:30px;border-radius:8px;cursor:pointer;font-family:var(--mono);font-size:11px;font-weight:600;border:1.5px solid var(--line);background:transparent;color:var(--textMid)}
+  .ncell.cur{box-shadow:0 0 0 2px rgba(245,184,65,.45)} .ncell.ok{border-color:var(--good);background:rgba(95,208,138,.2);color:var(--good)} .ncell.no{border-color:var(--bad);background:rgba(240,115,111,.2);color:var(--bad)}
+  .qcard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+  .qcat{margin-bottom:11px} .qstem{font-size:16px;font-weight:500;color:var(--text);line-height:1.42;margin-bottom:15px}
+  .expl2{margin-top:16px;background:var(--bg2);border:1px solid var(--lineSoft);border-radius:11px;padding:13px 14px}
+  .expl2 .lab{font-family:var(--mono);font-size:10.5px;letter-spacing:1px;margin-bottom:6px} .expl2 .et{font-size:14px;color:var(--text);line-height:1.55}
+  .expl2 .q{font-style:italic;color:var(--textDim);display:block;margin-top:7px}
+  .navb{display:flex;justify-content:space-between;margin-top:16px;gap:10px}
+  .nbtn{font-family:var(--body);font-weight:600;font-size:14px;padding:10px 18px;border-radius:10px;cursor:pointer;border:1px solid var(--line);background:transparent;color:var(--textMid)}
+  .nbtn.primary{background:var(--acc);color:var(--bg);border-color:var(--acc)} .nbtn.off{opacity:.35;cursor:default}
 </style>
-<style id="fab-ai-companion-css">
+<style id="m10anchor-css">
+#m10bar{position:sticky;top:0;z-index:99990;background:#0b1120;border-bottom:2px solid #a855f7;padding:7px 10px;display:flex;flex-wrap:wrap;gap:7px;align-items:center;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif}
+#m10bar .lbl{color:#c4b5fd;font-weight:800;font-size:.72rem;white-space:nowrap}
+#m10bar audio{height:34px;flex:1;min-width:180px}
+#m10bar button{background:#0e1626;color:#c4b5fd;border:1px solid #1e2b45;border-radius:8px;padding:4px 9px;font-weight:700;font-size:.72rem;cursor:pointer;font-family:inherit}
+#m10bar button.on{background:#a855f7;color:#1a0533;border-color:#a855f7}
+#m10vidwrap{display:none;position:sticky;top:48px;z-index:99989;background:#000;padding:0 10px 8px}
+#m10vid{width:100%;max-height:46vh;border-radius:0 0 10px 10px;background:#000;display:block}
+.m10ts{display:inline-flex;gap:2px;align-items:center;vertical-align:baseline;margin:0 1px}
+.m10ts a{cursor:pointer;text-decoration:none;border-radius:6px;padding:0 5px;font-weight:800;font-size:.9em;line-height:1.5;white-space:nowrap}
+.m10ts a.aud{background:#052e2b;color:#5eead4;border:1px solid #14b8a6}
+.m10ts a.vid{background:#3b0764;color:#e9d5ff;border:1px solid #a855f7;font-size:.85em}
+.m10ts a:hover{filter:brightness(1.35)}
+#m10edge{background:#132a3f;border:1px solid #38bdf8;color:#bae6fd;font:600 .8rem/1.5 -apple-system,system-ui,sans-serif;padding:8px 12px;margin:0;display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap}
+#m10edge b{color:#e0f2fe}#m10edge button{background:none;border:0;color:#7dd3fc;cursor:pointer;font-weight:800;font-size:1rem}
+</style><style id="fab-ai-companion-css">
 .fab-ai-btn {
   position: fixed; bottom: 24px; right: 24px; z-index: 9998;
   background: linear-gradient(135deg, #6366f1, #8b5cf6); color: #fff;
@@ -217,23 +250,25 @@
 .fab-ai-followup button:hover { transform: translateY(-1px); }
 .fab-ai-followup button:disabled { opacity: 0.5; cursor: not-allowed; }
 </style><style id="dc-wm-css">.dc-study-watermark{position:fixed;bottom:6px;right:10px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:10px;color:rgba(255,255,255,0.32);letter-spacing:.3px;pointer-events:none;z-index:2147483647;user-select:none}</style></head>
-<body>
+<body><div id="m10bar"><span class="lbl">&#127911; Dr. Basso</span><audio id="m10aud" controls preload="metadata" src="bn0213-m10-lipids.mp3"></audio><button id="m10vidbtn" type="button">&#127916; Video</button><span class="lbl">Speed</span><button type="button" data-r="1" class="on">1x</button><button type="button" data-r="1.5">1.5x</button><button type="button" data-r="2">2x</button><button type="button" data-r="3">3x</button></div><div id="m10vidwrap"><video id="m10vid" controls playsinline preload="none" src="https://pub-7fb2bb3e5a0b4096a57fc578b5a16078.r2.dev/bn0213/m10-lipids/lecture-fs-37da13d4.mp4"></video></div>
 <div class="wrap">
   <header>
     <span class="eyebrow">BN0213 · MODULE 10 · LIPIDS · MC DRILL ANSWER SHEET</span>
     <h1>MC Drill — Answer Sheet</h1>
     <p class="sub">Every question from your 95-question multiple-choice drill, with the correct answer and the reason.</p>
     <div class="callout">
-      <b>What this is:</b> the answer key to the 95-question MC drill quiz on your hub (the one built in Claude Code). Same 95 questions — here you can <b>flip flashcards</b> to drill recall, or <b>scan the full sheet</b> by topic to check answers.
+      <b>What this is:</b> the answer key to the 95-question MC drill quiz on your hub (the one built in Claude Code). Same 95 questions — <b>play them as a multiple-choice drill</b>, flip them as <b>flashcards</b>, or <b>scan the full answer sheet</b> by topic.
     </div>
   </header>
 
   <div class="tabs">
-    <button class="tab active" data-tab="cards">Flashcards</button>
+    <button class="tab active" data-tab="drill">MC Drill</button>
+    <button class="tab" data-tab="cards">Flashcards</button>
     <button class="tab" data-tab="key">Full Answer Sheet</button>
   </div>
 
-  <section id="cards"></section>
+  <section id="drill"></section>
+  <section id="cards" style="display:none"></section>
   <section id="key" style="display:none"></section>
   <footer id="foot"></footer>
 </div>
@@ -356,10 +391,47 @@ function renderKey(){
   });
 }
 
+
+/* ===== INTERACTIVE MC DRILL (95) ===== */
+var D={ filter:'all', i:0, picks:{}, deck:[] };
+function dPool(){ return BANK.filter(function(q){ return D.filter==='all'||q._b===D.filter; }); }
+function dBuild(){ D.deck=[]; D.picks={}; dPool().forEach(function(q){ var opts=q.o.map(function(t,ix){return {t:t,correct:ix===q.c};}); for(var i=opts.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=opts[i];opts[i]=opts[j];opts[j]=t;} var c=0; opts.forEach(function(o,ix){if(o.correct)c=ix;}); D.deck.push({q:q.q,o:opts.map(function(o){return o.t;}),c:c,r:q.r,quote:q.quote,source:q.source,slide:q.slide,b:q._b,n:q._n}); }); D.i=0; }
+function renderDrill(){
+  var root=document.getElementById('drill'); root.innerHTML='';
+  if(!D.deck.length) dBuild();
+  var r1=el('div','ctrls'); r1.appendChild(el('span','flabel','TOPIC'));
+  var opts=[['all','All 95']].concat(BORDER.filter(function(b){return BANK.some(function(q){return q._b===b;});}).map(function(b){ return [b, BUCKETLABEL[b]+' ('+BANK.filter(function(q){return q._b===b;}).length+')']; }));
+  r1.appendChild(seg('',opts,D.filter,function(v){ D.filter=v; dBuild(); renderDrill(); }));
+  root.appendChild(r1);
+  var answered=Object.keys(D.picks).length, correct=0; for(var k in D.picks){ if(D.deck[k]&&D.picks[k]===D.deck[k].c) correct++; }
+  var bar=el('div','ctrls'); bar.style.justifyContent='space-between';
+  bar.appendChild(el('div','statbar','<span class="s"><b style="color:var(--acc)">'+D.deck.length+'</b><span class="lab">questions</span></span> <span class="s"><b style="color:var(--good)">'+correct+'</b><span class="lab">correct</span></span> <span class="s"><b>'+answered+'</b><span class="lab">answered</span></span>'));
+  var rs=el('button','btn','\u21ba reset'); rs.onclick=function(){ dBuild(); renderDrill(); }; bar.appendChild(rs);
+  root.appendChild(bar);
+  var nav=el('div','dnav');
+  D.deck.forEach(function(q,pos){ var st=D.picks[pos]===undefined?'':(D.picks[pos]===q.c?' ok':' no'); var cell=el('button','ncell'+(pos===D.i?' cur':'')+st, String(pos+1)); cell.onclick=function(){ D.i=pos; renderDrill(); }; nav.appendChild(cell); });
+  root.appendChild(nav);
+  if(D.i>=D.deck.length) D.i=0;
+  var q=D.deck[D.i]; var ans=D.picks[D.i]!==undefined;
+  var qc=el('div','qcard');
+  qc.appendChild(el('div','qcat','<span class="badge">MC DRILL Q'+q.n+'</span> <span class="btopic" style="margin-left:8px">'+BUCKETLABEL[q.b]+'</span>'));
+  qc.appendChild(el('div','qstem', q.q));
+  var od=el('div','opts');
+  q.o.forEach(function(opt,oi){ var cls='opt'; if(ans){ if(oi===q.c)cls+=' correct'; else if(oi===D.picks[D.i])cls+=' wrong'; else cls+=' dim'; } var b=el('button',cls,''); var mark=ans?(oi===q.c?'\u2713':(oi===D.picks[D.i]?'\u2715':String.fromCharCode(65+oi))):String.fromCharCode(65+oi); b.innerHTML='<span class="lt">'+mark+'</span><span>'+opt+'</span>'; b.onclick=function(){ if(D.picks[D.i]!==undefined) return; D.picks[D.i]=oi; renderDrill(); }; od.appendChild(b); });
+  qc.appendChild(od);
+  if(ans){ var ex=el('div','expl2'); var ok=D.picks[D.i]===q.c; var lab=el('div','lab',ok?'CORRECT':'NOT QUITE'); lab.style.color=ok?'var(--good)':'var(--bad)'; ex.appendChild(lab); var why=(q.r||''); var quote=(q.quote?'<span class="q">'+q.quote+'</span>':''); ex.appendChild(el('div','et','Answer: <b>'+q.o[q.c]+'</b>. '+why+quote)); var sc=el('div',null,'<span class="src">'+(q.source||'')+(q.slide?' \u00b7 '+q.slide:'')+'</span>'); sc.style.marginTop='9px'; ex.appendChild(sc); qc.appendChild(ex); }
+  root.appendChild(qc);
+  var nb=el('div','navb');
+  var prev=el('button','nbtn'+(D.i===0?' off':''),'\u2039 Prev'); prev.onclick=function(){ if(D.i>0){D.i--;renderDrill();} };
+  var next=el('button','nbtn primary'+(D.i>=D.deck.length-1?' off':''),'Next \u203a'); next.onclick=function(){ if(D.i<D.deck.length-1){D.i++;renderDrill();} };
+  nb.appendChild(prev); nb.appendChild(next); root.appendChild(nb);
+}
+
 document.querySelectorAll('.tab').forEach(function(t){
   t.onclick=function(){
     document.querySelectorAll('.tab').forEach(function(x){ x.classList.toggle('active', x===t); });
     var tab=t.getAttribute('data-tab');
+    document.getElementById('drill').style.display=tab==='drill'?'block':'none';
     document.getElementById('cards').style.display=tab==='cards'?'block':'none';
     document.getElementById('key').style.display=tab==='key'?'block':'none';
     if(tab==='cards') startTick(); else stopTick();
@@ -367,9 +439,86 @@ document.querySelectorAll('.tab').forEach(function(t){
   };
 });
 document.getElementById('foot').innerHTML='The '+BANK.length+' questions here are exactly your MC drill quiz, correct answer + reason as keyed in the audited bank. This is the answer sheet \u2014 the concept-recall cards live in the Cram Coach\u2019s Recall tab. Keyboard: SPACE reveal \u00b7 1 got it \u00b7 2 shaky.';
-buildDeck(true); renderKey();
+renderDrill(); buildDeck(true); renderKey();
 </script>
-<script id="fab-ai-companion-js">
+<script id="m10anchor-js">
+(function(){
+  var aud, vid, vwrap, ready=false;
+  function el(id){ return document.getElementById(id); }
+  function play(m, sec){
+    var go=function(){ try{ m.currentTime=sec; }catch(e){} var p=m.play(); if(p&&p.catch)p.catch(function(){}); };
+    if(m.readyState>=1) go(); else { m.addEventListener('loadedmetadata',go,{once:true}); m.addEventListener('canplay',go,{once:true}); try{m.load();}catch(e){} }
+  }
+  window.__m10seek=function(sec, mode){
+    if(mode==='v'){ vwrap.style.display='block'; el('m10vidbtn').classList.add('on'); try{aud.pause();}catch(e){} play(vid, sec); vwrap.scrollIntoView({behavior:'smooth',block:'nearest'}); }
+    else { try{vid.pause();}catch(e){} play(aud, sec); el('m10bar').scrollIntoView({behavior:'smooth',block:'start'}); }
+  };
+  function setRate(r){
+    r=Math.max(0.5,Math.min(3,r)); aud.playbackRate=r; vid.playbackRate=r;
+    var bs=el('m10bar').querySelectorAll('button[data-r]');
+    for(var i=0;i<bs.length;i++) bs[i].classList.toggle('on', parseFloat(bs[i].getAttribute('data-r'))===r);
+  }
+  var TS=/\b(\d{1,3}):([0-5]\d)\b/;
+  function skip(node){
+    var p=node.parentNode; while(p && p!==document.body){
+      var t=p.nodeName;
+      if(t==='SCRIPT'||t==='STYLE'||t==='A'||t==='BUTTON'||t==='TEXTAREA'||t==='OPTION') return true;
+      if(p.id==='m10bar'||p.id==='m10edge') return true;
+      if(p.classList && p.classList.contains('m10ts')) return true;
+      p=p.parentNode;
+    }
+    return false;
+  }
+  function pill(sec, label){
+    var s=document.createElement('span'); s.className='m10ts';
+    var a=document.createElement('a'); a.className='aud'; a.textContent='🎧'+label;
+    a.title='Play Dr. Basso from here'; a.addEventListener('click',function(){ window.__m10seek(sec,'a'); });
+    var v=document.createElement('a'); v.className='vid'; v.textContent='🎬';
+    v.title='Watch from here'; v.addEventListener('click',function(){ window.__m10seek(sec,'v'); });
+    s.appendChild(a); s.appendChild(v); return s;
+  }
+  function enhanceNode(node){
+    var text=node.nodeValue; if(!text || !TS.test(text)) return;
+    var re=/\b(\d{1,3}):([0-5]\d)\b/g, m, last=0, frag=document.createDocumentFragment(), any=false;
+    while((m=re.exec(text))){
+      var min=parseInt(m[1],10); if(min>133) continue;                 // lecture is ~133 min
+      var after=text.slice(m.index+m[0].length, m.index+m[0].length+3);
+      if(/^\s*[ap]m/i.test(after)) continue;                            // skip "11:59pm" style
+      frag.appendChild(document.createTextNode(text.slice(last,m.index)));
+      frag.appendChild(pill(min*60+parseInt(m[2],10), m[0]));
+      last=m.index+m[0].length; any=true;
+    }
+    if(!any) return;
+    frag.appendChild(document.createTextNode(text.slice(last)));
+    node.parentNode.replaceChild(frag, node);
+  }
+  function enhance(root){
+    if(!root || root.nodeType!==1) { if(root && root.nodeType===3){ if(!skip(root)) enhanceNode(root); } return; }
+    var w=document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
+    var batch=[], n; while((n=w.nextNode())){ if(!skip(n) && TS.test(n.nodeValue||'')) batch.push(n); }
+    batch.forEach(enhanceNode);
+  }
+  function boot(){
+    aud=el('m10aud'); vid=el('m10vid'); vwrap=el('m10vidwrap'); if(!aud) return;
+    el('m10vidbtn').addEventListener('click',function(){
+      var open=vwrap.style.display!=='none'; vwrap.style.display=open?'none':'block';
+      this.classList.toggle('on',!open); if(open){ try{vid.pause();}catch(e){} }
+    });
+    var bs=el('m10bar').querySelectorAll('button[data-r]');
+    for(var i=0;i<bs.length;i++) (function(btn){ btn.addEventListener('click',function(){ setRate(parseFloat(btn.getAttribute('data-r'))); }); })(bs[i]);
+    enhance(document.body);
+    var mo=new MutationObserver(function(muts){
+      for(var i=0;i<muts.length;i++){ var a=muts[i].addedNodes;
+        for(var j=0;j<a.length;j++){ var nd=a[j];
+          if(nd.nodeType===1 && nd.id!=='m10bar' && nd.id!=='m10vidwrap' && !(nd.classList&&nd.classList.contains('m10ts'))) enhance(nd);
+          else if(nd.nodeType===3) enhance(nd);
+        } }
+    });
+    mo.observe(document.body,{childList:true,subtree:true});
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',boot); else boot();
+})();
+</script><script id="fab-ai-companion-js">
 (function(){
   const ENDPOINT = "https://fab-ai.dgync1.workers.dev";
   const CLASS_NAME = "BN0213"; // e.g., "CP1" / "FAB101" / "GA0102" — empty = generic chiropractic tutor
