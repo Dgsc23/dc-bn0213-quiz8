@@ -129,16 +129,26 @@
 <style id="m10anchor-css">
 #m10bar{position:sticky;top:0;z-index:99990;background:#0b1120;border-bottom:2px solid #a855f7;padding:7px 10px;display:flex;flex-wrap:wrap;gap:7px;align-items:center;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif}
 #m10bar .lbl{color:#c4b5fd;font-weight:800;font-size:.72rem;white-space:nowrap}
-#m10bar audio{height:34px;flex:1;min-width:180px}
+#m10bar audio{height:34px;flex:1;min-width:170px}
 #m10bar button{background:#0e1626;color:#c4b5fd;border:1px solid #1e2b45;border-radius:8px;padding:4px 9px;font-weight:700;font-size:.72rem;cursor:pointer;font-family:inherit}
 #m10bar button.on{background:#a855f7;color:#1a0533;border-color:#a855f7}
-#m10vidwrap{display:none;position:sticky;top:48px;z-index:99989;background:#000;padding:0 10px 8px}
+#m10vidwrap{position:sticky;top:48px;z-index:99989;background:#000;padding:0 10px 6px;display:none}
+#m10vidwrap.mini{position:fixed;top:auto;left:auto;right:12px;bottom:12px;width:300px;max-width:60vw;padding:0;border:2px solid #a855f7;border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.6)}
 #m10vid{width:100%;max-height:46vh;border-radius:0 0 10px 10px;background:#000;display:block}
+#m10vidwrap.mini #m10vid{max-height:none;border-radius:0}
+.m10vctl{display:flex;gap:6px;justify-content:flex-end;align-items:center;padding:4px 2px}
+#m10vidwrap.mini .m10vctl{position:absolute;top:0;right:0;left:0;background:linear-gradient(#000a,transparent);z-index:2;padding:4px 6px}
+.m10vctl button{background:rgba(168,85,247,.25);color:#f3e8ff;border:1px solid #a855f7;border-radius:7px;padding:2px 9px;font:800 .74rem inherit;cursor:pointer}
 .m10ts{display:inline-flex;gap:2px;align-items:center;vertical-align:baseline;margin:0 1px}
 .m10ts a{cursor:pointer;text-decoration:none;border-radius:6px;padding:0 5px;font-weight:800;font-size:.9em;line-height:1.5;white-space:nowrap}
 .m10ts a.aud{background:#052e2b;color:#5eead4;border:1px solid #14b8a6}
 .m10ts a.vid{background:#3b0764;color:#e9d5ff;border:1px solid #a855f7;font-size:.85em}
+.m10ts a.sld{background:#0b2540;color:#bae6fd;border:1px solid #38bdf8;font-size:.85em}
 .m10ts a:hover{filter:brightness(1.35)}
+#m10slide{position:fixed;inset:0;z-index:100000;background:rgba(2,6,18,.9);display:none;align-items:center;justify-content:center;padding:18px}
+#m10slide img{max-width:96vw;max-height:88vh;border-radius:12px;border:2px solid #38bdf8;background:#000}
+#m10slide .x{position:absolute;top:14px;right:18px;background:#1e293b;color:#fff;border:1px solid #38bdf8;border-radius:10px;padding:7px 13px;font:800 15px system-ui;cursor:pointer}
+#m10slide .cap{position:absolute;bottom:16px;left:0;right:0;text-align:center;color:#bae6fd;font:700 .8rem system-ui}
 #m10edge{background:#132a3f;border:1px solid #38bdf8;color:#bae6fd;font:600 .8rem/1.5 -apple-system,system-ui,sans-serif;padding:8px 12px;margin:0;display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap}
 #m10edge b{color:#e0f2fe}#m10edge button{background:none;border:0;color:#7dd3fc;cursor:pointer;font-weight:800;font-size:1rem}
 </style><style id="fab-ai-companion-css">
@@ -279,7 +289,7 @@
 .fab-ai-followup button:hover { transform: translateY(-1px); }
 .fab-ai-followup button:disabled { opacity: 0.5; cursor: not-allowed; }
 </style><style id="dc-wm-css">.dc-study-watermark{position:fixed;bottom:6px;right:10px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:10px;color:rgba(255,255,255,0.32);letter-spacing:.3px;pointer-events:none;z-index:2147483647;user-select:none}</style></head>
-<body><div id="m10edge">&#128266; For the best <b>Ava &amp; Emma</b> voices in the AI Coach, open this in <b>Microsoft Edge</b> (its Natural voices are the good ones). <button onclick="this.parentNode.style.display='none'" title="dismiss">&times;</button></div><div id="m10bar"><span class="lbl">&#127911; Dr. Basso</span><audio id="m10aud" controls preload="metadata" src="bn0213-m10-lipids.mp3"></audio><button id="m10vidbtn" type="button">&#127916; Video</button><span class="lbl">Speed</span><button type="button" data-r="1" class="on">1x</button><button type="button" data-r="1.5">1.5x</button><button type="button" data-r="2">2x</button><button type="button" data-r="3">3x</button></div><div id="m10vidwrap"><video id="m10vid" controls playsinline preload="none" src="https://pub-7fb2bb3e5a0b4096a57fc578b5a16078.r2.dev/bn0213/m10-lipids/lecture-fs-37da13d4.mp4"></video></div>
+<body><div id="m10edge">&#128266; For the best <b>Ava &amp; Emma</b> voices in the AI Coach, open this in <b>Microsoft Edge</b> (its Natural voices are the good ones). <button onclick="this.parentNode.style.display='none'" title="dismiss">&times;</button></div><div id="m10bar"><span class="lbl">&#127911; Dr. Basso</span><audio id="m10aud" controls preload="metadata" src="bn0213-m10-lipids.mp3"></audio><button id="m10vidbtn" type="button">&#127916; Video</button><span class="lbl">Speed</span><button type="button" data-r="1" class="on">1x</button><button type="button" data-r="1.5">1.5x</button><button type="button" data-r="2">2x</button><button type="button" data-r="3">3x</button></div><div id="m10vidwrap"><div class="m10vctl"><button id="m10vmin" type="button" title="Minimize to corner (keeps playing)">&#128469; Minimize</button><button id="m10vclose" type="button" title="Close video">&times; Close</button></div><video id="m10vid" controls playsinline preload="none" src="https://pub-7fb2bb3e5a0b4096a57fc578b5a16078.r2.dev/bn0213/m10-lipids/lecture-fs-37da13d4.mp4"></video></div><div id="m10slide"><button class="x" type="button">&times; Close</button><img id="m10slideimg" src="" alt="slide"><div class="cap" id="m10slidecap"></div></div>
 <div class="wrap">
   <header>
     <span class="eyebrow">BN0213 · MODULE 10 · LIPIDS</span>
@@ -818,14 +828,18 @@ renderCram(); renderFlags(); renderDrill(); renderCoach();
 </script>
 <script id="m10anchor-js">
 (function(){
-  var aud, vid, vwrap, ready=false;
+  var SLIDES=[{"s": 1696, "e": 1960, "img": "frames/m10_lecture_fv/s_01_01696.jpg"}, {"s": 1960, "e": 2144, "img": "frames/m10_lecture_fv/s_02_01960.jpg"}, {"s": 2144, "e": 2224, "img": "frames/m10_lecture_fv/s_03_02144.jpg"}, {"s": 2224, "e": 2344, "img": "frames/m10_lecture_fv/s_04_02224.jpg"}, {"s": 2344, "e": 2672, "img": "frames/m10_lecture_fv/s_05_02344.jpg"}, {"s": 2672, "e": 2896, "img": "frames/m10_lecture_fv/s_06_02672.jpg"}, {"s": 2896, "e": 3080, "img": "frames/m10_lecture_fv/s_08_02896.jpg"}, {"s": 3080, "e": 3560, "img": "frames/m10_lecture_fv/s_09_03080.jpg"}, {"s": 3560, "e": 3640, "img": "frames/m10_lecture_fv/s_10_03560.jpg"}, {"s": 3640, "e": 3664, "img": "frames/m10_lecture_fv/s_11_03640.jpg"}, {"s": 3664, "e": 3824, "img": "frames/m10_lecture_fv/s_12_03664.jpg"}, {"s": 3824, "e": 3872, "img": "frames/m10_lecture_fv/s_13_03824.jpg"}, {"s": 3872, "e": 4088, "img": "frames/m10_lecture_fv/s_14_03872.jpg"}, {"s": 4088, "e": 4392, "img": "frames/m10_lecture_fv/s_15_04088.jpg"}, {"s": 4392, "e": 4408, "img": "frames/m10_lecture_fv/s_16_04392.jpg"}, {"s": 4408, "e": 5040, "img": "frames/m10_lecture_fv/s_17_04408.jpg"}, {"s": 5040, "e": 5120, "img": "frames/m10_lecture_fv/s_18_05040.jpg"}, {"s": 5120, "e": 5136, "img": "frames/m10_lecture_fv/s_19_05120.jpg"}, {"s": 5136, "e": 5264, "img": "frames/m10_lecture_fv/s_20_05136.jpg"}, {"s": 5264, "e": 5288, "img": "frames/m10_lecture_fv/s_21_05264.jpg"}, {"s": 5288, "e": 5504, "img": "frames/m10_lecture_fv/s_22_05288.jpg"}, {"s": 5504, "e": 5648, "img": "frames/m10_lecture_fv/s_23_05504.jpg"}, {"s": 5648, "e": 5760, "img": "frames/m10_lecture_fv/s_24_05648.jpg"}, {"s": 5760, "e": 6080, "img": "frames/m10_lecture_fv/s_25_05760.jpg"}, {"s": 6080, "e": 6104, "img": "frames/m10_lecture_fv/s_26_06080.jpg"}, {"s": 6104, "e": 6144, "img": "frames/m10_lecture_fv/s_27_06104.jpg"}, {"s": 6144, "e": 6192, "img": "frames/m10_lecture_fv/s_28_06144.jpg"}, {"s": 6192, "e": 6224, "img": "frames/m10_lecture_fv/s_29_06192.jpg"}, {"s": 6224, "e": 6280, "img": "frames/m10_lecture_fv/s_30_06224.jpg"}, {"s": 6280, "e": 6352, "img": "frames/m10_lecture_fv/s_31_06280.jpg"}, {"s": 6352, "e": 6360, "img": "frames/m10_lecture_fv/s_32_06352.jpg"}, {"s": 6360, "e": 6368, "img": "frames/m10_lecture_fv/s_33_06360.jpg"}, {"s": 6368, "e": 6488, "img": "frames/m10_lecture_fv/s_34_06368.jpg"}, {"s": 6488, "e": 6504, "img": "frames/m10_lecture_fv/s_35_06488.jpg"}, {"s": 6504, "e": 6584, "img": "frames/m10_lecture_fv/s_36_06504.jpg"}, {"s": 6584, "e": 6616, "img": "frames/m10_lecture_fv/s_37_06584.jpg"}, {"s": 6616, "e": 6680, "img": "frames/m10_lecture_fv/s_38_06616.jpg"}, {"s": 6680, "e": 6688, "img": "frames/m10_lecture_fv/s_39_06680.jpg"}, {"s": 6688, "e": 6880, "img": "frames/m10_lecture_fv/s_40_06688.jpg"}, {"s": 6880, "e": 6944, "img": "frames/m10_lecture_fv/s_41_06880.jpg"}, {"s": 6944, "e": 6952, "img": "frames/m10_lecture_fv/s_42_06944.jpg"}, {"s": 6952, "e": 7048, "img": "frames/m10_lecture_fv/s_43_06952.jpg"}, {"s": 7048, "e": 7136, "img": "frames/m10_lecture_fv/s_44_07048.jpg"}, {"s": 7136, "e": 7536, "img": "frames/m10_lecture_fv/s_45_07136.jpg"}];
+  var aud, vid, vwrap, sover, simg, scap;
   function el(id){ return document.getElementById(id); }
   function play(m, sec){
     var go=function(){ try{ m.currentTime=sec; }catch(e){} var p=m.play(); if(p&&p.catch)p.catch(function(){}); };
     if(m.readyState>=1) go(); else { m.addEventListener('loadedmetadata',go,{once:true}); m.addEventListener('canplay',go,{once:true}); try{m.load();}catch(e){} }
   }
+  function slideFor(sec){ for(var i=0;i<SLIDES.length;i++){ if(sec>=SLIDES[i].s && sec<SLIDES[i].e) return SLIDES[i]; }
+    var best=SLIDES[0]; for(var j=0;j<SLIDES.length;j++){ if(SLIDES[j].s<=sec) best=SLIDES[j]; } return best; }
   window.__m10seek=function(sec, mode){
-    if(mode==='v'){ vwrap.style.display='block'; el('m10vidbtn').classList.add('on'); try{aud.pause();}catch(e){} play(vid, sec); vwrap.scrollIntoView({behavior:'smooth',block:'nearest'}); }
+    if(mode==='v'){ vwrap.style.display='block'; el('m10vidbtn').classList.add('on'); try{aud.pause();}catch(e){} play(vid, sec); if(!vwrap.classList.contains('mini')) vwrap.scrollIntoView({behavior:'smooth',block:'nearest'}); }
+    else if(mode==='s'){ var sl=slideFor(sec); simg.src=sl.img; scap.textContent=(sec/60|0)+':'+('0'+(sec%60)).slice(-2); sover.style.display='flex'; }
     else { try{vid.pause();}catch(e){} play(aud, sec); el('m10bar').scrollIntoView({behavior:'smooth',block:'start'}); }
   };
   function setRate(r){
@@ -838,27 +852,27 @@ renderCram(); renderFlags(); renderDrill(); renderCoach();
     var p=node.parentNode; while(p && p!==document.body){
       var t=p.nodeName;
       if(t==='SCRIPT'||t==='STYLE'||t==='A'||t==='BUTTON'||t==='TEXTAREA'||t==='OPTION') return true;
-      if(p.id==='m10bar'||p.id==='m10edge') return true;
+      if(p.id==='m10bar'||p.id==='m10edge'||p.id==='m10slide') return true;
       if(p.classList && p.classList.contains('m10ts')) return true;
       p=p.parentNode;
-    }
-    return false;
+    } return false;
   }
   function pill(sec, label){
     var s=document.createElement('span'); s.className='m10ts';
-    var a=document.createElement('a'); a.className='aud'; a.textContent='🎧'+label;
-    a.title='Play Dr. Basso from here'; a.addEventListener('click',function(){ window.__m10seek(sec,'a'); });
-    var v=document.createElement('a'); v.className='vid'; v.textContent='🎬';
-    v.title='Watch from here'; v.addEventListener('click',function(){ window.__m10seek(sec,'v'); });
-    s.appendChild(a); s.appendChild(v); return s;
+    function mk(cls,txt,mode,title){ var a=document.createElement('a'); a.className=cls; a.textContent=txt; a.title=title;
+      a.addEventListener('click',function(){ window.__m10seek(sec,mode); }); return a; }
+    s.appendChild(mk('aud','🎧'+label,'a','Play Dr. Basso from here'));
+    s.appendChild(mk('vid','🎬','v','Watch the video from here'));
+    s.appendChild(mk('sld','📖','s','Show the slide from this moment'));
+    return s;
   }
   function enhanceNode(node){
     var text=node.nodeValue; if(!text || !TS.test(text)) return;
     var re=/\b(\d{1,3}):([0-5]\d)\b/g, m, last=0, frag=document.createDocumentFragment(), any=false;
     while((m=re.exec(text))){
-      var min=parseInt(m[1],10); if(min>133) continue;                 // lecture is ~133 min
+      var min=parseInt(m[1],10); if(min>133) continue;
       var after=text.slice(m.index+m[0].length, m.index+m[0].length+3);
-      if(/^\s*[ap]m/i.test(after)) continue;                            // skip "11:59pm" style
+      if(/^\s*[ap]m/i.test(after)) continue;
       frag.appendChild(document.createTextNode(text.slice(last,m.index)));
       frag.appendChild(pill(min*60+parseInt(m[2],10), m[0]));
       last=m.index+m[0].length; any=true;
@@ -868,24 +882,35 @@ renderCram(); renderFlags(); renderDrill(); renderCoach();
     node.parentNode.replaceChild(frag, node);
   }
   function enhance(root){
-    if(!root || root.nodeType!==1) { if(root && root.nodeType===3){ if(!skip(root)) enhanceNode(root); } return; }
+    if(!root){return;} if(root.nodeType===3){ if(!skip(root)) enhanceNode(root); return; }
+    if(root.nodeType!==1) return;
     var w=document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
     var batch=[], n; while((n=w.nextNode())){ if(!skip(n) && TS.test(n.nodeValue||'')) batch.push(n); }
     batch.forEach(enhanceNode);
   }
   function boot(){
-    aud=el('m10aud'); vid=el('m10vid'); vwrap=el('m10vidwrap'); if(!aud) return;
+    aud=el('m10aud'); vid=el('m10vid'); vwrap=el('m10vidwrap');
+    sover=el('m10slide'); simg=el('m10slideimg'); scap=el('m10slidecap'); if(!aud) return;
     el('m10vidbtn').addEventListener('click',function(){
       var open=vwrap.style.display!=='none'; vwrap.style.display=open?'none':'block';
-      this.classList.toggle('on',!open); if(open){ try{vid.pause();}catch(e){} }
+      vwrap.classList.remove('mini'); this.classList.toggle('on',!open); if(open){ try{vid.pause();}catch(e){} }
     });
+    el('m10vmin').addEventListener('click',function(){
+      var mini=vwrap.classList.toggle('mini'); this.innerHTML=mini?'&#128470; Restore':'&#128469; Minimize';
+    });
+    el('m10vclose').addEventListener('click',function(){
+      vwrap.style.display='none'; vwrap.classList.remove('mini'); el('m10vmin').innerHTML='&#128469; Minimize';
+      el('m10vidbtn').classList.remove('on'); try{vid.pause();}catch(e){}
+    });
+    sover.querySelector('.x').addEventListener('click',function(){ sover.style.display='none'; });
+    sover.addEventListener('click',function(e){ if(e.target===sover) sover.style.display='none'; });
     var bs=el('m10bar').querySelectorAll('button[data-r]');
     for(var i=0;i<bs.length;i++) (function(btn){ btn.addEventListener('click',function(){ setRate(parseFloat(btn.getAttribute('data-r'))); }); })(bs[i]);
     enhance(document.body);
     var mo=new MutationObserver(function(muts){
       for(var i=0;i<muts.length;i++){ var a=muts[i].addedNodes;
         for(var j=0;j<a.length;j++){ var nd=a[j];
-          if(nd.nodeType===1 && nd.id!=='m10bar' && nd.id!=='m10vidwrap' && !(nd.classList&&nd.classList.contains('m10ts'))) enhance(nd);
+          if(nd.nodeType===1 && nd.id!=='m10bar' && nd.id!=='m10vidwrap' && nd.id!=='m10slide' && !(nd.classList&&nd.classList.contains('m10ts'))) enhance(nd);
           else if(nd.nodeType===3) enhance(nd);
         } }
     });
