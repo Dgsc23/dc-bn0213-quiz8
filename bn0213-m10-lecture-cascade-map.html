@@ -1,0 +1,920 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BN0213 Module 10 (Lipids) — Cascade Map</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  html,body{margin:0;height:100%;background:#0c0a0e;font-family:'Outfit',system-ui,sans-serif}
+  *{box-sizing:border-box}
+  @keyframes flow{to{stroke-dashoffset:-22}}
+  @keyframes fadeup{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+  ::-webkit-scrollbar{width:0;height:0}
+</style>
+<style>.dc-back-to-hub{position:fixed;top:12px;left:12px;z-index:99999;background:rgba(22,16,27,.85);color:#f0abfc;text-decoration:none;border:1px solid #86198f;border-radius:9px;padding:7px 13px;font:700 12.5px Outfit,system-ui;box-shadow:0 2px 10px rgba(0,0,0,.4)}.dc-back-to-hub:hover{background:rgba(232,121,249,.2)}@media print{.dc-back-to-hub{display:none}}</style>
+<style id="fab-ai-companion-css">
+.fab-ai-btn {
+  position: fixed; bottom: 24px; right: 24px; z-index: 9998;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6); color: #fff;
+  border: none; border-radius: 50%; width: 56px; height: 56px;
+  font-size: 26px; cursor: pointer; box-shadow: 0 4px 16px rgba(99,102,241,0.45);
+  transition: all 0.2s; display: flex; align-items: center; justify-content: center;
+  padding: 0;
+}
+.fab-ai-btn:hover { transform: translateY(-2px) scale(1.05); box-shadow: 0 8px 24px rgba(99,102,241,0.6); }
+.fab-ai-btn:active { transform: scale(0.95); }
+
+.fab-ai-panel {
+  position: fixed; top: 0; right: 0; bottom: 0; width: min(480px, 94vw);
+  background: #0f172a; border-left: 2px solid #334155;
+  box-shadow: -8px 0 32px rgba(0,0,0,0.5);
+  z-index: 9999; display: flex; flex-direction: column;
+  transform: translateX(100%); transition: transform 0.28s ease-out;
+}
+.fab-ai-panel.open { transform: translateX(0); }
+
+.fab-ai-header {
+  padding: 12px 16px; background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: #fff; display: flex; align-items: center; gap: 8px;
+}
+.fab-ai-header h3 { font-size: 15px; font-weight: 700; margin: 0; flex: 1; }
+.fab-ai-hdr-btn {
+  background: rgba(255,255,255,0.15); color: #fff; border: none;
+  padding: 6px 10px; border-radius: 6px; cursor: pointer; font-size: 12px;
+  font-weight: 600;
+}
+.fab-ai-hdr-btn:hover { background: rgba(255,255,255,0.28); }
+.fab-ai-close {
+  background: rgba(255,255,255,0.15); color: #fff; border: none;
+  width: 30px; height: 30px; border-radius: 6px; cursor: pointer; font-size: 18px;
+  line-height: 1; padding: 0;
+}
+.fab-ai-close:hover { background: rgba(255,255,255,0.3); }
+
+.fab-ai-body {
+  flex: 1; overflow-y: auto; padding: 14px 16px;
+  color: #e2e8f0; font-size: 13px; line-height: 1.6;
+  display: flex; flex-direction: column; gap: 10px;
+}
+
+.fab-ai-qpreview {
+  padding: 8px 12px; background: rgba(129,140,248,0.08); border-left: 3px solid #818cf8;
+  border-radius: 6px; font-size: 12px; color: #94a3b8; max-height: 100px; overflow-y: auto;
+  flex-shrink: 0;
+}
+.fab-ai-qpreview b { color: #cbd5e1; }
+
+.fab-ai-suggestions {
+  display: flex; flex-wrap: wrap; gap: 6px; padding: 4px 0;
+}
+.fab-ai-sug {
+  background: rgba(99,102,241,0.12); color: #a5b4fc;
+  border: 1px solid rgba(99,102,241,0.35); border-radius: 14px;
+  padding: 6px 12px; font-size: 12px; cursor: pointer; font-weight: 500;
+  transition: all .15s;
+}
+.fab-ai-sug:hover { background: rgba(99,102,241,0.25); color: #dbeafe; transform: translateY(-1px); }
+
+.fab-ai-msg { display: flex; gap: 6px; max-width: 100%; }
+.fab-ai-msg.user { justify-content: flex-end; }
+.fab-ai-bubble {
+  padding: 10px 14px; border-radius: 12px; font-size: 13px; line-height: 1.55;
+  max-width: 92%; word-wrap: break-word;
+}
+.fab-ai-msg.user .fab-ai-bubble {
+  background: linear-gradient(135deg, #3b82f6, #6366f1);
+  color: #fff; border-bottom-right-radius: 4px;
+}
+.fab-ai-msg.ai .fab-ai-bubble {
+  background: #1e293b; color: #e2e8f0; border-bottom-left-radius: 4px;
+  border: 1px solid #334155;
+}
+.fab-ai-msg.ai .fab-ai-bubble strong,
+.fab-ai-msg.ai .fab-ai-bubble b { color: #a5b4fc; }
+.fab-ai-msg.ai .fab-ai-bubble ul { margin: 6px 0; padding-left: 20px; }
+.fab-ai-msg.ai .fab-ai-bubble li { margin: 3px 0; }
+.fab-ai-msg.ai .fab-ai-bubble p { margin: 0 0 8px 0; }
+.fab-ai-msg.ai .fab-ai-bubble p:last-child { margin-bottom: 0; }
+.fab-ai-msg.ai .fab-ai-bubble h3 { font-size: 13px; margin: 8px 0 4px 0; color: #c4b5fd; }
+.fab-ai-msg.ai .fab-ai-bubble code { background: #0f172a; padding: 1px 5px; border-radius: 3px; font-size: 11px; }
+
+.fab-ai-tts-row { display: flex; align-items: center; gap: 6px; margin-top: 6px; padding-top: 6px; border-top: 1px solid #334155; }
+.fab-ai-tts-btn {
+  background: rgba(129,140,248,0.15); color: #c4b5fd;
+  border: 1px solid rgba(129,140,248,0.35); border-radius: 14px;
+  padding: 3px 10px; font-size: 11px; cursor: pointer; font-weight: 500;
+  display: inline-flex; align-items: center; gap: 4px;
+}
+.fab-ai-tts-btn:hover { background: rgba(129,140,248,0.3); color: #ddd6fe; }
+.fab-ai-tts-btn.playing { background: rgba(239,68,68,0.18); color: #fca5a5; border-color: rgba(239,68,68,0.4); }
+.fab-ai-tts-rate {
+  background: #0f172a; color: #cbd5e1; border: 1px solid #334155;
+  border-radius: 6px; padding: 2px 6px; font-size: 11px; cursor: pointer;
+}
+
+.fab-ai-status {
+  padding: 10px 14px; background: rgba(99,102,241,0.12); border: 1px solid rgba(99,102,241,0.3);
+  border-radius: 8px; color: #a5b4fc; font-size: 12px;
+}
+.fab-ai-status.err { background: rgba(239,68,68,0.12); border-color: rgba(239,68,68,0.4); color: #fca5a5; }
+.fab-ai-loading { display: flex; align-items: center; gap: 8px; color: #94a3b8; padding: 4px 6px; font-size: 12px; }
+.fab-ai-spinner {
+  width: 12px; height: 12px; border: 2px solid #334155; border-top-color: #818cf8;
+  border-radius: 50%; animation: fab-ai-spin 0.8s linear infinite;
+}
+@keyframes fab-ai-spin { to { transform: rotate(360deg); } }
+
+.fab-ai-followup {
+  padding: 12px; background: #1e293b; border-top: 1px solid #334155;
+  display: flex; gap: 8px; align-items: flex-end;
+}
+.fab-ai-mini-close {
+  background: #334155; color: #94a3b8; border: 1px solid #475569;
+  width: 32px; height: 36px; border-radius: 8px; cursor: pointer;
+  font-size: 16px; line-height: 1; padding: 0; font-weight: 600;
+  flex-shrink: 0;
+}
+.fab-ai-mini-close:hover { background: #475569; color: #f87171; border-color: #ef4444; }
+.fab-ai-followup textarea {
+  flex: 1; background: #0f172a; color: #e2e8f0;
+  border: 1px solid #334155; border-radius: 8px;
+  padding: 8px 10px; font-size: 13px; font-family: inherit;
+  resize: none; min-height: 36px; max-height: 120px;
+}
+.fab-ai-followup textarea:focus { outline: none; border-color: #818cf8; }
+.fab-ai-followup button {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6); color: #fff;
+  border: none; padding: 0 14px; border-radius: 8px; font-weight: 600;
+  cursor: pointer; font-size: 13px; white-space: nowrap;
+}
+.fab-ai-followup button:hover { transform: translateY(-1px); }
+.fab-ai-followup button:disabled { opacity: 0.5; cursor: not-allowed; }
+</style><style id="cascade-fab-fix">@media(max-width:760px){.fab-ai-btn{bottom:104px!important;right:14px!important}}</style></head><body>
+<a class="dc-back-to-hub" href="index.html" title="Back to the Quiz 8 hub">← Hub</a>
+<div id="cascade-root" style="position:fixed;inset:0;overflow:hidden;background:radial-gradient(1100px 600px at 88% -12%, rgba(232,121,249,.10), transparent 60%),radial-gradient(900px 520px at 4% 112%, rgba(251,113,133,.07), transparent 55%),#0c0a0e;color:#f3ecf6;font-family:'Outfit',sans-serif">
+  <div data-el="viewport" style="position:absolute;inset:0;overflow:hidden;cursor:grab;touch-action:none">
+    <div data-el="world" style="position:absolute;left:0;top:0;transform-origin:0 0;will-change:transform"></div>
+  </div>
+  <div style="position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 260px 70px rgba(0,0,0,.62)"></div>
+
+  <div style="position:absolute;top:0;left:0;right:0;display:flex;align-items:flex-start;justify-content:space-between;padding:18px 20px;pointer-events:none;z-index:15">
+    <div style="pointer-events:auto">
+      <div style="display:flex;align-items:center;gap:9px">
+        <span style="width:9px;height:9px;border-radius:50%;background:#e879f9;box-shadow:0 0 0 4px rgba(232,121,249,.18)"></span>
+        <span style="font:700 11px/1 Outfit;letter-spacing:.16em;text-transform:uppercase;color:#f0abfc">DC Study Supply · BN0213 Module 10</span>
+      </div>
+      <div style="font-family:'Fraunces',serif;font-weight:600;font-size:27px;letter-spacing:-.01em;margin-top:8px">Cascade <span style="font-style:italic;color:#e879f9">Map</span></div>
+      <div style="display:flex;gap:7px;margin-top:12px">
+        <button data-case="lip" style="border:1px solid #38bdf8;background:#38bdf81f;color:#38bdf8;font:600 12.5px Outfit;padding:7px 13px;border-radius:9px;cursor:pointer;transition:.15s">What a lipid is</button><button data-case="tag" style="border:1px solid #34d399;background:#34d3991f;color:#34d399;font:600 12.5px Outfit;padding:7px 13px;border-radius:9px;cursor:pointer;transition:.15s">Triacylglycerol & wax</button><button data-case="fa" style="border:1px solid #a78bfa;background:#a78bfa1f;color:#a78bfa;font:600 12.5px Outfit;padding:7px 13px;border-radius:9px;cursor:pointer;transition:.15s">Fatty acid: saturated vs unsaturated</button><button data-case="omg" style="border:1px solid #f59e0b;background:#f59e0b1f;color:#f59e0b;font:600 12.5px Outfit;padding:7px 13px;border-radius:9px;cursor:pointer;transition:.15s">Nomenclature & omega</button><button data-case="efa" style="border:1px solid #22d3ee;background:#22d3ee1f;color:#22d3ee;font:600 12.5px Outfit;padding:7px 13px;border-radius:9px;cursor:pointer;transition:.15s">Essential fatty acids</button><button data-case="ct" style="border:1px solid #fb7185;background:#fb71851f;color:#fb7185;font:600 12.5px Outfit;padding:7px 13px;border-radius:9px;cursor:pointer;transition:.15s">Cis vs trans</button><button data-case="pl" style="border:1px solid #e879f9;background:#e879f91f;color:#e879f9;font:600 12.5px Outfit;padding:7px 13px;border-radius:9px;cursor:pointer;transition:.15s">Phospholipids & sphingolipids</button><button data-case="lsd" style="border:1px solid #f97316;background:#f973161f;color:#f97316;font:600 12.5px Outfit;padding:7px 13px;border-radius:9px;cursor:pointer;transition:.15s">Lysosomal storage diseases</button></div>
+    </div>
+    <div style="pointer-events:auto;display:flex;gap:7px">
+      <button data-act="overview" style="border:1px solid #2b1f33;background:rgba(22,16,27,.82);color:#d8cadf;font:600 12.5px Outfit;padding:8px 13px;border-radius:10px;cursor:pointer;transition:.15s" style-hover="border-color:#86198f;color:#f0abfc">⤢ Overview</button>
+      <button data-act="zout" style="border:1px solid #2b1f33;background:rgba(22,16,27,.82);color:#d8cadf;font:600 17px/1 Outfit;width:38px;height:38px;border-radius:10px;cursor:pointer;transition:.15s" style-hover="border-color:#86198f;color:#f0abfc">−</button>
+      <button data-act="zin" style="border:1px solid #2b1f33;background:rgba(22,16,27,.82);color:#d8cadf;font:600 17px/1 Outfit;width:38px;height:38px;border-radius:10px;cursor:pointer;transition:.15s" style-hover="border-color:#86198f;color:#f0abfc">+</button>
+    </div>
+  </div>
+
+  <div data-el="hint" style="position:absolute;left:20px;bottom:22px;font:500 12px/1.5 Outfit;color:#8a7b94;pointer-events:none;z-index:15;transition:opacity .5s">drag to pan · scroll to zoom · click any node</div>
+
+  <div data-el="detail" style="position:absolute;top:50%;right:22px;width:344px;max-width:84vw;background:rgba(15,10,19,.93);border:1px solid #2b1f33;border-radius:18px;overflow:hidden;backdrop-filter:blur(8px);box-shadow:0 30px 80px rgba(0,0,0,.6);transform:translateX(calc(100% + 70px)) translateY(-50%);transition:transform .55s cubic-bezier(.2,.85,.25,1);z-index:20">
+    <div data-el="dbar" style="height:4px;background:#e879f9"></div>
+    <div style="padding:17px 19px 19px">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px">
+        <div data-el="dkick" style="font:700 10px/1.4 Outfit;letter-spacing:.13em;text-transform:uppercase;color:#b3a3bd">&nbsp;</div>
+        <button data-act="dclose" style="border:1px solid #2b1f33;background:none;color:#b3a3bd;font:600 12px Outfit;width:26px;height:26px;border-radius:7px;cursor:pointer;flex:0 0 auto" style-hover="color:#f0abfc;border-color:#86198f">✕</button>
+      </div>
+      <div data-el="dtitle" style="font-family:'Fraunces',serif;font-weight:600;font-size:21px;line-height:1.18;margin:7px 0 9px">&nbsp;</div>
+      <div data-el="dbody" style="font-size:14px;line-height:1.56;color:#d8cadf">&nbsp;</div>
+      <div style="margin-top:14px;display:flex;gap:7px;flex-wrap:wrap"><span data-el="dsrc" style="display:inline-block;font:700 10px Outfit;letter-spacing:.02em;color:#f0abfc;background:rgba(232,121,249,.12);border:1px solid #86198f;padding:3px 9px;border-radius:7px">&nbsp;</span><span data-el="dvid" style="display:none;font:700 10px Outfit;letter-spacing:.02em;padding:3px 9px;border-radius:7px;border:1px solid #86198f;cursor:pointer">&nbsp;</span><span data-el="dframe" style="display:none;font:700 10px Outfit;letter-spacing:.02em;padding:3px 9px;border-radius:7px;border:1px solid #a16207;cursor:pointer">&nbsp;</span></div>
+    </div>
+  </div>
+
+  <div data-el="tourbar" style="position:absolute;bottom:20px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:14px;background:rgba(15,10,19,.92);border:1px solid #2b1f33;border-radius:999px;padding:8px 9px 8px 17px;backdrop-filter:blur(8px);box-shadow:0 18px 50px rgba(0,0,0,.5);z-index:20;max-width:92vw">
+    <div style="min-width:0">
+      <div data-el="tlabel" style="font:700 9.5px/1.3 Outfit;letter-spacing:.11em;text-transform:uppercase;color:#b3a3bd">Guided tour</div>
+      <div data-el="ttitle" style="font:600 13.5px/1.25 Outfit;color:#f3ecf6;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:240px">Press play to fly the cascades</div>
+    </div>
+    <div style="display:flex;gap:6px">
+      <button data-act="tprev" style="border:1px solid #2b1f33;background:rgba(22,16,27,.7);color:#d8cadf;font:600 12px Outfit;width:36px;height:36px;border-radius:999px;cursor:pointer;transition:.15s" style-hover="border-color:#86198f;color:#f0abfc">⏮</button>
+      <button data-act="tplay" style="border:none;background:#e879f9;color:#1a0716;font:700 14px Outfit;width:40px;height:40px;border-radius:999px;cursor:pointer;transition:.15s" style-hover="background:#f0abfc">▶</button>
+      <button data-act="tnext" style="border:1px solid #2b1f33;background:rgba(22,16,27,.7);color:#d8cadf;font:600 12px Outfit;width:36px;height:36px;border-radius:999px;cursor:pointer;transition:.15s" style-hover="border-color:#86198f;color:#f0abfc">⏭</button>
+    </div>
+  </div>
+
+  <div data-el="intro" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(8,6,10,.6);backdrop-filter:blur(4px);z-index:30;transition:opacity .6s">
+    <div style="text-align:center;max-width:540px;padding:26px;animation:fadeup .6s both">
+      <div style="font:700 11px/1 Outfit;letter-spacing:.18em;text-transform:uppercase;color:#f0abfc;margin-bottom:16px">Module 10 · Lipids · concept cascades</div>
+      <div style="font-family:'Fraunces',serif;font-weight:600;font-size:40px;line-height:1.08;letter-spacing:-.015em">Fly through the <span style="font-style:italic;color:#e879f9">biochemistry</span>.</div>
+      <p style="color:#c9bbd1;font-size:15.5px;line-height:1.55;max-width:440px;margin:15px auto 24px">Six topic chains, mapped as living cascades — every step wired back to the exact lecture moment Dr. Basso taught it. Take the guided flight, or roam the map yourself.</p>
+      <div style="display:flex;gap:11px;justify-content:center;flex-wrap:wrap">
+        <button data-act="introtour" style="border:none;background:#e879f9;color:#1a0716;font:700 14.5px Outfit;padding:13px 24px;border-radius:11px;cursor:pointer;transition:.15s" style-hover="background:#f0abfc">▶ &nbsp;Guided flight</button>
+        <button data-act="introexplore" style="border:1px solid #2b1f33;background:rgba(22,16,27,.7);color:#e8dcef;font:600 14.5px Outfit;padding:13px 22px;border-radius:11px;cursor:pointer;transition:.15s" style-hover="border-color:#86198f;color:#f0abfc">Explore freely</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  function boot(){
+    var self={}; self.props={animateFlow:true, showGrid:true, tourSeconds:5};
+    self.root=document.getElementById('cascade-root');
+    self.applyProps=function(){
+    const flow=self.props.animateFlow??true;
+    const grid=self.props.showGrid??true;
+    self.tourMs=(self.props.tourSeconds??5)*1000;
+    if(self.links) self.links.forEach(L=>{ L.main.style.animationPlayState=flow?'running':'paused'; });
+    if(self.world){
+      if(grid){ self.world.style.backgroundImage='radial-gradient(rgba(232,121,249,.07) 1.2px, transparent 1.2px)'; self.world.style.backgroundSize='48px 48px'; }
+      else self.world.style.backgroundImage='none';
+    }
+
+    };
+    const esc=(s)=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    const root=self.root;
+    self.vp=root.querySelector('[data-el="viewport"]');
+    self.world=root.querySelector('[data-el="world"]');
+    self.elDetail=root.querySelector('[data-el="detail"]');
+    self.elIntro=root.querySelector('[data-el="intro"]');
+    self.elHint=root.querySelector('[data-el="hint"]');
+    const q=(s)=>root.querySelector(s);
+
+    /* ---------- data ---------- */
+    const CASES=[{"key": "lip", "color": "#38bdf8", "name": "What a lipid is", "ph": 0, "nodes": [{"id": "lip0", "k": "KEY", "t": "A lipid is defined by what it refuses to do", "b": "It will not dissolve in water. Long chains of carbon bonded to hydrogen carry no charge, so water has nothing to grab.", "s": "Dr. Basso · Lecture · 38:48"}, {"id": "lip1", "k": "MECHANISM", "t": "Hydrophobic, but soluble in organic solvents", "b": "Insoluble in water; dissolves in ether, chloroform, benzene, acetone. His example: you clean spilled paint off the floor with acetone. Like dissolves like.", "s": "Dr. Basso · Lecture · 38:48"}, {"id": "lip2", "k": "STEP", "t": "Those same bonds are packed with energy", "b": "High-energy C-C and C-H bonds. A hydrocarbon chain is a row of dry logs. This is why fat carries more than double the calories of sugar per gram.", "s": "Dr. Basso · Lecture · 38:48"}, {"id": "lip3", "k": "STEP", "t": "The job list", "b": "Energy (triacylglycerol) · cell membranes (phospholipids) · absorption of the fat-soluble vitamins D, E, A, K · steroid hormones (cholesterol) · organ padding (adipose) · myelin insulation of axons · lung surfactant (dipalmitoyl lecithin).", "s": "Dr. Basso · Lecture · 43:04"}, {"id": "lip4", "k": "PATIENT", "t": "The fat-free salad", "b": "Lettuce and spinach with no dressing and no fat. The fat-soluble vitamins have no ride, so you chew them and lose them. Put walnuts or olive oil on it.", "s": "Dr. Basso · Lecture · 43:04"}]}, {"key": "tag", "color": "#34d399", "name": "Triacylglycerol & wax", "ph": 1, "nodes": [{"id": "tag0", "k": "KEY", "t": "Triacylglycerol = glycerol + 3 fatty acids", "b": "A three-pronged fork. The handle is glycerol, a three-carbon alcohol; each prong is a fatty acid. Objective 1.", "s": "Dr. Basso · Lecture · 48:00"}, {"id": "tag1", "k": "MECHANISM", "t": "Joined by ester bonds", "b": "Acid plus alcohol, kick out a water, and you have an ester. Every fat you see contains three ester bonds.", "s": "Dr. Basso · Lecture · 48:00"}, {"id": "tag2", "k": "STEP", "t": "Stored in adipocytes; oils in plants", "b": "In animals it sits in fat cells. The same molecule in plants shows up as the oils in seeds.", "s": "Dr. Basso · Lecture · 48:00"}, {"id": "tag3", "k": "STEP", "t": "\"Here's your tag\" - the drawn structure", "b": "He put the full structure up and joked you would have to draw it on the exam. One glycerol spine, three long tails.", "s": "Dr. Basso · Lecture · 101:24"}, {"id": "tag4", "k": "STEP", "t": "Wax = fatty acid + long-chain alcohol", "b": "Esterified to a monohydric long-chain alcohol. His example is cetyl palmitate, the main component of spermaceti wax.", "s": "Dr. Basso · Lecture · 50:16"}, {"id": "tag5", "k": "PATIENT", "t": "Why burn victims dehydrate", "b": "Wax waterproofs. A cactus has a thick waxy coat; your skin has an oily one and water beads on it. Lose the barrier and you lose the water.", "s": "Dr. Basso · Lecture · 50:16"}]}, {"key": "fa", "color": "#a78bfa", "name": "Fatty acid: saturated vs unsaturated", "ph": 2, "nodes": [{"id": "fa0", "k": "KEY", "t": "A fatty acid has TWO ends", "b": "\"Make sure you know that there's those two terminus.\" One end is the carboxyl (COOH) acid end; the far end is the methyl, also called the omega end.", "s": "Dr. Basso · Lecture · 52:02"}, {"id": "fa1", "k": "STEP", "t": "Long-chain carboxylic acid, C4 to C24, R-COOH", "b": "He said you do not have to memorize the structures. It matters more that you understand how they work.", "s": "Dr. Basso · Lecture · 51:22"}, {"id": "fa2", "k": "KEY", "t": "Saturated means saturated WITH HYDROGENS", "b": "\"Hopefully you will remember this forever.\" No carbon-to-carbon double bonds; every carbon holds all the hydrogen it can. Unsaturated chains are missing hydrogens at the double bond.", "s": "Dr. Basso · Lecture · 53:03"}, {"id": "fa3", "k": "MECHANISM", "t": "A double bond puts a BEND in the chain", "b": "\"Notice this, everyone. See how there's a slight bend?\" Single bonds swivel, so saturated chains hang straight and stack like uncooked spaghetti. Bent chains cannot pack.", "s": "Dr. Basso · Lecture · 59:43"}, {"id": "fa4", "k": "KEY", "t": "THE FOUR S's (he wrote this in red pen)", "b": "Sat · Single (bonds) · Straight (no bend) · Solid at room temp. The mirror image: Un · Double · Bend · Liquid. His examples: filet mignon fat and cheese are solid; olive oil pours.", "s": "Dr. Basso · Lecture · 68:59"}, {"id": "fa5", "k": "STEP", "t": "Animal fats mostly saturated, plant fats mostly unsaturated", "b": "His rule of thumb, stated just before the four S's.", "s": "Dr. Basso · Lecture · 68:59"}]}, {"key": "omg", "color": "#f59e0b", "name": "Nomenclature & omega", "ph": 3, "nodes": [{"id": "omg0", "k": "STEP", "t": "-anoic = saturated, -enoic = unsaturated", "b": "Eicosanoic (arachidic) acid in peanut oil is saturated. Eicosapentaenoic acid, EPA, is unsaturated. One letter, the e, carries the distinction.", "s": "Dr. Basso · Lecture · 63:36"}, {"id": "omg1", "k": "STEP", "t": "Alpha and beta are counted from the COOH end", "b": "The carbon next to the carboxyl is alpha, the next is beta, and you walk the Greek alphabet. The last carbon of all is omega, because omega is the last letter.", "s": "Dr. Basso · Lecture · 63:44"}, {"id": "omg2", "k": "KEY", "t": "Omega family = first double bond from the METHYL end", "b": "\"Make sure you understand that nomenclature. You will see that on a test.\" Three carbons in from the tail is an omega-3; six in is an omega-6; nine in is an omega-9.", "s": "Dr. Basso · Lecture · 65:30"}, {"id": "omg3", "k": "MECHANISM", "t": "C18:3 means 18 carbons and 3 double bonds", "b": "Carbons before the colon, double bonds after. \"Make sure you know that means it's 18 carbons long and it has 3 double bonds.\"", "s": "Dr. Basso · Lecture · 65:44"}, {"id": "omg4", "k": "KEY", "t": "Omega-3 and omega-6 are ESSENTIAL", "b": "\"We have to eat them because we cannot make them.\" Essential does not mean important; it means your cells lack the enzyme to build it.", "s": "Dr. Basso · Lecture · 64:30"}, {"id": "omg5", "k": "STEP", "t": "Reading his figure", "b": "Omega-3s: alpha-linolenic C18:3, EPA C20:5, DHA C22:6. Omega-6s: linoleic C18:2, arachidonic C20:4. He said you should know EPA by name.", "s": "Dr. Basso · Lecture · 66:34"}]}, {"key": "efa", "color": "#22d3ee", "name": "Essential fatty acids", "ph": 4, "nodes": [{"id": "efa0", "k": "KEY", "t": "Two parent essential fatty acids", "b": "Linoleic acid is the omega-6 parent. Alpha-linolenic acid is the omega-3 parent. Everything else is elongated and desaturated from those two.", "s": "Dr. Basso · Lecture · 73:28"}, {"id": "efa1", "k": "STEP", "t": "MUFA has one double bond, PUFA has more than one", "b": "The essential fatty acids are all polyunsaturated.", "s": "Dr. Basso · Lecture · 73:20"}, {"id": "efa2", "k": "MECHANISM", "t": "The two branches", "b": "The omega-6 branch runs down to arachidonic acid. The omega-3 branch runs down to EPA and then DHA.", "s": "Dr. Basso · Lecture · 74:00"}, {"id": "efa3", "k": "STEP", "t": "Eicosanoids come from 20-carbon PUFAs", "b": "Eicosa is Greek for twenty. That is why arachidonic acid, C20:4, matters. (The COX cascade slide itself is stamped NOT TESTABLE.)", "s": "Dr. Basso · Lecture · 77:20"}, {"id": "efa4", "k": "PATIENT", "t": "The Western diet", "b": "\"I don't want you to hate on omega sixes, but I want you to know this. The Western diet takes in way too much omega six.\"", "s": "Dr. Basso · Lecture · 79:22"}, {"id": "efa5", "k": "STEP", "t": "Why omega-3s matter clinically", "b": "They keep the membrane fluid, displace arachidonic acid from the phospholipids of platelets, endothelial and inflammatory cells, lower serum triglycerides, and protect the cardiovascular system. Sources: cold-water fish, walnuts, flaxseed.", "s": "Dr. Basso · Lecture · 95:04"}]}, {"key": "ct", "color": "#fb7185", "name": "Cis vs trans", "ph": 5, "nodes": [{"id": "ct0", "k": "KEY", "t": "Cis: both hydrogens on the SAME side", "b": "They crowd one side and shove the chain into a bend. This is what nature makes: almonds, avocados, bacon, canola oil. Objective 4.", "s": "Dr. Basso · Lecture · 99:28"}, {"id": "ct1", "k": "KEY", "t": "Trans: hydrogens on OPPOSITE sides", "b": "The forces balance and the chain stays straight. So a trans fat, although unsaturated, packs and behaves like a saturated fat. An impostor.", "s": "Dr. Basso · Lecture · 99:28"}, {"id": "ct2", "k": "MECHANISM", "t": "Made by PARTIAL hydrogenation", "b": "Hydrogenate an oil completely and you get a saturated fat. Stop halfway and some surviving double bonds flip from cis to trans. His Study Check answer is the word partial.", "s": "Dr. Basso · Lecture · 102:08"}, {"id": "ct3", "k": "SYMPTOM", "t": "Raises cardiovascular disease and diabetes risk", "b": "He noted the mechanism is still unclear.", "s": "Dr. Basso · Lecture · 102:24"}, {"id": "ct4", "k": "STEP", "t": "Where they come from", "b": "Naturally, in small amounts: milk, eggs, beef. From hydrogenation: deep-fried foods, baked goods and cookies, crackers and chips, margarine, vegetable shortening.", "s": "Dr. Basso · Lecture · 103:12"}]}, {"key": "pl", "color": "#e879f9", "name": "Phospholipids & sphingolipids", "ph": 6, "nodes": [{"id": "pl0", "k": "KEY", "t": "The recipe never changes", "b": "Alcohol + fatty acid + phosphate + amino alcohol. Only the core alcohol changes, and that is what names the subtype. Objective 6.", "s": "Dr. Basso · Lecture · 103:44"}, {"id": "pl1", "k": "STEP", "t": "Glycerol -> glycerophospholipid", "b": "The star example is phosphatidylcholine, better known as lecithin.", "s": "Dr. Basso · Lecture · 105:28"}, {"id": "pl2", "k": "STEP", "t": "Sphingosine -> sphingophospholipid", "b": "The example there is sphingomyelin.", "s": "Dr. Basso · Lecture · 105:28"}, {"id": "pl3", "k": "KEY", "t": "Dipalmitoyl lecithin IS the lung surfactant", "b": "\"This is one you should know for sure.\" It lowers the surface tension of the alveoli, which is what stops them collapsing.", "s": "Dr. Basso · Lecture · 106:19"}, {"id": "pl4", "k": "PATIENT", "t": "The premature infant", "b": "Surfactant never had time to develop, so the alveoli collapse on every breath. That is respiratory distress syndrome.", "s": "Dr. Basso · Lecture · 106:19"}, {"id": "pl5", "k": "KEY", "t": "Sphingomyelin is a large part of the MYELIN sheath", "b": "\"You should definitely know this... that's really important.\" Myelin is the insulation around your axons. The name tells you: sphingo-MYELIN.", "s": "Dr. Basso · Lecture · 108:25"}, {"id": "pl6", "k": "STEP", "t": "Glycolipid = ceramide + carbohydrate", "b": "Glyco means sugar. The word gives it away.", "s": "Dr. Basso · Lecture · 109:44"}, {"id": "pl7", "k": "STEP", "t": "Cerebroside vs ganglioside", "b": "Cerebrosides carry ONE sugar (glucose or galactose) and sit in myelin, brain and nerves. Gangliosides carry MANY sugars (an oligosaccharide) and sit in the gray matter of the brain.", "s": "Dr. Basso · Lecture · 111:12"}]}, {"key": "lsd", "color": "#f97316", "name": "Lysosomal storage diseases", "ph": 7, "nodes": [{"id": "lsd0", "k": "KEY", "t": "Enzyme missing, so the substrate piles up", "b": "The lysosome is the recycling centre. Each membrane lipid has one enzyme that chops it. Knock the enzyme out and its substrate accumulates.", "s": "Dr. Basso · Lecture · 111:20"}, {"id": "lsd1", "k": "SYMPTOM", "t": "Tay-Sachs", "b": "Hexosaminidase A is missing, so GM2 ganglioside accumulates. Cherry-red spot in the macula, blindness, psychomotor retardation, exaggerated startle reflex, death usually before age two. NO hepatosplenomegaly.", "s": "Dr. Basso · Lecture · 118:48"}, {"id": "lsd2", "k": "SYMPTOM", "t": "Gaucher", "b": "Glucocerebrosidase is missing, so glucocerebroside accumulates. Hepatosplenomegaly, erosion of bone and fractures, pancytopenia.", "s": "Dr. Basso · Lecture · 118:48"}, {"id": "lsd3", "k": "SYMPTOM", "t": "Niemann-Pick", "b": "Sphingomyelinase is missing, so sphingomyelin accumulates. Cherry-red spot AND hepatosplenomegaly, mental retardation, early death.", "s": "Dr. Basso · Lecture · 118:48"}, {"id": "lsd4", "k": "KEY", "t": "His mnemonic: Cherry Trees Never Grow Tall In Sand", "b": "The causes of a cherry-red spot: CRAO (central retinal artery occlusion), Trauma, Niemann-Pick, Gaucher, Tay-Sachs, Sandhoff. He typed it in the chat and said save it.", "s": "Dr. Basso · Lecture · 111:47"}, {"id": "lsd5", "k": "PATIENT", "t": "His exam tip", "b": "Cherry-red spot plus CNS symptoms but NO hepatosplenomegaly points to Tay-Sachs, because Niemann-Pick would give you the big liver and spleen. He ranked board likelihood: 1) Tay-Sachs 2) Niemann-Pick 3) Gaucher.", "s": "Dr. Basso · Lecture · 118:02"}]}];
+    const LINKS=[["lip0", "lip1"], ["lip1", "lip2"], ["lip2", "lip3"], ["lip3", "lip4"], ["tag0", "tag1"], ["tag1", "tag2"], ["tag2", "tag3"], ["tag3", "tag4"], ["tag4", "tag5"], ["fa0", "fa1"], ["fa1", "fa2"], ["fa2", "fa3"], ["fa3", "fa4"], ["fa4", "fa5"], ["omg0", "omg1"], ["omg1", "omg2"], ["omg2", "omg3"], ["omg3", "omg4"], ["omg4", "omg5"], ["efa0", "efa1"], ["efa1", "efa2"], ["efa2", "efa3"], ["efa3", "efa4"], ["efa4", "efa5"], ["ct0", "ct1"], ["ct1", "ct2"], ["ct2", "ct3"], ["ct3", "ct4"], ["pl0", "pl1"], ["pl1", "pl2"], ["pl2", "pl3"], ["pl3", "pl4"], ["pl4", "pl5"], ["pl5", "pl6"], ["pl6", "pl7"], ["lsd0", "lsd1"], ["lsd1", "lsd2"], ["lsd2", "lsd3"], ["lsd3", "lsd4"], ["lsd4", "lsd5"]];
+    const CN={"lip": "What a lipid is", "tag": "Triacylglycerol & wax", "fa": "Fatty acid: saturated vs unsaturated", "omg": "Nomenclature & omega", "efa": "Essential fatty acids", "ct": "Cis vs trans", "pl": "Phospholipids & sphingolipids", "lsd": "Lysosomal storage diseases"};
+    const CX={"lip": 700, "tag": 2000, "fa": 3300, "omg": 4600, "efa": 5900, "ct": 7200, "pl": 8500, "lsd": 9800};
+    /* ---------- layout ---------- */
+    self.byId={}; self.all=[];
+    CASES.forEach((c)=>{ c.nodes.forEach((n,i)=>{
+      n.case=c.key; n.col=c.color; n.cn=CN[c.key];
+      n.x=CX[c.key]+Math.round(255*Math.sin(i*0.8+c.ph));
+      n.y=420+i*252;
+      self.byId[n.id]=n; self.all.push(n);
+    }); });
+    self.tour=self.all.slice();
+    let maxX=0,maxY=0; self.all.forEach(n=>{maxX=Math.max(maxX,n.x);maxY=Math.max(maxY,n.y);});
+    const WW=maxX+420, WH=maxY+360;
+    self.world.style.width=WW+'px'; self.world.style.height=WH+'px';
+
+    /* ---------- connectors ---------- */
+    const NS='http://www.w3.org/2000/svg';
+    const svg=document.createElementNS(NS,'svg');
+    svg.setAttribute('width',WW); svg.setAttribute('height',WH);
+    svg.style.cssText='position:absolute;left:0;top:0;overflow:visible;pointer-events:none;z-index:1';
+    self.svg=svg; self.world.appendChild(svg);
+    self.links=[];
+    LINKS.forEach(([a,b])=>{
+      const A=self.byId[a],B=self.byId[b]; if(!A||!B) return;
+      const mx=(A.x+B.x)/2,my=(A.y+B.y)/2,dx=B.x-A.x,dy=B.y-A.y;
+      const len=Math.hypot(dx,dy)||1,nx=-dy/len,ny=dx/len,cv=Math.min(len*0.16,64);
+      const d='M '+A.x+' '+A.y+' Q '+(mx+nx*cv)+' '+(my+ny*cv)+' '+B.x+' '+B.y;
+      const glow=document.createElementNS(NS,'path');
+      glow.setAttribute('d',d); glow.setAttribute('fill','none'); glow.setAttribute('stroke',A.col);
+      glow.setAttribute('stroke-width','9'); glow.setAttribute('stroke-linecap','round'); glow.style.opacity='.12';
+      const main=document.createElementNS(NS,'path');
+      main.setAttribute('d',d); main.setAttribute('fill','none'); main.setAttribute('stroke',A.col);
+      main.setAttribute('stroke-width','2.3'); main.setAttribute('stroke-linecap','round');
+      main.setAttribute('stroke-dasharray','5 13'); main.style.opacity='.5';
+      main.style.animation='flow 1.05s linear infinite';
+      svg.appendChild(glow); svg.appendChild(main);
+      self.links.push({a,b,main,glow});
+    });
+
+    /* ---------- territory titles ---------- */
+    CASES.forEach(c=>{
+      const t=document.createElement('div');
+      t.textContent=c.name.split(' · ')[0]==='the cascade'?'the cascade':c.name.split(' · ')[0];
+      t.style.cssText='position:absolute;left:'+CX[c.key]+'px;top:170px;transform:translate(-50%,-50%);font-family:Fraunces,serif;font-weight:600;font-size:58px;letter-spacing:-.02em;white-space:nowrap;color:'+c.color+';text-shadow:0 0 50px '+c.color+'66;opacity:.92;pointer-events:none;z-index:1';
+      self.world.appendChild(t);
+    });
+
+    /* ---------- nodes ---------- */
+    self.nodeEls={};
+    self.all.forEach(n=>{
+      const big=n.k==='PATIENT'||n.k==='KEY';
+      const el=document.createElement('div');
+      el.dataset.node=n.id;
+      const base='0 11px 34px rgba(0,0,0,.5), 0 0 '+(big?'30px -6px ':'22px -8px ')+n.col;
+      el.style.cssText='position:absolute;left:'+n.x+'px;top:'+n.y+'px;transform:translate(-50%,-50%);max-width:'+(n.k==='PATIENT'?'212':'188')+'px;padding:11px 14px;border-radius:15px;background:rgba(17,11,21,.88);border:'+(big?'2px':'1.5px')+' solid '+n.col+';box-shadow:'+base+';color:#f3ecf6;font:600 '+(n.k==='PATIENT'?'15.5':'14.5')+'px/1.32 Outfit;text-align:center;cursor:pointer;user-select:none;z-index:2;transition:box-shadow .22s, border-color .2s, opacity .28s, scale .2s';
+      el.innerHTML='<div style="font:700 9px/1 Outfit;letter-spacing:.14em;color:'+n.col+';opacity:.85;margin-bottom:5px">'+n.k+'</div>'+esc(n.t);
+      el.addEventListener('pointerenter',()=>{ if(self.activeId!==n.id) el.style.scale='1.05'; });
+      el.addEventListener('pointerleave',()=>{ if(self.activeId!==n.id) el.style.scale='1'; });
+      self.world.appendChild(el);
+      self.nodeEls[n.id]={el,col:n.col,base};
+    });
+
+    /* ---------- camera ---------- */
+    self.cam={x:WW/2,y:WH/2,s:0.4};
+    self.vw=self.vp.clientWidth; self.vh=self.vp.clientHeight;
+    self.render=()=>{
+      const px=self.vw/2-self.cam.x*self.cam.s, py=self.vh/2-self.cam.y*self.cam.s;
+      self.world.style.transform='translate('+px+'px,'+py+'px) scale('+self.cam.s+')';
+    };
+    self.cancelFly=()=>{ if(self.raf){cancelAnimationFrame(self.raf);self.raf=0;} };
+    self.flyTo=(x,y,s,dur)=>{
+      self.cancelFly(); s=Math.max(.12,Math.min(2.4,s)); dur=dur||850;
+      const a={x:self.cam.x,y:self.cam.y,s:self.cam.s}, t0=performance.now();
+      const step=(now)=>{ let p=Math.min(1,(now-t0)/dur); const e=p<.5?4*p*p*p:1-Math.pow(-2*p+2,3)/2;
+        self.cam.x=a.x+(x-a.x)*e; self.cam.y=a.y+(y-a.y)*e; self.cam.s=a.s+(s-a.s)*e; self.render();
+        if(p<1) self.raf=requestAnimationFrame(step); else self.raf=0; };
+      self.raf=requestAnimationFrame(step);
+    };
+    self.computeFit=(nodes,pad,maxS)=>{
+      let m1=1e9,m2=1e9,M1=-1e9,M2=-1e9;
+      nodes.forEach(n=>{m1=Math.min(m1,n.x);M1=Math.max(M1,n.x);m2=Math.min(m2,n.y);M2=Math.max(M2,n.y);});
+      m2=Math.min(m2,170);
+      const w=(M1-m1)+pad*2, h=(M2-m2)+pad*2;
+      return {x:(m1+M1)/2,y:(m2+M2)/2,s:Math.min(self.vw/w,self.vh/h,maxS)};
+    };
+    self.overview=(anim)=>{ self.deselect(); const f=self.computeFit(self.all,320,1.05);
+      if(anim===false){ self.cam=f; self.render(); } else self.flyTo(f.x,f.y,f.s,900); };
+    self.fitCase=(key)=>{ self.stopPlay(); const ns=self.all.filter(n=>n.case===key); const f=self.computeFit(ns,230,1.0); self.deselect(); self.flyTo(f.x,f.y,f.s,850); };
+
+    /* ---------- highlight + detail ---------- */
+    self.setActive=(id)=>{
+      self.activeId=id;
+      for(const k in self.nodeEls){ const o=self.nodeEls[k]; const on=k===id, dim=id&&!on;
+        o.el.style.opacity=dim?'.62':'1'; o.el.style.scale=on?'1.06':'1';
+        o.el.style.boxShadow=on?('0 14px 44px rgba(0,0,0,.55), 0 0 0 3px '+o.col+'55, 0 0 46px -4px '+o.col):o.base;
+        o.el.style.zIndex=on?'6':'2';
+      }
+      self.links.forEach(L=>{ const on=id&&(L.a===id||L.b===id);
+        L.main.style.opacity=id?(on?'.95':'.09'):'.5';
+        L.main.style.strokeWidth=on?'3.6':'2.3';
+        L.glow.style.opacity=id?(on?'.22':'.035'):'.12';
+      });
+    };
+    self.fillPanel=(n)=>{
+      q('[data-el="dbar"]').style.background=n.col;
+      q('[data-el="dkick"]').textContent=n.cn+' · '+n.k;
+      q('[data-el="dtitle"]').textContent=n.t;
+      q('[data-el="dbody"]').textContent=n.b;
+      const sp=q('[data-el="dsrc"]'), vd=q('[data-el="dvid"]');
+      const isec=(window.CM_INSTR||{})[n.id];
+      if(typeof isec==='number'){
+        const mm=Math.floor(isec/60), ssx=isec%60, t=mm+':'+(ssx<10?'0':'')+ssx;
+        sp.innerHTML='&#9654; Dr. Basso &middot; '+t;
+        sp.style.cursor='pointer'; sp.style.color='#6ee7b7'; sp.style.background='rgba(16,185,129,.13)'; sp.style.borderColor='#10b981';
+        sp.title="Play Dr. Basso's audio from here"; sp.onclick=function(){ if(window.cmAud) window.cmAud(isec); };
+        vd.style.display='inline-block'; vd.innerHTML='&#127909; Watch &middot; '+t;
+        vd.style.cursor='pointer'; vd.style.color='#f0abfc'; vd.style.background='rgba(232,121,249,.13)'; vd.style.borderColor='#86198f';
+        vd.title="Watch Dr. Basso's video from here"; vd.onclick=function(){ if(window.cmVid) window.cmVid(isec); };
+        if(window.cmSync) window.cmSync(isec);
+      } else {
+        const prior=n.s.indexOf('Prior')===0;
+        sp.textContent=prior?'Prior lab — no instructor clip':'Student-presented — no instructor clip';
+        sp.style.cursor='default'; sp.onclick=null;
+        sp.style.color=prior?'#fcd34d':'#9a8aa3'; sp.style.background='rgba(140,130,150,.10)'; sp.style.borderColor=prior?'#92590b':'#3a2f44';
+        sp.title=prior?'From a prior lab — not in this recording':"Dr. Basso ran out of time on the the cascade; this point is from the student presentation";
+        vd.style.display='none'; vd.onclick=null;
+      }
+      var fr=q('[data-el="dframe"]'); var fpath=window.cmFrameFor?window.cmFrameFor(n.id):null;
+      if(fpath){ fr.style.display='inline-block'; fr.innerHTML='&#9999;&#65039; Frame'; fr.style.cursor='pointer'; fr.style.color='#fcd34d'; fr.style.background='rgba(251,191,36,.14)'; fr.style.borderColor='#a16207'; fr.title='Open the slide / cascade canvas and annotate it'; fr.onclick=function(){ if(window.cmFrame) window.cmFrame(fpath, n.cn+' · '+n.t); }; }
+      else { fr.style.display='none'; fr.onclick=null; }
+      self.elDetail.style.transform='translateX(0) translateY(-50%)';
+    };
+    self.focusNode=(n,scale,dur)=>{
+      self.setActive(n.id); self.fillPanel(n);
+      self.ti=self.tour.indexOf(n); self.updateTour();
+      self.flyTo(n.x+165,n.y,scale||1.0,dur||850);
+    };
+    self.deselect=()=>{ self.setActive(null); self.elDetail.style.transform='translateX(calc(100% + 70px)) translateY(-50%)'; };
+
+    /* ---------- tour ---------- */
+    self.ti=0; self.playing=false; self.tourMs=(self.props.tourSeconds??5)*1000;
+    self.updateTour=()=>{
+      const n=self.tour[self.ti]||null;
+      q('[data-el="tlabel"]').textContent='Step '+(self.ti+1)+' / '+self.tour.length+(n?' · '+n.cn.split(' · ')[0]:'');
+      q('[data-el="ttitle"]').textContent=n?n.t:'Press play to fly the cascades';
+    };
+    self.tourGo=(i)=>{ i=(i+self.tour.length)%self.tour.length; self.ti=i; self.focusNode(self.tour[i],1.0,900); };
+    self.setPlayIcon=()=>{ q('[data-act="tplay"]').textContent=self.playing?'⏸':'▶'; };
+    self.tick=()=>{ clearTimeout(self.pt); self.pt=setTimeout(()=>{ if(!self.playing)return;
+      const nx=self.ti+1; if(nx>=self.tour.length){ self.stopPlay(); self.overview(); return; }
+      self.tourGo(nx); self.tick(); }, self.tourMs); };
+    self.startPlay=()=>{ self.playing=true; self.setPlayIcon(); if(self.activeId==null) self.tourGo(0); self.tick(); };
+    self.stopPlay=()=>{ self.playing=false; clearTimeout(self.pt); self.setPlayIcon(); };
+    self.togglePlay=()=>{ self.playing?self.stopPlay():self.startPlay(); };
+
+    /* ---------- interactions ---------- */
+    const hideHint=()=>{ if(self.elHint) self.elHint.style.opacity='0'; };
+    self.hideIntro=()=>{ if(self.introGone)return; self.introGone=true; self.elIntro.style.opacity='0'; self.elIntro.style.pointerEvents='none'; };
+    const vp=self.vp;
+    vp.addEventListener('pointerdown',(e)=>{ self.cancelFly(); self.down=true; self.moved=0;
+      self.lx=e.clientX; self.ly=e.clientY; self.startNode=e.target.closest('[data-node]');
+      try{vp.setPointerCapture(e.pointerId);}catch(_){}
+      vp.style.cursor='grabbing'; self.hideIntro(); hideHint();
+    });
+    vp.addEventListener('pointermove',(e)=>{ if(!self.down)return;
+      const dx=e.clientX-self.lx, dy=e.clientY-self.ly; self.lx=e.clientX; self.ly=e.clientY;
+      self.moved+=Math.abs(dx)+Math.abs(dy);
+      self.cam.x-=dx/self.cam.s; self.cam.y-=dy/self.cam.s; self.render();
+    });
+    const endPan=()=>{ if(!self.down)return; self.down=false; vp.style.cursor='grab';
+      if(self.moved<6){ if(self.startNode){ const n=self.byId[self.startNode.dataset.node];
+        if(n){ self.stopPlay(); self.focusNode(n,1.0); } } else self.deselect(); } };
+    vp.addEventListener('pointerup',endPan);
+    vp.addEventListener('pointercancel',endPan);
+    vp.addEventListener('wheel',(e)=>{ e.preventDefault(); self.cancelFly(); hideHint();
+      const r=vp.getBoundingClientRect(), mx=e.clientX-r.left, my=e.clientY-r.top;
+      const wx=self.cam.x+(mx-self.vw/2)/self.cam.s, wy=self.cam.y+(my-self.vh/2)/self.cam.s;
+      const f=Math.exp(-e.deltaY*0.0014);
+      self.cam.s=Math.max(.12,Math.min(2.4,self.cam.s*f));
+      self.cam.x=wx-(mx-self.vw/2)/self.cam.s; self.cam.y=wy-(my-self.vh/2)/self.cam.s; self.render();
+    },{passive:false});
+
+    root.querySelectorAll('[data-case]').forEach(b=>b.addEventListener('click',()=>{ self.hideIntro(); self.fitCase(b.dataset.case); }));
+    const act=(name,fn)=>{ const b=q('[data-act="'+name+'"]'); if(b) b.addEventListener('click',fn); };
+    act('overview',()=>{ self.stopPlay(); self.overview(); });
+    act('zin',()=>{ self.cancelFly(); self.flyTo(self.cam.x,self.cam.y,self.cam.s*1.4,420); });
+    act('zout',()=>{ self.cancelFly(); self.flyTo(self.cam.x,self.cam.y,self.cam.s*0.7,420); });
+    act('tprev',()=>{ self.tourGo(self.ti-1); if(self.playing)self.tick(); });
+    act('tnext',()=>{ self.tourGo(self.ti+1); if(self.playing)self.tick(); });
+    act('tplay',()=>{ self.hideIntro(); self.togglePlay(); });
+    act('dclose',()=>self.deselect());
+    act('introtour',()=>{ self.hideIntro(); self.startPlay(); });
+    act('introexplore',()=>{ self.hideIntro(); self.overview(); });
+
+    self.onKey=(e)=>{
+      if(e.key===' '){ e.preventDefault(); self.hideIntro(); self.togglePlay(); }
+      else if(e.key==='ArrowRight'){ self.tourGo(self.ti+1); if(self.playing)self.tick(); }
+      else if(e.key==='ArrowLeft'){ self.tourGo(self.ti-1); if(self.playing)self.tick(); }
+      else if(e.key==='Escape'){ self.stopPlay(); self.overview(); }
+      else if(e.key==='+'||e.key==='='){ self.flyTo(self.cam.x,self.cam.y,self.cam.s*1.4,360); }
+      else if(e.key==='-'){ self.flyTo(self.cam.x,self.cam.y,self.cam.s*0.7,360); }
+    };
+    window.addEventListener('keydown',self.onKey);
+    self.onResize=()=>{ self.vw=self.vp.clientWidth; self.vh=self.vp.clientHeight; self.render(); };
+    window.addEventListener('resize',self.onResize);
+
+    self.applyProps();
+    /* intro: start slightly zoomed out, then ease to overview */
+    const f=self.computeFit(self.all,320,1.05);
+    self.cam={x:f.x,y:f.y,s:f.s*0.8}; self.render();
+    self.updateTour();
+    setTimeout(()=>self.flyTo(f.x,f.y,f.s,1200),120);
+
+    // style-hover (the design runtime applied these; standalone handler):
+    self.root.querySelectorAll('[style-hover]').forEach(function(el){
+      var hv=el.getAttribute('style-hover'), og=el.getAttribute('style')||'';
+      el.addEventListener('pointerenter',function(){ el.setAttribute('style', og+';'+hv); });
+      el.addEventListener('pointerleave',function(){ el.setAttribute('style', og); });
+    });
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',boot); else boot();
+})();
+</script>
+<style>.dc-study-watermark{position:fixed;bottom:6px;right:10px;font-family:-apple-system,"Segoe UI",sans-serif;font-size:10px;color:rgba(255,255,255,.28);letter-spacing:.3px;pointer-events:none;z-index:2147483647;user-select:none}</style>
+<div class="dc-study-watermark">DC Study Supply &mdash; Dr. David Gramling, PHD</div>
+<!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "103b8d06e81040579d04d08fc593468f"}'></script>
+<script id="cm-instr-audio">
+/* Node -> Dr. Basso timestamp on the Module 10 lecture clock (same clock as the video and the mp3):
+   diabetes mechanism is his (42-53 min); he RAN OUT OF TIME on the the cascade, so only
+   distributive-shock (92:02), vasodilation (92:08) and treat-the-source (92:36) are his. Nodes
+   not listed here = student-presented -> no clickable instructor clip (anti-fab, teacher-voice). */
+window.CM_INSTR={"lip0": 2328, "lip1": 2328, "lip2": 2328, "lip3": 2584, "lip4": 2584, "tag0": 2880, "tag1": 2880, "tag2": 2880, "tag3": 6084, "tag4": 3016, "tag5": 3016, "fa0": 3122, "fa1": 3082, "fa2": 3183, "fa3": 3583, "fa4": 4139, "fa5": 4139, "omg0": 3816, "omg1": 3824, "omg2": 3930, "omg3": 3944, "omg4": 3870, "omg5": 3994, "efa0": 4408, "efa1": 4400, "efa2": 4440, "efa3": 4640, "efa4": 4762, "efa5": 5704, "ct0": 5968, "ct1": 5968, "ct2": 6128, "ct3": 6144, "ct4": 6192, "pl0": 6224, "pl1": 6328, "pl2": 6328, "pl3": 6379, "pl4": 6379, "pl5": 6505, "pl6": 6584, "pl7": 6672, "lsd0": 6680, "lsd1": 7128, "lsd2": 7128, "lsd3": 7128, "lsd4": 6707, "lsd5": 7082};
+window.cmAud=function(sec){
+  var p=document.getElementById('cm-audpop');
+  if(!p){
+    p=document.createElement('div'); p.id='cm-audpop';
+    p.style.cssText='position:fixed;left:14px;bottom:84px;width:min(380px,90vw);z-index:60000;background:#0b1220;border:2px solid #10b981;border-radius:12px;box-shadow:0 12px 40px rgba(0,0,0,.6);padding:9px;font-family:Outfit,system-ui,sans-serif';
+    var bs='background:#065f46;color:#d1fae5;border:1px solid #10b981;border-radius:6px;padding:4px 9px;cursor:pointer;font:700 12px Outfit;line-height:1';
+    p.innerHTML='<div style="display:flex;align-items:center;gap:5px;flex-wrap:wrap;color:#6ee7b7;font:700 12px Outfit">'
+      +'<span style="flex:1 1 100%;margin-bottom:3px">&#127911; Dr. Basso &mdash; lab breakdown (instructor)</span>'
+      +'<button id="cm-bk" style="'+bs+'">&laquo; 10</button>'
+      +'<button id="cm-fw" style="'+bs+'">10 &raquo;</button>'
+      +'<button id="cm-sl" style="'+bs+'">&minus; speed</button>'
+      +'<span id="cm-rt" style="min-width:34px;text-align:center;color:#6ee7b7;font:700 12px Outfit">1&times;</span>'
+      +'<button id="cm-fa" style="'+bs+'">speed +</button>'
+      +'<button id="cm-seek" onclick="window.cmToggleFollow()" title="Seek = jump to each node as you fly · Continue = keep playing through" style="'+bs+'">&#127919; Seek</button>'
+      +'<button id="cm-cl" style="'+bs+';background:#7f1d1d;color:#fecaca;border-color:#b91c1c;margin-left:auto">&times;</button>'
+      +'</div><audio id="cm-aud" controls preload="none" style="width:100%;margin-top:7px" src="bn0213-m10-lipids.mp3"></audio>';
+    document.body.appendChild(p);
+    var a=p.querySelector('#cm-aud'), rt=p.querySelector('#cm-rt');
+    p.querySelector('#cm-bk').onclick=function(){a.currentTime=Math.max(0,(a.currentTime||0)-10);};
+    p.querySelector('#cm-fw').onclick=function(){a.currentTime=(a.currentTime||0)+10;};
+    p.querySelector('#cm-sl').onclick=function(){a.playbackRate=Math.max(0.5,Math.round((a.playbackRate-0.25)*100)/100);rt.innerHTML=a.playbackRate+'&times;';};
+    p.querySelector('#cm-fa').onclick=function(){a.playbackRate=Math.min(3,Math.round((a.playbackRate+0.25)*100)/100);rt.innerHTML=a.playbackRate+'&times;';};
+    p.querySelector('#cm-cl').onclick=function(){try{a.pause();}catch(e){}p.style.display='none';};
+  }
+  if(window.cmCloseVid)window.cmCloseVid();
+  p.style.display='block';
+  var a=p.querySelector('#cm-aud');
+  function go(){try{a.currentTime=Math.max(0,sec);}catch(e){}var pr=a.play();if(pr&&pr.catch)pr.catch(function(){});}
+  if(a.readyState>=1)go();else{a.addEventListener('loadedmetadata',go,{once:true});a.load();}
+};
+window.cmCloseVid=function(){var vp=document.getElementById('cm-vidpop');if(vp){var v=vp.querySelector('#cm-vid');if(v){try{v.pause();}catch(e){}}vp.style.display='none';}};
+window.cmVid=function(sec){
+  var p=document.getElementById('cm-vidpop');
+  if(!p){
+    p=document.createElement('div'); p.id='cm-vidpop';
+    p.style.cssText='position:fixed;left:14px;bottom:84px;width:min(440px,92vw);z-index:60000;background:#000;border:2px solid #f0abfc;border-radius:12px;box-shadow:0 12px 40px rgba(0,0,0,.6);overflow:hidden;font-family:Outfit,system-ui,sans-serif';
+    var bs='background:#4a1d52;color:#f5d0fe;border:1px solid #86198f;border-radius:6px;padding:4px 9px;cursor:pointer;font:700 12px Outfit;line-height:1';
+    p.innerHTML='<div style="display:flex;align-items:center;gap:5px;flex-wrap:wrap;color:#f0abfc;font:700 12px Outfit;padding:7px 9px 0">'
+      +'<span style="flex:1 1 100%;margin-bottom:3px">&#127909; Dr. Basso &mdash; lab video</span>'
+      +'<button id="cmv-bk" style="'+bs+'">&laquo; 10</button><button id="cmv-fw" style="'+bs+'">10 &raquo;</button>'
+      +'<button id="cmv-sl" style="'+bs+'">&minus; speed</button><span id="cmv-rt" style="min-width:34px;text-align:center;color:#f0abfc">1&times;</span><button id="cmv-fa" style="'+bs+'">speed +</button>'
+      +'<button id="cmv-seek" onclick="window.cmToggleFollow()" title="Seek = jump to each node as you fly · Continue = keep playing through" style="'+bs+'">&#127919; Seek</button>'
+      +'<button id="cmv-cl" style="'+bs+';background:#7f1d1d;color:#fecaca;border-color:#b91c1c;margin-left:auto">&times;</button>'
+      +'</div><video id="cm-vid" controls playsinline preload="none" style="width:100%;display:block;background:#000;margin-top:7px" src="https://pub-7fb2bb3e5a0b4096a57fc578b5a16078.r2.dev/bn0213/m10-lipids/lecture-fs-37da13d4.mp4"></video>';
+    document.body.appendChild(p);
+    var v=p.querySelector('#cm-vid'), rt=p.querySelector('#cmv-rt');
+    p.querySelector('#cmv-bk').onclick=function(){v.currentTime=Math.max(0,(v.currentTime||0)-10);};
+    p.querySelector('#cmv-fw').onclick=function(){v.currentTime=(v.currentTime||0)+10;};
+    p.querySelector('#cmv-sl').onclick=function(){v.playbackRate=Math.max(0.5,Math.round((v.playbackRate-0.25)*100)/100);rt.innerHTML=v.playbackRate+'&times;';};
+    p.querySelector('#cmv-fa').onclick=function(){v.playbackRate=Math.min(3,Math.round((v.playbackRate+0.25)*100)/100);rt.innerHTML=v.playbackRate+'&times;';};
+    p.querySelector('#cmv-cl').onclick=function(){try{v.pause();}catch(e){}p.style.display='none';};
+  }
+  var ap=document.getElementById('cm-audpop'); if(ap){var aa=ap.querySelector('#cm-aud');if(aa){try{aa.pause();}catch(e){}}ap.style.display='none';}
+  p.style.display='block';
+  var v=p.querySelector('#cm-vid');
+  function go(){try{v.currentTime=Math.max(0,sec);}catch(e){}var pr=v.play();if(pr&&pr.catch)pr.catch(function(){});}
+  if(v.readyState>=1)go();else{v.addEventListener('loadedmetadata',go,{once:true});v.load();}
+};
+window.cmFollow=true;  // Seek mode (default): the open pop-out follows each node. false = Continue (keep playing).
+window.cmToggleFollow=function(){window.cmFollow=!window.cmFollow;['cm-seek','cmv-seek'].forEach(function(id){var b=document.getElementById(id);if(b){b.innerHTML=window.cmFollow?'&#127919; Seek':'&#9199; Continue';b.style.opacity=window.cmFollow?'1':'.7';}});};
+/* AUTO-SEEK (toggle): Seek = the OPEN pop-out jumps to each node as you fly; Continue = let it keep playing */
+window.cmSync=function(sec){
+  if(window.cmFollow===false)return;
+  var ap=document.getElementById('cm-audpop');
+  if(ap&&ap.style.display!=='none'){var a=ap.querySelector('#cm-aud');if(a){try{a.currentTime=Math.max(0,sec);var p1=a.play();if(p1&&p1.catch)p1.catch(function(){});}catch(e){}}}
+  var vp=document.getElementById('cm-vidpop');
+  if(vp&&vp.style.display!=='none'){var v=vp.querySelector('#cm-vid');if(v){try{v.currentTime=Math.max(0,sec);var p2=v.play();if(p2&&p2.catch)p2.catch(function(){});}catch(e){}}}
+};
+/* FRAME: diabetes nodes -> Dr. Basso's real slides; sepsis -> the draw-the-cascade canvas; the cascade -> none */
+window.cmFrameFor=function(id){
+  var DIA={"lip0": "s_04_02224", "lip1": "s_04_02224", "lip2": "s_04_02224", "lip3": "s_05_02344", "lip4": "s_05_02344", "tag0": "s_06_02672", "tag1": "s_06_02672", "tag2": "s_06_02672", "tag3": "s_26_06080", "tag4": "s_08_02896", "tag5": "s_08_02896", "fa0": "s_09_03080", "fa1": "s_09_03080", "fa2": "s_09_03080", "fa3": "s_10_03560", "fa4": "s_15_04088", "fa5": "s_15_04088", "omg0": "s_12_03664", "omg1": "s_13_03824", "omg2": "s_14_03872", "omg3": "s_14_03872", "omg4": "s_13_03824", "omg5": "s_14_03872", "efa0": "s_17_04408", "efa1": "s_16_04392", "efa2": "s_17_04408", "efa3": "s_17_04408", "efa4": "s_17_04408", "efa5": "s_24_05648", "ct0": "s_25_05760", "ct1": "s_25_05760", "ct2": "s_27_06104", "ct3": "s_28_06144", "ct4": "s_29_06192", "pl0": "s_30_06224", "pl1": "s_31_06280", "pl2": "s_31_06280", "pl3": "s_34_06368", "pl4": "s_34_06368", "pl5": "s_36_06504", "pl6": "s_37_06584", "pl7": "s_38_06616", "lsd0": "s_39_06680", "lsd1": "s_44_07048", "lsd2": "s_44_07048", "lsd3": "s_44_07048", "lsd4": "s_40_06688", "lsd5": "s_44_07048"};
+  if(DIA[id]) return 'frames/m10_lecture_fv/'+DIA[id]+'.jpg';
+  if(id.indexOf('ss')===0) return 'frames/m10_lecture_fv/s_02_01960.jpg';
+  return null;
+};
+window.cmFrame=function(src,label){
+  var lb=document.getElementById('cm-frame');
+  if(!lb){
+    lb=document.createElement('div'); lb.id='cm-frame';
+    lb.style.cssText='position:fixed;inset:0;z-index:70000;background:rgba(8,5,12,.96);display:none;align-items:center;justify-content:center;gap:12px;padding:14px;flex-wrap:wrap;font-family:Outfit,system-ui,sans-serif';
+    var fbs='background:#1f1530;color:#e9d5ff;border:1px solid #6d28d9;border-radius:6px;padding:7px 11px;cursor:pointer;font:700 12px Outfit;text-align:center';
+    lb.innerHTML='<div style="position:relative;line-height:0;max-width:80vw;max-height:90vh"><img id="cmf-img" style="max-width:80vw;max-height:90vh;border-radius:8px;display:block" alt=""><canvas id="cmf-cv" style="position:absolute;top:0;left:0;width:100%;height:100%;touch-action:none;cursor:crosshair"></canvas></div>'
+      +'<div style="display:flex;flex-direction:column;gap:7px;min-width:150px;max-height:90vh;overflow:auto">'
+      +'<div id="cmf-cap" style="color:#c7b3d6;font:600 11px Outfit;max-width:170px;line-height:1.4"></div>'
+      +'<div style="color:#6d5a7d;font:700 9px Outfit;letter-spacing:.5px">COLOR</div><div id="cmf-cols" style="display:flex;gap:5px;flex-wrap:wrap"></div>'
+      +'<button id="cmf-undo" style="'+fbs+'">&#8630; Undo</button><button id="cmf-clear" style="'+fbs+'">Clear</button>'
+      +'<button id="cmf-save" style="'+fbs+';background:#15803d;border-color:#22c55e;color:#dcfce7">&#8595; Save PNG</button>'
+      +'<button id="cmf-close" style="'+fbs+';background:#7f1d1d;border-color:#b91c1c;color:#fecaca">&times; Close</button></div>';
+    document.body.appendChild(lb);
+    var img=lb.querySelector('#cmf-img'), cv=lb.querySelector('#cmf-cv'), ctx=cv.getContext('2d');
+    var col='#fbbf24', drawing=false, lx=0, ly=0, undo=[];
+    ['#fbbf24','#ef4444','#22c55e','#3b82f6','#a78bfa','#ffffff'].forEach(function(c){var b=document.createElement('button');b.style.cssText='width:24px;height:24px;border-radius:5px;border:1px solid #555;background:'+c+';cursor:pointer;padding:0';b.onclick=function(){col=c;};lb.querySelector('#cmf-cols').appendChild(b);});
+    img.onload=function(){cv.width=img.naturalWidth||1280;cv.height=img.naturalHeight||720;ctx.clearRect(0,0,cv.width,cv.height);undo=[];};
+    function pos(e){var r=cv.getBoundingClientRect();var t=(e.touches&&e.touches[0])||e;return [(t.clientX-r.left)*(cv.width/(r.width||1)),(t.clientY-r.top)*(cv.height/(r.height||1))];}
+    function dn(e){e.preventDefault();try{undo.push(cv.toDataURL());if(undo.length>20)undo.shift();}catch(_){}drawing=true;var p=pos(e);lx=p[0];ly=p[1];}
+    function mv(e){if(!drawing)return;e.preventDefault();var p=pos(e);ctx.strokeStyle=col;ctx.lineWidth=4;ctx.lineCap='round';ctx.lineJoin='round';ctx.beginPath();ctx.moveTo(lx,ly);ctx.lineTo(p[0],p[1]);ctx.stroke();lx=p[0];ly=p[1];}
+    function up(){drawing=false;}
+    cv.addEventListener('mousedown',dn);cv.addEventListener('mousemove',mv);window.addEventListener('mouseup',up);
+    cv.addEventListener('touchstart',dn,{passive:false});cv.addEventListener('touchmove',mv,{passive:false});cv.addEventListener('touchend',up);
+    lb.querySelector('#cmf-undo').onclick=function(){if(!undo.length)return;var d=undo.pop();var im=new Image();im.onload=function(){ctx.clearRect(0,0,cv.width,cv.height);ctx.drawImage(im,0,0);};im.src=d;};
+    lb.querySelector('#cmf-clear').onclick=function(){ctx.clearRect(0,0,cv.width,cv.height);};
+    lb.querySelector('#cmf-close').onclick=function(){lb.style.display='none';};
+    lb.querySelector('#cmf-save').onclick=function(){if(!img.naturalWidth){alert('Frame still loading — try again in a second.');return;}var out=document.createElement('canvas');out.width=cv.width;out.height=cv.height;var o=out.getContext('2d');o.drawImage(img,0,0,out.width,out.height);o.drawImage(cv,0,0);o.fillStyle='rgba(60,60,60,.65)';o.font='600 13px sans-serif';o.textBaseline='bottom';o.fillText('DC Study Supply — Dr. David Gramling, PHD',14,out.height-10);out.toBlob(function(b){if(!b)return;var fn='bn0213-cascade-frame.png';var iOS=/iP(hone|ad|od)/.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);var f=null;try{f=new File([b],fn,{type:'image/png'});}catch(_){}function dl(){var u=URL.createObjectURL(b);var a=document.createElement('a');a.href=u;a.download=fn;document.body.appendChild(a);a.click();document.body.removeChild(a);if(iOS){try{window.open(u,'_blank');}catch(_){}}setTimeout(function(){URL.revokeObjectURL(u);},60000);}if((iOS||/Android/i.test(navigator.userAgent))&&f&&navigator.canShare&&navigator.canShare({files:[f]})){navigator.share({files:[f]}).catch(dl);}else dl();},'image/png');};
+  }
+  lb.querySelector('#cmf-img').src=src;
+  lb.querySelector('#cmf-cap').textContent=label||'Annotate';
+  lb.style.display='flex';
+};
+</script>
+<script id="fab-ai-companion-js">
+(function(){
+  const ENDPOINT = "https://fab-ai.dgync1.workers.dev";
+  const CLASS_NAME = "BN0213"; // e.g., "CP1" / "FAB101" / "GA0102" — empty = generic chiropractic tutor
+  let panel = null;
+  let history = []; // [{role:'user'|'model', content}]
+  let currentQKey = null; // to detect Q navigation
+
+  function readCurrentQ() {
+    const qText = (document.querySelector('.q-text')?.innerText || '').replace(/^Q\d+(\s+of\s+\d+)?:\s*/, '');
+    const optBtns = Array.from(document.querySelectorAll('.opt-btn'));
+    const options = optBtns.map(b => {
+      const clone = b.cloneNode(true);
+      clone.querySelectorAll('.rationale').forEach(r => r.remove());
+      clone.querySelectorAll('.letter').forEach(r => r.remove());
+      return clone.innerText.trim();
+    });
+    let picked = null, correct = null;
+    optBtns.forEach((b, i) => {
+      if (b.classList.contains('picked-correct') || b.classList.contains('picked-wrong')) picked = i;
+      if (b.classList.contains('picked-correct') || b.classList.contains('show-correct')) correct = i;
+    });
+    const profTip = document.querySelector('.prof-tip')?.innerText?.replace(/^Professor:\s*/i, '').trim() || '';
+    const source = document.querySelector('.source-line')?.innerText?.replace(/^Source:\s*/i, '').trim() || '';
+    const quote = document.querySelector('.quote-line')?.innerText?.trim() || '';
+    return { question: qText, options, picked, correct, profTip, source, quote };
+  }
+
+  function qKey(ctx){ return (ctx.question || '') + '|' + (ctx.options || []).join('|'); }
+
+  function mdToHtml(md){
+    let html = md
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+      .replace(/(^|\n)### (.+)/g, '$1<h3>$2</h3>')
+      .replace(/`([^`]+)`/g, '<code>$1</code>')
+      .replace(/^\s*[-*]\s+(.+)$/gm, '<li>$1</li>')
+      .replace(/(<li>.*?<\/li>(\s*<li>.*?<\/li>)*)/gs, '<ul>$1</ul>');
+    html = html.split(/\n{2,}/).map(p => {
+      if (p.trim().startsWith('<ul') || p.trim().startsWith('<h3')) return p;
+      if (p.trim() === '') return '';
+      return '<p>' + p.replace(/\n/g, '<br>') + '</p>';
+    }).join('');
+    return html;
+  }
+
+  function stripForTts(text){
+    // Remove markdown markers so TTS doesn't read them aloud
+    return text
+      .replace(/\*\*/g, '')
+      .replace(/`([^`]+)`/g, '$1')
+      .replace(/^\s*[-*]\s+/gm, '')
+      .replace(/^#+\s+/gm, '')
+      .replace(/\n{2,}/g, '. ')
+      .replace(/\s+/g, ' ')
+      .trim();
+  }
+
+  let currentUtter = null;
+  function speakToggle(btn, rawText){
+    if (!window.speechSynthesis) {
+      alert('Your browser does not support text-to-speech.');
+      return;
+    }
+    if (window.speechSynthesis.speaking && currentUtter && btn.classList.contains('playing')) {
+      window.speechSynthesis.cancel();
+      document.querySelectorAll('.fab-ai-tts-btn.playing').forEach(b => {
+        b.classList.remove('playing');
+        b.innerHTML = '🔊 Read';
+      });
+      currentUtter = null;
+      return;
+    }
+    window.speechSynthesis.cancel();
+    document.querySelectorAll('.fab-ai-tts-btn.playing').forEach(b => {
+      b.classList.remove('playing');
+      b.innerHTML = '🔊 Read';
+    });
+    const u = new SpeechSynthesisUtterance(stripForTts(rawText));
+    const rateSel = btn.parentElement.querySelector('.fab-ai-tts-rate');
+    u.rate = parseFloat(rateSel && rateSel.value || '1.0');
+    /*ava-tts*/try{var _vs=(window.speechSynthesis&&window.speechSynthesis.getVoices())||[];var _av=_vs.find(function(v){return /microsoft.*ava.*natural/i.test(v.name);})||_vs.find(function(v){return /microsoft.*emma.*natural/i.test(v.name);})||_vs.find(function(v){return /google us english female/i.test(v.name);});if(_av){u.voice=_av;u.lang=_av.lang||'en-US';}}catch(e){}
+    u.onend = () => {
+      btn.classList.remove('playing');
+      btn.innerHTML = '🔊 Read';
+      currentUtter = null;
+    };
+    u.onerror = () => {
+      btn.classList.remove('playing');
+      btn.innerHTML = '🔊 Read';
+      currentUtter = null;
+    };
+    currentUtter = u;
+    btn.classList.add('playing');
+    btn.innerHTML = '⏹ Stop';
+    window.speechSynthesis.speak(u);
+  }
+
+  function appendMsg(role, text) {
+    const body = document.getElementById('fabAiBody');
+    if (!body) return null;
+    const wrap = document.createElement('div');
+    wrap.className = 'fab-ai-msg ' + role;
+    const bub = document.createElement('div');
+    bub.className = 'fab-ai-bubble';
+    if (role === 'ai') {
+      bub.innerHTML = mdToHtml(text);
+      // Add TTS row
+      const row = document.createElement('div');
+      row.className = 'fab-ai-tts-row';
+      const btn = document.createElement('button');
+      btn.className = 'fab-ai-tts-btn';
+      btn.innerHTML = '🔊 Read';
+      btn.onclick = function(){ speakToggle(btn, text); };
+      const rate = document.createElement('select');
+      rate.className = 'fab-ai-tts-rate';
+      rate.title = 'Reading speed';
+      ['0.8','1.0','1.2','1.5','2.0'].forEach(function(r){
+        const o = document.createElement('option');
+        o.value = r; o.textContent = r + 'x';
+        if (r === '1.0') o.selected = true;
+        rate.appendChild(o);
+      });
+      row.appendChild(btn);
+      row.appendChild(rate);
+      bub.appendChild(row);
+    } else {
+      bub.textContent = text;
+    }
+    wrap.appendChild(bub);
+    body.appendChild(wrap);
+    body.scrollTop = body.scrollHeight;
+    return bub;
+  }
+
+  function appendLoading(){
+    const body = document.getElementById('fabAiBody');
+    if (!body) return null;
+    const wrap = document.createElement('div');
+    wrap.className = 'fab-ai-msg ai';
+    wrap.id = 'fabAiLoading';
+    const bub = document.createElement('div');
+    bub.className = 'fab-ai-bubble';
+    bub.innerHTML = '<div class="fab-ai-loading"><div class="fab-ai-spinner"></div> Thinking...</div>';
+    wrap.appendChild(bub);
+    body.appendChild(wrap);
+    body.scrollTop = body.scrollHeight;
+    return wrap;
+  }
+
+  function removeLoading(){
+    const el = document.getElementById('fabAiLoading');
+    if (el) el.remove();
+  }
+
+  function appendStatus(text, isErr){
+    const body = document.getElementById('fabAiBody');
+    if (!body) return;
+    const div = document.createElement('div');
+    div.className = 'fab-ai-status' + (isErr ? ' err' : '');
+    div.innerHTML = text;
+    body.appendChild(div);
+    body.scrollTop = body.scrollHeight;
+  }
+
+  function renderSuggestions(ctx){
+    const body = document.getElementById('fabAiBody');
+    if (!body) return;
+    // Q preview at top
+    if (ctx.question) {
+      const qp = document.createElement('div');
+      qp.className = 'fab-ai-qpreview';
+      qp.innerHTML = '<b>Q:</b> ' + ctx.question.substring(0, 240) + (ctx.question.length > 240 ? '...' : '');
+      body.appendChild(qp);
+    }
+    // Suggestion chips
+    const sug = document.createElement('div');
+    sug.className = 'fab-ai-suggestions';
+    const chips = [];
+    if (ctx.picked === null || ctx.picked === undefined) {
+      chips.push({ label: '💡 Give me a hint', q: 'Give me a hint for this question without revealing the answer.' });
+      chips.push({ label: '🧠 Explain the concept', q: 'Explain the core concept this question is testing.' });
+    } else if (ctx.picked !== ctx.correct && ctx.picked !== null) {
+      chips.push({ label: '❌ Why did I miss this?', q: 'I picked the wrong answer. Walk me through why my pick is wrong and why the correct answer is right.' });
+      chips.push({ label: '🧠 Explain the concept', q: 'Explain the concept this question is testing in simpler terms.' });
+      chips.push({ label: '🎯 Give me a mnemonic', q: 'Give me a memorable mnemonic for this topic.' });
+    } else if (ctx.picked === ctx.correct) {
+      chips.push({ label: '✅ Why is this right?', q: 'Confirm why the correct answer is right and flag any trap distractors to watch for.' });
+      chips.push({ label: '🎯 Give me a mnemonic', q: 'Give me a memorable mnemonic for this topic.' });
+    }
+    chips.push({ label: '🌟 Use an analogy', q: 'Explain this with a dumbed-down analogy.' });
+    chips.forEach(c => {
+      const btn = document.createElement('button');
+      btn.className = 'fab-ai-sug';
+      btn.textContent = c.label;
+      btn.onclick = () => sendMessage(c.q);
+      sug.appendChild(btn);
+    });
+    body.appendChild(sug);
+  }
+
+  function clearChat(preserveCtx){
+    const body = document.getElementById('fabAiBody');
+    if (body) body.innerHTML = '';
+    history = [];
+    if (preserveCtx) {
+      const ctx = readCurrentQ();
+      renderSuggestions(ctx);
+    }
+  }
+
+  function openPanel() {
+    if (!panel) panel = buildPanel();
+    panel.classList.add('open');
+    const ctx = readCurrentQ();
+    const key = qKey(ctx);
+    if (key !== currentQKey) {
+      // Q changed — reset chat and show suggestions for new Q
+      currentQKey = key;
+      clearChat(true);
+    }
+  }
+
+  function buildPanel() {
+    const el = document.createElement('div');
+    el.className = 'fab-ai-panel';
+    el.innerHTML = '<div class="fab-ai-header">'
+      + '<h3>🩺 Study Tutor</h3>'
+      + '<button class="fab-ai-hdr-btn" onclick="fabAiClear()">Clear</button>'
+      + '<button class="fab-ai-close" onclick="fabAiClose()">×</button>'
+      + '</div>'
+      + '<div class="fab-ai-body" id="fabAiBody"></div>'
+      + '<div class="fab-ai-followup">'
+      + '<button class="fab-ai-mini-close" title="Close panel" onclick="fabAiClose()">×</button>'
+      + '<textarea id="fabAiFollowup" placeholder="Ask a question about this Q..." rows="1" onkeydown="if(event.keyCode===13&&!event.shiftKey){event.preventDefault();fabAiFollowupSend();}"></textarea>'
+      + '<button onclick="fabAiFollowupSend()">Send</button>'
+      + '</div>';
+    document.body.appendChild(el);
+    return el;
+  }
+
+  window.fabAiClose = function(){ if(panel) panel.classList.remove('open'); };
+  window.fabAiClear = function(){ clearChat(true); };
+
+  async function callWorker(payload) {
+    if (!ENDPOINT) return { clipboardFallback: true };
+    try {
+      const res = await fetch(ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || ('HTTP ' + res.status));
+      return { reply: data.reply };
+    } catch (e) {
+      return { error: String(e.message || e) };
+    }
+  }
+
+  function clipboardFallback(ctx, userQ) {
+    const letter = (i) => String.fromCharCode(65 + i);
+    let prompt = "I'm studying FAB 101 with Dr. Bui at SCUHS. Drill question:\n\n";
+    prompt += 'Q: ' + ctx.question + '\n\n';
+    if (ctx.options && ctx.options.length) {
+      ctx.options.forEach((o, i) => {
+        const m = [];
+        if (i === ctx.picked) m.push('PICKED');
+        if (i === ctx.correct) m.push('CORRECT');
+        prompt += letter(i) + '. ' + o + (m.length ? ' ('+m.join(', ')+')' : '') + '\n';
+      });
+      prompt += '\n';
+    }
+    if (ctx.profTip) prompt += 'DRILL TIP: ' + ctx.profTip + '\n\n';
+    if (userQ) prompt += 'MY QUESTION: ' + userQ + '\n\n';
+    prompt += 'Explain using a dumbed-down analogy + mnemonic.';
+    navigator.clipboard.writeText(prompt).then(() => {
+      appendStatus('✓ Prompt copied to clipboard. Ask the Study Tutor (the 🩺 button).');
+    }).catch(() => {
+      appendStatus('Could not copy. Please select manually.', true);
+    });
+  }
+
+  async function sendMessage(userText) {
+    const ctx = readCurrentQ();
+    currentQKey = qKey(ctx);
+    appendMsg('user', userText);
+    history.push({ role: 'user', content: userText });
+    appendLoading();
+
+    const payload = Object.assign({}, ctx, {
+      userQuestion: userText,
+      history: history.slice(-10), // last 10 turns for context
+      className: CLASS_NAME, // worker uses this to load class-specific knowledge
+    });
+    const result = await callWorker(payload);
+    removeLoading();
+    if (result.clipboardFallback) {
+      clipboardFallback(ctx, userText);
+      return;
+    }
+    if (result.error) {
+      appendStatus('Error: ' + result.error, true);
+      return;
+    }
+    appendMsg('ai', result.reply);
+    history.push({ role: 'model', content: result.reply });
+  }
+
+  window.fabAiFollowupSend = function() {
+    const ta = document.getElementById('fabAiFollowup');
+    const q = (ta && ta.value || '').trim();
+    if (!q) return;
+    ta.value = '';
+    sendMessage(q);
+  };
+
+  // Button install — opens panel, does NOT auto-call AI
+  function install() {
+    if (document.getElementById('fabAiBtn')) return;
+    const btn = document.createElement('button');
+    btn.className = 'fab-ai-btn';
+    btn.id = 'fabAiBtn';
+    btn.textContent = '🩺';
+    btn.title = 'Open AI Study Tutor';
+    btn.onclick = () => openPanel();
+    document.body.appendChild(btn);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', install);
+  } else {
+    install();
+  }
+})();
+</script><!-- DC Analytics Helper v1 --><script defer src="https://dc-study-analytics.dgync1.workers.dev/helper.js"></script><!-- /DC Analytics Helper -->
+</body></html>

@@ -1,0 +1,673 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BN0213 Module 10 (Lipids) — Objective Talkback</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#0f172a;color:#e2e8f0;font-family:'Segoe UI',system-ui,-apple-system,sans-serif;line-height:1.55;padding:12px;padding-bottom:128px}
+button,a,select,.sent,.jb,.galnav,.fsgal,#thumbs img,.fsc,.b,.vpb,.watch,#pbBtn{touch-action:manipulation;-webkit-tap-highlight-color:rgba(56,189,248,.2)}
+a.back{display:inline-block;margin-bottom:8px;padding:7px 14px;background:#065f46;border:1px solid #10b981;color:#fff;border-radius:10px;font-weight:800;font-size:.8rem;text-decoration:none}
+h1{text-align:center;color:#7dd3fc;font-size:1.2rem;margin:4px 0 2px}.sub{text-align:center;color:#94a3b8;font-size:.82rem;margin:0 0 12px}
+.wrap{max-width:820px;margin:0 auto}
+.cat{display:inline-block;background:#1e293b;color:#7dd3fc;border:1px solid #334155;border-radius:999px;padding:3px 11px;font-size:.72rem;font-weight:800;margin-bottom:8px}
+.imgwrap{position:relative;background:#000;border-radius:12px;overflow:hidden;border:2px solid #334155}
+.imgwrap img{width:100%;max-height:46vh;object-fit:contain;display:block;cursor:zoom-in}
+#thumbs{display:none;gap:6px;flex-wrap:wrap;margin:8px 0 0}#thumbs img{height:56px;width:auto;border-radius:6px;border:2px solid #334155;cursor:pointer;object-fit:cover}#thumbs img:hover{border-color:#38bdf8}
+.galnav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(2,6,18,.6);color:#fff;border:1px solid #475569;border-radius:8px;width:40px;height:56px;font-size:1.5rem;font-weight:800;cursor:pointer;z-index:3;display:none}.galnav:hover{background:rgba(56,189,248,.5)}.gleft{left:8px}.gright{right:8px}
+.galcount{position:absolute;bottom:8px;left:8px;background:rgba(2,6,18,.7);color:#bae6fd;font-size:.7rem;font-weight:800;padding:3px 9px;border-radius:999px;z-index:3;display:none}
+.fsbtn{position:absolute;top:8px;right:8px;background:rgba(2,6,18,.72);color:#bae6fd;border:1px solid #38bdf8;border-radius:8px;padding:6px 10px;font-size:.72rem;font-weight:800;cursor:pointer}
+.title{font-size:1.18rem;font-weight:900;color:#86efac;margin:12px 0 8px}
+.watch{display:inline-block;margin:0 0 10px;background:#4c1d95;color:#e9d5ff;border:1px solid #a855f7;border-radius:9px;padding:8px 13px;font-weight:800;cursor:pointer;font-size:.82rem;font-family:inherit}
+.narr{font-size:1rem;color:#cbd5e1;background:#0f1830;border-left:3px solid #38bdf8;border-radius:8px;padding:13px 15px}
+.narr.tt-hidden{filter:blur(9px);user-select:none;pointer-events:none}
+#revealBtn{display:none;width:100%;margin:8px 0 0;background:#78350f;color:#fde68a;border:1px solid #fbbf24;border-radius:9px;padding:11px;font-weight:800;font-size:.9rem;cursor:pointer;font-family:inherit}
+.b.tt-on{background:#78350f;border-color:#fbbf24;color:#fde68a}
+.hintrow{color:#64748b;font-size:.74rem;margin:6px 2px 0}
+.sent{transition:all .15s;border-radius:5px;padding:1px 3px;cursor:pointer}.sent:hover{background:#243049}
+.sent.now{background:#1e3a5f;color:#fff;box-shadow:0 0 0 2px #38bdf8 inset}
+#bar{position:fixed;left:0;right:0;bottom:0;background:#0f1830;border-top:1px solid #24365c;padding:7px 8px 6px;z-index:50}
+.barrow{display:flex;gap:7px;justify-content:center;align-items:center;flex-wrap:wrap}
+.b{background:#1e293b;border:1px solid #475569;color:#e2e8f0;border-radius:9px;padding:9px 13px;font-weight:800;cursor:pointer;font-size:.82rem;font-family:inherit}
+.b.play{background:#065f46;border-color:#10b981}.b.tv{background:#3b0764;border-color:#a855f7;color:#e9d5ff}
+#pos{color:#94a3b8;font-size:.78rem;min-width:64px;text-align:center}
+select,#bar label{font-size:.76rem;color:#cbd5e1}select{background:#1e293b;border:1px solid #475569;color:#e2e8f0;border-radius:7px;padding:6px}
+#vbWrap{display:none}input[type=range]{width:84px;vertical-align:middle}
+.legend{color:#c4b5fd;font-size:.66rem;line-height:1.5;text-align:center;background:rgba(124,58,237,.12);border:1px solid #4c1d95;border-radius:7px;padding:4px 9px;margin:6px auto 0;max-width:800px}.legend b{color:#e9d5ff;font-weight:800}
+.jump{max-width:820px;margin:10px auto 0;display:flex;gap:6px;flex-wrap:wrap;justify-content:center}
+.jb{background:#1e293b;border:1px solid #334155;color:#cbd5e1;border-radius:8px;padding:6px 10px;font-size:.74rem;cursor:pointer;font-weight:700}.jb.on{background:#0c4a6e;border-color:#38bdf8;color:#fff}
+#fs{position:fixed;inset:0;background:#000;z-index:9999;display:none;flex-direction:column}#fs.open{display:flex}
+#fs.side{flex-direction:row}#fs.side .fstrans{order:-1;width:min(360px,44vw);max-height:none;height:100%;border-top:0;border-right:1px solid #24365c}
+#fs .fsimg{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;background:#000;position:relative}#fs .fsimg img{width:100%;height:100%;object-fit:contain;padding:8px}
+.fsgal{position:absolute;top:50%;transform:translateY(-50%);background:rgba(2,6,18,.55);color:#fff;border:1px solid #475569;border-radius:10px;width:56px;height:88px;font-size:2.1rem;font-weight:800;cursor:pointer;z-index:4;display:none}.fsgal:hover{background:rgba(56,189,248,.5)}.fsgleft{left:14px}.fsgright{right:14px}
+.fscount{position:absolute;bottom:14px;left:14px;background:rgba(2,6,18,.7);color:#bae6fd;font-size:.86rem;font-weight:800;padding:5px 13px;border-radius:999px;z-index:4;display:none}
+.fshint{position:absolute;bottom:14px;right:14px;background:rgba(2,6,18,.7);color:#c4b5fd;font-size:.68rem;padding:5px 11px;border-radius:999px;z-index:4}.fshint b{color:#e9d5ff}
+#fs .fstrans{background:rgba(8,14,28,.93);border-top:1px solid #24365c;color:#cbd5e1;font-size:.95rem;padding:12px 16px;max-height:40vh;overflow:auto}#fs .fstrans.hidden{display:none}
+#fs .fstitle{color:#86efac;font-weight:800;margin-bottom:6px;font-size:1rem}
+#fs .fsctrl{position:absolute;top:10px;right:12px;display:flex;gap:8px;z-index:5;flex-wrap:wrap;justify-content:flex-end;max-width:calc(100vw - 20px)}#fs .fsc{background:rgba(2,6,18,.82);color:#e2e8f0;border:1px solid #475569;border-radius:8px;padding:8px 12px;font-weight:800;cursor:pointer;font-size:.8rem}
+#vp{position:fixed;right:14px;bottom:140px;width:min(420px,92vw);background:#0b1120;border:2px solid #a855f7;border-radius:12px;z-index:9998;display:none;box-shadow:0 10px 30px rgba(0,0,0,.6)}#vp.open{display:block}
+#vp.big{width:min(760px,96vw);right:50%;transform:translateX(50%)}
+#vp.fill{position:fixed;inset:0;width:auto;right:0;transform:none;border:0;border-radius:0;background:rgba(2,6,18,.94);display:flex;flex-direction:column;justify-content:center}
+#vp .vph{display:flex;justify-content:space-between;align-items:center;padding:7px 10px;background:#3b0764;color:#e9d5ff;font-size:.76rem;font-weight:800;border-radius:10px 10px 0 0}#vp.fill .vph{border-radius:0}
+#vp .vph button{background:rgba(255,255,255,.15);color:#fff;border:0;border-radius:6px;padding:4px 9px;font-weight:800;cursor:pointer}
+#vp video{width:100%;display:block;background:#000;max-height:50vh}#vp.big video{max-height:74vh}#vp.fill video{max-height:84vh;width:auto;max-width:96vw;margin:0 auto}
+#vp .vpctrl{display:flex;gap:5px;justify-content:center;align-items:center;flex-wrap:wrap;padding:7px;background:#0b1120;border-top:1px solid #24365c}
+#vp .vpb{background:#1e293b;border:1px solid #475569;color:#e2e8f0;border-radius:7px;padding:6px 9px;font-weight:800;cursor:pointer;font-size:.74rem;font-family:inherit}
+#vp .vpleg{color:#c4b5fd;font-size:.62rem;text-align:center;padding:4px 8px;background:rgba(124,58,237,.12)}#vp .vpleg b{color:#e9d5ff}
+#qp{position:fixed;top:54px;right:10px;bottom:150px;width:min(360px,90vw);background:#0b1120;border:2px solid #38bdf8;border-radius:12px;z-index:60;display:none;flex-direction:column;box-shadow:0 10px 30px rgba(0,0,0,.6)}#qp.open{display:flex}
+#qp .qph{padding:8px 12px;background:#0c4a6e;color:#e0f2fe;font-weight:800;font-size:.8rem;border-radius:10px 10px 0 0;display:flex;justify-content:space-between;align-items:center}
+#qp .qph button{background:rgba(255,255,255,.15);color:#fff;border:0;border-radius:6px;padding:3px 8px;font-weight:800;cursor:pointer}
+#qp .qpbody{padding:12px;overflow:auto;font-size:.9rem}#qp .qpq{font-weight:700;color:#e2e8f0;margin-bottom:10px}
+#qp .qpo{display:block;width:100%;text-align:left;background:#1e293b;border:1px solid #334155;color:#e2e8f0;border-radius:8px;padding:8px 11px;margin:6px 0;font-size:.86rem;cursor:pointer;font-family:inherit}
+#qp .qpo.correct{background:#052e16;border-color:#22c55e;color:#bbf7d0}#qp .qpo.wrong{background:rgba(239,68,68,.12);border-color:#ef4444}
+#qp .qprev{background:#3b0764;color:#e9d5ff;border:1px solid #a855f7;border-radius:8px;padding:7px 12px;font-weight:800;cursor:pointer;font-size:.82rem;margin-top:6px;font-family:inherit}
+#qp .qpfb{margin-top:10px;font-size:.82rem;color:#cbd5e1}#qp .qpfb div{padding:4px 0;border-top:1px solid #1e293b}#qp .qpfb b{color:#7dd3fc}
+</style><style id="fab-ai-companion-css">
+.fab-ai-btn {
+  position: fixed; bottom: 24px; right: 24px; z-index: 9998;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6); color: #fff;
+  border: none; border-radius: 50%; width: 56px; height: 56px;
+  font-size: 26px; cursor: pointer; box-shadow: 0 4px 16px rgba(99,102,241,0.45);
+  transition: all 0.2s; display: flex; align-items: center; justify-content: center;
+  padding: 0;
+}
+.fab-ai-btn:hover { transform: translateY(-2px) scale(1.05); box-shadow: 0 8px 24px rgba(99,102,241,0.6); }
+.fab-ai-btn:active { transform: scale(0.95); }
+
+.fab-ai-panel {
+  position: fixed; top: 0; right: 0; bottom: 0; width: min(480px, 94vw);
+  background: #0f172a; border-left: 2px solid #334155;
+  box-shadow: -8px 0 32px rgba(0,0,0,0.5);
+  z-index: 9999; display: flex; flex-direction: column;
+  transform: translateX(100%); transition: transform 0.28s ease-out;
+}
+.fab-ai-panel.open { transform: translateX(0); }
+
+.fab-ai-header {
+  padding: 12px 16px; background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: #fff; display: flex; align-items: center; gap: 8px;
+}
+.fab-ai-header h3 { font-size: 15px; font-weight: 700; margin: 0; flex: 1; }
+.fab-ai-hdr-btn {
+  background: rgba(255,255,255,0.15); color: #fff; border: none;
+  padding: 6px 10px; border-radius: 6px; cursor: pointer; font-size: 12px;
+  font-weight: 600;
+}
+.fab-ai-hdr-btn:hover { background: rgba(255,255,255,0.28); }
+.fab-ai-close {
+  background: rgba(255,255,255,0.15); color: #fff; border: none;
+  width: 30px; height: 30px; border-radius: 6px; cursor: pointer; font-size: 18px;
+  line-height: 1; padding: 0;
+}
+.fab-ai-close:hover { background: rgba(255,255,255,0.3); }
+
+.fab-ai-body {
+  flex: 1; overflow-y: auto; padding: 14px 16px;
+  color: #e2e8f0; font-size: 13px; line-height: 1.6;
+  display: flex; flex-direction: column; gap: 10px;
+}
+
+.fab-ai-qpreview {
+  padding: 8px 12px; background: rgba(129,140,248,0.08); border-left: 3px solid #818cf8;
+  border-radius: 6px; font-size: 12px; color: #94a3b8; max-height: 100px; overflow-y: auto;
+  flex-shrink: 0;
+}
+.fab-ai-qpreview b { color: #cbd5e1; }
+
+.fab-ai-suggestions {
+  display: flex; flex-wrap: wrap; gap: 6px; padding: 4px 0;
+}
+.fab-ai-sug {
+  background: rgba(99,102,241,0.12); color: #a5b4fc;
+  border: 1px solid rgba(99,102,241,0.35); border-radius: 14px;
+  padding: 6px 12px; font-size: 12px; cursor: pointer; font-weight: 500;
+  transition: all .15s;
+}
+.fab-ai-sug:hover { background: rgba(99,102,241,0.25); color: #dbeafe; transform: translateY(-1px); }
+
+.fab-ai-msg { display: flex; gap: 6px; max-width: 100%; }
+.fab-ai-msg.user { justify-content: flex-end; }
+.fab-ai-bubble {
+  padding: 10px 14px; border-radius: 12px; font-size: 13px; line-height: 1.55;
+  max-width: 92%; word-wrap: break-word;
+}
+.fab-ai-msg.user .fab-ai-bubble {
+  background: linear-gradient(135deg, #3b82f6, #6366f1);
+  color: #fff; border-bottom-right-radius: 4px;
+}
+.fab-ai-msg.ai .fab-ai-bubble {
+  background: #1e293b; color: #e2e8f0; border-bottom-left-radius: 4px;
+  border: 1px solid #334155;
+}
+.fab-ai-msg.ai .fab-ai-bubble strong,
+.fab-ai-msg.ai .fab-ai-bubble b { color: #a5b4fc; }
+.fab-ai-msg.ai .fab-ai-bubble ul { margin: 6px 0; padding-left: 20px; }
+.fab-ai-msg.ai .fab-ai-bubble li { margin: 3px 0; }
+.fab-ai-msg.ai .fab-ai-bubble p { margin: 0 0 8px 0; }
+.fab-ai-msg.ai .fab-ai-bubble p:last-child { margin-bottom: 0; }
+.fab-ai-msg.ai .fab-ai-bubble h3 { font-size: 13px; margin: 8px 0 4px 0; color: #c4b5fd; }
+.fab-ai-msg.ai .fab-ai-bubble code { background: #0f172a; padding: 1px 5px; border-radius: 3px; font-size: 11px; }
+
+.fab-ai-tts-row { display: flex; align-items: center; gap: 6px; margin-top: 6px; padding-top: 6px; border-top: 1px solid #334155; }
+.fab-ai-tts-btn {
+  background: rgba(129,140,248,0.15); color: #c4b5fd;
+  border: 1px solid rgba(129,140,248,0.35); border-radius: 14px;
+  padding: 3px 10px; font-size: 11px; cursor: pointer; font-weight: 500;
+  display: inline-flex; align-items: center; gap: 4px;
+}
+.fab-ai-tts-btn:hover { background: rgba(129,140,248,0.3); color: #ddd6fe; }
+.fab-ai-tts-btn.playing { background: rgba(239,68,68,0.18); color: #fca5a5; border-color: rgba(239,68,68,0.4); }
+.fab-ai-tts-rate {
+  background: #0f172a; color: #cbd5e1; border: 1px solid #334155;
+  border-radius: 6px; padding: 2px 6px; font-size: 11px; cursor: pointer;
+}
+
+.fab-ai-status {
+  padding: 10px 14px; background: rgba(99,102,241,0.12); border: 1px solid rgba(99,102,241,0.3);
+  border-radius: 8px; color: #a5b4fc; font-size: 12px;
+}
+.fab-ai-status.err { background: rgba(239,68,68,0.12); border-color: rgba(239,68,68,0.4); color: #fca5a5; }
+.fab-ai-loading { display: flex; align-items: center; gap: 8px; color: #94a3b8; padding: 4px 6px; font-size: 12px; }
+.fab-ai-spinner {
+  width: 12px; height: 12px; border: 2px solid #334155; border-top-color: #818cf8;
+  border-radius: 50%; animation: fab-ai-spin 0.8s linear infinite;
+}
+@keyframes fab-ai-spin { to { transform: rotate(360deg); } }
+
+.fab-ai-followup {
+  padding: 12px; background: #1e293b; border-top: 1px solid #334155;
+  display: flex; gap: 8px; align-items: flex-end;
+}
+.fab-ai-mini-close {
+  background: #334155; color: #94a3b8; border: 1px solid #475569;
+  width: 32px; height: 36px; border-radius: 8px; cursor: pointer;
+  font-size: 16px; line-height: 1; padding: 0; font-weight: 600;
+  flex-shrink: 0;
+}
+.fab-ai-mini-close:hover { background: #475569; color: #f87171; border-color: #ef4444; }
+.fab-ai-followup textarea {
+  flex: 1; background: #0f172a; color: #e2e8f0;
+  border: 1px solid #334155; border-radius: 8px;
+  padding: 8px 10px; font-size: 13px; font-family: inherit;
+  resize: none; min-height: 36px; max-height: 120px;
+}
+.fab-ai-followup textarea:focus { outline: none; border-color: #818cf8; }
+.fab-ai-followup button {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6); color: #fff;
+  border: none; padding: 0 14px; border-radius: 8px; font-weight: 600;
+  cursor: pointer; font-size: 13px; white-space: nowrap;
+}
+.fab-ai-followup button:hover { transform: translateY(-1px); }
+.fab-ai-followup button:disabled { opacity: 0.5; cursor: not-allowed; }
+</style><style id="dc-wm-css">.dc-study-watermark{position:fixed;bottom:6px;right:10px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:10px;color:rgba(255,255,255,0.32);letter-spacing:.3px;pointer-events:none;z-index:2147483647;user-select:none}</style></head><body>
+<a class="back" href="ga-0202-midterm-hub.html">&larr; Hub</a>
+<h1>🗣️ BN0213 Module 10 — Lipids: Objective Talkback</h1>
+<div class="sub">Self-test is ON: an objective appears &mdash; say everything testable about it out loud, free-form, as if explaining it. Then Reveal &amp; hear the must-knows Basso tests on it. Tap any objective to jump. Best in Edge.</div>
+<div class="wrap">
+  <div class="cat" id="cat"></div>
+  <div class="imgwrap" id="imgwrap"><button class="galnav gleft" onclick="galStep(-1)">&#8249;</button><img id="im" src="" alt="frame" onclick="openFs()"><button class="galnav gright" onclick="galStep(1)">&#8250;</button><span class="galcount" id="galcount"></span><button class="fsbtn" onclick="openFs()">⛶ Image fullscreen</button></div>
+  <div id="thumbs"></div>
+  <div class="title" id="title"></div>
+  <button class="watch" onclick="watchHer()">🎬 Watch Dr. Basso say it</button>
+  <a id="pbBtn" href="#" target="_blank" rel="noopener" onclick="pausePlay()" style="display:inline-block;margin:0 0 10px 8px;background:#0c4a6e;color:#bae6fd;border:1px solid #38bdf8;border-radius:9px;padding:8px 13px;font-weight:800;cursor:pointer;font-size:.82rem;font-family:inherit;text-decoration:none">📖 Open in playbook</a>
+  <div class="narr" id="narr"></div>
+  <button id="revealBtn" onclick="revealTest()">&#128065; Reveal &amp; hear it</button>
+  <div class="hintrow">Tip: tap any sentence to jump &middot; tap the image (or ⛶) to blow it up full-screen &middot; <b style="color:#7dd3fc">&#8249; &#8250;</b> or <b style="color:#7dd3fc">[ ]</b> flip this slide's pictures while the audio keeps playing &middot; all keys in the bar below.</div>
+</div>
+<div class="jump" id="jump"></div>
+<div id="bar"><div class="barrow">
+  <button class="b" onclick="prev()">&#9664; Prev</button>
+  <button class="b play" id="playBtn" onclick="toggle()">&#9654; Play</button>
+  <button class="b" onclick="next()">Next &#9654;</button>
+  <span id="pos">1 / 1</span>
+  <label>Speed <input type="range" id="rate" min="0.5" max="3" step="0.05" value="1" oninput="setRate(this.value)"> <span id="rv">1.0&times;</span></label>
+  <button class="b tv" id="tvBtn" onclick="toggleTwo()">🎭 2 voices: OFF</button>
+  <button class="b" id="qpBtn" onclick="toggleQp()" style="border-color:#38bdf8">📝 Question</button>
+    <button class="b" id="testBtn" onclick="toggleTest()">🧠 Self-test: OFF</button>
+  <label>Voice <select id="voi" onchange="setVoice(this.value)"></select></label>
+  <label id="vbWrap">Voice B <select id="voiB" onchange="setVoiceB(this.value)"></select></label>
+</div>
+<div class="legend">&#9000; Keys &mdash; <b>Space</b> play/pause &middot; <b>&#8592;&#8594;</b> prev/next &middot; <b>&#8593;&#8595;</b> speed &middot; <b>F</b> image fill-page &middot; <b>T</b> transcript bottom/side/off &middot; <b>W</b> watch video &middot; <b>[ ]</b> gallery pics</div></div>
+<div id="fs"><div class="fsctrl"><button class="fsc" id="fsPlay" onclick="toggle()" style="background:#065f46;border-color:#10b981">&#9654; Play</button><button class="fsc" onclick="procPrev()">&#9664; Proc</button><button class="fsc" onclick="procNext()">Proc &#9654;</button><a class="fsc" id="fspbBtn" href="#" target="_blank" rel="noopener" onclick="pausePlay()" style="background:#0c4a6e;border-color:#38bdf8;color:#bae6fd;text-decoration:none;display:inline-flex;align-items:center">📖 Playbook</a><button class="fsc" onclick="cycleTrans()" id="ttBtn">Transcript: Bottom</button><button class="fsc" onclick="closeFs()">✕ Close</button></div>
+  <div class="fsimg"><button class="fsgal fsgleft" onclick="galStep(-1)">&#8249;</button><img id="fsim" src="" alt="frame"><button class="fsgal fsgright" onclick="galStep(1)">&#8250;</button><span class="fscount" id="fscount"></span><span class="fshint"><b>&#8249; &#8250;</b> or <b>[ ]</b> flip pics &middot; <b>T</b> transcript &middot; <b>Esc</b> close</span></div>
+  <div class="fstrans" id="fstrans"><div class="fstitle" id="fstitle"></div><div id="fsnarr"></div></div></div>
+<div id="vp"><div class="vph"><span id="vptitle">🎬 Review video</span><button onclick="closeVid()">✕ Close</button></div>
+  <video id="vpv" controls playsinline preload="metadata"></video>
+  <div class="vpctrl">
+    <button class="vpb" onclick="vpSeek(-10)">&#9194; 10s</button><button class="vpb" onclick="vpToggle()">&#9199;</button><button class="vpb" onclick="vpSeek(10)">10s &#9193;</button>
+    <button class="vpb" onclick="vpRate(-0.25)">&ndash; spd</button><button class="vpb" onclick="vpRate(0.25)">+ spd</button>
+    <button class="vpb" onclick="vpBig()">&#10530; Expand</button><button class="vpb" onclick="vpFill()">⛶ Fill page</button></div>
+  <div class="vpleg">&#9000; <b>Space</b> play/pause &middot; <b>&#8592;&#8594;</b> &#8723;10s &middot; <b>&#8593;&#8595;</b> speed &middot; <b>Y</b> back&nbsp;2s &middot; <b>D</b> expand &middot; <b>F</b> fill page &middot; <b>Esc</b> close</div></div>
+<div id="qp"><div class="qph"><span>📝 Walkthrough question</span><button onclick="toggleQp()">✕</button></div>
+  <div class="qpbody"><div class="qpq" id="qpq"></div><div id="qpo"></div><button class="qprev" onclick="revealQp()">Reveal answer</button><div class="qpfb" id="qpfb"></div></div></div>
+<script>
+var DATA={"video": "https://pub-7fb2bb3e5a0b4096a57fc578b5a16078.r2.dev/bn0213/m10-lipids/lecture-fs-37da13d4.mp4", "start": [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 25], "items": [{"title": "Objective 1: the triacylglycerol", "ts": 2880, "imgs": ["frames/m10_lecture_fv/s_06_02672.jpg", "frames/m10_lecture_fv/s_26_06080.jpg"], "s": ["Objective one. Outline the general structure of a triacylglycerol and say what it does. Say it out loud now, then I will give it back to you.", "Answer. A triacylglycerol is one glycerol, a three carbon alcohol, joined to three fatty acids by three ester bonds. An ester is what you get when an acid meets an alcohol and a water leaves. Its job is energy storage: in animals inside adipocytes, in plants as the oils in seeds."], "cat": "Module 10 · Lipids", "img": "frames/m10_lecture_fv/s_06_02672.jpg"}, {"title": "The two ends of a fatty acid", "ts": 3122, "imgs": ["frames/m10_lecture_fv/s_09_03080.jpg"], "s": ["He said make sure you know this. A fatty acid has two termini. Name them, and say which one you count from for each naming system.", "Answer. One end is the carboxyl end, the C O O H, the acid end. The other is the methyl end, also called the omega end. Alpha and beta carbons are counted from the carboxyl end. The omega family is counted from the methyl end."], "cat": "Module 10 · Lipids", "img": "frames/m10_lecture_fv/s_09_03080.jpg"}, {"title": "Saturated versus unsaturated", "ts": 3183, "imgs": ["frames/m10_lecture_fv/s_10_03560.jpg"], "s": ["He said hopefully you will remember this forever. Why is a saturated fatty acid called saturated, and what does that do to its shape?", "Answer. It is saturated with hydrogens. There are no carbon to carbon double bonds, so every carbon holds all the hydrogen it can. Single bonds swivel, so the chain hangs straight, packs tightly, and the fat is solid at room temperature. A double bond is rigid and kinks the chain, so unsaturated fats cannot pack and stay liquid."], "cat": "Module 10 · Lipids", "img": "frames/m10_lecture_fv/s_10_03560.jpg"}, {"title": "THE FOUR S's", "ts": 4139, "imgs": ["frames/m10_lecture_fv/s_15_04088.jpg"], "s": ["He wrote this in red pen and told the class to make notes. Recite the four S's, and then the four opposites.", "Answer. Saturated. Single bonds. Straight chains. Solid at room temperature. The mirror image is unsaturated, double bonds, bend, liquid. His examples were the solid white fat on a filet mignon that melts on the barbecue, and cheese sitting solid on the counter."], "cat": "Module 10 · Lipids", "img": "frames/m10_lecture_fv/s_15_04088.jpg"}, {"title": "Objective 3: omega nomenclature", "ts": 3930, "imgs": ["frames/m10_lecture_fv/s_14_03872.jpg"], "s": ["He said you will see this on a test. Explain how a fatty acid gets the name omega-3, and explain what C18 colon 3 means.", "Answer. You count from the methyl end, the omega end, and you find the first double bond. If it sits three carbons in, it is an omega-3. Six carbons in, omega-6. Nine, omega-9. C18 colon 3 means the chain is eighteen carbons long and it has three double bonds. Carbons before the colon, double bonds after."], "cat": "Module 10 · Lipids", "img": "frames/m10_lecture_fv/s_14_03872.jpg"}, {"title": "The suffix rule", "ts": 3816, "imgs": ["frames/m10_lecture_fv/s_12_03664.jpg"], "s": ["Two fatty acids: eicosanoic acid and eicosapentaenoic acid. Which is saturated, which is unsaturated, and how do you know from the name alone?", "Answer. Eicosanoic acid ends in a n o i c, so it is saturated. That is arachidic acid, found in peanut oil. Eicosapentaenoic acid ends in e n o i c, so it has double bonds. That is E P A, the omega-3 in cold water fish. The single letter e is doing all the work."], "cat": "Module 10 · Lipids", "img": "frames/m10_lecture_fv/s_12_03664.jpg"}, {"title": "Essential fatty acids", "ts": 3870, "imgs": ["frames/m10_lecture_fv/s_19_05120.jpg"], "s": ["Why are the omega-3s and omega-6s called essential, and what are the two parent molecules?", "Answer. Essential does not mean important. It means your cells lack the enzyme to build it, so you must eat it. His words: we have to eat them because we cannot make them. The two parents are linoleic acid, an omega-6, and alpha-linolenic acid, an omega-3. The omega-6 branch runs to arachidonic acid; the omega-3 branch runs to E P A and then D H A."], "cat": "Module 10 · Lipids", "img": "frames/m10_lecture_fv/s_19_05120.jpg"}, {"title": "Objective 4: cis versus trans", "ts": 5968, "imgs": ["frames/m10_lecture_fv/s_25_05760.jpg"], "s": ["Objective four. Explain the difference between a cis and a trans double bond, and explain why a trans fat behaves like a saturated fat.", "Answer. Cis means both hydrogens sit on the same side of the double bond, and that crowding bends the chain. Trans means they sit on opposite sides, the forces balance, and the chain stays straight. Because it is straight it packs tightly like a saturated fat, even though it is technically unsaturated. Trans fats are made by partial hydrogenation, and they raise cardiovascular and diabetes risk."], "cat": "Module 10 · Lipids", "img": "frames/m10_lecture_fv/s_25_05760.jpg"}, {"title": "Objective 6: phospholipids", "ts": 6328, "imgs": ["frames/m10_lecture_fv/s_33_06360.jpg"], "s": ["Objective six. Give the general recipe for a phospholipid, then name the two subtypes and one example of each.", "Answer. Alcohol plus fatty acid plus phosphate plus amino alcohol. If the alcohol is glycerol it is a glycerophospholipid, and the example is phosphatidylcholine, which is lecithin. If the alcohol is sphingosine it is a sphingophospholipid, and the example is sphingomyelin."], "cat": "Module 10 · Lipids", "img": "frames/m10_lecture_fv/s_33_06360.jpg"}, {"title": "The two he told you to know for sure", "ts": 6379, "imgs": ["frames/m10_lecture_fv/s_34_06368.jpg", "frames/m10_lecture_fv/s_36_06504.jpg"], "s": ["He said this is one you should know for sure, and later, you should definitely know this. Give both facts.", "Answer. First: dipalmitoyl lecithin is the lung surfactant. It lowers the surface tension of the alveoli, which prevents them collapsing. A premature infant has not made it yet, which is respiratory distress syndrome. Second: sphingomyelin is a large portion of the myelin sheath, the insulation around your axons."], "cat": "Module 10 · Lipids", "img": "frames/m10_lecture_fv/s_34_06368.jpg"}, {"title": "Cerebroside versus ganglioside", "ts": 6672, "imgs": ["frames/m10_lecture_fv/s_38_06616.jpg"], "s": ["Both are glycolipids. Distinguish them by sugar and by location.", "Answer. A glycolipid is ceramide plus a carbohydrate. A cerebroside carries a single sugar, a monosaccharide, glucose or galactose, and lives in myelin, in brain and nerves. A ganglioside carries an oligosaccharide, several sugars, and lives in the gray matter of the brain. One sugar, cerebroside. Many sugars, ganglioside."], "cat": "Module 10 · Lipids", "img": "frames/m10_lecture_fv/s_38_06616.jpg"}, {"title": "The three lysosomal storage diseases", "ts": 7128, "imgs": ["frames/m10_lecture_fv/s_44_07048.jpg", "frames/m10_lecture_fv/s_43_06952.jpg"], "s": ["Name the missing enzyme and the accumulating substrate for Tay-Sachs, Gaucher, and Niemann-Pick. Then give the one finding that separates Tay-Sachs from Niemann-Pick.", "Answer. Tay-Sachs: hexosaminidase A is missing, and G M 2 ganglioside accumulates. Gaucher: glucocerebrosidase is missing, and glucocerebroside accumulates, giving hepatosplenomegaly and bone erosion. Niemann-Pick: sphingomyelinase is missing, and sphingomyelin accumulates.", "The separator: both Tay-Sachs and Niemann-Pick give a cherry-red spot, but only Niemann-Pick gives hepatosplenomegaly. So a cherry-red spot with central nervous system signs and no big liver or spleen is Tay-Sachs. His mnemonic for the cherry-red spot is Cherry Trees Never Grow Tall In Sand: C R A O, trauma, Niemann-Pick, Gaucher, Tay-Sachs, Sandhoff."], "cat": "Module 10 · Lipids", "img": "frames/m10_lecture_fv/s_44_07048.jpg"}, {"title": "What he told you to SKIP", "ts": 5046, "imgs": ["frames/m10_lecture_fv/s_18_05040.jpg", "frames/m10_lecture_fv/s_30_06224.jpg"], "s": ["Which two slides did Dr. Basso tell you are not testable?", "Answer. The prostaglandin and arachidonic metabolism slide, the C O X one and C O X two cascade. It is stamped F Y I not testable in his own deck, and he said you do not have to memorize any of this. And the phospholipid classification diagram, which reads, this diagram is not testable. Spend that time on the four S's and the omega nomenclature instead."], "cat": "Module 10 · Lipids", "img": "frames/m10_lecture_fv/s_18_05040.jpg"}], "lines": [{"it": 0, "si": 0, "t": "Objective one. Outline the general structure of a triacylglycerol and say what it does. Say it out loud now, then I will give it back to you."}, {"it": 0, "si": 1, "t": "Answer. A triacylglycerol is one glycerol, a three carbon alcohol, joined to three fatty acids by three ester bonds. An ester is what you get when an acid meets an alcohol and a water leaves. Its job is energy storage: in animals inside adipocytes, in plants as the oils in seeds."}, {"it": 1, "si": 0, "t": "He said make sure you know this. A fatty acid has two termini. Name them, and say which one you count from for each naming system."}, {"it": 1, "si": 1, "t": "Answer. One end is the carboxyl end, the C O O H, the acid end. The other is the methyl end, also called the omega end. Alpha and beta carbons are counted from the carboxyl end. The omega family is counted from the methyl end."}, {"it": 2, "si": 0, "t": "He said hopefully you will remember this forever. Why is a saturated fatty acid called saturated, and what does that do to its shape?"}, {"it": 2, "si": 1, "t": "Answer. It is saturated with hydrogens. There are no carbon to carbon double bonds, so every carbon holds all the hydrogen it can. Single bonds swivel, so the chain hangs straight, packs tightly, and the fat is solid at room temperature. A double bond is rigid and kinks the chain, so unsaturated fats cannot pack and stay liquid."}, {"it": 3, "si": 0, "t": "He wrote this in red pen and told the class to make notes. Recite the four S's, and then the four opposites."}, {"it": 3, "si": 1, "t": "Answer. Saturated. Single bonds. Straight chains. Solid at room temperature. The mirror image is unsaturated, double bonds, bend, liquid. His examples were the solid white fat on a filet mignon that melts on the barbecue, and cheese sitting solid on the counter."}, {"it": 4, "si": 0, "t": "He said you will see this on a test. Explain how a fatty acid gets the name omega-3, and explain what C18 colon 3 means."}, {"it": 4, "si": 1, "t": "Answer. You count from the methyl end, the omega end, and you find the first double bond. If it sits three carbons in, it is an omega-3. Six carbons in, omega-6. Nine, omega-9. C18 colon 3 means the chain is eighteen carbons long and it has three double bonds. Carbons before the colon, double bonds after."}, {"it": 5, "si": 0, "t": "Two fatty acids: eicosanoic acid and eicosapentaenoic acid. Which is saturated, which is unsaturated, and how do you know from the name alone?"}, {"it": 5, "si": 1, "t": "Answer. Eicosanoic acid ends in a n o i c, so it is saturated. That is arachidic acid, found in peanut oil. Eicosapentaenoic acid ends in e n o i c, so it has double bonds. That is E P A, the omega-3 in cold water fish. The single letter e is doing all the work."}, {"it": 6, "si": 0, "t": "Why are the omega-3s and omega-6s called essential, and what are the two parent molecules?"}, {"it": 6, "si": 1, "t": "Answer. Essential does not mean important. It means your cells lack the enzyme to build it, so you must eat it. His words: we have to eat them because we cannot make them. The two parents are linoleic acid, an omega-6, and alpha-linolenic acid, an omega-3. The omega-6 branch runs to arachidonic acid; the omega-3 branch runs to E P A and then D H A."}, {"it": 7, "si": 0, "t": "Objective four. Explain the difference between a cis and a trans double bond, and explain why a trans fat behaves like a saturated fat."}, {"it": 7, "si": 1, "t": "Answer. Cis means both hydrogens sit on the same side of the double bond, and that crowding bends the chain. Trans means they sit on opposite sides, the forces balance, and the chain stays straight. Because it is straight it packs tightly like a saturated fat, even though it is technically unsaturated. Trans fats are made by partial hydrogenation, and they raise cardiovascular and diabetes risk."}, {"it": 8, "si": 0, "t": "Objective six. Give the general recipe for a phospholipid, then name the two subtypes and one example of each."}, {"it": 8, "si": 1, "t": "Answer. Alcohol plus fatty acid plus phosphate plus amino alcohol. If the alcohol is glycerol it is a glycerophospholipid, and the example is phosphatidylcholine, which is lecithin. If the alcohol is sphingosine it is a sphingophospholipid, and the example is sphingomyelin."}, {"it": 9, "si": 0, "t": "He said this is one you should know for sure, and later, you should definitely know this. Give both facts."}, {"it": 9, "si": 1, "t": "Answer. First: dipalmitoyl lecithin is the lung surfactant. It lowers the surface tension of the alveoli, which prevents them collapsing. A premature infant has not made it yet, which is respiratory distress syndrome. Second: sphingomyelin is a large portion of the myelin sheath, the insulation around your axons."}, {"it": 10, "si": 0, "t": "Both are glycolipids. Distinguish them by sugar and by location."}, {"it": 10, "si": 1, "t": "Answer. A glycolipid is ceramide plus a carbohydrate. A cerebroside carries a single sugar, a monosaccharide, glucose or galactose, and lives in myelin, in brain and nerves. A ganglioside carries an oligosaccharide, several sugars, and lives in the gray matter of the brain. One sugar, cerebroside. Many sugars, ganglioside."}, {"it": 11, "si": 0, "t": "Name the missing enzyme and the accumulating substrate for Tay-Sachs, Gaucher, and Niemann-Pick. Then give the one finding that separates Tay-Sachs from Niemann-Pick."}, {"it": 11, "si": 1, "t": "Answer. Tay-Sachs: hexosaminidase A is missing, and G M 2 ganglioside accumulates. Gaucher: glucocerebrosidase is missing, and glucocerebroside accumulates, giving hepatosplenomegaly and bone erosion. Niemann-Pick: sphingomyelinase is missing, and sphingomyelin accumulates."}, {"it": 11, "si": 2, "t": "The separator: both Tay-Sachs and Niemann-Pick give a cherry-red spot, but only Niemann-Pick gives hepatosplenomegaly. So a cherry-red spot with central nervous system signs and no big liver or spleen is Tay-Sachs. His mnemonic for the cherry-red spot is Cherry Trees Never Grow Tall In Sand: C R A O, trauma, Niemann-Pick, Gaucher, Tay-Sachs, Sandhoff."}, {"it": 12, "si": 0, "t": "Which two slides did Dr. Basso tell you are not testable?"}, {"it": 12, "si": 1, "t": "Answer. The prostaglandin and arachidonic metabolism slide, the C O X one and C O X two cascade. It is stamped F Y I not testable in his own deck, and he said you do not have to memorize any of this. And the phospholipid classification diagram, which reads, this diagram is not testable. Spend that time on the four S's and the omega nomenclature instead."}]}; var ITEMS=DATA.items, LINES=DATA.lines, START=DATA.start, VIDEO=DATA.video, PLAYBOOK=DATA.playbook||'';
+var i=0,on=false,paused=false,rate=1.0,voice=null,voiceB=null,vl=[],gen=0,userPicked=false,userPickedB=false,twoVoice=false,transMode='off',testMode=!!DATA.testDefault,revealed=false,lastItem=-1;
+function pickA(){return vl.find(function(v){return /microsoft.*ava.*natural/i.test(v.name);})||vl.find(function(v){return /microsoft.*emma.*natural/i.test(v.name);})||vl.find(function(v){return /google us english female/i.test(v.name);})||vl.find(function(v){return /en[-_]US/i.test(v.lang);})||vl.find(function(v){return /^en/i.test(v.lang);})||vl[0]||null;}
+function pickB(){return vl.find(function(v){return /microsoft.*andrew.*natural/i.test(v.name);})||vl.find(function(v){return /microsoft.*(ryan|guy|brian).*natural/i.test(v.name);})||vl.find(function(v){return /google uk english male/i.test(v.name);})||vl.find(function(v){return /en[-_]GB/i.test(v.lang)&&/male/i.test(v.name);})||vl.find(function(v){return /^en/i.test(v.lang);})||vl[0]||null;}
+function fillSel(id,chosen){var s=document.getElementById(id);if(!s||!vl.length)return;var en=vl.filter(function(v){return /^en/i.test(v.lang);});var L=en.length?en:vl;s.innerHTML=L.map(function(v){var g=vl.indexOf(v);return '<option value="'+g+'"'+(chosen&&chosen.name===v.name?' selected':'')+'>'+v.name.replace(/</g,'')+'</option>';}).join('');}
+function load(){if(!window.speechSynthesis)return;vl=speechSynthesis.getVoices()||[];if(!userPicked){var p=pickA();if(p)voice=p;}if(!userPickedB){var q=pickB();if(q)voiceB=q;}fillSel('voi',voice);fillSel('voiB',voiceB);}
+if(window.speechSynthesis){load();speechSynthesis.onvoiceschanged=load;var t=0,iv=setInterval(function(){t++;load();var g=(speechSynthesis.getVoices()||[]).some(function(v){return /google us english|microsoft.*natural/i.test(v.name);});if(g||t>24)clearInterval(iv);},250);}
+function curItem(){return LINES[i].it;}
+function voiceNow(){return (twoVoice&&(curItem()%2===1))?(voiceB||voice):voice;}
+function sentsHtml(it,curSi){var k=ITEMS.indexOf(it);return it.s.map(function(sent,si){return '<span class="sent'+(si===curSi?' now':'')+'" onclick="jump('+(START[k]+si)+')">'+sent.replace(/</g,'')+'</span>';}).join(' ');}
+function render(){var L=LINES[i],it=ITEMS[L.it];
+  document.getElementById('cat').textContent=it.cat;document.getElementById('title').textContent=it.title;
+  var iw=document.getElementById('imgwrap');
+  if(it.img){iw.style.display='';if(document.getElementById('im').getAttribute('src')!==it.img)document.getElementById('im').src=it.img;}else{iw.style.display='none';}
+  galIdx=0;
+  var th=document.getElementById('thumbs');if(th){if(it.imgs&&it.imgs.length>1){th.style.display='flex';th.innerHTML=it.imgs.map(function(im,gi){return '<img src="'+im+'" onclick="galTo('+gi+')">';}).join('');}else{th.style.display='none';th.innerHTML='';}}
+  setGal();
+  document.getElementById('narr').innerHTML=sentsHtml(it,L.si);
+  document.getElementById('pos').textContent=(i+1)+' / '+LINES.length;drawJump();renderQp();setPbHref();
+  if(curItem()!==lastItem){lastItem=curItem();if(testMode)revealed=false;}applyTest();
+  if(document.getElementById('fs').classList.contains('open'))renderFs();
+  var nw=document.querySelector('#narr .sent.now');if(nw)nw.scrollIntoView({behavior:'smooth',block:'center'});}
+function renderFs(){var L=LINES[i],it=ITEMS[L.it];if(it.img&&document.getElementById('fsim').getAttribute('src')!==it.img)document.getElementById('fsim').src=it.img;
+  document.getElementById('fstitle').textContent=it.title;document.getElementById('fsnarr').innerHTML=sentsHtml(it,L.si);
+  var nw=document.querySelector('#fsnarr .sent.now');if(nw)nw.scrollIntoView({block:'center'});}
+function drawJump(){document.getElementById('jump').innerHTML=ITEMS.map(function(it,k){return '<button class="jb'+(k===curItem()?' on':'')+'" onclick="jump('+START[k]+')">'+(k+1)+'. '+it.title.replace(/</g,'')+'</button>';}).join('');}
+function speak(){if(!window.speechSynthesis){auto();return;}var myGen=++gen;var u=new SpeechSynthesisUtterance(LINES[i].t);u.rate=rate;var vv=voiceNow();if(vv){u.voice=vv;u.lang=vv.lang||'en-US';}var fired=false;u.onend=function(){if(fired||myGen!==gen)return;fired=true;adv();};u.onerror=function(){if(fired||myGen!==gen)return;fired=true;setTimeout(adv,150);};try{window.speechSynthesis.cancel();}catch(e){}window.speechSynthesis.speak(u);}
+function auto(){var myGen=++gen;setTimeout(function(){if(myGen===gen&&on&&!paused)adv();},2400);}
+function adv(){if(!on||paused)return;if(i<LINES.length-1){if(testMode&&LINES[i+1].it!==LINES[i].it){stop();return;}i++;render();step();}else{stop();}}
+function step(){if(!on)return;render();speak();}
+function setPlayUI(){var lbl=(on&&!paused)?'&#10073;&#10073; Pause':(on?'&#9654; Resume':'&#9654; Play');var b=document.getElementById('playBtn'),f=document.getElementById('fsPlay');if(b){b.innerHTML=lbl;b.classList.toggle('play',!(on&&!paused));}if(f)f.innerHTML=lbl;}
+function toggle(){if(!on){on=true;paused=false;setPlayUI();if(window.speechSynthesis){var p=new SpeechSynthesisUtterance('Okay, here we go.');p.rate=rate;var vv=voiceNow();if(vv)p.voice=vv;window.speechSynthesis.speak(p);}step();}else{paused=!paused;if(paused){gen++;if(window.speechSynthesis)window.speechSynthesis.cancel();setPlayUI();}else{setPlayUI();step();}}}
+function stop(){on=false;paused=false;gen++;if(window.speechSynthesis)window.speechSynthesis.cancel();setPlayUI();}
+window.next=function(){gen++;if(window.speechSynthesis)window.speechSynthesis.cancel();if(i<LINES.length-1)i++;render();if(on&&!paused)step();};
+window.prev=function(){gen++;if(window.speechSynthesis)window.speechSynthesis.cancel();if(i>0)i--;render();if(on&&!paused)step();};
+window.jump=function(idx){gen++;if(window.speechSynthesis)window.speechSynthesis.cancel();i=idx;render();if(on&&!paused)step();};
+window.setRate=function(v){rate=Math.max(0.5,Math.min(3,parseFloat(v)));document.getElementById('rate').value=rate;document.getElementById('rv').textContent=rate.toFixed(2)+'×';};
+window.setVoice=function(idx){var v=vl[parseInt(idx,10)];if(v){voice=v;userPicked=true;}};
+window.setVoiceB=function(idx){var v=vl[parseInt(idx,10)];if(v){voiceB=v;userPickedB=true;}};
+window.toggleTwo=function(){twoVoice=!twoVoice;document.getElementById('tvBtn').textContent='🎭 2 voices: '+(twoVoice?'ON':'OFF');document.getElementById('vbWrap').style.display=twoVoice?'inline':'none';};
+window.openFs=function(){if(!ITEMS[curItem()].img)return;document.getElementById('fs').classList.add('open');applyTrans();renderFs();setGal();};
+window.closeFs=function(){document.getElementById('fs').classList.remove('open');};
+function applyTrans(){var fs=document.getElementById('fs'),tr=document.getElementById('fstrans'),b=document.getElementById('ttBtn');fs.classList.toggle('side',transMode==='side');tr.classList.toggle('hidden',transMode==='off');b.textContent='Transcript: '+(transMode==='bottom'?'Bottom':(transMode==='side'?'Side':'Off'));}
+window.cycleTrans=function(){transMode=transMode==='bottom'?'side':(transMode==='side'?'off':'bottom');applyTrans();};
+window.watchHer=function(){var it=ITEMS[curItem()];if(on&&!paused){paused=true;gen++;if(window.speechSynthesis)window.speechSynthesis.cancel();setPlayUI();}var p=document.getElementById('vp'),v=document.getElementById('vpv');document.getElementById('vptitle').textContent='🎬 '+it.title;p.classList.add('open');if(v.getAttribute('data-src')!==VIDEO){v.src=VIDEO;v.setAttribute('data-src',VIDEO);}var seek=function(){try{v.currentTime=it.ts||0;}catch(e){}v.play().catch(function(){});};if(v.readyState>=1)seek();else v.addEventListener('loadedmetadata',seek,{once:true});};
+window.closeVid=function(){var v=document.getElementById('vpv');try{v.pause();}catch(e){}var p=document.getElementById('vp');p.classList.remove('open','big','fill');};
+window.vpToggle=function(){var v=document.getElementById('vpv');if(v.paused)v.play().catch(function(){});else v.pause();};
+window.vpSeek=function(d){var v=document.getElementById('vpv');try{v.currentTime=Math.max(0,(v.currentTime||0)+d);}catch(e){}};
+window.vpRate=function(d){var v=document.getElementById('vpv');v.playbackRate=Math.max(0.5,Math.min(3,(v.playbackRate||1)+d));};
+window.vpBig=function(){var p=document.getElementById('vp');p.classList.remove('fill');p.classList.toggle('big');};
+window.vpFill=function(){var p=document.getElementById('vp');p.classList.remove('big');p.classList.toggle('fill');};
+function renderQp(){var it=ITEMS[curItem()];var has=it.q&&it.o&&it.o.length;var btn=document.getElementById('qpBtn');if(btn)btn.style.display=has?'':'none';
+  var p=document.getElementById('qp');if(!p.classList.contains('open'))return;
+  if(!has){document.getElementById('qpq').textContent='(No question for this item.)';document.getElementById('qpo').innerHTML='';document.getElementById('qpfb').innerHTML='';return;}
+  document.getElementById('qpq').textContent=it.q;
+  document.getElementById('qpo').innerHTML=it.o.map(function(o,j){return '<button class="qpo" data-j="'+j+'" onclick="pickQp('+j+')">'+String.fromCharCode(65+j)+'. '+String(o).replace(/</g,'')+'</button>';}).join('');
+  document.getElementById('qpfb').innerHTML='';}
+function showQpFb(){var it=ITEMS[curItem()];var h='';if(it.c>=0&&it.o[it.c])h+='<div><b>Answer:</b> '+String(it.o[it.c]).replace(/</g,'')+'</div>';(it.fb||[]).forEach(function(s){h+='<div>'+String(s).replace(/</g,'')+'</div>';});document.getElementById('qpfb').innerHTML=h;}
+window.pickQp=function(j){var it=ITEMS[curItem()];var os=document.querySelectorAll('#qpo .qpo');for(var n=0;n<os.length;n++){var bj=+os[n].getAttribute('data-j');if(bj===it.c)os[n].classList.add('correct');else if(bj===j)os[n].classList.add('wrong');}showQpFb();};
+window.revealQp=function(){var it=ITEMS[curItem()];var os=document.querySelectorAll('#qpo .qpo');for(var n=0;n<os.length;n++){if(+os[n].getAttribute('data-j')===it.c)os[n].classList.add('correct');}showQpFb();};
+window.toggleQp=function(){var p=document.getElementById('qp');p.classList.toggle('open');var b=document.getElementById('qpBtn');if(b)b.textContent=p.classList.contains('open')?'📝 Question: ON':'📝 Question';if(p.classList.contains('open'))renderQp();};
+window.swapImg=function(s){var im=document.getElementById('im');if(im)im.src=s;var fi=document.getElementById('fsim');if(fi)fi.src=s;};
+var galIdx=0;
+function setGal(){var it=ITEMS[curItem()];var n=(it.imgs&&it.imgs.length)||0;var fsopen=document.getElementById('fs').classList.contains('open');
+  var L=document.querySelector('.gleft'),R=document.querySelector('.gright'),c=document.getElementById('galcount');
+  var fl=document.querySelector('.fsgleft'),fr=document.querySelector('.fsgright'),fc=document.getElementById('fscount');
+  var multi=n>1;var pg=multi?'block':'none';
+  if(L)L.style.display=pg;if(R)R.style.display=pg;if(c){c.style.display=pg;if(multi)c.textContent=(galIdx+1)+' / '+n;}
+  if(fl)fl.style.display=(multi&&fsopen)?'block':'none';if(fr)fr.style.display=(multi&&fsopen)?'block':'none';if(fc){fc.style.display=(multi&&fsopen)?'block':'none';if(multi)fc.textContent=(galIdx+1)+' / '+n;}
+  if(multi){var s=it.imgs[galIdx];var im=document.getElementById('im');if(im)im.src=s;var fi=document.getElementById('fsim');if(fi&&fsopen)fi.src=s;
+    var ts=document.querySelectorAll('#thumbs img');for(var k=0;k<ts.length;k++)ts[k].style.outline=(k===galIdx?'2px solid #38bdf8':'');}}
+window.galStep=function(d){var it=ITEMS[curItem()];var n=(it.imgs&&it.imgs.length)||0;if(n<2)return;galIdx=(galIdx+d+n)%n;setGal();};
+window.galTo=function(j){galIdx=j;setGal();};
+window.pausePlay=function(){if(on&&!paused){paused=true;gen++;if(window.speechSynthesis)window.speechSynthesis.cancel();setPlayUI();}};
+window.procPrev=function(){var k=curItem();if(k>0)jump(START[k-1]);};
+window.procNext=function(){var k=curItem();if(k<ITEMS.length-1)jump(START[k+1]);};
+function setPbHref(){if(!PLAYBOOK)return;var pid=(ITEMS[curItem()]||{}).playbookId||'';var u=PLAYBOOK+(pid?'#'+pid:'');var a=document.getElementById('pbBtn'),b=document.getElementById('fspbBtn');if(a)a.setAttribute('href',u);if(b)b.setAttribute('href',u);}
+if(!VIDEO){var _wb=document.querySelector('.watch');if(_wb)_wb.style.display='none';}
+if(!PLAYBOOK){var _pb=document.querySelectorAll('#pbBtn,#fspbBtn');for(var _x=0;_x<_pb.length;_x++)_pb[_x].style.display='none';}
+if(!ITEMS.some(function(x){return x.img;})){var _hr=document.querySelector('.hintrow');if(_hr)_hr.innerHTML='Tip: tap any sentence to jump &middot; with Self-test on, the answer is hidden &mdash; talk it out, then <b>&#128065; Reveal &amp; hear</b> &middot; keys in the bar below.';}
+function applyTest(){var n=document.getElementById('narr'),r=document.getElementById('revealBtn');if(!n)return;if(testMode&&!revealed){n.classList.add('tt-hidden');if(r)r.style.display='block';}else{n.classList.remove('tt-hidden');if(r)r.style.display='none';}}
+window.toggleTest=function(){testMode=!testMode;revealed=false;var b=document.getElementById('testBtn');if(b){b.textContent='🧠 Self-test: '+(testMode?'ON':'OFF');b.classList.toggle('tt-on',testMode);}applyTest();};
+window.revealTest=function(){revealed=true;applyTest();if(!on||paused)toggle();};
+if(testMode){var _tb0=document.getElementById('testBtn');if(_tb0){_tb0.textContent='🧠 Self-test: ON';_tb0.classList.add('tt-on');}}
+window.toggle=toggle;
+document.addEventListener('keydown',function(e){var tag=(e.target&&e.target.tagName)||'';if(tag==='INPUT'||tag==='SELECT'||tag==='TEXTAREA')return;var k=e.key,handled=true;
+  var vp=document.getElementById('vp');
+  if(vp.classList.contains('open')){var vv=document.getElementById('vpv');if((k===' '||k==='Spacebar')&&e.target===vv)return;
+    if(k===' '||k==='Spacebar')vpToggle();else if(k==='ArrowLeft')vpSeek(-10);else if(k==='ArrowRight')vpSeek(10);else if(k==='ArrowUp')vpRate(0.25);else if(k==='ArrowDown')vpRate(-0.25);else if(k==='y'||k==='Y')vpSeek(-2);else if(k==='d'||k==='D')vpBig();else if(k==='f'||k==='F')vpFill();else if(k==='Escape')closeVid();else handled=false;
+    if(handled){e.preventDefault();e.stopPropagation();}return;}
+  if(k===' '||k==='Spacebar')toggle();else if(k==='ArrowLeft')prev();else if(k==='ArrowRight')next();else if(k==='ArrowUp')setRate(rate+0.1);else if(k==='ArrowDown')setRate(rate-0.1);
+  else if(k==='f'||k==='F'){if(document.getElementById('fs').classList.contains('open'))closeFs();else openFs();}
+  else if(k==='t'||k==='T'){if(document.getElementById('fs').classList.contains('open'))cycleTrans();}
+  else if(k==='w'||k==='W')watchHer();else if(k==='[')galStep(-1);else if(k===']')galStep(1);else if(k==='Escape')closeFs();else handled=false;
+  if(handled){e.preventDefault();e.stopPropagation();}});
+render();
+</script><!-- DC Analytics Helper v1 --><script defer src="https://dc-study-analytics.dgync1.workers.dev/helper.js"></script><!-- /DC Analytics Helper -->
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "103b8d06e81040579d04d08fc593468f"}'></script><!-- End Cloudflare Web Analytics -->
+<script id="fab-ai-companion-js">
+(function(){
+  const ENDPOINT = "https://fab-ai.dgync1.workers.dev";
+  const CLASS_NAME = "BN0213"; // e.g., "CP1" / "FAB101" / "GA0102" — empty = generic chiropractic tutor
+  let panel = null;
+  let history = []; // [{role:'user'|'model', content}]
+  let currentQKey = null; // to detect Q navigation
+
+  function readCurrentQ() {
+    const qText = (document.querySelector('.q-text')?.innerText || '').replace(/^Q\d+(\s+of\s+\d+)?:\s*/, '');
+    const optBtns = Array.from(document.querySelectorAll('.opt-btn'));
+    const options = optBtns.map(b => {
+      const clone = b.cloneNode(true);
+      clone.querySelectorAll('.rationale').forEach(r => r.remove());
+      clone.querySelectorAll('.letter').forEach(r => r.remove());
+      return clone.innerText.trim();
+    });
+    let picked = null, correct = null;
+    optBtns.forEach((b, i) => {
+      if (b.classList.contains('picked-correct') || b.classList.contains('picked-wrong')) picked = i;
+      if (b.classList.contains('picked-correct') || b.classList.contains('show-correct')) correct = i;
+    });
+    const profTip = document.querySelector('.prof-tip')?.innerText?.replace(/^Professor:\s*/i, '').trim() || '';
+    const source = document.querySelector('.source-line')?.innerText?.replace(/^Source:\s*/i, '').trim() || '';
+    const quote = document.querySelector('.quote-line')?.innerText?.trim() || '';
+    return { question: qText, options, picked, correct, profTip, source, quote };
+  }
+
+  function qKey(ctx){ return (ctx.question || '') + '|' + (ctx.options || []).join('|'); }
+
+  function mdToHtml(md){
+    let html = md
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+      .replace(/(^|\n)### (.+)/g, '$1<h3>$2</h3>')
+      .replace(/`([^`]+)`/g, '<code>$1</code>')
+      .replace(/^\s*[-*]\s+(.+)$/gm, '<li>$1</li>')
+      .replace(/(<li>.*?<\/li>(\s*<li>.*?<\/li>)*)/gs, '<ul>$1</ul>');
+    html = html.split(/\n{2,}/).map(p => {
+      if (p.trim().startsWith('<ul') || p.trim().startsWith('<h3')) return p;
+      if (p.trim() === '') return '';
+      return '<p>' + p.replace(/\n/g, '<br>') + '</p>';
+    }).join('');
+    return html;
+  }
+
+  function stripForTts(text){
+    // Remove markdown markers so TTS doesn't read them aloud
+    return text
+      .replace(/\*\*/g, '')
+      .replace(/`([^`]+)`/g, '$1')
+      .replace(/^\s*[-*]\s+/gm, '')
+      .replace(/^#+\s+/gm, '')
+      .replace(/\n{2,}/g, '. ')
+      .replace(/\s+/g, ' ')
+      .trim();
+  }
+
+  let currentUtter = null;
+  function speakToggle(btn, rawText){
+    if (!window.speechSynthesis) {
+      alert('Your browser does not support text-to-speech.');
+      return;
+    }
+    if (window.speechSynthesis.speaking && currentUtter && btn.classList.contains('playing')) {
+      window.speechSynthesis.cancel();
+      document.querySelectorAll('.fab-ai-tts-btn.playing').forEach(b => {
+        b.classList.remove('playing');
+        b.innerHTML = '🔊 Read';
+      });
+      currentUtter = null;
+      return;
+    }
+    window.speechSynthesis.cancel();
+    document.querySelectorAll('.fab-ai-tts-btn.playing').forEach(b => {
+      b.classList.remove('playing');
+      b.innerHTML = '🔊 Read';
+    });
+    const u = new SpeechSynthesisUtterance(stripForTts(rawText));
+    const rateSel = btn.parentElement.querySelector('.fab-ai-tts-rate');
+    u.rate = parseFloat(rateSel && rateSel.value || '1.0');
+    /*ava-tts*/try{var _vs=(window.speechSynthesis&&window.speechSynthesis.getVoices())||[];var _av=_vs.find(function(v){return /microsoft.*ava.*natural/i.test(v.name);})||_vs.find(function(v){return /microsoft.*emma.*natural/i.test(v.name);})||_vs.find(function(v){return /google us english female/i.test(v.name);});if(_av){u.voice=_av;u.lang=_av.lang||'en-US';}}catch(e){}
+    u.onend = () => {
+      btn.classList.remove('playing');
+      btn.innerHTML = '🔊 Read';
+      currentUtter = null;
+    };
+    u.onerror = () => {
+      btn.classList.remove('playing');
+      btn.innerHTML = '🔊 Read';
+      currentUtter = null;
+    };
+    currentUtter = u;
+    btn.classList.add('playing');
+    btn.innerHTML = '⏹ Stop';
+    window.speechSynthesis.speak(u);
+  }
+
+  function appendMsg(role, text) {
+    const body = document.getElementById('fabAiBody');
+    if (!body) return null;
+    const wrap = document.createElement('div');
+    wrap.className = 'fab-ai-msg ' + role;
+    const bub = document.createElement('div');
+    bub.className = 'fab-ai-bubble';
+    if (role === 'ai') {
+      bub.innerHTML = mdToHtml(text);
+      // Add TTS row
+      const row = document.createElement('div');
+      row.className = 'fab-ai-tts-row';
+      const btn = document.createElement('button');
+      btn.className = 'fab-ai-tts-btn';
+      btn.innerHTML = '🔊 Read';
+      btn.onclick = function(){ speakToggle(btn, text); };
+      const rate = document.createElement('select');
+      rate.className = 'fab-ai-tts-rate';
+      rate.title = 'Reading speed';
+      ['0.8','1.0','1.2','1.5','2.0'].forEach(function(r){
+        const o = document.createElement('option');
+        o.value = r; o.textContent = r + 'x';
+        if (r === '1.0') o.selected = true;
+        rate.appendChild(o);
+      });
+      row.appendChild(btn);
+      row.appendChild(rate);
+      bub.appendChild(row);
+    } else {
+      bub.textContent = text;
+    }
+    wrap.appendChild(bub);
+    body.appendChild(wrap);
+    body.scrollTop = body.scrollHeight;
+    return bub;
+  }
+
+  function appendLoading(){
+    const body = document.getElementById('fabAiBody');
+    if (!body) return null;
+    const wrap = document.createElement('div');
+    wrap.className = 'fab-ai-msg ai';
+    wrap.id = 'fabAiLoading';
+    const bub = document.createElement('div');
+    bub.className = 'fab-ai-bubble';
+    bub.innerHTML = '<div class="fab-ai-loading"><div class="fab-ai-spinner"></div> Thinking...</div>';
+    wrap.appendChild(bub);
+    body.appendChild(wrap);
+    body.scrollTop = body.scrollHeight;
+    return wrap;
+  }
+
+  function removeLoading(){
+    const el = document.getElementById('fabAiLoading');
+    if (el) el.remove();
+  }
+
+  function appendStatus(text, isErr){
+    const body = document.getElementById('fabAiBody');
+    if (!body) return;
+    const div = document.createElement('div');
+    div.className = 'fab-ai-status' + (isErr ? ' err' : '');
+    div.innerHTML = text;
+    body.appendChild(div);
+    body.scrollTop = body.scrollHeight;
+  }
+
+  function renderSuggestions(ctx){
+    const body = document.getElementById('fabAiBody');
+    if (!body) return;
+    // Q preview at top
+    if (ctx.question) {
+      const qp = document.createElement('div');
+      qp.className = 'fab-ai-qpreview';
+      qp.innerHTML = '<b>Q:</b> ' + ctx.question.substring(0, 240) + (ctx.question.length > 240 ? '...' : '');
+      body.appendChild(qp);
+    }
+    // Suggestion chips
+    const sug = document.createElement('div');
+    sug.className = 'fab-ai-suggestions';
+    const chips = [];
+    if (ctx.picked === null || ctx.picked === undefined) {
+      chips.push({ label: '💡 Give me a hint', q: 'Give me a hint for this question without revealing the answer.' });
+      chips.push({ label: '🧠 Explain the concept', q: 'Explain the core concept this question is testing.' });
+    } else if (ctx.picked !== ctx.correct && ctx.picked !== null) {
+      chips.push({ label: '❌ Why did I miss this?', q: 'I picked the wrong answer. Walk me through why my pick is wrong and why the correct answer is right.' });
+      chips.push({ label: '🧠 Explain the concept', q: 'Explain the concept this question is testing in simpler terms.' });
+      chips.push({ label: '🎯 Give me a mnemonic', q: 'Give me a memorable mnemonic for this topic.' });
+    } else if (ctx.picked === ctx.correct) {
+      chips.push({ label: '✅ Why is this right?', q: 'Confirm why the correct answer is right and flag any trap distractors to watch for.' });
+      chips.push({ label: '🎯 Give me a mnemonic', q: 'Give me a memorable mnemonic for this topic.' });
+    }
+    chips.push({ label: '🌟 Use an analogy', q: 'Explain this with a dumbed-down analogy.' });
+    chips.forEach(c => {
+      const btn = document.createElement('button');
+      btn.className = 'fab-ai-sug';
+      btn.textContent = c.label;
+      btn.onclick = () => sendMessage(c.q);
+      sug.appendChild(btn);
+    });
+    body.appendChild(sug);
+  }
+
+  function clearChat(preserveCtx){
+    const body = document.getElementById('fabAiBody');
+    if (body) body.innerHTML = '';
+    history = [];
+    if (preserveCtx) {
+      const ctx = readCurrentQ();
+      renderSuggestions(ctx);
+    }
+  }
+
+  function openPanel() {
+    if (!panel) panel = buildPanel();
+    panel.classList.add('open');
+    const ctx = readCurrentQ();
+    const key = qKey(ctx);
+    if (key !== currentQKey) {
+      // Q changed — reset chat and show suggestions for new Q
+      currentQKey = key;
+      clearChat(true);
+    }
+  }
+
+  function buildPanel() {
+    const el = document.createElement('div');
+    el.className = 'fab-ai-panel';
+    el.innerHTML = '<div class="fab-ai-header">'
+      + '<h3>🩺 Study Tutor</h3>'
+      + '<button class="fab-ai-hdr-btn" onclick="fabAiClear()">Clear</button>'
+      + '<button class="fab-ai-close" onclick="fabAiClose()">×</button>'
+      + '</div>'
+      + '<div class="fab-ai-body" id="fabAiBody"></div>'
+      + '<div class="fab-ai-followup">'
+      + '<button class="fab-ai-mini-close" title="Close panel" onclick="fabAiClose()">×</button>'
+      + '<textarea id="fabAiFollowup" placeholder="Ask a question about this Q..." rows="1" onkeydown="if(event.keyCode===13&&!event.shiftKey){event.preventDefault();fabAiFollowupSend();}"></textarea>'
+      + '<button onclick="fabAiFollowupSend()">Send</button>'
+      + '</div>';
+    document.body.appendChild(el);
+    return el;
+  }
+
+  window.fabAiClose = function(){ if(panel) panel.classList.remove('open'); };
+  window.fabAiClear = function(){ clearChat(true); };
+
+  async function callWorker(payload) {
+    if (!ENDPOINT) return { clipboardFallback: true };
+    try {
+      const res = await fetch(ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || ('HTTP ' + res.status));
+      return { reply: data.reply };
+    } catch (e) {
+      return { error: String(e.message || e) };
+    }
+  }
+
+  function clipboardFallback(ctx, userQ) {
+    const letter = (i) => String.fromCharCode(65 + i);
+    let prompt = "I'm studying FAB 101 with Dr. Bui at SCUHS. Drill question:\n\n";
+    prompt += 'Q: ' + ctx.question + '\n\n';
+    if (ctx.options && ctx.options.length) {
+      ctx.options.forEach((o, i) => {
+        const m = [];
+        if (i === ctx.picked) m.push('PICKED');
+        if (i === ctx.correct) m.push('CORRECT');
+        prompt += letter(i) + '. ' + o + (m.length ? ' ('+m.join(', ')+')' : '') + '\n';
+      });
+      prompt += '\n';
+    }
+    if (ctx.profTip) prompt += 'DRILL TIP: ' + ctx.profTip + '\n\n';
+    if (userQ) prompt += 'MY QUESTION: ' + userQ + '\n\n';
+    prompt += 'Explain using a dumbed-down analogy + mnemonic.';
+    navigator.clipboard.writeText(prompt).then(() => {
+      appendStatus('✓ Prompt copied to clipboard. Ask the Study Tutor (the 🩺 button).');
+    }).catch(() => {
+      appendStatus('Could not copy. Please select manually.', true);
+    });
+  }
+
+  async function sendMessage(userText) {
+    const ctx = readCurrentQ();
+    currentQKey = qKey(ctx);
+    appendMsg('user', userText);
+    history.push({ role: 'user', content: userText });
+    appendLoading();
+
+    const payload = Object.assign({}, ctx, {
+      userQuestion: userText,
+      history: history.slice(-10), // last 10 turns for context
+      className: CLASS_NAME, // worker uses this to load class-specific knowledge
+    });
+    const result = await callWorker(payload);
+    removeLoading();
+    if (result.clipboardFallback) {
+      clipboardFallback(ctx, userText);
+      return;
+    }
+    if (result.error) {
+      appendStatus('Error: ' + result.error, true);
+      return;
+    }
+    appendMsg('ai', result.reply);
+    history.push({ role: 'model', content: result.reply });
+  }
+
+  window.fabAiFollowupSend = function() {
+    const ta = document.getElementById('fabAiFollowup');
+    const q = (ta && ta.value || '').trim();
+    if (!q) return;
+    ta.value = '';
+    sendMessage(q);
+  };
+
+  // Button install — opens panel, does NOT auto-call AI
+  function install() {
+    if (document.getElementById('fabAiBtn')) return;
+    const btn = document.createElement('button');
+    btn.className = 'fab-ai-btn';
+    btn.id = 'fabAiBtn';
+    btn.textContent = '🩺';
+    btn.title = 'Open AI Study Tutor';
+    btn.onclick = () => openPanel();
+    document.body.appendChild(btn);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', install);
+  } else {
+    install();
+  }
+})();
+</script><div class="dc-study-watermark">DC Study Supply &mdash; Dr. David Gramling, PHD</div><a href="index.html" id="dc-hub-btn" style="position:fixed;top:12px;left:12px;z-index:2147483000;background:#0b3d2e;border:1.5px solid #10b981;color:#fff;text-decoration:none;padding:8px 13px;border-radius:10px;font:700 13px -apple-system,system-ui,sans-serif;box-shadow:0 4px 14px rgba(0,0,0,.4)">&larr; Hub</a></body></html>

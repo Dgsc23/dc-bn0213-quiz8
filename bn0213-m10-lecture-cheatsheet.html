@@ -1,0 +1,656 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>BN0213 Module 10 (Lipids) &mdash; Cheat Sheet</title>
+<style>
+:root{--bg:#070b16;--card:#0e1626;--line:#1e2b45;--ink:#e8eefc;--mut:#9fb0d0;--ac:#a855f7}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;padding:16px 12px 90px}
+.wrap{max-width:900px;margin:0 auto}
+h1{font-size:1.35rem;text-align:center;margin:6px 0 2px}
+.sub{text-align:center;color:var(--mut);font-size:.85rem;margin-bottom:14px}
+.player{position:sticky;top:6px;z-index:30;background:#0b1120;border:1px solid var(--line);border-radius:12px;padding:9px 11px;margin-bottom:16px}
+audio,video{width:100%;display:block;border-radius:8px;background:#000}
+video{max-height:44vh;margin-top:8px}
+#ssvidwrap{display:none;margin-top:6px}
+.spdrow{display:flex;gap:5px;align-items:center;flex-wrap:wrap;margin-top:7px}
+.spdrow b{color:var(--mut);font-size:.74rem;font-weight:700;margin-right:2px}
+.spd{background:#0e1626;color:#c4b5fd;border:1px solid var(--line);border-radius:7px;padding:3px 9px;font-weight:700;font-size:.72rem;cursor:pointer;font-family:inherit}
+.spd.on{background:var(--ac);color:#1a0533;border-color:var(--ac)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-bottom:13px}
+.card.skip{border-color:#475569;opacity:.9}
+h2{font-size:1rem;margin:0 0 10px;color:#e9d5ff;display:flex;align-items:center;gap:9px;flex-wrap:wrap;line-height:1.35}
+.anch{display:inline-flex;gap:5px;margin-left:auto}
+.ab{border-radius:999px;padding:3px 10px;font:700 .7rem inherit;cursor:pointer;white-space:nowrap;font-family:inherit}
+.ab.aud{background:#052e2b;color:#5eead4;border:1px solid #14b8a6}
+.ab.vid{background:#3b0764;color:#e9d5ff;border:1px solid #a855f7}
+.ab:hover{filter:brightness(1.3)}
+.quote{background:#1a1030;border-left:3px solid var(--ac);border-radius:0 8px 8px 0;padding:8px 12px;margin:0 0 11px;color:#ddd6fe;font-size:.83rem;font-style:italic;line-height:1.5}
+dl{margin:0}
+dt{font-weight:800;color:#7dd3fc;font-size:.85rem;margin-top:9px}
+dd{margin:3px 0 0;color:#cbd5e1;font-size:.86rem;line-height:1.55}
+dd b{color:#fff}
+.skipnote{color:#94a3b8;font-size:.82rem;margin:0 0 9px}
+.dc-study-watermark{position:fixed;bottom:6px;right:10px;font-size:10px;color:rgba(255,255,255,.32);pointer-events:none;z-index:2147483647}
+</style><style id="fab-ai-companion-css">
+.fab-ai-btn {
+  position: fixed; bottom: 24px; right: 24px; z-index: 9998;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6); color: #fff;
+  border: none; border-radius: 50%; width: 56px; height: 56px;
+  font-size: 26px; cursor: pointer; box-shadow: 0 4px 16px rgba(99,102,241,0.45);
+  transition: all 0.2s; display: flex; align-items: center; justify-content: center;
+  padding: 0;
+}
+.fab-ai-btn:hover { transform: translateY(-2px) scale(1.05); box-shadow: 0 8px 24px rgba(99,102,241,0.6); }
+.fab-ai-btn:active { transform: scale(0.95); }
+
+.fab-ai-panel {
+  position: fixed; top: 0; right: 0; bottom: 0; width: min(480px, 94vw);
+  background: #0f172a; border-left: 2px solid #334155;
+  box-shadow: -8px 0 32px rgba(0,0,0,0.5);
+  z-index: 9999; display: flex; flex-direction: column;
+  transform: translateX(100%); transition: transform 0.28s ease-out;
+}
+.fab-ai-panel.open { transform: translateX(0); }
+
+.fab-ai-header {
+  padding: 12px 16px; background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: #fff; display: flex; align-items: center; gap: 8px;
+}
+.fab-ai-header h3 { font-size: 15px; font-weight: 700; margin: 0; flex: 1; }
+.fab-ai-hdr-btn {
+  background: rgba(255,255,255,0.15); color: #fff; border: none;
+  padding: 6px 10px; border-radius: 6px; cursor: pointer; font-size: 12px;
+  font-weight: 600;
+}
+.fab-ai-hdr-btn:hover { background: rgba(255,255,255,0.28); }
+.fab-ai-close {
+  background: rgba(255,255,255,0.15); color: #fff; border: none;
+  width: 30px; height: 30px; border-radius: 6px; cursor: pointer; font-size: 18px;
+  line-height: 1; padding: 0;
+}
+.fab-ai-close:hover { background: rgba(255,255,255,0.3); }
+
+.fab-ai-body {
+  flex: 1; overflow-y: auto; padding: 14px 16px;
+  color: #e2e8f0; font-size: 13px; line-height: 1.6;
+  display: flex; flex-direction: column; gap: 10px;
+}
+
+.fab-ai-qpreview {
+  padding: 8px 12px; background: rgba(129,140,248,0.08); border-left: 3px solid #818cf8;
+  border-radius: 6px; font-size: 12px; color: #94a3b8; max-height: 100px; overflow-y: auto;
+  flex-shrink: 0;
+}
+.fab-ai-qpreview b { color: #cbd5e1; }
+
+.fab-ai-suggestions {
+  display: flex; flex-wrap: wrap; gap: 6px; padding: 4px 0;
+}
+.fab-ai-sug {
+  background: rgba(99,102,241,0.12); color: #a5b4fc;
+  border: 1px solid rgba(99,102,241,0.35); border-radius: 14px;
+  padding: 6px 12px; font-size: 12px; cursor: pointer; font-weight: 500;
+  transition: all .15s;
+}
+.fab-ai-sug:hover { background: rgba(99,102,241,0.25); color: #dbeafe; transform: translateY(-1px); }
+
+.fab-ai-msg { display: flex; gap: 6px; max-width: 100%; }
+.fab-ai-msg.user { justify-content: flex-end; }
+.fab-ai-bubble {
+  padding: 10px 14px; border-radius: 12px; font-size: 13px; line-height: 1.55;
+  max-width: 92%; word-wrap: break-word;
+}
+.fab-ai-msg.user .fab-ai-bubble {
+  background: linear-gradient(135deg, #3b82f6, #6366f1);
+  color: #fff; border-bottom-right-radius: 4px;
+}
+.fab-ai-msg.ai .fab-ai-bubble {
+  background: #1e293b; color: #e2e8f0; border-bottom-left-radius: 4px;
+  border: 1px solid #334155;
+}
+.fab-ai-msg.ai .fab-ai-bubble strong,
+.fab-ai-msg.ai .fab-ai-bubble b { color: #a5b4fc; }
+.fab-ai-msg.ai .fab-ai-bubble ul { margin: 6px 0; padding-left: 20px; }
+.fab-ai-msg.ai .fab-ai-bubble li { margin: 3px 0; }
+.fab-ai-msg.ai .fab-ai-bubble p { margin: 0 0 8px 0; }
+.fab-ai-msg.ai .fab-ai-bubble p:last-child { margin-bottom: 0; }
+.fab-ai-msg.ai .fab-ai-bubble h3 { font-size: 13px; margin: 8px 0 4px 0; color: #c4b5fd; }
+.fab-ai-msg.ai .fab-ai-bubble code { background: #0f172a; padding: 1px 5px; border-radius: 3px; font-size: 11px; }
+
+.fab-ai-tts-row { display: flex; align-items: center; gap: 6px; margin-top: 6px; padding-top: 6px; border-top: 1px solid #334155; }
+.fab-ai-tts-btn {
+  background: rgba(129,140,248,0.15); color: #c4b5fd;
+  border: 1px solid rgba(129,140,248,0.35); border-radius: 14px;
+  padding: 3px 10px; font-size: 11px; cursor: pointer; font-weight: 500;
+  display: inline-flex; align-items: center; gap: 4px;
+}
+.fab-ai-tts-btn:hover { background: rgba(129,140,248,0.3); color: #ddd6fe; }
+.fab-ai-tts-btn.playing { background: rgba(239,68,68,0.18); color: #fca5a5; border-color: rgba(239,68,68,0.4); }
+.fab-ai-tts-rate {
+  background: #0f172a; color: #cbd5e1; border: 1px solid #334155;
+  border-radius: 6px; padding: 2px 6px; font-size: 11px; cursor: pointer;
+}
+
+.fab-ai-status {
+  padding: 10px 14px; background: rgba(99,102,241,0.12); border: 1px solid rgba(99,102,241,0.3);
+  border-radius: 8px; color: #a5b4fc; font-size: 12px;
+}
+.fab-ai-status.err { background: rgba(239,68,68,0.12); border-color: rgba(239,68,68,0.4); color: #fca5a5; }
+.fab-ai-loading { display: flex; align-items: center; gap: 8px; color: #94a3b8; padding: 4px 6px; font-size: 12px; }
+.fab-ai-spinner {
+  width: 12px; height: 12px; border: 2px solid #334155; border-top-color: #818cf8;
+  border-radius: 50%; animation: fab-ai-spin 0.8s linear infinite;
+}
+@keyframes fab-ai-spin { to { transform: rotate(360deg); } }
+
+.fab-ai-followup {
+  padding: 12px; background: #1e293b; border-top: 1px solid #334155;
+  display: flex; gap: 8px; align-items: flex-end;
+}
+.fab-ai-mini-close {
+  background: #334155; color: #94a3b8; border: 1px solid #475569;
+  width: 32px; height: 36px; border-radius: 8px; cursor: pointer;
+  font-size: 16px; line-height: 1; padding: 0; font-weight: 600;
+  flex-shrink: 0;
+}
+.fab-ai-mini-close:hover { background: #475569; color: #f87171; border-color: #ef4444; }
+.fab-ai-followup textarea {
+  flex: 1; background: #0f172a; color: #e2e8f0;
+  border: 1px solid #334155; border-radius: 8px;
+  padding: 8px 10px; font-size: 13px; font-family: inherit;
+  resize: none; min-height: 36px; max-height: 120px;
+}
+.fab-ai-followup textarea:focus { outline: none; border-color: #818cf8; }
+.fab-ai-followup button {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6); color: #fff;
+  border: none; padding: 0 14px; border-radius: 8px; font-weight: 600;
+  cursor: pointer; font-size: 13px; white-space: nowrap;
+}
+.fab-ai-followup button:hover { transform: translateY(-1px); }
+.fab-ai-followup button:disabled { opacity: 0.5; cursor: not-allowed; }
+</style></head><body>
+<div class="wrap">
+<h1>&#128203; BN0213 Module 10 &mdash; Lipids Cheat Sheet</h1>
+<div class="sub">Dr. Jory Basso &middot; every section jumps the audio or the video to the moment he says it</div>
+
+<div class="player">
+  <audio id="ssaud" controls preload="metadata" src="bn0213-m10-lipids.mp3"></audio>
+  <div id="ssvidwrap"><video id="ssvid" controls playsinline preload="none" src="https://pub-7fb2bb3e5a0b4096a57fc578b5a16078.r2.dev/bn0213/m10-lipids/lecture-fs-37da13d4.mp4"></video></div>
+  <div class="spdrow"><b>Speed</b>
+    <button class="spd" onclick="ssRate(0.75,this)">0.75x</button>
+    <button class="spd on" onclick="ssRate(1,this)">1x</button>
+    <button class="spd" onclick="ssRate(1.25,this)">1.25x</button>
+    <button class="spd" onclick="ssRate(1.5,this)">1.5x</button>
+    <button class="spd" onclick="ssRate(2,this)">2x</button>
+    <button class="spd" onclick="ssRate(2.5,this)">2.5x</button>
+    <button class="spd" onclick="ssRate(3,this)">3x</button>
+    <button class="spd" style="margin-left:auto" onclick="ssHideVid()">&#10005; hide video</button>
+  </div>
+</div>
+
+<section class="card">
+<h2>Why lipids behave the way they do <span class="anch"><button class="ab aud" onclick="ssSeekTo(2328)" title="Play Dr. Basso from here">&#127911; 38:48</button><button class="ab vid" onclick="ssVideoAt(2328)" title="Watch Dr. Basso from here">&#127916; Watch</button></span></h2>
+<dl>
+<dt>Definition</dt><dd>A lipid is defined by being <b>insoluble in water</b> (hydrophobic). Long nonpolar C-C and C-H chains give water nothing to grab.</dd>
+<dt>Soluble in</dt><dd>Organic solvents: ether, chloroform, benzene, acetone. (You clean spilled paint with acetone. Like dissolves like.)</dd>
+<dt>Energy</dt><dd>Those same C-C and C-H bonds are high-energy, which is why fat carries more than double the calories per gram of sugar.</dd>
+</dl></section>
+<section class="card">
+<h2>The jobs of lipids <span class="anch"><button class="ab aud" onclick="ssSeekTo(2584)" title="Play Dr. Basso from here">&#127911; 43:04</button><button class="ab vid" onclick="ssVideoAt(2584)" title="Watch Dr. Basso from here">&#127916; Watch</button></span></h2>
+<dl>
+<dt>Energy</dt><dd>Stored as <b>triacylglycerol</b> (= triglyceride).</dd>
+<dt>Cell membranes</dt><dd>Phospholipids.</dd>
+<dt>Vitamin absorption</dt><dd>The fat-soluble vitamins <b>D, E, A, K</b> (his slide writes them <b>DEAK</b>). No dietary fat = you do not absorb them. A fat-free salad costs you these; add walnuts or olive oil.</dd>
+<dt>Steroid hormones</dt><dd>Made from cholesterol (testosterone, estrogen).</dd>
+<dt>Protection</dt><dd>Adipose (triacylglycerols) pads the internal organs.</dd>
+<dt>Electrical insulation</dt><dd>Myelin sheaths around axons.</dd>
+<dt>Lung surfactant</dt><dd>Dipalmitoyl lecithin.</dd>
+</dl></section>
+<section class="card">
+<h2>Triacylglycerol and wax <span class="anch"><button class="ab aud" onclick="ssSeekTo(2880)" title="Play Dr. Basso from here">&#127911; 48:00</button><button class="ab vid" onclick="ssVideoAt(2880)" title="Watch Dr. Basso from here">&#127916; Watch</button></span></h2>
+<div class="quote">He put the drawn triacylglycerol up at 101:24 and joked: "here's your tag, you're going to have to draw this out on the exam. Just kidding."</div>
+<dl>
+<dt>Triacylglycerol (Objective 1)</dt><dd><b>Glycerol + 3 fatty acids</b>, joined by <b>3 ester bonds</b>. (Acid + alcohol, lose a water = ester.) Stored in adipocytes in animals; the same molecule is the oil in plant seeds.</dd>
+<dt>Wax</dt><dd>A fatty acid esterified to a <b>monohydric long-chain alcohol</b>. Example: <b>cetyl palmitate</b>, the major component of spermaceti wax.</dd>
+<dt>Wax function</dt><dd>Waterproofing and energy storage. A cactus has a waxy coat; your skin has an oily one. Lose that barrier (burns) and you dehydrate.</dd>
+</dl></section>
+<section class="card">
+<h2>The fatty acid itself <span class="anch"><button class="ab aud" onclick="ssSeekTo(3122)" title="Play Dr. Basso from here">&#127911; 52:02</button><button class="ab vid" onclick="ssVideoAt(3122)" title="Watch Dr. Basso from here">&#127916; Watch</button></span></h2>
+<div class="quote">"Watch this, everybody, and hopefully you will remember this forever. We say it's saturated because it's saturated with hydrogens." (53:03)</div>
+<dl>
+<dt>Structure</dt><dd>A <b>long-chain carboxylic acid</b>. Chain length <b>C4 to C24</b>. General formula <b>R-COOH</b>.</dd>
+<dt>The two ends</dt><dd>The <b>carboxyl end</b> (COOH, the acid end) and the <b>methyl end</b>, also called the <b>omega end</b>. "Make sure you know that there's those two terminus."</dd>
+<dt>Saturated</dt><dd><b>Saturated with hydrogens.</b> No carbon-to-carbon double bonds; every carbon holds all the hydrogen it can.</dd>
+<dt>Unsaturated</dt><dd>Has one or more C=C double bonds, so it is missing hydrogens there. <b>MUFA</b> = one double bond. <b>PUFA</b> = more than one.</dd>
+<dt>The bend</dt><dd>A double bond is rigid and <b>kinks</b> the chain. Single bonds swivel, so saturated chains hang straight.</dd>
+</dl></section>
+<section class="card">
+<h2>THE FOUR S&#x27;s — his own red pen <span class="anch"><button class="ab aud" onclick="ssSeekTo(4139)" title="Play Dr. Basso from here">&#127911; 68:59</button><button class="ab vid" onclick="ssVideoAt(4139)" title="Watch Dr. Basso from here">&#127916; Watch</button></span></h2>
+<div class="quote">"Here's an easy way I want you to remember this. Everyone, please pay attention. Make notes here." (68:59)</div>
+<dl>
+<dt>Saturated</dt><dd><b>Sat · Single</b> (bonds) <b>· Straight</b> (no bend) <b>· Solid</b> at room temp.</dd>
+<dt>Unsaturated</dt><dd><b>Un · Double</b> (bonds) <b>· Bend · Liquid.</b></dd>
+<dt>Why</dt><dd>Straight chains stack tightly (like uncooked spaghetti), so they are solid. Bent chains cannot pack, so they stay liquid.</dd>
+<dt>His examples</dt><dd>The white fat on a filet mignon is solid, and melts on the barbecue. Cheese is solid on the counter. Olive oil pours.</dd>
+<dt>Rule of thumb</dt><dd>Animal products are mostly saturated; plants are mostly unsaturated.</dd>
+</dl></section>
+<section class="card">
+<h2>Nomenclature (Objective 3) <span class="anch"><button class="ab aud" onclick="ssSeekTo(3816)" title="Play Dr. Basso from here">&#127911; 63:36</button><button class="ab vid" onclick="ssVideoAt(3816)" title="Watch Dr. Basso from here">&#127916; Watch</button></span></h2>
+<div class="quote">"Make sure you understand that nomenclature. <b>You will see that on a test.</b>" (65:30)</div>
+<dl>
+<dt>Suffix</dt><dd><b>-anoic = saturated.</b> Eicosanoic acid (= arachidic acid), found in peanut oil. <b>-enoic = unsaturated.</b> Eicosapentaenoic acid (EPA), an omega-3 in cold-water fish.</dd>
+<dt>Alpha / beta</dt><dd>Numbering from the <b>carboxyl</b> end: the carbon next to COOH is <b>alpha</b>, the next is <b>beta</b>, then down the Greek alphabet.</dd>
+<dt>Omega</dt><dd>The <b>last</b> carbon (methyl end), because omega is the last Greek letter.</dd>
+<dt>Omega family</dt><dd>Named for the position of the <b>FIRST double bond counted from the methyl end</b>. 3 carbons in = omega-3; 6 in = omega-6; 9 in = omega-9.</dd>
+<dt>Shorthand</dt><dd><b>C18:3</b> = 18 carbons long, 3 double bonds. Carbons before the colon, double bonds after.</dd>
+<dt>His figure</dt><dd>Omega-3: alpha-linolenic (ALA) C18:3 · EPA C20:5 · DHA C22:6. Omega-6: linoleic (LA) C18:2 · arachidonic (AA) C20:4.</dd>
+</dl></section>
+<section class="card">
+<h2>Essential fatty acids <span class="anch"><button class="ab aud" onclick="ssSeekTo(3870)" title="Play Dr. Basso from here">&#127911; 64:30</button><button class="ab vid" onclick="ssVideoAt(3870)" title="Watch Dr. Basso from here">&#127916; Watch</button></span></h2>
+<dl>
+<dt>Definition</dt><dd>Your body <b>cannot synthesize</b> them, so they must be eaten. "We have to eat them because we cannot make them."</dd>
+<dt>The two parents</dt><dd><b>Linoleic acid</b> (omega-6) and <b>alpha-linolenic acid</b> (omega-3). Both are PUFAs. <b>Omega-9 is NOT essential.</b></dd>
+<dt>The branches</dt><dd>Omega-6 leads down to <b>arachidonic acid</b>. Omega-3 leads to <b>EPA</b>, then <b>DHA</b>.</dd>
+<dt>Eicosanoids (Objective 5)</dt><dd>Signalling molecules built from <b>20-carbon PUFAs</b> (<i>eicosa</i> = twenty). That is why arachidonic acid, C20:4, matters.</dd>
+<dt>Omega-3 clinical significance</dt><dd>Keeps membranes fluid; displaces arachidonic acid from the phospholipids of platelets, endothelial and inflammatory cells; lowers serum triglycerides; cardioprotective. Sources: cold-water fish (salmon, tuna, herring), walnuts, flaxseed.</dd>
+<dt>Western diet</dt><dd>Takes in far too much omega-6.</dd>
+</dl></section>
+<section class="card">
+<h2>Cis vs trans (Objective 4) <span class="anch"><button class="ab aud" onclick="ssSeekTo(5968)" title="Play Dr. Basso from here">&#127911; 99:28</button><button class="ab vid" onclick="ssVideoAt(5968)" title="Watch Dr. Basso from here">&#127916; Watch</button></span></h2>
+<dl>
+<dt>Cis</dt><dd>Both hydrogens on the <b>SAME side</b> of the C=C. Causes a <b>bend</b>. Found in natural food: almonds, avocados, bacon, canola oil.</dd>
+<dt>Trans</dt><dd>Hydrogens on <b>OPPOSITE sides</b>. <b>No bend</b>, stays straight, so it packs and <b>behaves like a saturated fat</b> even though it is unsaturated.</dd>
+<dt>How trans fats are made</dt><dd><b>PARTIAL hydrogenation.</b> (Complete hydrogenation would give a saturated fat instead.) This is his Study Check answer.</dd>
+<dt>Health</dt><dd>Trans fats raise <b>cardiovascular disease and diabetes</b> risk. He noted the mechanism is unclear.</dd>
+<dt>Where they are</dt><dd>Naturally in small amounts: milk, eggs, beef. From hydrogenation: deep-fried foods, baked goods and cookies, crackers and chips, margarine, vegetable shortening.</dd>
+</dl></section>
+<section class="card">
+<h2>Phospholipids and sphingolipids (Objective 6) <span class="anch"><button class="ab aud" onclick="ssSeekTo(6328)" title="Play Dr. Basso from here">&#127911; 105:28</button><button class="ab vid" onclick="ssVideoAt(6328)" title="Watch Dr. Basso from here">&#127916; Watch</button></span></h2>
+<div class="quote">"This is one you should know for sure" (106:19, lecithin) · "You should definitely know this" (108:25, sphingomyelin)</div>
+<dl>
+<dt>The recipe</dt><dd><b>Alcohol + fatty acid + phosphate + amino alcohol.</b> The core alcohol names the subtype.</dd>
+<dt>Glycerophospholipid</dt><dd>Alcohol = <b>glycerol</b>. Example: <b>phosphatidylcholine = lecithin</b>.</dd>
+<dt>Sphingophospholipid</dt><dd>Alcohol = <b>sphingosine</b>. Example: <b>sphingomyelin</b>.</dd>
+<dt>Lecithin</dt><dd><b>Dipalmitoyl lecithin IS the lung surfactant.</b> It <b>lowers the surface tension</b> of the alveoli, which <b>prevents alveolar collapse</b>. A premature infant has not made it yet: respiratory distress syndrome.</dd>
+<dt>Sphingomyelin</dt><dd>A <b>large portion of the myelin sheath</b> (nerves, brain, lungs, liver). Myelin insulates axons.</dd>
+<dt>Glycolipids</dt><dd><b>Ceramide + carbohydrate</b> (glyco = sugar).</dd>
+<dt>Cerebroside vs ganglioside</dt><dd><b>Cerebroside</b> = ONE sugar (glucose or galactose), located in <b>myelin</b>, brain and nerves. <b>Ganglioside</b> = an oligosaccharide (many sugars), located in the <b>gray matter</b>.</dd>
+</dl></section>
+<section class="card">
+<h2>Lysosomal storage diseases <span class="anch"><button class="ab aud" onclick="ssSeekTo(7128)" title="Play Dr. Basso from here">&#127911; 118:48</button><button class="ab vid" onclick="ssVideoAt(7128)" title="Watch Dr. Basso from here">&#127916; Watch</button></span></h2>
+<dl>
+<dt>The principle</dt><dd>The lysosomal enzyme is missing, so its substrate accumulates.</dd>
+<dt>Tay-Sachs</dt><dd>Missing <b>hexosaminidase A</b> → <b>GM2 ganglioside</b> accumulates. Cherry-red spot in the macula, blindness, psychomotor retardation, exaggerated startle reflex, death usually before age 2. <b>No hepatosplenomegaly.</b></dd>
+<dt>Gaucher</dt><dd>Missing <b>glucocerebrosidase</b> → <b>glucocerebroside</b> accumulates. Hepatosplenomegaly, erosion of bone and fractures, pancytopenia/thrombocytopenia.</dd>
+<dt>Niemann-Pick</dt><dd>Missing <b>sphingomyelinase</b> → <b>sphingomyelin</b> accumulates. Cherry-red spot <b>AND</b> hepatosplenomegaly, mental retardation, early death.</dd>
+<dt>His mnemonic</dt><dd><b>Cherry Trees Never Grow Tall In Sand</b> = <b>C</b>RAO (central retinal artery occlusion), <b>T</b>rauma, <b>N</b>iemann-Pick, <b>G</b>aucher, <b>T</b>ay-Sachs, <b>S</b>andhoff. (The causes of a cherry-red spot.)</dd>
+<dt>His exam tip</dt><dd>Cherry-red spot + CNS symptoms but <b>NO hepatosplenomegaly = Tay-Sachs</b> (Niemann-Pick would give the big liver and spleen). He ranked board likelihood: <b>1) Tay-Sachs 2) Niemann-Pick 3) Gaucher.</b></dd>
+</dl></section>
+<section class="card skip"><h2>&#9940; What Dr. Basso told you to SKIP</h2><p class="skipnote">Both of these are marked not-testable in his own deck. Do not spend the night on them.</p><dl>
+<dt>Prostaglandins &amp; Arachidonic Metabolism (the COX-1 / COX-2 cascade) <span class="anch"><button class="ab aud" onclick="ssSeekTo(5046)" title="Play Dr. Basso from here">&#127911; 84:06</button><button class="ab vid" onclick="ssVideoAt(5046)" title="Watch Dr. Basso from here">&#127916; Watch</button></span></dt><dd>Stamped <b>"FYI: NOT TESTABLE"</b> on his own slide, and he said out loud: "you don't have to memorize any of this."</dd>
+<dt>The phospholipid classification diagram <span class="anch"><button class="ab aud" onclick="ssSeekTo(6235)" title="Play Dr. Basso from here">&#127911; 103:55</button><button class="ab vid" onclick="ssVideoAt(6235)" title="Watch Dr. Basso from here">&#127916; Watch</button></span></dt><dd>The slide itself reads <b>"*This diagram is not testable."</b></dd>
+</dl></section>
+</div>
+<script>
+function ssPlayAt(el, sec){
+  var go=function(){ try{ el.currentTime=sec; }catch(e){} var p=el.play(); if(p&&p.catch)p.catch(function(){}); };
+  if(el.readyState>=1) go();
+  else { el.addEventListener('loadedmetadata',go,{once:true}); el.addEventListener('canplay',go,{once:true}); try{el.load();}catch(e){} }
+}
+function ssSeekTo(sec){
+  var v=document.getElementById('ssvid'); try{ v.pause(); }catch(e){}
+  ssPlayAt(document.getElementById('ssaud'), sec);
+  document.querySelector('.player').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function ssVideoAt(sec){
+  var a=document.getElementById('ssaud'); try{ a.pause(); }catch(e){}
+  document.getElementById('ssvidwrap').style.display='block';
+  ssPlayAt(document.getElementById('ssvid'), sec);
+  document.querySelector('.player').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function ssHideVid(){ var v=document.getElementById('ssvid'); try{v.pause();}catch(e){}
+  document.getElementById('ssvidwrap').style.display='none'; }
+function ssRate(r, btn){
+  r=Math.max(0.5,Math.min(3,r));
+  document.getElementById('ssaud').playbackRate=r;
+  document.getElementById('ssvid').playbackRate=r;
+  var bs=document.querySelectorAll('.spd'); for(var i=0;i<bs.length;i++){ if(bs[i].textContent.indexOf('x')>-1) bs[i].classList.remove('on'); }
+  if(btn) btn.classList.add('on');
+}
+</script>
+<div class="dc-study-watermark">DC Study Supply &mdash; Dr. David Gramling, PHD</div>
+<script id="fab-ai-companion-js">
+(function(){
+  const ENDPOINT = "https://fab-ai.dgync1.workers.dev";
+  const CLASS_NAME = "BN0213"; // e.g., "CP1" / "FAB101" / "GA0102" — empty = generic chiropractic tutor
+  let panel = null;
+  let history = []; // [{role:'user'|'model', content}]
+  let currentQKey = null; // to detect Q navigation
+
+  function readCurrentQ() {
+    const qText = (document.querySelector('.q-text')?.innerText || '').replace(/^Q\d+(\s+of\s+\d+)?:\s*/, '');
+    const optBtns = Array.from(document.querySelectorAll('.opt-btn'));
+    const options = optBtns.map(b => {
+      const clone = b.cloneNode(true);
+      clone.querySelectorAll('.rationale').forEach(r => r.remove());
+      clone.querySelectorAll('.letter').forEach(r => r.remove());
+      return clone.innerText.trim();
+    });
+    let picked = null, correct = null;
+    optBtns.forEach((b, i) => {
+      if (b.classList.contains('picked-correct') || b.classList.contains('picked-wrong')) picked = i;
+      if (b.classList.contains('picked-correct') || b.classList.contains('show-correct')) correct = i;
+    });
+    const profTip = document.querySelector('.prof-tip')?.innerText?.replace(/^Professor:\s*/i, '').trim() || '';
+    const source = document.querySelector('.source-line')?.innerText?.replace(/^Source:\s*/i, '').trim() || '';
+    const quote = document.querySelector('.quote-line')?.innerText?.trim() || '';
+    return { question: qText, options, picked, correct, profTip, source, quote };
+  }
+
+  function qKey(ctx){ return (ctx.question || '') + '|' + (ctx.options || []).join('|'); }
+
+  function mdToHtml(md){
+    let html = md
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+      .replace(/(^|\n)### (.+)/g, '$1<h3>$2</h3>')
+      .replace(/`([^`]+)`/g, '<code>$1</code>')
+      .replace(/^\s*[-*]\s+(.+)$/gm, '<li>$1</li>')
+      .replace(/(<li>.*?<\/li>(\s*<li>.*?<\/li>)*)/gs, '<ul>$1</ul>');
+    html = html.split(/\n{2,}/).map(p => {
+      if (p.trim().startsWith('<ul') || p.trim().startsWith('<h3')) return p;
+      if (p.trim() === '') return '';
+      return '<p>' + p.replace(/\n/g, '<br>') + '</p>';
+    }).join('');
+    return html;
+  }
+
+  function stripForTts(text){
+    // Remove markdown markers so TTS doesn't read them aloud
+    return text
+      .replace(/\*\*/g, '')
+      .replace(/`([^`]+)`/g, '$1')
+      .replace(/^\s*[-*]\s+/gm, '')
+      .replace(/^#+\s+/gm, '')
+      .replace(/\n{2,}/g, '. ')
+      .replace(/\s+/g, ' ')
+      .trim();
+  }
+
+  let currentUtter = null;
+  function speakToggle(btn, rawText){
+    if (!window.speechSynthesis) {
+      alert('Your browser does not support text-to-speech.');
+      return;
+    }
+    if (window.speechSynthesis.speaking && currentUtter && btn.classList.contains('playing')) {
+      window.speechSynthesis.cancel();
+      document.querySelectorAll('.fab-ai-tts-btn.playing').forEach(b => {
+        b.classList.remove('playing');
+        b.innerHTML = '🔊 Read';
+      });
+      currentUtter = null;
+      return;
+    }
+    window.speechSynthesis.cancel();
+    document.querySelectorAll('.fab-ai-tts-btn.playing').forEach(b => {
+      b.classList.remove('playing');
+      b.innerHTML = '🔊 Read';
+    });
+    const u = new SpeechSynthesisUtterance(stripForTts(rawText));
+    const rateSel = btn.parentElement.querySelector('.fab-ai-tts-rate');
+    u.rate = parseFloat(rateSel && rateSel.value || '1.0');
+    /*ava-tts*/try{var _vs=(window.speechSynthesis&&window.speechSynthesis.getVoices())||[];var _av=_vs.find(function(v){return /microsoft.*ava.*natural/i.test(v.name);})||_vs.find(function(v){return /microsoft.*emma.*natural/i.test(v.name);})||_vs.find(function(v){return /google us english female/i.test(v.name);});if(_av){u.voice=_av;u.lang=_av.lang||'en-US';}}catch(e){}
+    u.onend = () => {
+      btn.classList.remove('playing');
+      btn.innerHTML = '🔊 Read';
+      currentUtter = null;
+    };
+    u.onerror = () => {
+      btn.classList.remove('playing');
+      btn.innerHTML = '🔊 Read';
+      currentUtter = null;
+    };
+    currentUtter = u;
+    btn.classList.add('playing');
+    btn.innerHTML = '⏹ Stop';
+    window.speechSynthesis.speak(u);
+  }
+
+  function appendMsg(role, text) {
+    const body = document.getElementById('fabAiBody');
+    if (!body) return null;
+    const wrap = document.createElement('div');
+    wrap.className = 'fab-ai-msg ' + role;
+    const bub = document.createElement('div');
+    bub.className = 'fab-ai-bubble';
+    if (role === 'ai') {
+      bub.innerHTML = mdToHtml(text);
+      // Add TTS row
+      const row = document.createElement('div');
+      row.className = 'fab-ai-tts-row';
+      const btn = document.createElement('button');
+      btn.className = 'fab-ai-tts-btn';
+      btn.innerHTML = '🔊 Read';
+      btn.onclick = function(){ speakToggle(btn, text); };
+      const rate = document.createElement('select');
+      rate.className = 'fab-ai-tts-rate';
+      rate.title = 'Reading speed';
+      ['0.8','1.0','1.2','1.5','2.0'].forEach(function(r){
+        const o = document.createElement('option');
+        o.value = r; o.textContent = r + 'x';
+        if (r === '1.0') o.selected = true;
+        rate.appendChild(o);
+      });
+      row.appendChild(btn);
+      row.appendChild(rate);
+      bub.appendChild(row);
+    } else {
+      bub.textContent = text;
+    }
+    wrap.appendChild(bub);
+    body.appendChild(wrap);
+    body.scrollTop = body.scrollHeight;
+    return bub;
+  }
+
+  function appendLoading(){
+    const body = document.getElementById('fabAiBody');
+    if (!body) return null;
+    const wrap = document.createElement('div');
+    wrap.className = 'fab-ai-msg ai';
+    wrap.id = 'fabAiLoading';
+    const bub = document.createElement('div');
+    bub.className = 'fab-ai-bubble';
+    bub.innerHTML = '<div class="fab-ai-loading"><div class="fab-ai-spinner"></div> Thinking...</div>';
+    wrap.appendChild(bub);
+    body.appendChild(wrap);
+    body.scrollTop = body.scrollHeight;
+    return wrap;
+  }
+
+  function removeLoading(){
+    const el = document.getElementById('fabAiLoading');
+    if (el) el.remove();
+  }
+
+  function appendStatus(text, isErr){
+    const body = document.getElementById('fabAiBody');
+    if (!body) return;
+    const div = document.createElement('div');
+    div.className = 'fab-ai-status' + (isErr ? ' err' : '');
+    div.innerHTML = text;
+    body.appendChild(div);
+    body.scrollTop = body.scrollHeight;
+  }
+
+  function renderSuggestions(ctx){
+    const body = document.getElementById('fabAiBody');
+    if (!body) return;
+    // Q preview at top
+    if (ctx.question) {
+      const qp = document.createElement('div');
+      qp.className = 'fab-ai-qpreview';
+      qp.innerHTML = '<b>Q:</b> ' + ctx.question.substring(0, 240) + (ctx.question.length > 240 ? '...' : '');
+      body.appendChild(qp);
+    }
+    // Suggestion chips
+    const sug = document.createElement('div');
+    sug.className = 'fab-ai-suggestions';
+    const chips = [];
+    if (ctx.picked === null || ctx.picked === undefined) {
+      chips.push({ label: '💡 Give me a hint', q: 'Give me a hint for this question without revealing the answer.' });
+      chips.push({ label: '🧠 Explain the concept', q: 'Explain the core concept this question is testing.' });
+    } else if (ctx.picked !== ctx.correct && ctx.picked !== null) {
+      chips.push({ label: '❌ Why did I miss this?', q: 'I picked the wrong answer. Walk me through why my pick is wrong and why the correct answer is right.' });
+      chips.push({ label: '🧠 Explain the concept', q: 'Explain the concept this question is testing in simpler terms.' });
+      chips.push({ label: '🎯 Give me a mnemonic', q: 'Give me a memorable mnemonic for this topic.' });
+    } else if (ctx.picked === ctx.correct) {
+      chips.push({ label: '✅ Why is this right?', q: 'Confirm why the correct answer is right and flag any trap distractors to watch for.' });
+      chips.push({ label: '🎯 Give me a mnemonic', q: 'Give me a memorable mnemonic for this topic.' });
+    }
+    chips.push({ label: '🌟 Use an analogy', q: 'Explain this with a dumbed-down analogy.' });
+    chips.forEach(c => {
+      const btn = document.createElement('button');
+      btn.className = 'fab-ai-sug';
+      btn.textContent = c.label;
+      btn.onclick = () => sendMessage(c.q);
+      sug.appendChild(btn);
+    });
+    body.appendChild(sug);
+  }
+
+  function clearChat(preserveCtx){
+    const body = document.getElementById('fabAiBody');
+    if (body) body.innerHTML = '';
+    history = [];
+    if (preserveCtx) {
+      const ctx = readCurrentQ();
+      renderSuggestions(ctx);
+    }
+  }
+
+  function openPanel() {
+    if (!panel) panel = buildPanel();
+    panel.classList.add('open');
+    const ctx = readCurrentQ();
+    const key = qKey(ctx);
+    if (key !== currentQKey) {
+      // Q changed — reset chat and show suggestions for new Q
+      currentQKey = key;
+      clearChat(true);
+    }
+  }
+
+  function buildPanel() {
+    const el = document.createElement('div');
+    el.className = 'fab-ai-panel';
+    el.innerHTML = '<div class="fab-ai-header">'
+      + '<h3>🩺 Study Tutor</h3>'
+      + '<button class="fab-ai-hdr-btn" onclick="fabAiClear()">Clear</button>'
+      + '<button class="fab-ai-close" onclick="fabAiClose()">×</button>'
+      + '</div>'
+      + '<div class="fab-ai-body" id="fabAiBody"></div>'
+      + '<div class="fab-ai-followup">'
+      + '<button class="fab-ai-mini-close" title="Close panel" onclick="fabAiClose()">×</button>'
+      + '<textarea id="fabAiFollowup" placeholder="Ask a question about this Q..." rows="1" onkeydown="if(event.keyCode===13&&!event.shiftKey){event.preventDefault();fabAiFollowupSend();}"></textarea>'
+      + '<button onclick="fabAiFollowupSend()">Send</button>'
+      + '</div>';
+    document.body.appendChild(el);
+    return el;
+  }
+
+  window.fabAiClose = function(){ if(panel) panel.classList.remove('open'); };
+  window.fabAiClear = function(){ clearChat(true); };
+
+  async function callWorker(payload) {
+    if (!ENDPOINT) return { clipboardFallback: true };
+    try {
+      const res = await fetch(ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || ('HTTP ' + res.status));
+      return { reply: data.reply };
+    } catch (e) {
+      return { error: String(e.message || e) };
+    }
+  }
+
+  function clipboardFallback(ctx, userQ) {
+    const letter = (i) => String.fromCharCode(65 + i);
+    let prompt = "I'm studying FAB 101 with Dr. Bui at SCUHS. Drill question:\n\n";
+    prompt += 'Q: ' + ctx.question + '\n\n';
+    if (ctx.options && ctx.options.length) {
+      ctx.options.forEach((o, i) => {
+        const m = [];
+        if (i === ctx.picked) m.push('PICKED');
+        if (i === ctx.correct) m.push('CORRECT');
+        prompt += letter(i) + '. ' + o + (m.length ? ' ('+m.join(', ')+')' : '') + '\n';
+      });
+      prompt += '\n';
+    }
+    if (ctx.profTip) prompt += 'DRILL TIP: ' + ctx.profTip + '\n\n';
+    if (userQ) prompt += 'MY QUESTION: ' + userQ + '\n\n';
+    prompt += 'Explain using a dumbed-down analogy + mnemonic.';
+    navigator.clipboard.writeText(prompt).then(() => {
+      appendStatus('✓ Prompt copied to clipboard. Ask the Study Tutor (the 🩺 button).');
+    }).catch(() => {
+      appendStatus('Could not copy. Please select manually.', true);
+    });
+  }
+
+  async function sendMessage(userText) {
+    const ctx = readCurrentQ();
+    currentQKey = qKey(ctx);
+    appendMsg('user', userText);
+    history.push({ role: 'user', content: userText });
+    appendLoading();
+
+    const payload = Object.assign({}, ctx, {
+      userQuestion: userText,
+      history: history.slice(-10), // last 10 turns for context
+      className: CLASS_NAME, // worker uses this to load class-specific knowledge
+    });
+    const result = await callWorker(payload);
+    removeLoading();
+    if (result.clipboardFallback) {
+      clipboardFallback(ctx, userText);
+      return;
+    }
+    if (result.error) {
+      appendStatus('Error: ' + result.error, true);
+      return;
+    }
+    appendMsg('ai', result.reply);
+    history.push({ role: 'model', content: result.reply });
+  }
+
+  window.fabAiFollowupSend = function() {
+    const ta = document.getElementById('fabAiFollowup');
+    const q = (ta && ta.value || '').trim();
+    if (!q) return;
+    ta.value = '';
+    sendMessage(q);
+  };
+
+  // Button install — opens panel, does NOT auto-call AI
+  function install() {
+    if (document.getElementById('fabAiBtn')) return;
+    const btn = document.createElement('button');
+    btn.className = 'fab-ai-btn';
+    btn.id = 'fabAiBtn';
+    btn.textContent = '🩺';
+    btn.title = 'Open AI Study Tutor';
+    btn.onclick = () => openPanel();
+    document.body.appendChild(btn);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', install);
+  } else {
+    install();
+  }
+})();
+</script><a href="index.html" id="dc-hub-btn" style="position:fixed;top:12px;left:12px;z-index:2147483000;background:#0b3d2e;border:1.5px solid #10b981;color:#fff;text-decoration:none;padding:8px 13px;border-radius:10px;font:700 13px -apple-system,system-ui,sans-serif;box-shadow:0 4px 14px rgba(0,0,0,.4)">&larr; Hub</a></body></html>
