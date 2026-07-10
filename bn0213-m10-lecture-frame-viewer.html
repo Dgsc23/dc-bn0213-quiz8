@@ -1,0 +1,682 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>BN0213 Module 10 (Lipids) &mdash; Frame Viewer</title>
+<style>
+:root{--bg:#070b16;--card:#0e1626;--line:#1e2b45;--ink:#e8eefc;--mut:#9fb0d0;--ac:#a855f7}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;padding:14px 12px 70px}
+.wrap{max-width:1000px;margin:0 auto}
+h1{font-size:1.15rem;text-align:center;margin:6px 0 4px}.sub{text-align:center;color:var(--mut);font-size:.85rem;margin-bottom:12px}
+.video-demo{position:sticky;top:8px;z-index:20;margin-bottom:10px}
+.r2-video{width:100%;border-radius:12px;background:#000;border:2px solid var(--ac);max-height:56vh}
+.speed-bar{display:flex;gap:6px;align-items:center;justify-content:center;flex-wrap:wrap;margin:8px 0 14px}
+.spd{background:#0e1626;color:#c4b5fd;border:1px solid #1e2b45;border-radius:8px;padding:4px 10px;font-weight:700;font-size:.78rem;cursor:pointer;font-family:inherit}
+.spd.on{background:#a855f7;color:#1a0533;border-color:#a855f7}
+.note{background:#1a1030;border:1px solid #6d28d9;border-radius:12px;padding:11px 14px;margin:0 0 14px;font-size:.84rem;color:#ddd6fe;line-height:1.5}
+.note b{color:#fff}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.frame-row{display:block;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:0;overflow:hidden;cursor:pointer;font-family:inherit;color:var(--ink);text-align:left}
+.frame-row:hover{border-color:var(--ac)}
+.frame-row.fr-star{border-color:#ef4444}
+.frame-row.fr-no{opacity:.62}
+.frame-row img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover;background:#111}
+.cap{display:flex;align-items:center;gap:6px;padding:5px 8px 0}
+.ts{font-weight:800;font-size:.76rem;color:#c4b5fd;font-variant-numeric:tabular-nums}
+.bd{font-size:.6rem;font-weight:800;padding:1px 6px;border-radius:999px;text-transform:uppercase;letter-spacing:.03em}
+.bd-star{background:#7f1d1d;color:#fecaca}.bd-no{background:#334155;color:#cbd5e1}
+.ti{display:block;padding:2px 8px 8px;font-size:.76rem;color:#cbd5e1;line-height:1.32}
+.hubbtn{position:fixed;top:12px;left:12px;z-index:60;background:#0b3d2e;border:1.5px solid #10b981;color:#fff;text-decoration:none;padding:8px 13px;border-radius:10px;font:700 13px system-ui}
+.gembtn{position:fixed;top:12px;right:12px;z-index:60;background:#1e293b;border:1.5px solid #38bdf8;color:#fff;text-decoration:none;padding:8px 13px;border-radius:10px;font:700 13px system-ui}
+.dc-study-watermark{position:fixed;bottom:6px;right:10px;font-size:10px;color:rgba(255,255,255,.32);pointer-events:none;z-index:2147483647}
+@media(max-width:520px){.hubbtn,.gembtn{top:auto;bottom:10px;padding:7px 11px;font-size:12px}}
+</style><style id="fab-ai-companion-css">
+.fab-ai-btn {
+  position: fixed; bottom: 24px; right: 24px; z-index: 9998;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6); color: #fff;
+  border: none; border-radius: 50%; width: 56px; height: 56px;
+  font-size: 26px; cursor: pointer; box-shadow: 0 4px 16px rgba(99,102,241,0.45);
+  transition: all 0.2s; display: flex; align-items: center; justify-content: center;
+  padding: 0;
+}
+.fab-ai-btn:hover { transform: translateY(-2px) scale(1.05); box-shadow: 0 8px 24px rgba(99,102,241,0.6); }
+.fab-ai-btn:active { transform: scale(0.95); }
+
+.fab-ai-panel {
+  position: fixed; top: 0; right: 0; bottom: 0; width: min(480px, 94vw);
+  background: #0f172a; border-left: 2px solid #334155;
+  box-shadow: -8px 0 32px rgba(0,0,0,0.5);
+  z-index: 9999; display: flex; flex-direction: column;
+  transform: translateX(100%); transition: transform 0.28s ease-out;
+}
+.fab-ai-panel.open { transform: translateX(0); }
+
+.fab-ai-header {
+  padding: 12px 16px; background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: #fff; display: flex; align-items: center; gap: 8px;
+}
+.fab-ai-header h3 { font-size: 15px; font-weight: 700; margin: 0; flex: 1; }
+.fab-ai-hdr-btn {
+  background: rgba(255,255,255,0.15); color: #fff; border: none;
+  padding: 6px 10px; border-radius: 6px; cursor: pointer; font-size: 12px;
+  font-weight: 600;
+}
+.fab-ai-hdr-btn:hover { background: rgba(255,255,255,0.28); }
+.fab-ai-close {
+  background: rgba(255,255,255,0.15); color: #fff; border: none;
+  width: 30px; height: 30px; border-radius: 6px; cursor: pointer; font-size: 18px;
+  line-height: 1; padding: 0;
+}
+.fab-ai-close:hover { background: rgba(255,255,255,0.3); }
+
+.fab-ai-body {
+  flex: 1; overflow-y: auto; padding: 14px 16px;
+  color: #e2e8f0; font-size: 13px; line-height: 1.6;
+  display: flex; flex-direction: column; gap: 10px;
+}
+
+.fab-ai-qpreview {
+  padding: 8px 12px; background: rgba(129,140,248,0.08); border-left: 3px solid #818cf8;
+  border-radius: 6px; font-size: 12px; color: #94a3b8; max-height: 100px; overflow-y: auto;
+  flex-shrink: 0;
+}
+.fab-ai-qpreview b { color: #cbd5e1; }
+
+.fab-ai-suggestions {
+  display: flex; flex-wrap: wrap; gap: 6px; padding: 4px 0;
+}
+.fab-ai-sug {
+  background: rgba(99,102,241,0.12); color: #a5b4fc;
+  border: 1px solid rgba(99,102,241,0.35); border-radius: 14px;
+  padding: 6px 12px; font-size: 12px; cursor: pointer; font-weight: 500;
+  transition: all .15s;
+}
+.fab-ai-sug:hover { background: rgba(99,102,241,0.25); color: #dbeafe; transform: translateY(-1px); }
+
+.fab-ai-msg { display: flex; gap: 6px; max-width: 100%; }
+.fab-ai-msg.user { justify-content: flex-end; }
+.fab-ai-bubble {
+  padding: 10px 14px; border-radius: 12px; font-size: 13px; line-height: 1.55;
+  max-width: 92%; word-wrap: break-word;
+}
+.fab-ai-msg.user .fab-ai-bubble {
+  background: linear-gradient(135deg, #3b82f6, #6366f1);
+  color: #fff; border-bottom-right-radius: 4px;
+}
+.fab-ai-msg.ai .fab-ai-bubble {
+  background: #1e293b; color: #e2e8f0; border-bottom-left-radius: 4px;
+  border: 1px solid #334155;
+}
+.fab-ai-msg.ai .fab-ai-bubble strong,
+.fab-ai-msg.ai .fab-ai-bubble b { color: #a5b4fc; }
+.fab-ai-msg.ai .fab-ai-bubble ul { margin: 6px 0; padding-left: 20px; }
+.fab-ai-msg.ai .fab-ai-bubble li { margin: 3px 0; }
+.fab-ai-msg.ai .fab-ai-bubble p { margin: 0 0 8px 0; }
+.fab-ai-msg.ai .fab-ai-bubble p:last-child { margin-bottom: 0; }
+.fab-ai-msg.ai .fab-ai-bubble h3 { font-size: 13px; margin: 8px 0 4px 0; color: #c4b5fd; }
+.fab-ai-msg.ai .fab-ai-bubble code { background: #0f172a; padding: 1px 5px; border-radius: 3px; font-size: 11px; }
+
+.fab-ai-tts-row { display: flex; align-items: center; gap: 6px; margin-top: 6px; padding-top: 6px; border-top: 1px solid #334155; }
+.fab-ai-tts-btn {
+  background: rgba(129,140,248,0.15); color: #c4b5fd;
+  border: 1px solid rgba(129,140,248,0.35); border-radius: 14px;
+  padding: 3px 10px; font-size: 11px; cursor: pointer; font-weight: 500;
+  display: inline-flex; align-items: center; gap: 4px;
+}
+.fab-ai-tts-btn:hover { background: rgba(129,140,248,0.3); color: #ddd6fe; }
+.fab-ai-tts-btn.playing { background: rgba(239,68,68,0.18); color: #fca5a5; border-color: rgba(239,68,68,0.4); }
+.fab-ai-tts-rate {
+  background: #0f172a; color: #cbd5e1; border: 1px solid #334155;
+  border-radius: 6px; padding: 2px 6px; font-size: 11px; cursor: pointer;
+}
+
+.fab-ai-status {
+  padding: 10px 14px; background: rgba(99,102,241,0.12); border: 1px solid rgba(99,102,241,0.3);
+  border-radius: 8px; color: #a5b4fc; font-size: 12px;
+}
+.fab-ai-status.err { background: rgba(239,68,68,0.12); border-color: rgba(239,68,68,0.4); color: #fca5a5; }
+.fab-ai-loading { display: flex; align-items: center; gap: 8px; color: #94a3b8; padding: 4px 6px; font-size: 12px; }
+.fab-ai-spinner {
+  width: 12px; height: 12px; border: 2px solid #334155; border-top-color: #818cf8;
+  border-radius: 50%; animation: fab-ai-spin 0.8s linear infinite;
+}
+@keyframes fab-ai-spin { to { transform: rotate(360deg); } }
+
+.fab-ai-followup {
+  padding: 12px; background: #1e293b; border-top: 1px solid #334155;
+  display: flex; gap: 8px; align-items: flex-end;
+}
+.fab-ai-mini-close {
+  background: #334155; color: #94a3b8; border: 1px solid #475569;
+  width: 32px; height: 36px; border-radius: 8px; cursor: pointer;
+  font-size: 16px; line-height: 1; padding: 0; font-weight: 600;
+  flex-shrink: 0;
+}
+.fab-ai-mini-close:hover { background: #475569; color: #f87171; border-color: #ef4444; }
+.fab-ai-followup textarea {
+  flex: 1; background: #0f172a; color: #e2e8f0;
+  border: 1px solid #334155; border-radius: 8px;
+  padding: 8px 10px; font-size: 13px; font-family: inherit;
+  resize: none; min-height: 36px; max-height: 120px;
+}
+.fab-ai-followup textarea:focus { outline: none; border-color: #818cf8; }
+.fab-ai-followup button {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6); color: #fff;
+  border: none; padding: 0 14px; border-radius: 8px; font-weight: 600;
+  cursor: pointer; font-size: 13px; white-space: nowrap;
+}
+.fab-ai-followup button:hover { transform: translateY(-1px); }
+.fab-ai-followup button:disabled { opacity: 0.5; cursor: not-allowed; }
+</style></head><body>
+<a href="index.html" class="hubbtn">&larr; Hub</a>
+<div class="wrap">
+<h1>&#127909; BN0213 Module 10 &mdash; Lipid Structure, Function &amp; Properties</h1>
+<div class="sub">Dr. Jory Basso &middot; recorded 2026-07-06 &middot; every distinct slide, in order</div>
+<div class="note"><b>Heads-up about this recording:</b> the first ~28 minutes finish the <b>diabetes</b> material from the previous session (Type II DM, glycation/AGEs, sorbitol damage). The <b>Lipids</b> title slide comes up at <b>30:48</b>, and Dr. Basso's own <b>Presentation Objectives</b> slide is at <b>35:04</b>. Frames below start there.<br>
+<b style="color:#fca5a5">Red-bordered</b> = he flagged it out loud. <b style="color:#cbd5e1">Greyed</b> = he said (and the slide says) it is <b>not testable</b>.</div>
+
+<!--objnav-v1-->
+<style id="objnav-css">
+.objnav{background:#0b1120;border:2px solid #a855f7;border-radius:14px;margin:0 0 16px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.45)}
+.objnav-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:11px 14px;background:linear-gradient(135deg,#3b0764,#5b21b6)}
+.objnav-title{font-weight:800;color:#f3e8ff;font-size:.98rem;flex:1;min-width:200px}
+.objnav-title .s{display:block;font-weight:600;color:#d8b4fe;font-size:.72rem;margin-top:2px}
+.objnav-filter{display:flex;gap:6px;align-items:center}
+.objf{background:rgba(255,255,255,.12);color:#ede9fe;border:1px solid #a855f7;border-radius:999px;padding:5px 11px;font-weight:700;font-size:.72rem;cursor:pointer;font-family:inherit}
+.objf.active{background:#a855f7;color:#1a0533}
+.objnav-collapse{background:rgba(255,255,255,.12);color:#fff;border:0;border-radius:8px;padding:5px 9px;font-weight:800;cursor:pointer;font-size:.8rem}
+.objnav-step{display:flex;align-items:center;justify-content:center;gap:10px;padding:9px 12px;background:#160a2e;border-bottom:1px solid #3b2860}
+.objstep-btn{display:inline-flex;align-items:center;gap:6px;background:#4c1d95;color:#f3e8ff;border:1px solid #a855f7;border-radius:9px;padding:8px 15px;font-weight:800;font-size:.82rem;cursor:pointer;font-family:inherit}
+.objstep-btn:hover{background:#6d28d9}
+.objstep-btn:disabled{opacity:.4;cursor:default}
+.objstep-pos{color:#e9d5ff;font-weight:800;font-size:.82rem;font-variant-numeric:tabular-nums;min-width:74px;text-align:center}
+.objstep-pos b{color:#fff}
+.objnav-list{max-height:44vh;overflow-y:auto;padding:8px;scroll-behavior:smooth}
+.objnav.collapsed .objnav-list,.objnav.collapsed .objnav-step{display:none}
+.objrow{display:flex;align-items:center;gap:10px;width:100%;text-align:left;background:#111a30;border:1px solid #24365c;border-left:4px solid #475569;border-radius:9px;padding:9px 11px;margin:5px 0;cursor:pointer;font-family:inherit;transition:background .12s,border-color .12s}
+.objrow:hover{background:#182543;border-color:#a855f7}
+.objrow.o-high{border-left-color:#ef4444}
+.objrow.o-med{border-left-color:#eab308}
+.objrow.o-low{border-left-color:#22c55e}
+.objrow.objsel{background:#1c2b52;box-shadow:inset 0 0 0 1.5px #a855f7;border-color:#a855f7}
+.objdot{font-size:.72rem;flex-shrink:0}
+.objt{flex:1;color:#e5edff;font-weight:600;font-size:.86rem;line-height:1.3}
+.objtime{flex-shrink:0;color:#c4b5fd;font-weight:800;font-size:.8rem;font-variant-numeric:tabular-nums;background:rgba(168,85,247,.16);padding:2px 8px;border-radius:6px}
+.objnav-list.high-only .objrow:not(.o-high){display:none}
+</style>
+<div class="objnav" id="objnav">
+  <div class="objnav-head">
+    <div class="objnav-title">📋 What Dr. Basso wants you to know<span class="s">Key points, in order — tap one, then ◀ Prev / Next ▶ to zoom through each. 🔴 = must-know.</span></div>
+    <div class="objnav-filter">
+      <button type="button" class="objf active" data-f="all" onclick="objFilter('all',this)">All 30</button>
+      <button type="button" class="objf" data-f="high" onclick="objFilter('high',this)">🔴 Must-know 19</button>
+      <button type="button" class="objnav-collapse" onclick="objToggle(this)" title="Collapse">▾</button>
+    </div>
+  </div>
+  <div class="objnav-step">
+    <button type="button" class="objstep-btn" id="objPrev" onclick="objStep(-1)">&#9198; Prev</button>
+    <span class="objstep-pos" id="objPos"><b>—</b> / 30</span>
+    <button type="button" class="objstep-btn" id="objNext" onclick="objStep(1)">Next &#9197;</button>
+  </div>
+  <div class="objnav-list" id="objnavList">
+<button type="button" class="objrow o-high" data-emp="high" data-sec="2104" onclick="objGo(this)"><span class="objdot">🔴</span><span class="objt">HIS OWN 6 OBJECTIVES (read these first)</span><span class="objtime">35:04</span></button>
+<button type="button" class="objrow o-med" data-emp="med" data-sec="2328" onclick="objGo(this)"><span class="objdot">🟡</span><span class="objt">Why lipids: hydrophobic, and packed with energy (C-C and C-H bonds)</span><span class="objtime">38:48</span></button>
+<button type="button" class="objrow o-high" data-emp="high" data-sec="2584" onclick="objGo(this)"><span class="objdot">🔴</span><span class="objt">The jobs of lipids: energy, cell membrane, fat-soluble vitamins (D,E,A,K), steroid hormones, organ padding, myelin, lung surfactant</span><span class="objtime">43:04</span></button>
+<button type="button" class="objrow o-high" data-emp="high" data-sec="2880" onclick="objGo(this)"><span class="objdot">🔴</span><span class="objt">OBJ 1: Triacylglycerol = glycerol + 3 fatty acids, joined by ester bonds</span><span class="objtime">48:00</span></button>
+<button type="button" class="objrow o-low" data-emp="low" data-sec="3016" onclick="objGo(this)"><span class="objdot">🟢</span><span class="objt">Wax = fatty acid + long-chain alcohol (cactus coating, your skin, candles)</span><span class="objtime">50:16</span></button>
+<button type="button" class="objrow o-low" data-emp="low" data-sec="3082" onclick="objGo(this)"><span class="objdot">🟢</span><span class="objt">"You don't have to memorize the structures" - understand how they work</span><span class="objtime">51:22</span></button>
+<button type="button" class="objrow o-high" data-emp="high" data-sec="3122" onclick="objGo(this)"><span class="objdot">🔴</span><span class="objt">"Make sure you know": a fatty acid has TWO ends - the carboxyl end and the methyl (omega) end</span><span class="objtime">52:02</span></button>
+<button type="button" class="objrow o-high" data-emp="high" data-sec="3183" onclick="objGo(this)"><span class="objdot">🔴</span><span class="objt">"Hopefully you will remember this forever": saturated means saturated WITH HYDROGENS</span><span class="objtime">53:03</span></button>
+<button type="button" class="objrow o-med" data-emp="med" data-sec="3583" onclick="objGo(this)"><span class="objdot">🟡</span><span class="objt">"Notice this, pay attention": a double bond puts a BEND in the chain</span><span class="objtime">59:43</span></button>
+<button type="button" class="objrow o-high" data-emp="high" data-sec="3816" onclick="objGo(this)"><span class="objdot">🔴</span><span class="objt">OBJ 3: Naming - saturated ends in -anoic, unsaturated ends in -enoic; carbons numbered from the COOH end (alpha, then beta)</span><span class="objtime">63:36</span></button>
+<button type="button" class="objrow o-high" data-emp="high" data-sec="3870" onclick="objGo(this)"><span class="objdot">🔴</span><span class="objt">"Make sure you know that": omega-3 and omega-6 are ESSENTIAL - you must eat them, you cannot make them</span><span class="objtime">64:30</span></button>
+<button type="button" class="objrow o-high" data-emp="high" data-sec="3930" onclick="objGo(this)"><span class="objdot">🔴</span><span class="objt">"You will see that on a test": omega nomenclature - count from the omega (methyl) end</span><span class="objtime">65:30</span></button>
+<button type="button" class="objrow o-high" data-emp="high" data-sec="3944" onclick="objGo(this)"><span class="objdot">🔴</span><span class="objt">"Make sure you know": C18:3 means 18 carbons long with 3 double bonds</span><span class="objtime">65:44</span></button>
+<button type="button" class="objrow o-med" data-emp="med" data-sec="3994" onclick="objGo(this)"><span class="objdot">🟡</span><span class="objt">"You should know about" EPA - eicosapentaenoic acid</span><span class="objtime">66:34</span></button>
+<button type="button" class="objrow o-high" data-emp="high" data-sec="4139" onclick="objGo(this)"><span class="objdot">🔴</span><span class="objt">"Make notes here": THE FOUR S's - Sat, Single, Straight, Solid at room temp (vs Un, Double, Bend, Liquid)</span><span class="objtime">68:59</span></button>
+<button type="button" class="objrow o-med" data-emp="med" data-sec="4408" onclick="objGo(this)"><span class="objdot">🟡</span><span class="objt">OBJ 5 (the testable part): eicosanoids are built from 20-carbon PUFAs - omega-6 leads to arachidonic acid; omega-3 leads to EPA and DHA</span><span class="objtime">73:28</span></button>
+<button type="button" class="objrow o-med" data-emp="med" data-sec="4762" onclick="objGo(this)"><span class="objdot">🟡</span><span class="objt">"I want you to know this": the Western diet takes in way too much omega-6</span><span class="objtime">79:22</span></button>
+<button type="button" class="objrow o-low" data-emp="low" data-sec="5046" onclick="objGo(this)"><span class="objdot">🟢</span><span class="objt">NOT TESTABLE (slide says so, and he says so): the COX-1/COX-2 prostaglandin cascade</span><span class="objtime">84:06</span></button>
+<button type="button" class="objrow o-med" data-emp="med" data-sec="5704" onclick="objGo(this)"><span class="objdot">🟡</span><span class="objt">Omega-3 clinical significance: displaces arachidonic acid, lowers serum triglycerides, cardiovascular protection</span><span class="objtime">95:04</span></button>
+<button type="button" class="objrow o-high" data-emp="high" data-sec="5968" onclick="objGo(this)"><span class="objdot">🔴</span><span class="objt">OBJ 4: Cis = both hydrogens on the SAME side, causes a bend. Trans = opposite sides, stays straight and acts like a saturated fat</span><span class="objtime">99:28</span></button>
+<button type="button" class="objrow o-high" data-emp="high" data-sec="6084" onclick="objGo(this)"><span class="objdot">🔴</span><span class="objt">"Here's your tag": the triacylglycerol drawn out - glycerol backbone plus three fatty acids</span><span class="objtime">101:24</span></button>
+<button type="button" class="objrow o-high" data-emp="high" data-sec="6128" onclick="objGo(this)"><span class="objdot">🔴</span><span class="objt">Study Check: trans fats are created by PARTIAL HYDROGENATION</span><span class="objtime">102:08</span></button>
+<button type="button" class="objrow o-low" data-emp="low" data-sec="6235" onclick="objGo(this)"><span class="objdot">🟢</span><span class="objt">NOT TESTABLE (slide says so): the phospholipid classification diagram</span><span class="objtime">103:55</span></button>
+<button type="button" class="objrow o-high" data-emp="high" data-sec="6328" onclick="objGo(this)"><span class="objdot">🔴</span><span class="objt">OBJ 6: Phospholipid types - glycerophospholipid (glycerol) = lecithin; sphingophospholipid (sphingosine) = sphingomyelin</span><span class="objtime">105:28</span></button>
+<button type="button" class="objrow o-high" data-emp="high" data-sec="6379" onclick="objGo(this)"><span class="objdot">🔴</span><span class="objt">"This is one you should know for sure": dipalmitoyl lecithin is the LUNG SURFACTANT - lowers alveolar surface tension, prevents alveolar collapse</span><span class="objtime">106:19</span></button>
+<button type="button" class="objrow o-high" data-emp="high" data-sec="6505" onclick="objGo(this)"><span class="objdot">🔴</span><span class="objt">"You should definitely know this": sphingomyelin is a large portion of the MYELIN SHEATH</span><span class="objtime">108:25</span></button>
+<button type="button" class="objrow o-med" data-emp="med" data-sec="6672" onclick="objGo(this)"><span class="objdot">🟡</span><span class="objt">Glycolipids: cerebrosides (one sugar, in myelin) vs gangliosides (many sugars, in gray matter)</span><span class="objtime">111:12</span></button>
+<button type="button" class="objrow o-high" data-emp="high" data-sec="6707" onclick="objGo(this)"><span class="objdot">🔴</span><span class="objt">HIS MNEMONIC: "Cherry Trees Never Grow Tall In Sand" = CRAO, Trauma, Niemann-Pick, Gaucher, Tay-Sachs, Sandhoff (cherry-red spot)</span><span class="objtime">111:47</span></button>
+<button type="button" class="objrow o-high" data-emp="high" data-sec="7082" onclick="objGo(this)"><span class="objdot">🔴</span><span class="objt">HIS EXAM TIP: cherry-red spot + CNS symptoms but NO hepatosplenomegaly = Tay-Sachs. Board-exam likelihood: 1) Tay-Sachs 2) Niemann-Pick 3) Gaucher</span><span class="objtime">118:02</span></button>
+<button type="button" class="objrow o-high" data-emp="high" data-sec="7128" onclick="objGo(this)"><span class="objdot">🔴</span><span class="objt">The table: Tay-Sachs (hexosaminidase A / GM2 ganglioside) - Gaucher (glucocerebrosidase / glucocerebroside) - Niemann-Pick (sphingomyelinase / sphingomyelin)</span><span class="objtime">118:48</span></button>
+  </div>
+</div>
+<script id="objnav-js">
+(function(){
+  function vis(){ return Array.prototype.filter.call(document.querySelectorAll('.objrow'), function(r){ return r.offsetParent!==null; }); }
+  function curIdx(v){ v=v||vis(); for(var i=0;i<v.length;i++){ if(v[i].classList.contains('objsel')) return i; } return -1; }
+  function updatePos(){ var v=vis(), i=curIdx(v), pos=document.getElementById('objPos');
+    if(pos) pos.innerHTML='<b>'+(i<0?'—':(i+1))+'</b> / '+v.length;
+    var p=document.getElementById('objPrev'), n=document.getElementById('objNext');
+    if(p) p.disabled=(i<=0); if(n) n.disabled=(i>=0 && i>=v.length-1); }
+  window.objGo=function(row){ document.querySelectorAll('.objrow.objsel').forEach(function(r){r.classList.remove('objsel');}); row.classList.add('objsel');
+    seekVideo(row, parseInt(row.getAttribute('data-sec'),10)||0); updatePos(); };
+  window.objStep=function(dir){ var v=vis(); if(!v.length) return; var i=curIdx(v);
+    i = (i<0) ? (dir>0?0:v.length-1) : Math.min(v.length-1, Math.max(0, i+dir));
+    var row=v[i]; if(!row) return; document.querySelectorAll('.objrow.objsel').forEach(function(r){r.classList.remove('objsel');});
+    row.classList.add('objsel'); seekVideo(row, parseInt(row.getAttribute('data-sec'),10)||0);
+    try{ row.scrollIntoView({block:'nearest'}); }catch(e){} updatePos(); };
+  window.objFilter=function(mode,btn){ document.getElementById('objnavList').classList.toggle('high-only', mode==='high');
+    document.querySelectorAll('.objf').forEach(function(b){ b.classList.toggle('active', b===btn); }); updatePos(); };
+  window.objToggle=function(btn){ var c=document.getElementById('objnav').classList.toggle('collapsed'); if(btn) btn.textContent=c?'▸':'▾'; };
+  document.addEventListener('keydown', function(e){ var t=(e.target&&e.target.tagName)||''; if(t==='INPUT'||t==='TEXTAREA'||t==='SELECT') return;
+    if(e.key===','||e.key==='<'){ objStep(-1); e.preventDefault(); } else if(e.key==='.'||e.key==='>'){ objStep(1); e.preventDefault(); } });
+  updatePos();
+})();
+</script>
+<!--/objnav-v1-->
+
+<div class="video-demo"><video class="r2-video" id="r2v" src="https://pub-7fb2bb3e5a0b4096a57fc578b5a16078.r2.dev/bn0213/m10-lipids/lecture-fs-37da13d4.mp4" controls preload="metadata" playsinline webkit-playsinline controlslist="nodownload"></video></div>
+<div class="speed-bar"><span style="color:#9fb0d0;font-size:.8rem;font-weight:700">Speed</span>
+<button type="button" class="spd" data-r="0.5" onclick="fvSpeed(0.5,this)">0.5x</button>
+<button type="button" class="spd" data-r="0.75" onclick="fvSpeed(0.75,this)">0.75x</button>
+<button type="button" class="spd on" data-r="1" onclick="fvSpeed(1,this)">1x</button>
+<button type="button" class="spd" data-r="1.25" onclick="fvSpeed(1.25,this)">1.25x</button>
+<button type="button" class="spd" data-r="1.5" onclick="fvSpeed(1.5,this)">1.5x</button>
+<button type="button" class="spd" data-r="2" onclick="fvSpeed(2,this)">2x</button>
+<button type="button" class="spd" data-r="2.5" onclick="fvSpeed(2.5,this)">2.5x</button>
+<button type="button" class="spd" data-r="3" onclick="fvSpeed(3,this)">3x</button></div>
+<div class="gal">
+<button type="button" class="frame-row" onclick="seekVideo(this, 1848)"><img src="frames/m10_lecture_fv/s_01_01696.jpg" loading="lazy" alt="30:48"><span class="cap"><span class="ts">30:48</span></span><span class="ti">Title: Lipid Structure, Function and Properties</span></button>
+<button type="button" class="frame-row fr-star" onclick="seekVideo(this, 2104)"><img src="frames/m10_lecture_fv/s_02_01960.jpg" loading="lazy" alt="35:04"><span class="cap"><span class="ts">35:04</span><span class="bd bd-star">must-know</span></span><span class="ti">Presentation Objectives (his 6 objectives)</span></button>
+<button type="button" class="frame-row" onclick="seekVideo(this, 2168)"><img src="frames/m10_lecture_fv/s_03_02144.jpg" loading="lazy" alt="36:08"><span class="cap"><span class="ts">36:08</span></span><span class="ti">Introduction: Lipids</span></button>
+<button type="button" class="frame-row" onclick="seekVideo(this, 2328)"><img src="frames/m10_lecture_fv/s_04_02224.jpg" loading="lazy" alt="38:48"><span class="cap"><span class="ts">38:48</span></span><span class="ti">Introduction: Properties (hydrophobic, high energy)</span></button>
+<button type="button" class="frame-row fr-star" onclick="seekVideo(this, 2584)"><img src="frames/m10_lecture_fv/s_05_02344.jpg" loading="lazy" alt="43:04"><span class="cap"><span class="ts">43:04</span><span class="bd bd-star">must-know</span></span><span class="ti">Lipid Function (energy, membrane, DEAK, hormones)</span></button>
+<button type="button" class="frame-row fr-star" onclick="seekVideo(this, 2880)"><img src="frames/m10_lecture_fv/s_06_02672.jpg" loading="lazy" alt="48:00"><span class="cap"><span class="ts">48:00</span><span class="bd bd-star">must-know</span></span><span class="ti">Fats (Triacylglycerols): glycerol + 3 fatty acids</span></button>
+<button type="button" class="frame-row" onclick="seekVideo(this, 3016)"><img src="frames/m10_lecture_fv/s_08_02896.jpg" loading="lazy" alt="50:16"><span class="cap"><span class="ts">50:16</span></span><span class="ti">Wax: ester of fatty acid + long-chain alcohol</span></button>
+<button type="button" class="frame-row fr-star" onclick="seekVideo(this, 3408)"><img src="frames/m10_lecture_fv/s_09_03080.jpg" loading="lazy" alt="56:48"><span class="cap"><span class="ts">56:48</span><span class="bd bd-star">must-know</span></span><span class="ti">Fatty Acids: C4-C24, R-COOH, the 4 types</span></button>
+<button type="button" class="frame-row" onclick="seekVideo(this, 3560)"><img src="frames/m10_lecture_fv/s_10_03560.jpg" loading="lazy" alt="59:20"><span class="cap"><span class="ts">59:20</span></span><span class="ti">Nomenclature / Naming: unsaturated vs saturated</span></button>
+<button type="button" class="frame-row" onclick="seekVideo(this, 3640)"><img src="frames/m10_lecture_fv/s_11_03640.jpg" loading="lazy" alt="60:40"><span class="cap"><span class="ts">60:40</span></span><span class="ti">Fatty Acids (revisit)</span></button>
+<button type="button" class="frame-row fr-star" onclick="seekVideo(this, 3816)"><img src="frames/m10_lecture_fv/s_12_03664.jpg" loading="lazy" alt="63:36"><span class="cap"><span class="ts">63:36</span><span class="bd bd-star">must-know</span></span><span class="ti">Naming: -anoic (sat) vs -enoic (unsat)</span></button>
+<button type="button" class="frame-row" onclick="seekVideo(this, 3824)"><img src="frames/m10_lecture_fv/s_13_03824.jpg" loading="lazy" alt="63:44"><span class="cap"><span class="ts">63:44</span></span><span class="ti">Naming: alpha &amp; beta carbons from the COOH end</span></button>
+<button type="button" class="frame-row fr-star" onclick="seekVideo(this, 4080)"><img src="frames/m10_lecture_fv/s_14_03872.jpg" loading="lazy" alt="68:00"><span class="cap"><span class="ts">68:00</span><span class="bd bd-star">must-know</span></span><span class="ti">Omega Fatty Acids: ALA, EPA, DHA, LA, AA</span></button>
+<button type="button" class="frame-row fr-star" onclick="seekVideo(this, 4384)"><img src="frames/m10_lecture_fv/s_15_04088.jpg" loading="lazy" alt="73:04"><span class="cap"><span class="ts">73:04</span><span class="bd bd-star">must-know</span></span><span class="ti">Saturated Fatty Acids + HIS FOUR S's (red pen)</span></button>
+<button type="button" class="frame-row" onclick="seekVideo(this, 4400)"><img src="frames/m10_lecture_fv/s_16_04392.jpg" loading="lazy" alt="73:20"><span class="cap"><span class="ts">73:20</span></span><span class="ti">Unsaturated Fatty Acids: mono vs poly</span></button>
+<button type="button" class="frame-row fr-star" onclick="seekVideo(this, 5000)"><img src="frames/m10_lecture_fv/s_17_04408.jpg" loading="lazy" alt="83:20"><span class="cap"><span class="ts">83:20</span><span class="bd bd-star">must-know</span></span><span class="ti">Essential Fatty Acids (omega 3, 6) pathways</span></button>
+<button type="button" class="frame-row fr-no" onclick="seekVideo(this, 5104)"><img src="frames/m10_lecture_fv/s_18_05040.jpg" loading="lazy" alt="85:04"><span class="cap"><span class="ts">85:04</span><span class="bd bd-no">NOT testable</span></span><span class="ti">Prostaglandins &amp; Arachidonic Metabolism</span></button>
+<button type="button" class="frame-row fr-star" onclick="seekVideo(this, 5120)"><img src="frames/m10_lecture_fv/s_19_05120.jpg" loading="lazy" alt="85:20"><span class="cap"><span class="ts">85:20</span><span class="bd bd-star">must-know</span></span><span class="ti">Essential Fatty Acids: not synthesized, diet, PUFAs</span></button>
+<button type="button" class="frame-row fr-no" onclick="seekVideo(this, 5200)"><img src="frames/m10_lecture_fv/s_20_05136.jpg" loading="lazy" alt="86:40"><span class="cap"><span class="ts">86:40</span><span class="bd bd-no">NOT testable</span></span><span class="ti">Prostaglandins &amp; Arachidonic Metabolism</span></button>
+<button type="button" class="frame-row" onclick="seekVideo(this, 5272)"><img src="frames/m10_lecture_fv/s_21_05264.jpg" loading="lazy" alt="87:52"><span class="cap"><span class="ts">87:52</span></span><span class="ti">Essential Fatty Acid pathways (revisit)</span></button>
+<button type="button" class="frame-row fr-no" onclick="seekVideo(this, 5496)"><img src="frames/m10_lecture_fv/s_22_05288.jpg" loading="lazy" alt="91:36"><span class="cap"><span class="ts">91:36</span><span class="bd bd-no">NOT testable</span></span><span class="ti">Prostaglandins &amp; Arachidonic Metabolism</span></button>
+<button type="button" class="frame-row" onclick="seekVideo(this, 5552)"><img src="frames/m10_lecture_fv/s_23_05504.jpg" loading="lazy" alt="92:32"><span class="cap"><span class="ts">92:32</span></span><span class="ti">Essential FAs: membrane phospholipids, fluidity</span></button>
+<button type="button" class="frame-row fr-star" onclick="seekVideo(this, 5704)"><img src="frames/m10_lecture_fv/s_24_05648.jpg" loading="lazy" alt="95:04"><span class="cap"><span class="ts">95:04</span><span class="bd bd-star">must-know</span></span><span class="ti">Omega Fatty Acids: Clinical Significance</span></button>
+<button type="button" class="frame-row fr-star" onclick="seekVideo(this, 5968)"><img src="frames/m10_lecture_fv/s_25_05760.jpg" loading="lazy" alt="99:28"><span class="cap"><span class="ts">99:28</span><span class="bd bd-star">must-know</span></span><span class="ti">Cis vs Trans Fatty Acids</span></button>
+<button type="button" class="frame-row fr-star" onclick="seekVideo(this, 6080)"><img src="frames/m10_lecture_fv/s_26_06080.jpg" loading="lazy" alt="101:20"><span class="cap"><span class="ts">101:20</span><span class="bd bd-star">must-know</span></span><span class="ti">Fatty Acids in Triacylglycerols (the TAG structure)</span></button>
+<button type="button" class="frame-row fr-star" onclick="seekVideo(this, 6128)"><img src="frames/m10_lecture_fv/s_27_06104.jpg" loading="lazy" alt="102:08"><span class="cap"><span class="ts">102:08</span><span class="bd bd-star">must-know</span></span><span class="ti">Study Check: How are trans fats created?</span></button>
+<button type="button" class="frame-row" onclick="seekVideo(this, 6168)"><img src="frames/m10_lecture_fv/s_28_06144.jpg" loading="lazy" alt="102:48"><span class="cap"><span class="ts">102:48</span></span><span class="ti">Trans Fats and Health Risks</span></button>
+<button type="button" class="frame-row" onclick="seekVideo(this, 6200)"><img src="frames/m10_lecture_fv/s_29_06192.jpg" loading="lazy" alt="103:20"><span class="cap"><span class="ts">103:20</span></span><span class="ti">Trans Fatty Acids in Food</span></button>
+<button type="button" class="frame-row fr-no" onclick="seekVideo(this, 6248)"><img src="frames/m10_lecture_fv/s_30_06224.jpg" loading="lazy" alt="104:08"><span class="cap"><span class="ts">104:08</span><span class="bd bd-no">NOT testable</span></span><span class="ti">Phospholipids: alcohol + FA + phosphate + amino alcohol</span></button>
+<button type="button" class="frame-row fr-star" onclick="seekVideo(this, 6328)"><img src="frames/m10_lecture_fv/s_31_06280.jpg" loading="lazy" alt="105:28"><span class="cap"><span class="ts">105:28</span><span class="bd bd-star">must-know</span></span><span class="ti">Phospholipid Types: glycero- vs sphingo-</span></button>
+<button type="button" class="frame-row" onclick="seekVideo(this, 6352)"><img src="frames/m10_lecture_fv/s_32_06352.jpg" loading="lazy" alt="105:52"><span class="cap"><span class="ts">105:52</span></span><span class="ti">Phosphatidyl Choline (Lecithin)</span></button>
+<button type="button" class="frame-row fr-star" onclick="seekVideo(this, 6360)"><img src="frames/m10_lecture_fv/s_33_06360.jpg" loading="lazy" alt="106:00"><span class="cap"><span class="ts">106:00</span><span class="bd bd-star">must-know</span></span><span class="ti">Phospholipid Types (filled: lecithin / sphingomyelin)</span></button>
+<button type="button" class="frame-row fr-star" onclick="seekVideo(this, 6416)"><img src="frames/m10_lecture_fv/s_34_06368.jpg" loading="lazy" alt="106:56"><span class="cap"><span class="ts">106:56</span><span class="bd bd-star">must-know</span></span><span class="ti">Lecithin: dipalmitoyl lecithin = LUNG SURFACTANT</span></button>
+<button type="button" class="frame-row" onclick="seekVideo(this, 6496)"><img src="frames/m10_lecture_fv/s_35_06488.jpg" loading="lazy" alt="108:16"><span class="cap"><span class="ts">108:16</span></span><span class="ti">Sphingomyelin: sphingosine + FA + phosphate + choline</span></button>
+<button type="button" class="frame-row fr-star" onclick="seekVideo(this, 6528)"><img src="frames/m10_lecture_fv/s_36_06504.jpg" loading="lazy" alt="108:48"><span class="cap"><span class="ts">108:48</span><span class="bd bd-star">must-know</span></span><span class="ti">Sphingomyelin: large portion of the MYELIN SHEATH</span></button>
+<button type="button" class="frame-row" onclick="seekVideo(this, 6600)"><img src="frames/m10_lecture_fv/s_37_06584.jpg" loading="lazy" alt="110:00"><span class="cap"><span class="ts">110:00</span></span><span class="ti">Glycolipids: ceramide + carbohydrate</span></button>
+<button type="button" class="frame-row fr-star" onclick="seekVideo(this, 6672)"><img src="frames/m10_lecture_fv/s_38_06616.jpg" loading="lazy" alt="111:12"><span class="cap"><span class="ts">111:12</span><span class="bd bd-star">must-know</span></span><span class="ti">Cerebrosides vs Gangliosides</span></button>
+<button type="button" class="frame-row" onclick="seekVideo(this, 6680)"><img src="frames/m10_lecture_fv/s_39_06680.jpg" loading="lazy" alt="111:20"><span class="cap"><span class="ts">111:20</span></span><span class="ti">Lipid Breakdown Deficiencies (building)</span></button>
+<button type="button" class="frame-row" onclick="seekVideo(this, 6832)"><img src="frames/m10_lecture_fv/s_40_06688.jpg" loading="lazy" alt="113:52"><span class="cap"><span class="ts">113:52</span></span><span class="ti">Missing or Faulty Enzymes (building)</span></button>
+<button type="button" class="frame-row" onclick="seekVideo(this, 6936)"><img src="frames/m10_lecture_fv/s_41_06880.jpg" loading="lazy" alt="115:36"><span class="cap"><span class="ts">115:36</span></span><span class="ti">Lipid Breakdown Deficiencies + red pen</span></button>
+<button type="button" class="frame-row" onclick="seekVideo(this, 6944)"><img src="frames/m10_lecture_fv/s_42_06944.jpg" loading="lazy" alt="115:44"><span class="cap"><span class="ts">115:44</span></span><span class="ti">Missing or Faulty Enzymes (building)</span></button>
+<button type="button" class="frame-row fr-star" onclick="seekVideo(this, 7040)"><img src="frames/m10_lecture_fv/s_43_06952.jpg" loading="lazy" alt="117:20"><span class="cap"><span class="ts">117:20</span><span class="bd bd-star">must-know</span></span><span class="ti">Lipid Breakdown Deficiencies: LYSOSOMAL STORAGE (full)</span></button>
+<button type="button" class="frame-row fr-star" onclick="seekVideo(this, 7128)"><img src="frames/m10_lecture_fv/s_44_07048.jpg" loading="lazy" alt="118:48"><span class="cap"><span class="ts">118:48</span><span class="bd bd-star">must-know</span></span><span class="ti">Missing or Faulty Enzymes: Tay-Sachs / Gaucher / Niemann-Pick</span></button>
+<button type="button" class="frame-row" onclick="seekVideo(this, 7136)"><img src="frames/m10_lecture_fv/s_45_07136.jpg" loading="lazy" alt="118:56"><span class="cap"><span class="ts">118:56</span></span><span class="ti">References</span></button>
+</div></div>
+<script>
+function seekVideo(el, seconds){
+  var v=document.getElementById('r2v');
+  var go=function(){ try{ v.currentTime=seconds; }catch(e){} var p=v.play(); if(p&&p.catch)p.catch(function(){}); };
+  if(v.readyState>=1) go(); else { v.addEventListener('loadedmetadata',go,{once:true}); v.addEventListener('canplay',go,{once:true}); try{v.load();}catch(e){} }
+  try{ document.querySelector('.video-demo').scrollIntoView({behavior:'smooth',block:'start'}); }catch(e){}
+}
+function fvSpeed(r, btn){
+  var v=document.getElementById('r2v');
+  v.playbackRate = Math.max(0.5, Math.min(3, r));
+  var bs=document.querySelectorAll('.spd'); for(var i=0;i<bs.length;i++) bs[i].classList.remove('on');
+  if(btn) btn.classList.add('on');
+}
+</script>
+<div class="dc-study-watermark">DC Study Supply &mdash; Dr. David Gramling, PHD</div>
+<script id="fab-ai-companion-js">
+(function(){
+  const ENDPOINT = "https://fab-ai.dgync1.workers.dev";
+  const CLASS_NAME = "BN0213"; // e.g., "CP1" / "FAB101" / "GA0102" — empty = generic chiropractic tutor
+  let panel = null;
+  let history = []; // [{role:'user'|'model', content}]
+  let currentQKey = null; // to detect Q navigation
+
+  function readCurrentQ() {
+    const qText = (document.querySelector('.q-text')?.innerText || '').replace(/^Q\d+(\s+of\s+\d+)?:\s*/, '');
+    const optBtns = Array.from(document.querySelectorAll('.opt-btn'));
+    const options = optBtns.map(b => {
+      const clone = b.cloneNode(true);
+      clone.querySelectorAll('.rationale').forEach(r => r.remove());
+      clone.querySelectorAll('.letter').forEach(r => r.remove());
+      return clone.innerText.trim();
+    });
+    let picked = null, correct = null;
+    optBtns.forEach((b, i) => {
+      if (b.classList.contains('picked-correct') || b.classList.contains('picked-wrong')) picked = i;
+      if (b.classList.contains('picked-correct') || b.classList.contains('show-correct')) correct = i;
+    });
+    const profTip = document.querySelector('.prof-tip')?.innerText?.replace(/^Professor:\s*/i, '').trim() || '';
+    const source = document.querySelector('.source-line')?.innerText?.replace(/^Source:\s*/i, '').trim() || '';
+    const quote = document.querySelector('.quote-line')?.innerText?.trim() || '';
+    return { question: qText, options, picked, correct, profTip, source, quote };
+  }
+
+  function qKey(ctx){ return (ctx.question || '') + '|' + (ctx.options || []).join('|'); }
+
+  function mdToHtml(md){
+    let html = md
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+      .replace(/(^|\n)### (.+)/g, '$1<h3>$2</h3>')
+      .replace(/`([^`]+)`/g, '<code>$1</code>')
+      .replace(/^\s*[-*]\s+(.+)$/gm, '<li>$1</li>')
+      .replace(/(<li>.*?<\/li>(\s*<li>.*?<\/li>)*)/gs, '<ul>$1</ul>');
+    html = html.split(/\n{2,}/).map(p => {
+      if (p.trim().startsWith('<ul') || p.trim().startsWith('<h3')) return p;
+      if (p.trim() === '') return '';
+      return '<p>' + p.replace(/\n/g, '<br>') + '</p>';
+    }).join('');
+    return html;
+  }
+
+  function stripForTts(text){
+    // Remove markdown markers so TTS doesn't read them aloud
+    return text
+      .replace(/\*\*/g, '')
+      .replace(/`([^`]+)`/g, '$1')
+      .replace(/^\s*[-*]\s+/gm, '')
+      .replace(/^#+\s+/gm, '')
+      .replace(/\n{2,}/g, '. ')
+      .replace(/\s+/g, ' ')
+      .trim();
+  }
+
+  let currentUtter = null;
+  function speakToggle(btn, rawText){
+    if (!window.speechSynthesis) {
+      alert('Your browser does not support text-to-speech.');
+      return;
+    }
+    if (window.speechSynthesis.speaking && currentUtter && btn.classList.contains('playing')) {
+      window.speechSynthesis.cancel();
+      document.querySelectorAll('.fab-ai-tts-btn.playing').forEach(b => {
+        b.classList.remove('playing');
+        b.innerHTML = '🔊 Read';
+      });
+      currentUtter = null;
+      return;
+    }
+    window.speechSynthesis.cancel();
+    document.querySelectorAll('.fab-ai-tts-btn.playing').forEach(b => {
+      b.classList.remove('playing');
+      b.innerHTML = '🔊 Read';
+    });
+    const u = new SpeechSynthesisUtterance(stripForTts(rawText));
+    const rateSel = btn.parentElement.querySelector('.fab-ai-tts-rate');
+    u.rate = parseFloat(rateSel && rateSel.value || '1.0');
+    /*ava-tts*/try{var _vs=(window.speechSynthesis&&window.speechSynthesis.getVoices())||[];var _av=_vs.find(function(v){return /microsoft.*ava.*natural/i.test(v.name);})||_vs.find(function(v){return /microsoft.*emma.*natural/i.test(v.name);})||_vs.find(function(v){return /google us english female/i.test(v.name);});if(_av){u.voice=_av;u.lang=_av.lang||'en-US';}}catch(e){}
+    u.onend = () => {
+      btn.classList.remove('playing');
+      btn.innerHTML = '🔊 Read';
+      currentUtter = null;
+    };
+    u.onerror = () => {
+      btn.classList.remove('playing');
+      btn.innerHTML = '🔊 Read';
+      currentUtter = null;
+    };
+    currentUtter = u;
+    btn.classList.add('playing');
+    btn.innerHTML = '⏹ Stop';
+    window.speechSynthesis.speak(u);
+  }
+
+  function appendMsg(role, text) {
+    const body = document.getElementById('fabAiBody');
+    if (!body) return null;
+    const wrap = document.createElement('div');
+    wrap.className = 'fab-ai-msg ' + role;
+    const bub = document.createElement('div');
+    bub.className = 'fab-ai-bubble';
+    if (role === 'ai') {
+      bub.innerHTML = mdToHtml(text);
+      // Add TTS row
+      const row = document.createElement('div');
+      row.className = 'fab-ai-tts-row';
+      const btn = document.createElement('button');
+      btn.className = 'fab-ai-tts-btn';
+      btn.innerHTML = '🔊 Read';
+      btn.onclick = function(){ speakToggle(btn, text); };
+      const rate = document.createElement('select');
+      rate.className = 'fab-ai-tts-rate';
+      rate.title = 'Reading speed';
+      ['0.8','1.0','1.2','1.5','2.0'].forEach(function(r){
+        const o = document.createElement('option');
+        o.value = r; o.textContent = r + 'x';
+        if (r === '1.0') o.selected = true;
+        rate.appendChild(o);
+      });
+      row.appendChild(btn);
+      row.appendChild(rate);
+      bub.appendChild(row);
+    } else {
+      bub.textContent = text;
+    }
+    wrap.appendChild(bub);
+    body.appendChild(wrap);
+    body.scrollTop = body.scrollHeight;
+    return bub;
+  }
+
+  function appendLoading(){
+    const body = document.getElementById('fabAiBody');
+    if (!body) return null;
+    const wrap = document.createElement('div');
+    wrap.className = 'fab-ai-msg ai';
+    wrap.id = 'fabAiLoading';
+    const bub = document.createElement('div');
+    bub.className = 'fab-ai-bubble';
+    bub.innerHTML = '<div class="fab-ai-loading"><div class="fab-ai-spinner"></div> Thinking...</div>';
+    wrap.appendChild(bub);
+    body.appendChild(wrap);
+    body.scrollTop = body.scrollHeight;
+    return wrap;
+  }
+
+  function removeLoading(){
+    const el = document.getElementById('fabAiLoading');
+    if (el) el.remove();
+  }
+
+  function appendStatus(text, isErr){
+    const body = document.getElementById('fabAiBody');
+    if (!body) return;
+    const div = document.createElement('div');
+    div.className = 'fab-ai-status' + (isErr ? ' err' : '');
+    div.innerHTML = text;
+    body.appendChild(div);
+    body.scrollTop = body.scrollHeight;
+  }
+
+  function renderSuggestions(ctx){
+    const body = document.getElementById('fabAiBody');
+    if (!body) return;
+    // Q preview at top
+    if (ctx.question) {
+      const qp = document.createElement('div');
+      qp.className = 'fab-ai-qpreview';
+      qp.innerHTML = '<b>Q:</b> ' + ctx.question.substring(0, 240) + (ctx.question.length > 240 ? '...' : '');
+      body.appendChild(qp);
+    }
+    // Suggestion chips
+    const sug = document.createElement('div');
+    sug.className = 'fab-ai-suggestions';
+    const chips = [];
+    if (ctx.picked === null || ctx.picked === undefined) {
+      chips.push({ label: '💡 Give me a hint', q: 'Give me a hint for this question without revealing the answer.' });
+      chips.push({ label: '🧠 Explain the concept', q: 'Explain the core concept this question is testing.' });
+    } else if (ctx.picked !== ctx.correct && ctx.picked !== null) {
+      chips.push({ label: '❌ Why did I miss this?', q: 'I picked the wrong answer. Walk me through why my pick is wrong and why the correct answer is right.' });
+      chips.push({ label: '🧠 Explain the concept', q: 'Explain the concept this question is testing in simpler terms.' });
+      chips.push({ label: '🎯 Give me a mnemonic', q: 'Give me a memorable mnemonic for this topic.' });
+    } else if (ctx.picked === ctx.correct) {
+      chips.push({ label: '✅ Why is this right?', q: 'Confirm why the correct answer is right and flag any trap distractors to watch for.' });
+      chips.push({ label: '🎯 Give me a mnemonic', q: 'Give me a memorable mnemonic for this topic.' });
+    }
+    chips.push({ label: '🌟 Use an analogy', q: 'Explain this with a dumbed-down analogy.' });
+    chips.forEach(c => {
+      const btn = document.createElement('button');
+      btn.className = 'fab-ai-sug';
+      btn.textContent = c.label;
+      btn.onclick = () => sendMessage(c.q);
+      sug.appendChild(btn);
+    });
+    body.appendChild(sug);
+  }
+
+  function clearChat(preserveCtx){
+    const body = document.getElementById('fabAiBody');
+    if (body) body.innerHTML = '';
+    history = [];
+    if (preserveCtx) {
+      const ctx = readCurrentQ();
+      renderSuggestions(ctx);
+    }
+  }
+
+  function openPanel() {
+    if (!panel) panel = buildPanel();
+    panel.classList.add('open');
+    const ctx = readCurrentQ();
+    const key = qKey(ctx);
+    if (key !== currentQKey) {
+      // Q changed — reset chat and show suggestions for new Q
+      currentQKey = key;
+      clearChat(true);
+    }
+  }
+
+  function buildPanel() {
+    const el = document.createElement('div');
+    el.className = 'fab-ai-panel';
+    el.innerHTML = '<div class="fab-ai-header">'
+      + '<h3>🩺 Study Tutor</h3>'
+      + '<button class="fab-ai-hdr-btn" onclick="fabAiClear()">Clear</button>'
+      + '<button class="fab-ai-close" onclick="fabAiClose()">×</button>'
+      + '</div>'
+      + '<div class="fab-ai-body" id="fabAiBody"></div>'
+      + '<div class="fab-ai-followup">'
+      + '<button class="fab-ai-mini-close" title="Close panel" onclick="fabAiClose()">×</button>'
+      + '<textarea id="fabAiFollowup" placeholder="Ask a question about this Q..." rows="1" onkeydown="if(event.keyCode===13&&!event.shiftKey){event.preventDefault();fabAiFollowupSend();}"></textarea>'
+      + '<button onclick="fabAiFollowupSend()">Send</button>'
+      + '</div>';
+    document.body.appendChild(el);
+    return el;
+  }
+
+  window.fabAiClose = function(){ if(panel) panel.classList.remove('open'); };
+  window.fabAiClear = function(){ clearChat(true); };
+
+  async function callWorker(payload) {
+    if (!ENDPOINT) return { clipboardFallback: true };
+    try {
+      const res = await fetch(ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || ('HTTP ' + res.status));
+      return { reply: data.reply };
+    } catch (e) {
+      return { error: String(e.message || e) };
+    }
+  }
+
+  function clipboardFallback(ctx, userQ) {
+    const letter = (i) => String.fromCharCode(65 + i);
+    let prompt = "I'm studying FAB 101 with Dr. Bui at SCUHS. Drill question:\n\n";
+    prompt += 'Q: ' + ctx.question + '\n\n';
+    if (ctx.options && ctx.options.length) {
+      ctx.options.forEach((o, i) => {
+        const m = [];
+        if (i === ctx.picked) m.push('PICKED');
+        if (i === ctx.correct) m.push('CORRECT');
+        prompt += letter(i) + '. ' + o + (m.length ? ' ('+m.join(', ')+')' : '') + '\n';
+      });
+      prompt += '\n';
+    }
+    if (ctx.profTip) prompt += 'DRILL TIP: ' + ctx.profTip + '\n\n';
+    if (userQ) prompt += 'MY QUESTION: ' + userQ + '\n\n';
+    prompt += 'Explain using a dumbed-down analogy + mnemonic.';
+    navigator.clipboard.writeText(prompt).then(() => {
+      appendStatus('✓ Prompt copied to clipboard. Ask the Study Tutor (the 🩺 button).');
+    }).catch(() => {
+      appendStatus('Could not copy. Please select manually.', true);
+    });
+  }
+
+  async function sendMessage(userText) {
+    const ctx = readCurrentQ();
+    currentQKey = qKey(ctx);
+    appendMsg('user', userText);
+    history.push({ role: 'user', content: userText });
+    appendLoading();
+
+    const payload = Object.assign({}, ctx, {
+      userQuestion: userText,
+      history: history.slice(-10), // last 10 turns for context
+      className: CLASS_NAME, // worker uses this to load class-specific knowledge
+    });
+    const result = await callWorker(payload);
+    removeLoading();
+    if (result.clipboardFallback) {
+      clipboardFallback(ctx, userText);
+      return;
+    }
+    if (result.error) {
+      appendStatus('Error: ' + result.error, true);
+      return;
+    }
+    appendMsg('ai', result.reply);
+    history.push({ role: 'model', content: result.reply });
+  }
+
+  window.fabAiFollowupSend = function() {
+    const ta = document.getElementById('fabAiFollowup');
+    const q = (ta && ta.value || '').trim();
+    if (!q) return;
+    ta.value = '';
+    sendMessage(q);
+  };
+
+  // Button install — opens panel, does NOT auto-call AI
+  function install() {
+    if (document.getElementById('fabAiBtn')) return;
+    const btn = document.createElement('button');
+    btn.className = 'fab-ai-btn';
+    btn.id = 'fabAiBtn';
+    btn.textContent = '🩺';
+    btn.title = 'Open AI Study Tutor';
+    btn.onclick = () => openPanel();
+    document.body.appendChild(btn);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', install);
+  } else {
+    install();
+  }
+})();
+</script></body></html>
