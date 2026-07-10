@@ -1,10 +1,1100 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
-<title>Moved &mdash; Night-Before Blitz</title>
-<meta http-equiv="refresh" content="0; url=bn0213-m10-lecture-blitz.html">
-<link rel="canonical" href="bn0213-m10-lecture-blitz.html">
-<style>body{background:#070b16;color:#e8eefc;font:600 15px/1.6 system-ui;display:grid;place-items:center;height:100vh;margin:0;text-align:center;padding:20px}
-a{color:#c4b5fd}</style></head><body><div>
-<p>This page is now called the <b>Night-Before Blitz</b>.</p>
-<p><a href="bn0213-m10-lecture-blitz.html">Continue &rarr;</a></p>
-<p style="color:#64748b;font-size:12px">(&ldquo;Cram Coach&rdquo; now refers to the one generated from the Claude interface.)</p>
-</div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BN0213 · Module 10 — Lipids Cram Coach</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#11141B; --ink2:#161A22; --panel:#1A1F29; --panel2:#222836;
+    --line:rgba(59,168,192,0.22); --lineSoft:rgba(59,168,192,0.12);
+    --gold:#3BA8C0; --goldHi:#86D0E0; --crimson:#E0605F; --teal:#E0A63E;
+    --text:#F1ECE4; --textMid:#C4BCB2; --textDim:#8E877E;
+    --good:#6FC29A; --bad:#E0716F; --warn:#E0A94E;
+    --disp:'Spectral',Georgia,serif; --body:'Inter',system-ui,-apple-system,sans-serif; --mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{background:var(--ink);color:var(--text);font-family:var(--body);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:900px;margin:0 auto;padding:0 16px 72px}
+  a{color:var(--gold)}
+  ::selection{background:rgba(59,168,192,0.30)}
+  ::-webkit-scrollbar{width:9px;height:9px}
+  ::-webkit-scrollbar-thumb{background:var(--panel2);border-radius:8px}
+
+  header{padding:28px 0 16px}
+  .eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:1.4px;color:var(--gold);border:1px solid var(--line);border-radius:6px;padding:3px 9px;display:inline-block}
+  h1{font-family:var(--disp);font-weight:700;font-size:29px;line-height:1.12;margin:12px 0 6px}
+  .sub{color:var(--textMid);font-size:14.5px;max-width:640px}
+
+  nav.tabs{position:sticky;top:0;z-index:20;background:var(--ink);padding:10px 0;margin-bottom:22px;border-bottom:1px solid var(--lineSoft)}
+  .tabrow{display:flex;gap:8px;overflow-x:auto;padding-bottom:2px}
+  .tab{font-family:var(--body);font-weight:600;font-size:13.5px;letter-spacing:.2px;padding:9px 15px;border-radius:999px;white-space:nowrap;cursor:pointer;border:1px solid var(--line);color:var(--textMid);background:transparent;transition:all .18s}
+  .tab.active{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+
+  .panel{display:none;animation:fade .25s ease}
+  .panel.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+  .seclabel{font-family:var(--mono);font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin:0 0 14px;display:flex;align-items:center;gap:10px}
+  .seclabel::before{content:"";width:18px;height:1px;background:var(--gold)}
+
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-bottom:14px}
+  .card .spine{display:flex}
+  .card .bar{width:6px;flex:0 0 6px}
+  .card .body{padding:15px 17px;flex:1;min-width:0}
+  .card h3{font-family:var(--disp);font-weight:600;font-size:19px;margin:0 0 4px;display:flex;flex-wrap:wrap;align-items:baseline;gap:9px}
+  .cnum{font-family:var(--mono);font-size:12px}
+  .intro{color:var(--textMid);font-size:13.5px;line-height:1.55;margin:6px 0 12px}
+
+  .grp{margin-top:12px}
+  .grp .sub{font-family:var(--body);font-weight:600;font-size:13.5px;color:var(--text);margin:0 0 6px}
+  .fact{display:flex;gap:9px;align-items:flex-start;padding:3px 0}
+  .fact .dot{margin-top:8px;flex:0 0 5px;width:5px;height:5px;border-radius:999px;opacity:.8}
+  .fact .ft{font-size:13.5px;color:var(--textMid);line-height:1.5}
+  .fact b{color:var(--text)}
+  .src{font-family:var(--mono);font-size:10px;color:var(--textDim);border:1px solid var(--lineSoft);border-radius:5px;padding:1px 5px;margin-left:6px;white-space:nowrap}
+  .src.bui{color:var(--crimson);border-color:rgba(224,96,95,.35)}
+
+  .chip{font-family:var(--mono);font-size:11px;font-weight:500;border-radius:6px;padding:2px 8px;white-space:nowrap}
+
+  .playbtn{font-family:var(--body);font-weight:600;font-size:12.5px;color:var(--gold);background:transparent;border:1px solid var(--line);border-radius:9px;padding:6px 12px;cursor:pointer;display:inline-flex;align-items:center;gap:7px;margin-top:12px}
+  .playbtn:hover{background:var(--lineSoft)}
+  .playbtn.playing{color:var(--ink);background:var(--gold);border-color:var(--gold)}
+  .voicenote{font-family:var(--mono);font-size:10.5px;color:var(--textDim);margin-top:8px}
+
+  /* flags */
+  .flag{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:13px 15px;margin-bottom:11px;display:flex;gap:12px;align-items:flex-start}
+  .flag .tagcol{flex:0 0 auto;display:flex;flex-direction:column;gap:5px;align-items:flex-start}
+  .flag .ftitle{font-family:var(--body);font-weight:600;font-size:14.5px;color:var(--text);margin:0 0 4px}
+  .flag .fbody{font-size:13.5px;color:var(--textMid);line-height:1.55}
+  .flag.hot{border-color:rgba(224,96,95,.5);background:rgba(224,96,95,.07)}
+
+  /* drill */
+  .drillbar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+  .stat{font-family:var(--mono);font-size:12.5px;color:var(--textMid)}
+  .filters{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+  .fbtn{font-family:var(--body);font-size:12px;color:var(--textMid);background:var(--ink2);border:1px solid var(--lineSoft);border-radius:8px;padding:6px 10px;cursor:pointer}
+  .fbtn.on{color:var(--ink);background:var(--gold);border-color:var(--gold);font-weight:600}
+  .nav{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px}
+  .ncell{width:30px;height:30px;border-radius:8px;cursor:pointer;font-family:var(--mono);font-size:11px;font-weight:600;border:1.5px solid var(--line);background:transparent;color:var(--textMid);transition:all .15s}
+  .ncell.cur{box-shadow:0 0 0 2px rgba(217,169,78,.45)}
+  .ncell.ok{border-color:var(--good);background:rgba(111,194,154,.2);color:var(--good)}
+  .ncell.no{border-color:var(--bad);background:rgba(224,113,111,.2);color:var(--bad)}
+  .qcard{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px}
+  .qcat{margin-bottom:11px}
+  .qstem{font-size:16.5px;font-weight:500;color:var(--text);line-height:1.42;margin-bottom:15px}
+  .opts{display:flex;flex-direction:column;gap:9px}
+  .opt{text-align:left;cursor:pointer;border:1.5px solid var(--line);background:var(--ink2);border-radius:11px;padding:12px 14px;display:flex;gap:11px;align-items:flex-start;transition:all .15s;font-family:var(--body);font-size:14.5px;color:var(--text);line-height:1.4}
+  .opt .lt{flex:0 0 24px;width:24px;height:24px;border-radius:7px;display:grid;place-items:center;font-family:var(--mono);font-size:12px;font-weight:600;border:1px solid var(--line);color:var(--textMid)}
+  .opt.correct{border-color:var(--good);background:rgba(111,194,154,.12)}
+  .opt.wrong{border-color:var(--bad);background:rgba(224,113,111,.12)}
+  .opt.correct .lt{border-color:var(--good);color:var(--good)}
+  .opt.wrong .lt{border-color:var(--bad);color:var(--bad)}
+  .opt.dim{color:var(--textDim)}
+  .hintbtn{font-family:var(--body);font-weight:500;font-size:13px;color:var(--warn);background:transparent;border:1px solid rgba(224,169,78,.4);border-radius:9px;padding:7px 12px;cursor:pointer;margin-top:14px}
+  .hintbox{margin-top:10px;font-size:13.5px;color:var(--textMid);line-height:1.55;border-left:2px solid rgba(224,169,78,.5);padding-left:11px}
+  .expl{margin-top:16px;background:var(--ink2);border:1px solid var(--lineSoft);border-radius:11px;padding:13px 14px}
+  .expl .lab{font-family:var(--mono);font-size:10.5px;letter-spacing:1px;margin-bottom:6px}
+  .expl .et{font-size:14px;color:var(--text);line-height:1.55}
+  .navbtns{display:flex;justify-content:space-between;margin-top:16px;gap:10px}
+  .nb{font-family:var(--body);font-weight:600;font-size:14px;padding:10px 18px;border-radius:10px;cursor:pointer;border:1px solid var(--line);background:transparent;color:var(--textMid);transition:all .15s}
+  .nb.primary{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+  .nb.off{opacity:.35;cursor:default}
+
+  /* coach */
+  .coachwrap .lead{color:var(--textMid);font-size:13.5px;line-height:1.55;margin-bottom:14px}
+  .chatbox{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px;height:400px;overflow-y:auto;display:flex;flex-direction:column;gap:12px}
+  .msg{max-width:88%;white-space:pre-wrap;border-radius:12px;padding:10px 13px;font-size:14px;line-height:1.55}
+  .msg.user{align-self:flex-end;background:var(--gold);color:var(--ink);font-weight:500;border:1px solid var(--gold)}
+  .msg.bot{align-self:flex-start;background:var(--ink2);color:var(--text);border:1px solid var(--lineSoft)}
+  .quicks{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+  .qk{font-family:var(--body);font-size:12px;color:var(--textMid);background:var(--ink2);border:1px solid var(--lineSoft);border-radius:8px;padding:6px 10px;cursor:pointer}
+  .inrow{display:flex;gap:9px;margin-top:12px}
+  .inrow input{flex:1;font-family:var(--body);font-size:14px;color:var(--text);background:var(--ink2);border:1px solid var(--line);border-radius:11px;padding:12px 14px;outline:none}
+  .inrow button{font-family:var(--body);font-weight:600;font-size:14px;padding:0 18px;border-radius:11px;border:none;cursor:pointer;background:var(--gold);color:var(--ink)}
+  .inrow button:disabled{opacity:.4;cursor:default}
+  .tiny{font-size:11.5px;color:var(--textDim);line-height:1.5;margin-top:10px}
+  .togrow{display:flex;align-items:center;gap:8px;margin-top:10px;font-size:12.5px;color:var(--textMid)}
+  .togrow input{accent-color:var(--gold)}
+
+  footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--lineSoft);font-family:var(--mono);font-size:10.5px;color:var(--textDim);line-height:1.6}
+  .spin{display:inline-block;width:15px;height:15px;animation:sp .8s linear infinite}
+  @keyframes sp{to{transform:rotate(360deg)}}
+</style>
+<style id="fab-ai-companion-css">
+.fab-ai-btn {
+  position: fixed; bottom: 24px; right: 24px; z-index: 9998;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6); color: #fff;
+  border: none; border-radius: 50%; width: 56px; height: 56px;
+  font-size: 26px; cursor: pointer; box-shadow: 0 4px 16px rgba(99,102,241,0.45);
+  transition: all 0.2s; display: flex; align-items: center; justify-content: center;
+  padding: 0;
+}
+.fab-ai-btn:hover { transform: translateY(-2px) scale(1.05); box-shadow: 0 8px 24px rgba(99,102,241,0.6); }
+.fab-ai-btn:active { transform: scale(0.95); }
+
+.fab-ai-panel {
+  position: fixed; top: 0; right: 0; bottom: 0; width: min(480px, 94vw);
+  background: #0f172a; border-left: 2px solid #334155;
+  box-shadow: -8px 0 32px rgba(0,0,0,0.5);
+  z-index: 9999; display: flex; flex-direction: column;
+  transform: translateX(100%); transition: transform 0.28s ease-out;
+}
+.fab-ai-panel.open { transform: translateX(0); }
+
+.fab-ai-header {
+  padding: 12px 16px; background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: #fff; display: flex; align-items: center; gap: 8px;
+}
+.fab-ai-header h3 { font-size: 15px; font-weight: 700; margin: 0; flex: 1; }
+.fab-ai-hdr-btn {
+  background: rgba(255,255,255,0.15); color: #fff; border: none;
+  padding: 6px 10px; border-radius: 6px; cursor: pointer; font-size: 12px;
+  font-weight: 600;
+}
+.fab-ai-hdr-btn:hover { background: rgba(255,255,255,0.28); }
+.fab-ai-close {
+  background: rgba(255,255,255,0.15); color: #fff; border: none;
+  width: 30px; height: 30px; border-radius: 6px; cursor: pointer; font-size: 18px;
+  line-height: 1; padding: 0;
+}
+.fab-ai-close:hover { background: rgba(255,255,255,0.3); }
+
+.fab-ai-body {
+  flex: 1; overflow-y: auto; padding: 14px 16px;
+  color: #e2e8f0; font-size: 13px; line-height: 1.6;
+  display: flex; flex-direction: column; gap: 10px;
+}
+
+.fab-ai-qpreview {
+  padding: 8px 12px; background: rgba(129,140,248,0.08); border-left: 3px solid #818cf8;
+  border-radius: 6px; font-size: 12px; color: #94a3b8; max-height: 100px; overflow-y: auto;
+  flex-shrink: 0;
+}
+.fab-ai-qpreview b { color: #cbd5e1; }
+
+.fab-ai-suggestions {
+  display: flex; flex-wrap: wrap; gap: 6px; padding: 4px 0;
+}
+.fab-ai-sug {
+  background: rgba(99,102,241,0.12); color: #a5b4fc;
+  border: 1px solid rgba(99,102,241,0.35); border-radius: 14px;
+  padding: 6px 12px; font-size: 12px; cursor: pointer; font-weight: 500;
+  transition: all .15s;
+}
+.fab-ai-sug:hover { background: rgba(99,102,241,0.25); color: #dbeafe; transform: translateY(-1px); }
+
+.fab-ai-msg { display: flex; gap: 6px; max-width: 100%; }
+.fab-ai-msg.user { justify-content: flex-end; }
+.fab-ai-bubble {
+  padding: 10px 14px; border-radius: 12px; font-size: 13px; line-height: 1.55;
+  max-width: 92%; word-wrap: break-word;
+}
+.fab-ai-msg.user .fab-ai-bubble {
+  background: linear-gradient(135deg, #3b82f6, #6366f1);
+  color: #fff; border-bottom-right-radius: 4px;
+}
+.fab-ai-msg.ai .fab-ai-bubble {
+  background: #1e293b; color: #e2e8f0; border-bottom-left-radius: 4px;
+  border: 1px solid #334155;
+}
+.fab-ai-msg.ai .fab-ai-bubble strong,
+.fab-ai-msg.ai .fab-ai-bubble b { color: #a5b4fc; }
+.fab-ai-msg.ai .fab-ai-bubble ul { margin: 6px 0; padding-left: 20px; }
+.fab-ai-msg.ai .fab-ai-bubble li { margin: 3px 0; }
+.fab-ai-msg.ai .fab-ai-bubble p { margin: 0 0 8px 0; }
+.fab-ai-msg.ai .fab-ai-bubble p:last-child { margin-bottom: 0; }
+.fab-ai-msg.ai .fab-ai-bubble h3 { font-size: 13px; margin: 8px 0 4px 0; color: #c4b5fd; }
+.fab-ai-msg.ai .fab-ai-bubble code { background: #0f172a; padding: 1px 5px; border-radius: 3px; font-size: 11px; }
+
+.fab-ai-tts-row { display: flex; align-items: center; gap: 6px; margin-top: 6px; padding-top: 6px; border-top: 1px solid #334155; }
+.fab-ai-tts-btn {
+  background: rgba(129,140,248,0.15); color: #c4b5fd;
+  border: 1px solid rgba(129,140,248,0.35); border-radius: 14px;
+  padding: 3px 10px; font-size: 11px; cursor: pointer; font-weight: 500;
+  display: inline-flex; align-items: center; gap: 4px;
+}
+.fab-ai-tts-btn:hover { background: rgba(129,140,248,0.3); color: #ddd6fe; }
+.fab-ai-tts-btn.playing { background: rgba(239,68,68,0.18); color: #fca5a5; border-color: rgba(239,68,68,0.4); }
+.fab-ai-tts-rate {
+  background: #0f172a; color: #cbd5e1; border: 1px solid #334155;
+  border-radius: 6px; padding: 2px 6px; font-size: 11px; cursor: pointer;
+}
+
+.fab-ai-status {
+  padding: 10px 14px; background: rgba(99,102,241,0.12); border: 1px solid rgba(99,102,241,0.3);
+  border-radius: 8px; color: #a5b4fc; font-size: 12px;
+}
+.fab-ai-status.err { background: rgba(239,68,68,0.12); border-color: rgba(239,68,68,0.4); color: #fca5a5; }
+.fab-ai-loading { display: flex; align-items: center; gap: 8px; color: #94a3b8; padding: 4px 6px; font-size: 12px; }
+.fab-ai-spinner {
+  width: 12px; height: 12px; border: 2px solid #334155; border-top-color: #818cf8;
+  border-radius: 50%; animation: fab-ai-spin 0.8s linear infinite;
+}
+@keyframes fab-ai-spin { to { transform: rotate(360deg); } }
+
+.fab-ai-followup {
+  padding: 12px; background: #1e293b; border-top: 1px solid #334155;
+  display: flex; gap: 8px; align-items: flex-end;
+}
+.fab-ai-mini-close {
+  background: #334155; color: #94a3b8; border: 1px solid #475569;
+  width: 32px; height: 36px; border-radius: 8px; cursor: pointer;
+  font-size: 16px; line-height: 1; padding: 0; font-weight: 600;
+  flex-shrink: 0;
+}
+.fab-ai-mini-close:hover { background: #475569; color: #f87171; border-color: #ef4444; }
+.fab-ai-followup textarea {
+  flex: 1; background: #0f172a; color: #e2e8f0;
+  border: 1px solid #334155; border-radius: 8px;
+  padding: 8px 10px; font-size: 13px; font-family: inherit;
+  resize: none; min-height: 36px; max-height: 120px;
+}
+.fab-ai-followup textarea:focus { outline: none; border-color: #818cf8; }
+.fab-ai-followup button {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6); color: #fff;
+  border: none; padding: 0 14px; border-radius: 8px; font-weight: 600;
+  cursor: pointer; font-size: 13px; white-space: nowrap;
+}
+.fab-ai-followup button:hover { transform: translateY(-1px); }
+.fab-ai-followup button:disabled { opacity: 0.5; cursor: not-allowed; }
+</style><style id="dc-wm-css">.dc-study-watermark{position:fixed;bottom:6px;right:10px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:10px;color:rgba(255,255,255,0.32);letter-spacing:.3px;pointer-events:none;z-index:2147483647;user-select:none}</style></head>
+<body>
+<div class="wrap">
+  <header>
+    <span class="eyebrow">BN0213 · MODULE 10 · LIPIDS</span>
+    <h1>Lipid Structure &amp; Function</h1>
+    <p class="sub">Dr. Basso · covers Module 10 (Lipids). Built to his six objectives: triacylglycerols, saturated vs unsaturated fatty acids, nomenclature, cis vs trans, eicosanoids, and phospholipids + glycosphingolipids — plus the lysosomal-storage clinical set. The COX cascade and the phospholipid-classification diagram are excluded (he stamped both NOT testable).</p>
+  </header>
+
+  <nav class="tabs">
+    <div class="tabrow">
+      <button class="tab active" data-tab="cram">Cram</button>
+      <button class="tab" data-tab="flags">Prof-Flags</button>
+      <button class="tab" data-tab="drill">Recall</button>
+      <button class="tab" data-tab="coach">AI Coach</button>
+    </div>
+  </nav>
+
+  <section class="panel active" id="cram"></section>
+  <section class="panel" id="flags"></section>
+  <section class="panel" id="drill"></section>
+  <section class="panel" id="coach"></section>
+
+  <footer id="foot"></footer>
+</div>
+
+<script>
+/* ============================ DATA ============================ */
+/* Source tags: [Slide N] = slide-only · [Basso MM:SS] = spoken (full-recording clock).
+   Grounded in Basso's PowerPoint, his objectives + exam cues, and the lecture transcript. */
+
+var GOLD="#3BA8C0", CRIM="#E0605F", TEAL="#E0A63E";
+var SECCLR=["#3BA8C0","#E0A63E","#E0605F","#7FA7E0","#B08BE0","#7FC29A","#E07AA8","#7F8FE0","#5FD0C0"];
+
+var CRAM=[
+ { id:1, title:"Lipids — properties &amp; function", clr:SECCLR[0],
+   intro:"The foundation. Basso opened on why fat is such a good fuel and what jobs lipids do in the body.",
+   groups:[
+     {sub:"What a lipid is", facts:[
+       ["A heterogeneous group (fats, oils, steroids, waxes) that all contain fatty acids or a steroid nucleus","Slide 3"],
+       ["Properties: rich in C–C and C–H bonds → high energy (~9 kcal/g); hydrophobic (insoluble in water); soluble in organic solvents (ether, chloroform, benzene, acetone)","Slide 4 / Basso 35:28"],
+     ]},
+     {sub:"The 7 functions (his must-know list)", facts:[
+       ["Energy (triacylglycerol) · cell membranes (phospholipids) · fat-soluble vitamin absorption (<b>DEAK</b>) · steroid hormones (cholesterol)","Slide 5"],
+       ["Organ protection (adipose) · electrical insulation of axons (myelin) · <b>lung surfactant (dipalmitoyl lecithin)</b>","Slide 5"],
+       ["Wax = ester of a fatty acid + a long-chain <b>monohydric</b> (one –OH) alcohol; used for waterproofing/energy","Slide 7"],
+     ]},
+   ],
+   walk:[
+     ["A","Why is fat such a good fuel?"],
+     ["E","It’s basically a chain of carbon-hydrogen bonds, and those bonds are packed with energy — about nine kilocalories per gram, more than twice what carbs or protein give you. And because it’s all hydrocarbon, it’s hydrophobic, so it clumps together and won’t dissolve in water. Think of an oil spill sitting in blobs on the ocean."],
+     ["A","What jobs do lipids do?"],
+     ["E","Seven he wants you to know: energy from triacylglycerols, cell membranes from phospholipids, absorbing the fat-soluble vitamins — D, E, A, K — steroid hormones from cholesterol, cushioning organs, insulating nerves as myelin, and lowering surface tension in the lungs as surfactant. Energy, membrane, vitamins, hormones, protection, insulation, surfactant."],
+   ]},
+
+ { id:2, title:"Triacylglycerols (Objective 1)", clr:SECCLR[1],
+   intro:"The body’s fat-storage molecule. Simple structure — know the three pieces.",
+   groups:[
+     {sub:"Structure + storage", facts:[
+       ["<b>TAG (triglyceride) = glycerol + 3 fatty acids</b>, joined to glycerol by ESTER linkages","Slide 6 / Basso 47:18"],
+       ["Glycerol = a <b>three-carbon alcohol</b> (the backbone that anchors the three fatty acids)","Basso 47:34"],
+       ["Stored in <b>adipocytes</b> (fat cells) in animals; as oils in plant seeds","Slide 6 / Basso 47:42"],
+       ["He joked you’d have to draw it on the exam, then said “don’t worry about it” — know the pieces, you won’t have to draw it","Basso 101:24"],
+     ]},
+   ],
+   walk:[
+     ["A","Build a triacylglycerol for me."],
+     ["E","Start with glycerol — a little three-carbon alcohol — and hang three fatty acid chains off it through ester linkages. Glycerol backbone, three fatty acids, ester bonds. That’s it. It’s how the body warehouses fat, tucked away in adipocytes."],
+   ]},
+
+ { id:3, title:"Saturated vs unsaturated — the Four S’s (Objective 2)", clr:SECCLR[2],
+   intro:"His red-pen mnemonic lives here. The whole objective collapses into four S’s.",
+   groups:[
+     {sub:"The core idea", facts:[
+       ["A fatty acid = a long-chain carboxylic acid, C4–C24, general formula R–COOH; it has TWO ends: a <b>carboxyl terminus</b> and a <b>methyl terminus</b>","Slide 8 / Basso 52:03"],
+       ["<b>Saturated = no double bonds = ‘saturated WITH HYDROGENS’</b> (“hopefully you remember this forever”)","Basso 53:03 / Slide 12"],
+       ["Unsaturated = has double bond(s); a double bond puts a <b>BEND</b> in the chain; sub-types = mono- vs poly-unsaturated","Basso 59:43 / Slide 13"],
+     ]},
+     {sub:"THE FOUR S’s (red pen)", facts:[
+       ["<b>Saturated = Sat · Single (bonds) · Straight (no bend) · Solid at room temp</b>","Basso 68:59"],
+       ["<b>Unsaturated = Un · Double · Bend · Liquid</b>","Basso 68:59"],
+       ["His examples: filet-mignon fat is solid and melts on the barbecue; cheese/butter solid — saturated. Oils stay liquid — unsaturated","Basso 72:05"],
+       ["You do NOT have to memorize the actual structures — understand how they behave","Basso 51:22"],
+     ]},
+   ],
+   walk:[
+     ["A","Give me the Four S’s."],
+     ["E","Saturated is the four S’s: Sat, Single bonds, Straight chain, Solid at room temperature. Unsaturated is the mirror: Un, Double bonds, a Bend in the chain, Liquid. So butter and steak fat — saturated, single bonds, straight, solid. Olive oil — unsaturated, double bond, bent, liquid."],
+     ["A","Why does one double bond change everything?"],
+     ["E","The double bond kinks the chain. Straight saturated chains stack neatly and pack into a solid; a bent unsaturated chain can’t stack, so it stays loose and liquid. And ‘saturated’ just means saturated with hydrogens — every carbon is holding all the hydrogen it can, no room for a double bond."],
+   ]},
+
+ { id:4, title:"Nomenclature &amp; omega (Objective 3)", clr:SECCLR[3],
+   intro:"His single strongest cue: “You will see that on a test.” Omega naming + reading a shorthand like C18:3.",
+   groups:[
+     {sub:"Naming + numbering", facts:[
+       ["Suffix: <b>saturated = -anoic</b> (eicosanoic = arachidic acid, peanut oil); <b>unsaturated = -enoic</b> (eicosapentaenoic = EPA, an omega-3 in cold-water fish)","Slide 9"],
+       ["Number carbons from the CARBOXYL end: carbon next to –COOH = α, then β…; the terminal (methyl) carbon = ω (omega), next is ω2","Slide 10"],
+     ]},
+     {sub:"Omega naming (STRONGEST CUE)", facts:[
+       ["<b>Omega = position of the FIRST double bond counting from the ω (methyl) end</b> — “make sure you understand that nomenclature, you WILL see it on a test”","Basso 65:30 / Slide 11"],
+       ["Three families: ω3, ω6, ω9","Slide 11"],
+       ["<b>Reading C18:3</b> = 18 carbons long, 3 double bonds (this one is α-linolenic acid)","Basso 65:44"],
+     ]},
+     {sub:"Essential fatty acids", facts:[
+       ["<b>ω3 and ω6 are essential</b> — the body can’t make them, we must eat them; they’re PUFAs. Examples: linolenic (ω3), linoleic (ω6), arachidonic (ω6)","Basso 64:30 / Slide 14"],
+       ["<b>EPA</b> (eicosapentaenoic acid) — “you should know about” it","Basso 66:34"],
+     ]},
+   ],
+   walk:[
+     ["A","This is his big one. How does omega naming work?"],
+     ["E","Flip the molecule around and count from the methyl end — the omega end — to the first double bond. If it’s three carbons in, it’s omega-3; six carbons in, omega-6. That’s the whole rule, and he flat-out said you will see it on the test."],
+     ["A","And a shorthand like C18:3?"],
+     ["E","Two numbers: carbons, then double bonds. C18:3 means eighteen carbons long with three double bonds. That one’s alpha-linolenic acid. Left number is length, right number is how many double bonds."],
+     ["A","Which fatty acids are essential?"],
+     ["E","Omega-3 and omega-6 — linolenic, linoleic, arachidonic. Essential means your body can’t build them, so they have to come from your diet. And know EPA by name."],
+   ]},
+
+ { id:5, title:"Cis vs trans (Objective 4)", clr:SECCLR[4],
+   intro:"Same-side versus opposite-side hydrogens — and why trans fats behave like saturated fat.",
+   groups:[
+     {sub:"The distinction", facts:[
+       ["<b>Cis</b>: both H’s on the SAME side of the C=C → causes a BEND; common in natural foods (almonds, avocado, canola)","Slide 18"],
+       ["<b>Trans</b>: both H’s on OPPOSITE sides → NO bend (‘straight’), so it RESEMBLES a saturated fat; rare in nature","Slide 18"],
+       ["<b>Trans fats are made by PARTIAL hydrogenation</b> of oils (complete hydrogenation → fully saturated)","Slide 20"],
+     ]},
+     {sub:"Health + sources", facts:[
+       ["Trans (and saturated) fats are detrimental → ↑ risk of CVD and diabetes (mechanism unclear)","Slide 21"],
+       ["Trans sources: margarine, vegetable shortening, deep-fried foods, baked goods, chips; naturally trace in milk/eggs/beef","Slide 22"],
+     ]},
+   ],
+   walk:[
+     ["A","Cis versus trans in one line each?"],
+     ["E","Cis has both hydrogens on the same side, which kinks the chain — that’s your normal natural fat. Trans has them on opposite sides, so the chain stays straight and acts just like a saturated fat. Same side bends, opposite side straight."],
+     ["A","Where do trans fats come from?"],
+     ["E","Partial hydrogenation — you take a healthy liquid oil and force hydrogens on halfway, and it straightens into a solid-ish trans fat. Margarine, shortening, fried and baked goods. If you fully hydrogenate, you just get a saturated fat."],
+   ]},
+
+ { id:6, title:"Essential FA &amp; eicosanoids (Objective 5)", clr:SECCLR[5],
+   intro:"Where the essential fats go — membranes and eicosanoids. He said the COX cascade itself is NOT testable.",
+   groups:[
+     {sub:"What the essential fats do", facts:[
+       ["Linolenic + linoleic acids act as membrane phospholipids and <b>maintain membrane fluidity</b>","Slide 15"],
+       ["<b>Arachidonic acid is the precursor for the eicosanoids: prostaglandins, thromboxanes, leukotrienes</b>","Slide 15"],
+     ]},
+     {sub:"Omega-3 clinical", facts:[
+       ["Omega-3s → ↓ cardiovascular risk (?) and ↓ serum triacylglycerols; sources = cold-water fish (salmon, tuna, herring), walnuts, flaxseed","Slide 16"],
+       ["Omega-3s REDUCE arachidonic-acid content in membrane phospholipids (platelets, endothelium, inflammatory cells) — less inflammatory signaling","Slide 17"],
+       ["Balance matters: the Western diet takes in far too much omega-6","Basso 77:20 / 79:22"],
+     ]},
+     {sub:"What to skip", facts:[
+       ["The COX-1/COX-2 prostaglandin cascade and tissue isomerases/prostacyclin/thromboxane synthesis are <b>NOT testable</b> — just know eicosanoids come FROM arachidonic acid","Basso 84:06"],
+     ]},
+   ],
+   walk:[
+     ["A","Where do the essential fats end up?"],
+     ["E","Two places. They sit in your cell membranes keeping them fluid, and arachidonic acid — an omega-6 — is the raw material for the eicosanoids: prostaglandins, thromboxanes, and leukotrienes. Membrane fluidity and eicosanoid precursor."],
+     ["A","How deep on the eicosanoid pathway?"],
+     ["E","Not deep at all — he stamped the COX cascade not testable and said don’t memorize it. Just know the source: arachidonic acid makes prostaglandins, thromboxanes, and leukotrienes. And that omega-3s tamp that system down by pushing arachidonic acid out of the membrane."],
+   ]},
+
+ { id:7, title:"Phospholipids — lecithin &amp; sphingomyelin (Objective 6)", clr:SECCLR[6],
+   intro:"Two phospholipids, two must-know clinical facts. (The classification diagram itself is not testable.)",
+   groups:[
+     {sub:"The two backbones", facts:[
+       ["Phospholipid = alcohol + fatty acid + phosphate + amino alcohol; 2 subtypes by alcohol: <b>glycerophospholipid</b> (glycerol) vs <b>sphingophospholipid</b> (sphingosine)","Slide 24"],
+       ["The phospholipid-classification DIAGRAM is NOT testable — just know a phospholipid always has a phosphate","Basso 103:55"],
+     ]},
+     {sub:"Lecithin (phosphatidylcholine)", facts:[
+       ["Glycerol + fatty acid + phosphate + <b>choline</b>","Slide 25"],
+       ["<b>Dipalmitoyl lecithin = the LUNG SURFACTANT</b> — lowers alveolar surface tension, prevents alveolar collapse (“know this for sure”)","Basso 106:19 / Slide 25"],
+     ]},
+     {sub:"Sphingomyelin", facts:[
+       ["Sphingosine + fatty acid + phosphate + choline","Slide 26"],
+       ["<b>A large portion of the MYELIN SHEATH</b> (also in nerves, brain, lungs, liver) — “you should definitely know this”","Basso 108:25 / Slide 26"],
+     ]},
+   ],
+   walk:[
+     ["A","Two phospholipids, two facts — give me the pairs."],
+     ["E","Lecithin is the glycerol one, and dipalmitoyl lecithin is your lung surfactant — it lowers surface tension so the alveoli don’t collapse. Sphingomyelin is the sphingosine one, and it makes up a big chunk of the myelin sheath. Lecithin-lungs, sphingomyelin-myelin. He said know both for sure."],
+     ["A","What separates the two subtypes?"],
+     ["E","Just the backbone alcohol. Glycerol backbone makes it a glycerophospholipid like lecithin; sphingosine backbone makes it a sphingophospholipid like sphingomyelin. Both still carry a phosphate — that’s what makes it a phospholipid."],
+   ]},
+
+ { id:8, title:"Glycolipids — cerebrosides &amp; gangliosides (Objective 6)", clr:SECCLR[7],
+   intro:"Ceramide plus a sugar. Two types, split by how much sugar and where they live.",
+   groups:[
+     {sub:"The two glycolipids", facts:[
+       ["Glycolipid = <b>ceramide + carbohydrate</b>; two important ones: cerebrosides and gangliosides","Slide 27"],
+       ["<b>Cerebrosides</b>: a single sugar (monosaccharide — glucose or galactose); found in <b>myelin</b> (brain + nerves)","Slide 28 / Basso 108:25"],
+       ["<b>Gangliosides</b>: a sugar chain (oligosaccharide); found in the <b>gray matter</b> of the brain","Slide 28"],
+     ]},
+   ],
+   walk:[
+     ["A","Cerebroside versus ganglioside?"],
+     ["E","Both are ceramide plus sugar — the difference is how much sugar and where. Cerebrosides carry a single sugar and live in myelin. Gangliosides carry a whole sugar chain and live in gray matter. One sugar, myelin; many sugars, gray matter. And GM2 ganglioside is the one that piles up in Tay-Sachs, which sets up the next section."],
+   ]},
+
+ { id:9, title:"Lysosomal storage diseases (clinical)", clr:SECCLR[8],
+   intro:"The high-yield clinical payoff — a missing lysosomal enzyme, a substrate that piles up, and his cherry-red-spot mnemonic.",
+   groups:[
+     {sub:"The three diseases (enzyme → substrate → signs)", facts:[
+       ["<b>Tay-Sachs</b>: hexosaminidase A deficiency → <b>GM2 ganglioside</b> accumulates → cherry-red spot, blindness, psychomotor retardation, startle reflex, death &lt; 2 yr — <b>NO hepatosplenomegaly</b>","Slide 30"],
+       ["<b>Niemann-Pick</b>: sphingomyelinase deficiency → <b>sphingomyelin</b> accumulates → cherry-red spot + <b>hepatosplenomegaly</b> + mental retardation + early death","Slide 30"],
+       ["<b>Gaucher</b>: glucocerebrosidase deficiency → <b>glucocerebroside</b> accumulates → hepatosplenomegaly, bone erosion/fractures, pancytopenia/thrombocytopenia","Slide 30"],
+     ]},
+     {sub:"His mnemonic + exam tip", facts:[
+       ["<b>“Cherry Trees Never Grow Tall In Sand”</b> = causes of a cherry-red spot: <b>C</b>RAO, <b>T</b>rauma, <b>N</b>iemann-Pick, <b>G</b>aucher, <b>T</b>ay-Sachs, <b>S</b>andhoff","Basso 111:47"],
+       ["<b>Exam tip: cherry-red spot + CNS symptoms + NO hepatosplenomegaly = Tay-Sachs.</b> His board-likelihood ranking: 1) Tay-Sachs 2) Niemann-Pick 3) Gaucher","Basso 118:02"],
+     ]},
+   ],
+   walk:[
+     ["A","Line up the three diseases."],
+     ["E","Each is a missing lysosomal enzyme letting a substrate pile up. Tay-Sachs — hexosaminidase A missing, GM2 ganglioside builds up, cherry-red spot, and crucially no big liver or spleen. Niemann-Pick — sphingomyelinase missing, sphingomyelin builds up, cherry-red spot but this time with hepatosplenomegaly. Gaucher — glucocerebrosidase missing, glucocerebroside builds up, big liver and spleen plus bone problems."],
+     ["A","How do I tell Tay-Sachs from Niemann-Pick fast?"],
+     ["E","The spleen and liver. Both give a cherry-red spot and brain symptoms, but Tay-Sachs has NO hepatosplenomegaly and Niemann-Pick does. So cherry-red spot plus CNS signs but a normal belly points to Tay-Sachs — that’s his exam tip, and he ranked it the number-one board answer."],
+     ["A","And the mnemonic for the spot itself?"],
+     ["E","Cherry Trees Never Grow Tall In Sand — CRAO, Trauma, Niemann-Pick, Gaucher, Tay-Sachs, Sandhoff. He typed it into the chat and told you to save it."],
+   ]},
+];
+
+/* PROF-FLAGS — Basso's emphasis */
+var FLAGS=[
+ {hot:true, tag:"STRONGEST CUE", clr:CRIM, title:"Omega nomenclature — “you WILL see it on a test”",
+  body:"“Make sure you understand that nomenclature. You will see that on a test.” Omega number = the position of the first double bond counting from the ω (methyl) end. Three families: ω3, ω6, ω9.", src:"Basso 65:30"},
+ {hot:true, tag:"MNEMONIC", clr:CRIM, title:"The Four S’s (red pen)",
+  body:"Saturated = Sat · Single · Straight · Solid. Unsaturated = Un · Double · Bend · Liquid. He wrote it in red pen and said “make notes here.”", src:"Basso 68:59"},
+ {tag:"READ IT", clr:GOLD, title:"C18:3 = 18 carbons, 3 double bonds",
+  body:"The shorthand is carbons : double bonds. C18:3 is eighteen carbons with three double bonds (α-linolenic acid). “Make sure you know that.”", src:"Basso 65:44"},
+ {tag:"FOREVER", clr:TEAL, title:"Saturated = saturated WITH hydrogens",
+  body:"“Hopefully you will remember this forever.” No double bonds means every carbon is holding all the hydrogen it can.", src:"Basso 53:03"},
+ {hot:true, tag:"KNOW FOR SURE", clr:CRIM, title:"Dipalmitoyl lecithin = lung surfactant",
+  body:"“This is one you should know for sure.” It lowers the surface tension of the alveoli and prevents them from collapsing.", src:"Basso 106:19"},
+ {hot:true, tag:"DEFINITELY KNOW", clr:CRIM, title:"Sphingomyelin = myelin sheath",
+  body:"“You should definitely know this. Large portion of the myelin sheath. That’s really important.”", src:"Basso 108:25"},
+ {hot:true, tag:"EXAM TIP", clr:CRIM, title:"Cherry-red spot + no hepatosplenomegaly = Tay-Sachs",
+  body:"Cherry-red spot + CNS symptoms + NO hepatosplenomegaly = Tay-Sachs. His board-likelihood ranking, numbered in red pen: 1) Tay-Sachs 2) Niemann-Pick 3) Gaucher.", src:"Basso 118:02"},
+ {tag:"MNEMONIC", clr:GOLD, title:"Cherry Trees Never Grow Tall In Sand",
+  body:"Causes of a cherry-red spot: CRAO, Trauma, Niemann-Pick, Gaucher, Tay-Sachs, Sandhoff. He typed it into the chat and said “save it.”", src:"Basso 111:47"},
+ {tag:"ESSENTIAL", clr:GOLD, title:"ω3 &amp; ω6 must be eaten",
+  body:"Essential fatty acids — the omega-3s and omega-6s — can’t be made by the body, so they have to come from the diet. Linolenic (ω3), linoleic (ω6), arachidonic (ω6).", src:"Basso 64:30"},
+ {tag:"KNOW IT", clr:TEAL, title:"Two ends of a fatty acid",
+  body:"Every fatty acid has a carboxyl terminus and a methyl terminus — the methyl end is the omega end you count from.", src:"Basso 52:03"},
+ {tag:"KEY LINK", clr:GOLD, title:"Arachidonic acid → eicosanoids",
+  body:"Arachidonic acid is the precursor for prostaglandins, thromboxanes, and leukotrienes. That’s the testable link — not the pathway.", src:"Slide 15"},
+ {tag:"TRANS", clr:TEAL, title:"Trans fats = partial hydrogenation",
+  body:"Trans fats are made by PARTIAL hydrogenation of oils; opposite-side hydrogens leave the chain straight, so it behaves like a saturated fat. Complete hydrogenation gives a saturated fat.", src:"Slide 20"},
+ {hot:true, tag:"⛔ DO NOT STUDY", clr:CRIM, title:"What he stamped NOT testable",
+  body:"Skip the COX-1/COX-2 prostaglandin cascade (84:06, slide stamped ‘FYI: NOT TESTABLE’) and the phospholipid-classification diagram (103:55, slide reads ‘not testable’). You also don’t need to memorize the fatty-acid structures (51:22).", src:"Basso 84:06 / 103:55"},
+];
+
+var BANK_RAW = [{"q": "According to Dr. Basso, what is the general structure of a triacylglycerol (what your lab report calls a triglyceride)?", "cat": "Triacylglycerols & Wax", "o": ["A glycerol backbone joined to a single steroid nucleus", "Three fatty acid chains joined to glycerol by ester linkages", "Two fatty acid chains and a phosphate group joined to glycerol", "One fatty acid wrapped around three glycerol molecules"], "c": 1, "r": "Dr. Basso defines a tag as three fatty acid chains (one, two, and three) each attached to the three-carbon glycerol through an ester linkage.", "source": "Basso 47:18", "quote": "He said: \"There are three fatty acid chains, one, two, and three. And then they have an ester linkage through that oxygen, and that is bonding the glycerol molecule.\"", "slide": "Fats (Triacylglycerols): glycerol + 3 fatty acids"}, {"q": "Dr. Basso describes glycerol, the backbone that anchors the three fatty acids of a triacylglycerol. What kind of molecule is glycerol?", "cat": "Triacylglycerols & Wax", "o": ["A long-chain saturated fatty acid", "A phosphate-containing head group", "A three-carbon alcohol", "A cholesterol-derived steroid ring"], "c": 2, "r": "Dr. Basso states glycerol is an alcohol that is just three carbons, providing the attachment points for the fatty acids.", "source": "Basso 47:34", "quote": "He said: \"Glycerol is an alcohol... it's just the three carbons there.\"", "slide": "Fats (Triacylglycerols): glycerol + 3 fatty acids"}, {"q": "Dr. Basso says triacylglycerols are how the body likes to store its fats. Where are they primarily stored?", "cat": "Triacylglycerols & Wax", "o": ["In adipocytes (fat cells)", "In the myelin sheaths of neurons", "Floating freely in the bloodstream as glucose", "Inside red blood cells"], "c": 0, "r": "Dr. Basso says the esters of fatty acids with glycerol are stored in adipocytes, which is how the body stores fat.", "source": "Basso 47:42", "quote": "He said: \"esters and fatty acids with glycerol stored in adipocytes. This is how we like to store our fats.\"", "slide": "Fats (Triacylglycerols): glycerol + 3 fatty acids"}, {"q": "Dr. Basso explains that fats can also take the form of a wax. How does he describe the structure of a wax?", "cat": "Triacylglycerols & Wax", "o": ["Three fatty acids esterified to glycerol", "Two fatty acids attached to a sphingosine backbone", "A fatty acid bonded to a phosphate head group", "Esters of fatty acids with a monohydric alcohol (a single hydroxyl group)"], "c": 3, "r": "Dr. Basso defines a wax as esters of fatty acids with a monohydric alcohol, meaning an alcohol with just one hydroxyl group.", "source": "Basso 48:08", "quote": "He said: \"fats can also be waxes, esters of fatty acids with monohydric, 1-hydroxyl group.\"", "slide": "Fats (Triacylglycerols): glycerol + 3 fatty acids"}, {"q": "Dr. Basso opens with a picture of fat surrounded by flames. What point is he making about lipids as a fuel?", "cat": "Lipid Properties & Function", "o": ["Fat cannot be used for energy and must be excreted", "Fat is the most energy-dense fuel, giving about 9 kcal per gram, more than any other source", "Fat and carbohydrate release exactly the same energy per gram", "Fat only releases energy when it is combined with water"], "c": 1, "r": "Dr. Basso stresses fat is a very dense energy source at about 9 kcal per gram, the most energy per gram of any macronutrient.", "source": "Basso 35:28", "quote": "He said: \"You get more energy from one gram of fat than you do from anything else... 9 kcal per gram, most energy per gram.\"", "slide": "Introduction: Properties (hydrophobic, high energy)"}, {"q": "Dr. Basso says the only good news about an oil spill is that the oil stays in blobs instead of dissolving into the ocean. What property explains this?", "cat": "Lipid Properties & Function", "o": ["Oil is denser than water and simply sinks", "Oil forms ester bonds with the surrounding water molecules", "Oil is a charged, polar molecule", "Oil is hydrophobic, so it does not mix with water and sticks to itself"], "c": 3, "r": "Dr. Basso says oil likes to stick together because it is hydrophobic and does not like water, so it stays contained rather than dispersing.", "source": "Basso 36:41", "quote": "He said: \"oil likes to stick together because it's hydrophobic. It doesn't like water.\"", "slide": "Introduction: Lipids"}, {"q": "Dr. Basso likes to say that lipids are mostly hydrocarbons. Why does that composition make them such a good energy source?", "cat": "Lipid Properties & Function", "o": ["Breaking the many carbon-to-carbon and carbon-to-hydrogen bonds releases a large amount of energy", "Hydrocarbons dissolve easily in blood and are quickly absorbed", "Hydrocarbons are packed with phosphate groups that store energy", "Hydrocarbons are charged, so they attract water and swell"], "c": 0, "r": "Dr. Basso explains lipids are largely carbons and hydrogens, and breaking those numerous carbon-carbon and carbon-hydrogen bonds gives you a lot of energy.", "source": "Basso 37:30", "quote": "He said: \"they are mostly hydrocarbons... and the hydrocarbons breaking those bonds gives you a lot of energy.\"", "slide": "Introduction: Lipids"}, {"q": "How does Dr. Basso define lipids as a group of molecules?", "cat": "Lipid Properties & Function", "o": ["A single, uniform molecule found only in cell membranes", "A family of water-soluble sugars", "A heterogeneous group of compounds (fats, oils, steroids, waxes) that contain fatty acids or a steroid nucleus", "A class of proteins that fold up to store energy"], "c": 2, "r": "Dr. Basso defines lipids as a heterogeneous group, including fats, oils, steroids, and waxes, that contain either fatty acids or a steroid nucleus.", "source": "Basso 36:51", "quote": "He said: \"lipids are a heterogeneous group of compounds, including fats, oils, steroids, waxes, et cetera, containing fatty acids or a steroid nucleus.\"", "slide": "Introduction: Lipids"}, {"q": "Lipids are insoluble in water. According to Dr. Basso, what CAN dissolve them, as shown by his paint-cleanup example?", "cat": "Lipid Properties & Function", "o": ["Salt water", "Strong acids only", "Nothing; lipids are insoluble in every solvent", "Organic solvents such as ether, chloroform, benzene, and acetone"], "c": 3, "r": "Dr. Basso says lipids are insoluble in water but dissolve in organic solvents like ether, chloroform, benzene, and acetone (acetone doubling as paint thinner).", "source": "Basso 38:25", "quote": "He said: \"it's insoluble in water because it's hydrophobic, but it can dissolve in organic solvents like ether, chloroform, benzene, acetone.\"", "slide": "Introduction: Lipids"}, {"q": "Dr. Basso warns that eating a dry salad with no dressing may cause you to miss out on nutrients. Which vitamins require dietary fat for absorption?", "cat": "Lipid Properties & Function", "o": ["Vitamin C and the B-complex vitamins", "The fat-soluble vitamins D, E, A, and K", "Only vitamin C", "All of the water-soluble vitamins"], "c": 1, "r": "Dr. Basso says fats let you absorb the fat-soluble vitamins D, E, A, and K, which is why a salad should be paired with fat such as nuts, avocado, or olive oil.", "source": "Basso 40:10", "quote": "He said: \"Fats also allow you to absorb fat-soluble vitamins. Vitamin D, E, A, and K.\"", "slide": "Lipid Function (energy, membrane, DEAK, hormones)"}, {"q": "Dr. Basso points to testosterone and estrogen to illustrate which function of lipids?", "cat": "Lipid Properties & Function", "o": ["Serving as the body's genetic blueprint", "Carrying oxygen through the blood", "Serving as the raw material for steroid hormones", "Speeding up digestion as enzymes"], "c": 2, "r": "Dr. Basso lists steroid hormones such as testosterone and estrogen as an important lipid-based function in humans.", "source": "Basso 42:07", "quote": "He said: \"Steroid hormones... Think of testosterone. Think of estrogen.\"", "slide": "Lipid Function (energy, membrane, DEAK, hormones)"}, {"q": "In the cadaver lab you should find a fat pad around the kidney. Dr. Basso uses this to illustrate which function of fat?", "cat": "Lipid Properties & Function", "o": ["Protection and cushioning of internal organs", "Production of digestive enzymes", "Synthesis of DNA", "Transport of oxygen to tissues"], "c": 0, "r": "Dr. Basso says the fat pad around the kidney provides protection, cushioning the organ (his car-accident analogy about absorbing impact).", "source": "Basso 42:31", "quote": "He said: \"there should be a fat pad around the kidney... because that's going to provide some protection.\"", "slide": "Lipid Function (energy, membrane, DEAK, hormones)"}, {"q": "Dr. Basso notes that fat also insulates nerve cells. Which structure did he say is made of fat?", "cat": "Lipid Properties & Function", "o": ["The ribosomes of the neuron", "The synaptic vesicles", "The cell nucleus", "The myelin sheath wrapping the axons"], "c": 3, "r": "Dr. Basso says the myelin that wraps around your axons is made of fat, insulating the nerve fiber.", "source": "Basso 43:49", "quote": "He said: \"The myelin that wraps around your axons is made of fat.\"", "slide": "Lipid Function (energy, membrane, DEAK, hormones)"}, {"q": "Among the functions of lipids, Dr. Basso lists lung surfactant. Which lipid did he name as the lung surfactant?", "cat": "Lipid Properties & Function", "o": ["Cholesterol", "Dipalmitoyl lecithin", "Glycerol", "Arachidonic acid"], "c": 1, "r": "Dr. Basso names dipalmitoyl lecithin as the lung surfactant, mentioning it alongside respiratory distress syndrome from lab.", "source": "Basso 44:01", "quote": "He said: \"Surfactant for the lungs. Dipalmitoyl lecithin.\"", "slide": "Lipid Function (energy, membrane, DEAK, hormones)"}, {"q": "Dr. Basso argues that phospholipids may be the single most common molecule in the entire body. What is his reasoning?", "cat": "Phospholipids & Sphingolipids", "o": ["Every cell membrane in the body is built from phospholipids, and there are roughly 20 trillion cells", "Phospholipids are the main mineral in bone", "Phospholipids circulate in the blood as sugar", "Each phospholipid molecule contains three fatty acids, making them heavy"], "c": 0, "r": "Dr. Basso reasons that all membranes use phospholipids and, multiplied across roughly 20 trillion cells, they are probably the most common molecule in the body.", "source": "Basso 39:53", "quote": "He said: \"phospholipids are probably the most common molecule in your entire body.\"", "slide": "Lipid Function (energy, membrane, DEAK, hormones)"}, {"q": "According to Dr. Basso, a wax is an ester formed when a fatty acid combines with which other component?", "cat": "Triacylglycerols & Wax", "o": ["A molecule of glycerol", "A phosphate group", "A long-chain alcohol", "A second fatty acid"], "c": 2, "r": "He defined a wax as the ester of a fatty acid with a long-chain alcohol (e.g., palmitic acid forming spermaceti wax).", "source": "Basso 48:21", "quote": "", "slide": "Wax: ester of fatty acid + long-chain alcohol"}, {"q": "Which of the following did Dr. Basso list as a function of waxes in animals and plants?", "cat": "Triacylglycerols & Wax", "o": ["Carrying oxygen in the blood", "Energy storage and waterproofing", "Encoding proteins for the cell", "Buffering the pH of blood"], "c": 1, "r": "He listed the wax functions as energy storage, waterproofing, and being hydrophobic (candles are wax too).", "source": "Basso 51:04", "quote": "He said: \"functions are multiple energy storage, waterproofing, as we talked about, hydrophobic\"", "slide": "Wax: ester of fatty acid + long-chain alcohol"}, {"q": "Dr. Basso noted that burn victims are at major risk of dehydration in part because they lose which protective feature?", "cat": "Lipid Properties & Function", "o": ["Their outer oily, waterproof skin barrier", "Their store of essential fatty acids", "Their supply of triacylglycerols", "Their carboxyl termini"], "c": 0, "r": "He said skin's oily, waterproof coating guards against dehydration, and losing that outer barrier is one reason burn victims dehydrate.", "source": "Basso 50:52", "quote": "He said: \"That's why burn victims are at major risk of dehydration... one of them is losing that outer barrier\"", "slide": "Wax: ester of fatty acid + long-chain alcohol"}, {"q": "Dr. Basso stressed that every fatty acid has two ends. What are these two termini?", "cat": "Fatty Acid Structure", "o": ["An amino terminus and a carboxyl terminus", "A phosphate terminus and a glycerol terminus", "A methyl terminus and a carboxyl terminus", "A hydroxyl terminus and a sulfhydryl terminus"], "c": 2, "r": "He insisted you know the two ends: the methyl terminus (CH3) and the carboxyl terminus (COOH).", "source": "Basso 52:03", "quote": "He said: \"make sure you know that there's those two terminus, the methyl terminus and the carboxyl terminus\"", "slide": "Fatty Acids: C4-C24, R-COOH, the 4 types"}, {"q": "Dr. Basso said the carbon-chain length of fatty acids can vary across what span, giving short-, medium-, and long-chain fatty acids?", "cat": "Fatty Acid Structure", "o": ["From 1 to 6 carbons", "From 10 to 100 carbons", "From 24 to 48 carbons", "From 4 to 24 carbons"], "c": 3, "r": "He said fatty-acid length varies from C4 (four carbons) up to 24 carbons, giving short-, medium-, and long-chain fatty acids.", "source": "Basso 52:19", "quote": "He said: \"the lengths of the fatty acids can vary from C4, four carbons, all the way to 24 carbons\"", "slide": "Fatty Acids: C4-C24, R-COOH, the 4 types"}, {"q": "What did Dr. Basso give as the general formula for a fatty acid, reflecting its carboxyl-capped hydrocarbon chain?", "cat": "Fatty Acid Structure", "o": ["R-COOH", "R-NH2", "R-PO4", "R-OH"], "c": 0, "r": "He gave the general formula as R-COOH: a hydrocarbon chain (R) ending in the carboxyl (COOH) group.", "source": "Basso 52:36", "quote": "He said: \"The general formula is R-C-O-O-H because they have the carboxyl group on the end\"", "slide": "Fatty Acids: C4-C24, R-COOH, the 4 types"}, {"q": "In the moment he told the class to remember 'forever,' how did Dr. Basso explain why a fatty acid is called saturated?", "cat": "Saturated vs Unsaturated", "o": ["Because it is dissolved (saturated) in water", "Because it is saturated with hydrogens", "Because it holds the maximum number of double bonds", "Because its carboxyl end is saturated with oxygen"], "c": 1, "r": "His 'remember this forever' point: a fatty acid is saturated because it is saturated WITH hydrogens (no carbon-carbon double bonds, so hydrogens everywhere).", "source": "Basso 53:03", "quote": "He said: \"hopefully you will remember this forever... We say it's saturated because it's saturated with hydrogens\"", "slide": "Fatty Acids: C4-C24, R-COOH, the 4 types"}, {"q": "Besides being 'saturated with hydrogens,' how did Dr. Basso say you can recognize a saturated fatty acid by its bonds?", "cat": "Saturated vs Unsaturated", "o": ["It has exactly one carbon-carbon double bond", "It has many carbon-carbon double bonds", "It has no carbon-carbon double bonds", "It has a double bond only at the methyl end"], "c": 2, "r": "He said we call it saturated 'because there are no double bonds' (no carbon-to-carbon double bonds; the carboxyl group's own bond is not counted).", "source": "Basso 52:50", "quote": "He said: \"Why do we call it saturated? Because there are no double bonds.\"", "slide": "Fatty Acids: C4-C24, R-COOH, the 4 types"}, {"q": "How did Dr. Basso distinguish a MONOunsaturated from a POLYunsaturated fatty acid?", "cat": "Saturated vs Unsaturated", "o": ["Mono has many double bonds; poly has one", "Mono is always an omega-3; poly is always an omega-6", "Mono is essential; poly is non-essential", "Mono has one double bond; poly has many double bonds"], "c": 3, "r": "'Mono' means one double bond (e.g., oleic acid) and 'poly' means many double bonds (the PUFAs).", "source": "Basso 55:50", "quote": "He said: \"Poly means many, many double bonds\"", "slide": "Fatty Acids: C4-C24, R-COOH, the 4 types"}, {"q": "Dr. Basso taught a quick way to classify a fatty acid as omega-3, -6, or -9. What is the method?", "cat": "Nomenclature & Omega", "o": ["Count carbons from the carboxyl (alpha) end to the first double bond", "Count carbons from the methyl (omega) end to the first double bond", "Count the total number of double bonds in the chain", "Count the total number of carbons in the chain"], "c": 1, "r": "He said to look at the methyl (omega) end and count carbons; the first double bond you reach dictates omega-3, -6, or -9.", "source": "Basso 54:46", "quote": "He said: \"if we count from the omega end, the first double bond we see will dictate if it's an omega 3, 6, 9, etc.\"", "slide": "Fatty Acids: C4-C24, R-COOH, the 4 types"}, {"q": "When identifying an omega-3 PUFA, why did Dr. Basso say the additional double bonds further down the chain do not change the classification?", "cat": "Nomenclature & Omega", "o": ["Only the double bond nearest the omega (methyl) end sets the number", "An omega-3 has only one double bond in total", "You actually count double bonds from the carboxyl end", "The additional double bonds cancel each other out"], "c": 0, "r": "He stressed counting from the omega end to the FIRST double bond only: 'It doesn't matter that there's another one coming up. You just count the first one.'", "source": "Basso 55:32", "quote": "He said: \"It doesn't matter that there's another one coming up. You just count the first one.\"", "slide": "Fatty Acids: C4-C24, R-COOH, the 4 types"}, {"q": "Dr. Basso said certain fatty acids are 'essential.' Which fatty acids did he identify as essential, and why?", "cat": "Essential Fatty Acids & Eicosanoids", "o": ["The omega-9s, because the body overproduces them", "All saturated fatty acids, because they store the most energy", "Only short-chain fatty acids, because they absorb fastest", "The omega-3s and omega-6s, because we cannot make them and must eat them"], "c": 3, "r": "He named the essential fatty acids as the omega-3s and omega-6s: 'We cannot make those ourselves. That's why we need to eat them.'", "source": "Basso 56:14", "quote": "He said: \"The omega-3s and the omega-6s. Those are the essential ones. We cannot make those ourselves.\"", "slide": "Fatty Acids: C4-C24, R-COOH, the 4 types"}, {"q": "In fatty acid naming, Dr. Basso mapped 'alpha' and 'omega' to the two ends of the molecule. Which mapping did he give?", "cat": "Nomenclature & Omega", "o": ["Alpha = the methyl end; omega = the carboxyl end", "Alpha = the carboxyl end; omega = the methyl end", "Alpha = the middle of the chain; omega = both ends", "Alpha = the first double bond; omega = the last double bond"], "c": 1, "r": "He mapped the carboxyl end as the alpha end and the methyl end as the omega end (alpha = first/beginning, omega = the end).", "source": "Basso 59:30", "quote": "He said: \"we have that omega end, which is the methyl end... the acidic or carboxyl end over here. That's the alpha end.\"", "slide": "Nomenclature / Naming: unsaturated vs saturated"}, {"q": "Dr. Basso told the class to 'pay attention' to a fatty acid with a double bond. What does a carbon-carbon double bond do to the shape of the chain?", "cat": "Saturated vs Unsaturated", "o": ["It makes the chain perfectly straight", "It adds extra hydrogens at that carbon", "It puts a bend (kink) in the chain", "It converts the fatty acid into glycerol"], "c": 2, "r": "He told the class to notice the 'slight bend': a carbon-carbon double bond changes the chain's linearity and puts a bend in it.", "source": "Basso 59:43", "quote": "He said: \"Notice this, everyone. Pay attention. Look. See how there's a slight bend?\"", "slide": "Nomenclature / Naming: unsaturated vs saturated"}, {"q": "Dr. Basso contrasted the names 'icosanoic' and 'icosapentaenoic (EPA)', which differ only in one part of the ending. Based on the suffix, which statement is correct?", "cat": "Nomenclature & Omega", "o": ["Both names indicate saturated fatty acids", "Icosanoic is unsaturated; icosapentaenoic (EPA) is saturated", "Both names indicate unsaturated fatty acids", "Icosanoic is saturated; icosapentaenoic (EPA) is unsaturated"], "c": 3, "r": "The suffix -anoic means saturated (icosanoic), while -enoic means unsaturated, which is why EPA (icosapentaenoic) carries double bonds.", "source": "Basso 61:24", "quote": "He said: \"So icosanoic is saturated, whereas enoic is unsaturated.\"", "slide": "Naming: -anoic (sat) vs -enoic (unsat)"}, {"q": "Using the Greek-letter naming Dr. Basso described, which carbon is the alpha carbon of a fatty acid?", "cat": "Nomenclature & Omega", "o": ["The terminal carbon at the very end of the chain", "The carbon adjacent to the carboxylic acid (COOH) group", "The carbon that carries the first double bond", "The methyl-end carbon"], "c": 1, "r": "Numbering starts at the COOH end, so the carbon adjacent to the carboxylic acid is the alpha carbon; the next one is beta.", "source": "Basso 63:52", "quote": "He said: \"The carbon adjacent to the COOH is the alpha carbon.\"", "slide": "Naming: alpha & beta carbons from the COOH end"}, {"q": "Dr. Basso stressed that a fatty acid's carbons can be counted two different ways. Which pairing is correct?", "cat": "Nomenclature & Omega", "o": ["Greek letters (alpha, beta...) count from the methyl end; omega numbers count from the COOH end", "Greek letters (alpha, beta...) count from the COOH end; omega numbers count from the methyl end", "Both systems count from the COOH end", "Both systems count from the methyl end"], "c": 1, "r": "The alpha carbon is adjacent to the COOH group (Greek letters count from the carboxyl end), whereas omega counting starts at the terminal methyl (omega) carbon.", "source": "Basso 64:24", "quote": "He said: \"So it just depends, are we counting from the methyl end or are we counting from the carboxyl end?\"", "slide": "Naming: alpha & beta carbons from the COOH end"}, {"q": "What did Dr. Basso identify as the 'omega carbon' of a fatty acid?", "cat": "Nomenclature & Omega", "o": ["The carboxylic acid (COOH) carbon", "The carbon adjacent to the COOH group", "The terminal (last) carbon, at the methyl end", "The carbon bearing the third double bond"], "c": 2, "r": "The terminal carbon at the methyl end is the omega carbon; the next one in is omega-2, and so on.", "source": "Basso 64:08", "quote": "He said: \"The terminal carbon is called the omega carbon.\"", "slide": "Naming: alpha & beta carbons from the COOH end"}, {"q": "According to Dr. Basso, how is a fatty acid classified as an omega-3 versus an omega-6?", "cat": "Nomenclature & Omega", "o": ["By the total number of double bonds in the chain", "By the total number of carbons in the chain", "By the position of the first double bond counted from the COOH end", "By the position of the first double bond counted from the methyl (omega) end"], "c": 3, "r": "The name comes from the first double bond counted from the omega (methyl) end: if it is at the third carbon, it is omega-3.", "source": "Basso 64:49", "quote": "He said: \"the name is based on the first double bond from the omega\"", "slide": "Omega Fatty Acids: ALA, EPA, DHA, LA, AA"}, {"q": "Why did Dr. Basso stress that the omega-3 and omega-6 fatty acids are called 'essential'?", "cat": "Essential Fatty Acids & Eicosanoids", "o": ["Because the body makes them only in the liver", "Because we must obtain them from the diet since our bodies cannot make them", "Because they are the most abundant fatty acids in the plasma membrane", "Because they are needed only during infancy"], "c": 1, "r": "Omega-3 and omega-6 are essential because our bodies cannot make them, so they must come from food.", "source": "Basso 64:42", "quote": "He said: \"we have to eat them because we cannot make these in our body\"", "slide": "Omega Fatty Acids: ALA, EPA, DHA, LA, AA"}, {"q": "Dr. Basso contrasted omega-9 fatty acids with omega-3 and omega-6. What did he say about omega-9s?", "cat": "Essential Fatty Acids & Eicosanoids", "o": ["They are essential because we cannot make them", "They are the only truly essential fatty acids", "They are not essential because our bodies can make them", "They cannot be found in any food source"], "c": 2, "r": "Omega-9s are not essential because the body can synthesize them on its own.", "source": "Basso 68:01", "quote": "He said: \"omega-9s are not essential fatty acids because we can make omega-9s\"", "slide": "Omega Fatty Acids: ALA, EPA, DHA, LA, AA"}, {"q": "Dr. Basso showed the shorthand 'C18:3' for alpha-linolenic acid and said it will be on the test. What does C18:3 mean?", "cat": "Nomenclature & Omega", "o": ["18 double bonds and 3 carbons", "carbon number 18 with a single double bond at position 3", "18 carbons and 3 double bonds", "18 carbons and 3 branch points"], "c": 2, "r": "The number before the colon is the carbon count (18) and the number after is the number of double bonds (3), so alpha-linolenic is C18:3.", "source": "Basso 65:44", "quote": "He said: \"make sure you know that means it's 18 carbons long and it has 3 double bonds\"", "slide": "Omega Fatty Acids: ALA, EPA, DHA, LA, AA"}, {"q": "Following the same shorthand, what would 'C18:0' tell you about a fatty acid?", "cat": "Nomenclature & Omega", "o": ["It has 18 double bonds", "It is unsaturated with one double bond", "It is an 'omega-0' fatty acid", "It is saturated, because the zero means no double bonds"], "c": 3, "r": "The zero after the colon means zero double bonds, so a C18:0 fatty acid is saturated.", "source": "Basso 65:58", "quote": "He said: \"If it had a zero there, it means it's saturated. There's no double bonds.\"", "slide": "Omega Fatty Acids: ALA, EPA, DHA, LA, AA"}, {"q": "Dr. Basso said you should know eicosapentaenoic acid (EPA). How did he describe its structure and class?", "cat": "Essential Fatty Acids & Eicosanoids", "o": ["20 carbons, 5 double bonds, omega-3", "18 carbons, 2 double bonds, omega-6", "22 carbons, 6 double bonds, omega-3", "20 carbons, 0 double bonds, saturated"], "c": 0, "r": "EPA (eicosapentaenoic acid) has 20 carbons and 5 double bonds and is an omega-3.", "source": "Basso 66:06", "quote": "He said: \"eicosapentaenoic acid, EPA, five double bonds, 20 carbons. It's an omega-3.\"", "slide": "Omega Fatty Acids: ALA, EPA, DHA, LA, AA"}, {"q": "How did Dr. Basso describe DHA (docosahexaenoic acid)?", "cat": "Nomenclature & Omega", "o": ["18 carbons, 3 double bonds, omega-3", "22 carbons, 6 double bonds, omega-3", "20 carbons, 5 double bonds, omega-3", "24 carbons, 4 double bonds, omega-6"], "c": 1, "r": "DHA has 22 carbons and 6 double bonds and is an omega-3 ('hexa' = six double bonds).", "source": "Basso 67:21", "quote": "He said: \"that's 22 with six double bonds, and it's an omega-3\"", "slide": "Omega Fatty Acids: ALA, EPA, DHA, LA, AA"}, {"q": "Dr. Basso described linoleic acid. What are its carbon count, double bonds, and omega class?", "cat": "Nomenclature & Omega", "o": ["20 carbons, 5 double bonds, omega-3", "18 carbons, 3 double bonds, omega-3", "18 carbons, 2 double bonds, omega-6", "22 carbons, 6 double bonds, omega-6"], "c": 2, "r": "Linoleic acid is 18 carbons with 2 double bonds and is an omega-6.", "source": "Basso 67:35", "quote": "He said: \"That one is 18, two double bonds, and it's an omega-6.\"", "slide": "Omega Fatty Acids: ALA, EPA, DHA, LA, AA"}, {"q": "Which fatty acid did Dr. Basso describe as 'really common in our plasma membranes' and classify as an omega-6?", "cat": "Essential Fatty Acids & Eicosanoids", "o": ["Eicosapentaenoic acid (EPA)", "Docosahexaenoic acid (DHA)", "Alpha-linolenic acid (ALA)", "Arachidonic acid"], "c": 3, "r": "Arachidonic acid is the omega-6 he said is really common in our plasma membranes.", "source": "Basso 67:44", "quote": "He said: \"This one's really common in our plasma membranes.\"", "slide": "Omega Fatty Acids: ALA, EPA, DHA, LA, AA"}, {"q": "Dr. Basso asked whether EPA, with its five double bonds, is a PUFA or a MUFA. What is the answer and why?", "cat": "Saturated vs Unsaturated", "o": ["PUFA, because 'poly' means many double bonds", "MUFA, because 'mono' refers to a single long chain", "MUFA, because it has one carboxyl group", "Neither, because it is a saturated fatty acid"], "c": 0, "r": "EPA is a PUFA (polyunsaturated) because 'poly' means many double bonds, and EPA has five.", "source": "Basso 66:28", "quote": "He said: \"PUFA because it's poly because there's many double bonds.\"", "slide": "Omega Fatty Acids: ALA, EPA, DHA, LA, AA"}, {"q": "Dr. Basso told everyone to 'make notes here' and gave a memory trick for saturated fatty acids. What are his 'four S's'?", "cat": "Saturated vs Unsaturated", "o": ["Saturated, Single, Straight, Solid at room temperature", "Saturated, Soft, Short, Soluble", "Saturated, Single, Symmetrical, Sticky", "Saturated, Straight, Slippery, Sweet"], "c": 0, "r": "His four S's are Saturated = Single bonds, Straight chains (no bend), and Solid at room temperature.", "source": "Basso 69:21", "quote": "He said: \"So I call it the four S's. Saturated. Single. Straight. Solid at room temp.\"", "slide": "Saturated Fatty Acids + HIS FOUR S's (red pen)"}, {"q": "Using the opposite of his four S's, how did Dr. Basso characterize UNSATURATED fatty acids?", "cat": "Saturated vs Unsaturated", "o": ["Single bonds, straight chains, solid at room temperature", "At least one double bond, a bend in the chain, and liquid at room temperature", "No double bonds, a bend in the chain, and solid at room temperature", "At least one double bond, straight chains, and liquid at room temperature"], "c": 1, "r": "Unsaturated fats have at least one double bond, which puts a bend in the chain, and they are liquid at room temperature.", "source": "Basso 71:21", "quote": "He said: \"Are they straight? No, there is a bend. Are they solid at room temperature? No, they're liquid at room temperature.\"", "slide": "Unsaturated Fatty Acids: mono vs poly"}, {"q": "Dr. Basso listed examples of saturated fats and gave a general rule about their food sources. Which statement matches what he said?", "cat": "Saturated vs Unsaturated", "o": ["Saturated fats come only from plants; there are no animal sources", "All plant oils are saturated and all animal fats are unsaturated", "Saturated fats are mostly animal products (butter, cheese, milk, meat), with plant exceptions like palm oil and coconut oil", "Saturated fats always contain at least one double bond"], "c": 2, "r": "Saturated fats are mostly animal products (palmitic acid, butter, cheese, milk, meat), with plant exceptions such as palm oil and coconut oil.", "source": "Basso 68:50", "quote": "He said: \"animal products are going to have the saturated and plants are going to have the unsaturated fats\"", "slide": "Saturated Fatty Acids + HIS FOUR S's (red pen)"}, {"q": "Dr. Basso noted that coconut oil can be solid or liquid depending on the room temperature. What did he say this tells you about coconut oil?", "cat": "Saturated vs Unsaturated", "o": ["It contains both saturated and unsaturated fats", "It is purely saturated", "It is purely unsaturated", "It contains no fatty acids at all"], "c": 0, "r": "Because it can be solid or liquid depending on temperature, coconut oil must contain both saturated and unsaturated fats; most foods are a mix that is simply more saturated or more unsaturated.", "source": "Basso 72:10", "quote": "He said: \"So what that's telling you is it has both saturated and unsaturated.\"", "slide": "Unsaturated Fatty Acids: mono vs poly"}, {"q": "Dr. Basso contrasts monounsaturated (MUFA) and polyunsaturated (PUFA) fatty acids by counting double bonds. How many carbon-carbon double bonds does a MUFA have?", "cat": "Saturated vs Unsaturated", "o": ["None - it is fully saturated", "More than one", "At least three", "Exactly one"], "c": 3, "r": "'MUFAs only have one double bond' - the prefix mono means one.", "source": "Basso 73:21", "quote": "He said: \"MUFAs only have one double bond.\"", "slide": "Unsaturated Fatty Acids: mono vs poly"}, {"q": "What makes the omega-3 and omega-6 fatty acids 'essential,' according to Dr. Basso?", "cat": "Essential Fatty Acids & Eicosanoids", "o": ["They are the only fatty acids the body can build de novo", "The body cannot synthesize them, so they must come from the diet", "They are saturated fats used mainly for long-term energy storage", "They are manufactured in the liver from cholesterol"], "c": 1, "r": "His slide lists essential fatty acids as 'not synthesized' in the body, so as he puts it 'we need to eat them.'", "source": "Basso 74:01", "quote": "He said: \"because these are essential fatty acids, we need to eat them\"", "slide": "Essential Fatty Acids (omega 3, 6) pathways"}, {"q": "Dr. Basso says that once you eat an essential fatty acid, your body can 'modify our fatty acids de novo.' What kind of modification does he demonstrate?", "cat": "Essential Fatty Acids & Eicosanoids", "o": ["Adding carbon units (elongation) and adding double bonds (desaturation) to make them longer and more unsaturated", "Converting them directly into glucose for fuel", "Breaking them down into cholesterol", "Leaving them unchanged and simply storing them as triacylglycerols"], "c": 0, "r": "He shows elongase enzymes adding 2-carbon units and desaturases adding double bonds - 'we can modify fatty acids de novo.'", "source": "Basso 75:10", "quote": "He said: \"just know that we can modify fatty acids de novo depending on what our body is doing\"", "slide": "Essential Fatty Acids (omega 3, 6) pathways"}, {"q": "In the omega-6 pathway, Dr. Basso ends at a 20-carbon fatty acid he calls 'a big portion of our phospholipids in our plasma membranes.' Which fatty acid is it?", "cat": "Essential Fatty Acids & Eicosanoids", "o": ["Alpha-linolenic acid", "DHA (docosahexaenoic acid)", "Arachidonic acid", "EPA (eicosapentaenoic acid)"], "c": 2, "r": "The omega-6 pathway ends in arachidonic acid, which he stresses is 'a big portion of our phospholipids in our plasma membranes.'", "source": "Basso 74:57", "quote": "He said: \"arachidonic acid is a big portion of our phospholipids in our plasma membranes\"", "slide": "Essential Fatty Acids (omega 3, 6) pathways"}, {"q": "Starting from dietary alpha-linolenic acid, Dr. Basso traces the omega-3 pathway to two fatty acids he says are 'really good for you.' In order, which two are they?", "cat": "Essential Fatty Acids & Eicosanoids", "o": ["Arachidonic acid, then gamma-linolenic acid", "DHA first, then EPA", "Gamma-linolenic acid, then arachidonic acid", "EPA first, then DHA"], "c": 3, "r": "The omega-3 pathway runs from alpha-linolenic acid through to EPA (eicosapentaenoic), then on to DHA (docosahexaenoic).", "source": "Basso 76:19", "quote": "He said: \"This is EPA... and we get DHA, dicosahexaenoic acid\"", "slide": "Essential Fatty Acids (omega 3, 6) pathways"}, {"q": "Flagging it as 'really important - listen up,' how does Dr. Basso generally characterize omega-6 versus omega-3 fatty acids?", "cat": "Essential Fatty Acids & Eicosanoids", "o": ["Both families are equally pro-inflammatory", "Omega-6 are anti-inflammatory; omega-3 are pro-inflammatory", "Omega-6 are generally pro-inflammatory; omega-3 are generally anti-inflammatory", "Neither family has any effect on inflammation"], "c": 2, "r": "'omega-6s are pro-inflammatory... omega-3 fatty acids are less inflammatory... you could say they're anti-inflammatory.'", "source": "Basso 77:48", "quote": "He said: \"generally speaking, omega-6s are pro-inflammatory... omega-3s tend to be anti-inflammatory\"", "slide": "Essential Fatty Acids (omega 3, 6) pathways"}, {"q": "A student concludes 'omega-6 is bad.' How does Dr. Basso correct that?", "cat": "Essential Fatty Acids & Eicosanoids", "o": ["Omega-6 is always harmful and should be eliminated from the diet", "Omega-6 itself isn't bad - the problem is getting too much of it (or having inflammatory conditions)", "Omega-6 is completely harmless in any amount", "Omega-6 is only harmful if eaten together with omega-3"], "c": 1, "r": "'everything is bad if you get too much of it' - omega-6 becomes a problem in excess or with inflammatory issues like inflammatory arthritis.", "source": "Basso 79:16", "quote": "He said: \"everything is bad if you get too much of it\"", "slide": "Essential Fatty Acids (omega 3, 6) pathways"}, {"q": "Dr. Basso says our dietary omega-6 to omega-3 ratio is 'out of whack.' What ratio should we aim for, and where does the Western diet actually sit?", "cat": "Essential Fatty Acids & Eicosanoids", "o": ["Aim for about 2 to 1 omega-6 to omega-3, but the Western diet runs closer to 8 to 1, up to 20 to 1", "Aim for 20 to 1 omega-6 to omega-3, which the Western diet already meets", "Aim for 1 to 1, but the Western diet runs about 2 to 1", "Aim for 8 to 1 omega-3 to omega-6, but the Western diet reverses it"], "c": 0, "r": "'the ratio should be something like 2 to 1 omega-6 to omega-3... the Western diet is... Closer to 8 to 1, all the way up to 20 to 1.'", "source": "Basso 79:52", "quote": "He said: \"the ratio should be something like 2 to 1 omega-6 to omega-3... Closer to 8 to 1, all the way up to 20 to 1\"", "slide": "Essential Fatty Acids (omega 3, 6) pathways"}, {"q": "Dr. Basso explains why Americans get too much omega-6. Which foods does he name as the omega-6-heavy staples of the American diet?", "cat": "Essential Fatty Acids & Eicosanoids", "o": ["Cold-water fish and flaxseed", "Walnuts, chia, and flaxseed oil", "Grains, pasta, and bread", "Leafy greens and berries"], "c": 2, "r": "'Where do we see omega-6 oils? Grains. Pasta. Bread... That's the American diet.'", "source": "Basso 80:29", "quote": "He said: \"Where do we see omega-6 oils? Grains. Pasta. Bread.\"", "slide": "Essential Fatty Acids (omega 3, 6) pathways"}, {"q": "For a patient who wants more omega-3 but does not eat animal products, which source does Dr. Basso specifically call 'a really good source of omega-3s'?", "cat": "Essential Fatty Acids & Eicosanoids", "o": ["Cold-water (oily) fish", "Bread and pasta", "Beef", "Flaxseed oil"], "c": 3, "r": "'Flaxseed oil is a really good source of omega-3s if you don't want to eat animals' (walnuts and chia are the other plant options he names).", "source": "Basso 82:08", "quote": "He said: \"Flaxseed oil is a really good source of omega-3s if you don't want to eat animals\"", "slide": "Essential Fatty Acids (omega 3, 6) pathways"}, {"q": "Dr. Basso invokes the saying 'you are what you eat.' What point is he making about dietary fatty acids?", "cat": "Lipid Properties & Function", "o": ["Dietary fats are all burned for energy and leave no structural mark", "The fatty acids you eat are built into your plasma membranes and help set their fluidity", "Dietary fats are converted entirely into cholesterol", "Only saturated fats can be incorporated into cell membranes"], "c": 1, "r": "'whatever fatty acids you are eating... that's going to help make up your plasma membranes... and they maintain fluidity of the cell membrane.'", "source": "Basso 92:40", "quote": "He said: \"so you are what you eat... and they maintain fluidity of the cell membrane\"", "slide": "Essential FAs: membrane phospholipids, fluidity"}, {"q": "Using the now-banned trans fats as his example, what did Dr. Basso say happens to a plasma membrane built largely from trans fats?", "cat": "Cis vs Trans", "o": ["It becomes more fluid and more flexible", "It stops incorporating any dietary fatty acids", "It becomes more permeable to water", "It becomes more rigid and less flexible, which is unhealthy"], "c": 3, "r": "'it made your membrane more rigid. It wasn't as flexible, and that's not healthy. You want it to be fluid.'", "source": "Basso 93:06", "quote": "He said: \"it made your membrane more rigid. It wasn't as flexible, and that's not healthy. You want it to be fluid.\"", "slide": "Essential FAs: membrane phospholipids, fluidity"}, {"q": "Objective 5 concerns eicosanoids. Consistent with Dr. Basso's lecture, eicosanoids are formed by modifying what type of fatty acid?", "cat": "Essential Fatty Acids & Eicosanoids", "o": ["A 2-carbon acetyl group", "A 20-carbon polyunsaturated fatty acid, such as arachidonic acid", "A 16-carbon saturated fatty acid", "A short-chain saturated fatty acid"], "c": 1, "r": "Eicosanoids ('eicosa' = 20) are built from 20-carbon polyunsaturated fatty acids like arachidonic acid, the omega-6 product he built up to 20 carbons and placed in the membrane.", "source": "Basso 74:57", "quote": "", "slide": "Essential Fatty Acids (omega 3, 6) pathways"}, {"q": "On the 'Omega Fatty Acids: Clinical Significance' point, what does Dr. Basso say omega-3 fatty acids do at the cell membrane?", "cat": "Essential Fatty Acids & Eicosanoids", "o": ["They reduce the arachidonic acid content in the membrane phospholipids of platelets, endothelial cells, and inflammatory cells", "They increase arachidonic acid in every membrane in the body", "They strip all phospholipids out of the membrane", "They convert membrane cholesterol into arachidonic acid"], "c": 0, "r": "'Omega-3 fatty acids reduce the content of arachidonic acid in the membrane phospholipids, in platelets, endothelial cells, and inflammatory cells' - omega-3 substitutes in for the omega-6.", "source": "Basso 94:11", "quote": "He said: \"Omega-3 fatty acids reduce the content of arachidonic acid in the membrane phospholipids, in platelets, endothelial cells, and inflammatory cells\"", "slide": "Omega Fatty Acids: Clinical Significance"}, {"q": "Dr. Basso finds it 'interesting' that omega-3 - itself a fatty acid - does what to blood lipids, correlating with decreased cardiovascular risk?", "cat": "Essential Fatty Acids & Eicosanoids", "o": ["Raises serum triacylglycerols (tags)", "Has no measurable effect on blood tags", "Is associated with a decrease in serum triacylglycerols (tags)", "Converts blood tags directly into cholesterol"], "c": 2, "r": "'it's actually a fatty acid, omega-3, but it's associated with a decrease in blood tags,' and it correlates with decreased cardiovascular risk.", "source": "Basso 93:43", "quote": "He said: \"it's actually a fatty acid, omega-3, but it's associated with a decrease in blood tags\"", "slide": "Essential FAs: membrane phospholipids, fluidity"}, {"q": "Returning to the essential fatty acids after the break, which two fatty acids does Dr. Basso name (noting their role as membrane phospholipids)?", "cat": "Essential Fatty Acids & Eicosanoids", "o": ["Arachidonic acid and EPA", "Linoleic and linolenic acid", "Gamma-linolenic and dihomogamma-linolenic acid", "EPA and DHA"], "c": 1, "r": "'so linoleic and linolenic role as membrane phospholipids' - linoleic (omega-6) and linolenic (omega-3) are the essential fatty acids.", "source": "Basso 91:59", "quote": "", "slide": "Essential FAs: membrane phospholipids, fluidity"}, {"q": "In a cis carbon-carbon double bond, how are the two hydrogen atoms arranged?", "cat": "Cis vs Trans", "o": ["One hydrogen is on one side and the other is on the opposite side", "Both hydrogens are removed and replaced by oxygen", "The hydrogens are shared equally across the double bond", "Both hydrogens are on the same side of the double bond"], "c": 3, "r": "Cis means both hydrogens are on the same side of the C=C, which is what produces the bend in the chain.", "source": "Basso 96:06", "quote": "He said: \"cis means both of the hydrogens are on the same side of the double bond\"", "slide": "Cis vs Trans Fatty Acids"}, {"q": "How does Dr. Basso define a trans carbon-carbon double bond?", "cat": "Cis vs Trans", "o": ["There is a hydrogen on one side and a hydrogen on the other side", "Both hydrogens sit on the same side of the double bond", "There are no hydrogens on the double-bonded carbons", "The double bond is fully saturated with hydrogens"], "c": 0, "r": "Trans means one hydrogen is on one side and the other hydrogen is on the opposite side of the double bond.", "source": "Basso 96:11", "quote": "He said: \"trans means there is a hydrogen on one side and a hydrogen on the other side\"", "slide": "Cis vs Trans Fatty Acids"}, {"q": "What does the trans configuration do to the shape of the fatty acid chain?", "cat": "Cis vs Trans", "o": ["It puts a sharp bend in the chain", "It coils the chain into a ring", "It straightens the chain out instead of leaving a bend", "It has no effect on the chain's shape"], "c": 2, "r": "A trans double bond straightens the chain out instead of leaving the bend that a cis bond would create.", "source": "Basso 96:21", "quote": "He said: \"it straightens it out instead of having as much of a bend\"", "slide": "Cis vs Trans Fatty Acids"}, {"q": "Dr. Basso stressed that although a trans fat is technically unsaturated, how does it actually behave?", "cat": "Cis vs Trans", "o": ["Like an essential omega-3 fatty acid", "Like a phospholipid in the membrane", "Like a molecule with no fat-like properties at all", "Like a saturated fatty acid"], "c": 3, "r": "Because the trans double bond straightens the chain, a trans fat, though technically unsaturated, behaves like a saturated fatty acid.", "source": "Basso 96:25", "quote": "He said: \"So a trans fat, although it is unsaturated, it acts kind of like a saturated fatty acid.\"", "slide": "Cis vs Trans Fatty Acids"}, {"q": "Why does Dr. Basso say saturated (and trans) fats were favored for products like cakes, cookies, snack chips, and fried foods?", "cat": "Cis vs Trans", "o": ["They are liquid at room temperature, making batter pourable", "They are solid at room temperature", "They add omega-3 fatty acids to the product", "They prevent any oxidation of the food"], "c": 1, "r": "Saturated fats (and trans fats that mimic them) are solid at room temperature, which is why they were used in cakes, cookies, snack chips, and fried foods.", "source": "Basso 96:36", "quote": "He said: \"saturated fatty acids are solid at room temperature, and therefore that's why they like to use it in cakes, cookies, snack chips, fried foods\"", "slide": "Cis vs Trans Fatty Acids"}, {"q": "On his Study Check slide, Dr. Basso asks how trans fats are created. What is the answer?", "cat": "Cis vs Trans", "o": ["Complete hydrogenation", "Oxidation of glycerol", "Partial hydrogenation", "Esterification with phosphate"], "c": 2, "r": "Partial hydrogenation is how trans fats are created; it leaves a hydrogen on one side and the other, forming the trans double bond.", "source": "Basso 101:52", "quote": "He said: \"How are the trans fats created? Partial hydrogenation.\"", "slide": "Study Check: How are trans fats created?"}, {"q": "What health risks did Dr. Basso attribute to trans fats?", "cat": "Cis vs Trans", "o": ["Increased risk of cardiovascular disease and diabetes, by a clearly established mechanism", "Increased risk of cardiovascular disease and diabetes, though the mechanism is unclear", "Decreased risk of heart disease due to plaque stabilization", "No known health effects at any intake level"], "c": 1, "r": "Basso said trans fats are detrimental, raising the risk of cardiovascular disease and diabetes, and added that the mechanism is unclear.", "source": "Basso 102:26", "quote": "He said: \"increased risk of cardiovascular disease and diabetes as well. Mechanism is unclear.\"", "slide": "Trans Fats and Health Risks"}, {"q": "Which of the following did Dr. Basso list as a food that contained trans fats from the hydrogenation process?", "cat": "Cis vs Trans", "o": ["Fresh spinach", "Grass-fed butter", "Coconut oil", "Vegetable shortening"], "c": 3, "r": "Vegetable shortening was on his hydrogenation-process list, along with deep-fried foods, baked goods, cookies, crackers, chips, and margarine.", "source": "Basso 103:37", "quote": "He said: \"Deep fried foods, bread, baked goods, cookies, crackers, chips, margarine...\"", "slide": "Trans Fatty Acids in Food"}, {"q": "Dr. Basso said trans fats can also occur naturally. Which food did he give as an example?", "cat": "Cis vs Trans", "o": ["Dairy such as milk and some yogurt", "Margarine", "Snack chips", "Vegetable shortening"], "c": 0, "r": "He gave dairy (milk and some yogurt) as naturally containing a small amount of trans fat, because cows are ruminant animals whose gut bacteria create some.", "source": "Basso 97:18", "quote": "He said: \"yogurt, for instance, or dairy. It's because the cows, they're ruminant animals.\"", "slide": "Cis vs Trans Fatty Acids"}, {"q": "How did Dr. Basso explain what margarine is and why older margarine contained trans fats?", "cat": "Cis vs Trans", "o": ["It is churned animal butterfat that naturally forms trans fats", "It is a plant oil such as soybean oil that was hydrogenated, which created trans fats", "It is an omega-3-rich fish oil emulsion", "It is glycerol bonded to three saturated fatty acids"], "c": 1, "r": "Margarine is a plant oil like soybean oil that was hydrogenated, and that hydrogenation created trans fats.", "source": "Basso 99:17", "quote": "He said: \"It's like soybean oil or some other plant oil. But they hydrogenated it, and that was creating trans fats.\"", "slide": "Cis vs Trans Fatty Acids"}, {"q": "When Dr. Basso drew out 'your tag' (triacylglycerol), what three-part structure did he point to?", "cat": "Triacylglycerols & Wax", "o": ["A phosphate head, an amino alcohol, and two fatty acids", "A single fatty acid esterified to a cholesterol ring", "A glycerol backbone joined by ester linkages to three fatty acids", "A sphingosine backbone with a sugar and one fatty acid"], "c": 2, "r": "He pointed to three fatty acids connected by ester linkages (through the oxygen bond) to a glycerol backbone; that is the TAG.", "source": "Basso 101:35", "quote": "He said: \"here's a fatty acid, here is your ester linkages through the oxygen bond, and there's your glycerol.\"", "slide": "Fatty Acids in Triacylglycerols"}, {"q": "On the Cis vs Trans Fatty Acids slide, cis fatty acids are shown as the form found in natural whole foods. Which group are the cis-fat food examples?", "cat": "Cis vs Trans", "o": ["Almonds, avocados, bacon, and canola oil", "Margarine and vegetable shortening", "Cookies, crackers, and snack chips", "Deep-fried foods and baked goods"], "c": 0, "r": "The slide lists natural whole foods, such as almonds, avocados, bacon, and canola oil, as sources of cis (bent) fatty acids.", "source": "Basso 99:28", "quote": "", "slide": "Cis vs Trans Fatty Acids"}, {"q": "On the Omega Fatty Acids: Clinical Significance slide, what effect did Dr. Basso say omega-3s have on platelets?", "cat": "Essential Fatty Acids & Eicosanoids", "o": ["They increase platelet aggregation, making blood stickier", "They have no measurable effect on platelets", "They decrease platelet aggregation, so blood is less sticky and less likely to clot", "They destroy platelets, causing bleeding"], "c": 2, "r": "Basso said omega-3s lower platelet aggregation, so blood is less sticky, rheology improves, and clots are less likely.", "source": "Basso 95:41", "quote": "He said: \"Platelet aggregation goes down, so you don't have as sticky of blood, and rheology increases better perfusion.\"", "slide": "Omega Fatty Acids: Clinical Significance"}, {"q": "According to Dr. Basso, every phospholipid is assembled from the same set of building blocks. Which set correctly lists them?", "cat": "Phospholipids & Sphingolipids", "o": ["Three fatty acids attached to a glycerol backbone only", "A ceramide joined to a carbohydrate", "Two fatty acids and a phosphate, with no alcohol at all", "An alcohol, the fatty acids, a phosphate, and an amino alcohol"], "c": 3, "r": "Dr. Basso lists the four parts shared by every phospholipid as an alcohol, the fatty acids, a phosphate, and an amino alcohol.", "source": "Basso 105:16", "quote": "He said: \"Glycerol, sphingosine, fatty acids, phosphate, amino alcohol.\"", "slide": "Phospholipid Types: glycero- vs sphingo-"}, {"q": "Dr. Basso says phospholipids come in two subtypes, and the name of each depends on one specific component. Which pairing follows his rule?", "cat": "Phospholipids & Sphingolipids", "o": ["Glycerol as the alcohol makes a sphingophospholipid", "Sphingosine as the alcohol makes a glycerophospholipid", "Glycerol makes a glycerophospholipid and sphingosine makes a sphingophospholipid", "The number of fatty acids decides the subtype name"], "c": 2, "r": "The subtype is named for its alcohol: glycerol yields a glycerophospholipid and sphingosine yields a sphingophospholipid.", "source": "Basso 105:05", "quote": "He said: \"And then if sphingosine is the alcohol, then it would be sphingophospholipid.\"", "slide": "Phospholipid Types: glycero- vs sphingo-"}, {"q": "Phosphatidyl choline, also called lecithin, is Dr. Basso's example of a glycerophospholipid. Which components make it up?", "cat": "Phospholipids & Sphingolipids", "o": ["Sphingosine, one fatty acid, a phosphate, and choline", "Glycerol, two fatty acids, a phosphate, and choline as the amino alcohol", "Ceramide plus a single monosaccharide", "Glycerol with three fatty acids and no phosphate"], "c": 1, "r": "Phosphatidyl choline (lecithin) is glycerol plus two fatty acids, a phosphate, and choline as its amino alcohol.", "source": "Basso 106:02", "quote": "He said: \"Phosphatidylcholine, lecithin, has the alcohol glycerol, two fatty acids. Phosphate. Choline is the amino alcohol, choline.\"", "slide": "Phospholipid Types (filled: lecithin / sphingomyelin)"}, {"q": "Dr. Basso flagged this as one to know for sure: what is the physiological role of dipalmitoyl lecithin?", "cat": "Phospholipids & Sphingolipids", "o": ["It forms a large portion of the myelin sheath", "It accumulates inside the neurons in Tay-Sachs disease", "It is the oligosaccharide carried by a ganglioside", "It is the lung surfactant that lowers alveolar surface tension and keeps the alveoli from collapsing"], "c": 3, "r": "Dr. Basso stresses that dipalmitoyl lecithin is the lung surfactant, lowering the surface tension of the alveoli so they do not collapse.", "source": "Basso 106:23", "quote": "He said: \"Dipalmitoyl lecithin is the lung surfactant, lowers the surface tension of the alveoli, and therefore preventing collapse of the alveoli.\"", "slide": "Lecithin: dipalmitoyl lecithin = LUNG SURFACTANT"}, {"q": "In lab, Dr. Basso tied lecithin to respiratory distress syndrome (RDS) in a newborn. Why does a premature infant develop RDS?", "cat": "Phospholipids & Sphingolipids", "o": ["The infant made too much surfactant and over-inflated the alveoli", "The surfactant did not have a chance to develop, so the alveoli tend to collapse", "Excess sphingomyelin flooded the lungs", "A missing enzyme let GM2 ganglioside build up in the lungs"], "c": 1, "r": "In a premature infant the surfactant has not yet developed, so surface tension stays high and the alveoli tend to collapse.", "source": "Basso 106:43", "quote": "He said: \"the infant was born prematurely and the surfactant didn't have a chance to get developed\"", "slide": "Lecithin: dipalmitoyl lecithin = LUNG SURFACTANT"}, {"q": "Sphingomyelin is Dr. Basso's example of the second phospholipid subtype. What is its alcohol, and which subtype does that make it?", "cat": "Phospholipids & Sphingolipids", "o": ["Glycerol, which makes it a glycerophospholipid", "Choline, which makes it a glycolipid", "Sphingosine, which makes it a sphingophospholipid", "Ceramide, which makes it a cerebroside"], "c": 2, "r": "Sphingomyelin uses sphingosine as its alcohol, which classifies it as a sphingophospholipid.", "source": "Basso 108:17", "quote": "He said: \"Sphingomyelin. The alcohol is sphingosine.\"", "slide": "Sphingomyelin: sphingosine + FA + phosphate + choline"}, {"q": "Dr. Basso said to definitely know this: what is the physiological relevance of sphingomyelin?", "cat": "Phospholipids & Sphingolipids", "o": ["It is the lung surfactant", "It is stored as a ganglioside in the gray matter", "It carries a single monosaccharide in the brain", "It makes up a large portion of the myelin sheath that insulates the axons"], "c": 3, "r": "Dr. Basso says to definitely know that sphingomyelin forms a large portion of the myelin sheath that insulates the axons.", "source": "Basso 108:27", "quote": "He said: \"Large portion of the myelin sheath. That's really important.\"", "slide": "Sphingomyelin: large portion of the MYELIN SHEATH"}, {"q": "Using his computer-wire analogy, why does Dr. Basso say a myelinated axon transmits an impulse faster than an unmyelinated pain fiber?", "cat": "Phospholipids & Sphingolipids", "o": ["Myelin acts like the rubber insulation on a wire, keeping the impulse flowing without losing its power, so the signal travels faster", "Myelin adds extra sodium channels all along the length of the axon to boost the current", "Unmyelinated fibers contain more sphingomyelin, which is what slows them down", "Myelin converts the electrical signal into a chemical one that moves faster"], "c": 0, "r": "Dr. Basso compares myelin to the rubber around a wire: it keeps the electrical impulse flowing without losing power, so a myelinated axon fires faster than an unmyelinated pain fiber.", "source": "Basso 109:06", "quote": "He said: \"myelinated axons will send your electrical impulse faster than an unmyelinated\"", "slide": "Sphingomyelin: large portion of the MYELIN SHEATH"}, {"q": "How does Dr. Basso define a glycolipid, and what alcohol does it still contain?", "cat": "Phospholipids & Sphingolipids", "o": ["Ceramide plus a carbohydrate, and the alcohol is still sphingosine", "Glycerol plus a phosphate, with glycerol as the alcohol", "Two fatty acids plus choline, with choline as the alcohol", "A phosphate plus an amino alcohol, with no sugar attached"], "c": 0, "r": "Dr. Basso defines a glycolipid as ceramide plus a carbohydrate, and it still uses sphingosine as its alcohol.", "source": "Basso 109:51", "quote": "He said: \"Ceramide plus a carbohydrate. It still has sphingosine as its alcohol.\"", "slide": "Glycolipids: ceramide + carbohydrate"}, {"q": "What is the key structural difference between a cerebroside and a ganglioside?", "cat": "Phospholipids & Sphingolipids", "o": ["A cerebroside carries an oligosaccharide while a ganglioside carries a single monosaccharide", "A cerebroside carries one monosaccharide such as glucose or galactose, while a ganglioside carries an oligosaccharide", "A cerebroside contains glycerol while a ganglioside contains sphingosine", "A cerebroside has a phosphate while a ganglioside has choline"], "c": 1, "r": "Cerebrosides carry one monosaccharide (glucose or galactose), whereas gangliosides carry an oligosaccharide of roughly three to eight sugars.", "source": "Basso 110:31", "quote": "He said: \"Cerebrosides have glucose or galactose, a monosaccharide, whereas the gangliosides have an oligosaccharide.\"", "slide": "Cerebrosides vs Gangliosides"}, {"q": "Where does Dr. Basso locate cerebrosides versus gangliosides in the body?", "cat": "Phospholipids & Sphingolipids", "o": ["Cerebrosides in the gray matter; gangliosides in the myelin", "Cerebrosides in the lung alveoli; gangliosides in bone", "Cerebrosides in the myelin, brain and nerves; gangliosides in the gray matter of the brain", "Both are found only in the liver and spleen"], "c": 2, "r": "Dr. Basso places cerebrosides in the myelin, brain and nerves, and gangliosides in the gray matter of the brain.", "source": "Basso 110:58", "quote": "He said: \"Where is the location for the cerebrosides? Myelin again. In the brain and nerves.\"", "slide": "Cerebrosides vs Gangliosides"}, {"q": "Tay-Sachs, Gaucher, and Niemann-Pick are grouped as lysosomal storage disorders. Using Dr. Basso's dam analogy, what happens when the responsible enzyme is missing or faulty?", "cat": "Lysosomal Storage Diseases", "o": ["The downstream product overflows and is excreted", "The lysosome simply makes extra enzyme to compensate", "The membrane phospholipids convert into glycolipids", "The upstream substrate builds up, just like water backing up behind a blocked dam"], "c": 3, "r": "Dr. Basso uses the dam analogy: block the enzyme and the upstream substrate backs up and accumulates in the lysosome.", "source": "Basso 115:25", "quote": "He said: \"If you block the dam, then the water builds up upstream.\"", "slide": "Missing or Faulty Enzymes: Tay-Sachs / Gaucher / Niemann-Pick"}, {"q": "In Tay-Sachs disease, which enzyme is defective and what accumulates as a result?", "cat": "Lysosomal Storage Diseases", "o": ["Sphingomyelinase is defective, so sphingomyelin accumulates", "Glucocerebrosidase is defective, so glucocerebroside accumulates", "Hexosaminidase A (hex A) is defective, so GM2 ganglioside accumulates and crowds the neuron cell bodies", "Hexosaminidase A is defective, but glucocerebroside is what accumulates"], "c": 2, "r": "In Tay-Sachs the hex A enzyme is faulty, so GM2 ganglioside builds up and crowds out the neuron cell bodies, driving the CNS signs.", "source": "Basso 113:43", "quote": "He said: \"you'll have GM2 ganglioside building up. And this is going to crowd out your neuron cell bodies\"", "slide": "Missing or Faulty Enzymes: Tay-Sachs / Gaucher / Niemann-Pick"}, {"q": "Which enzyme deficiency causes Gaucher disease, and what lipid builds up?", "cat": "Lysosomal Storage Diseases", "o": ["Hexosaminidase A is missing; GM2 ganglioside builds up", "Glucocerebrosidase is missing; glucocerebroside builds up", "Sphingomyelinase is missing; sphingomyelin builds up", "Glucocerebrosidase is missing, but sphingomyelin builds up"], "c": 1, "r": "Gaucher comes from a faulty glucocerebrosidase, so glucocerebroside accumulates upstream.", "source": "Basso 114:20", "quote": "He said: \"Gaucher, glucocerebrosidase, so you get glucocerebroside building up.\"", "slide": "Missing or Faulty Enzymes: Tay-Sachs / Gaucher / Niemann-Pick"}, {"q": "Niemann-Pick disease results from a deficiency of which enzyme, leading to buildup of which lipid?", "cat": "Lysosomal Storage Diseases", "o": ["Sphingomyelinase deficiency; sphingomyelin builds up", "Glucocerebrosidase deficiency; glucocerebroside builds up", "Hexosaminidase A deficiency; GM2 ganglioside builds up", "Sphingomyelinase deficiency, but glucocerebroside builds up"], "c": 0, "r": "Niemann-Pick is a faulty sphingomyelinase, so sphingomyelin accumulates upstream.", "source": "Basso 114:28", "quote": "He said: \"Niemann-Pick, sphingomyelinase, so you get sphingomyelin buildup.\"", "slide": "Missing or Faulty Enzymes: Tay-Sachs / Gaucher / Niemann-Pick"}, {"q": "Dr. Basso gave a test tip: a patient has a cherry-red spot and central nervous system symptoms but NO hepatosplenomegaly. Which disease is most likely?", "cat": "Lysosomal Storage Diseases", "o": ["Gaucher disease", "Niemann-Pick disease", "Central retinal artery occlusion", "Tay-Sachs disease"], "c": 3, "r": "His test tip: a cherry-red spot with CNS symptoms and no hepatosplenomegaly points to Tay-Sachs, which stays in the central nervous system.", "source": "Basso 118:10", "quote": "He said: \"if you saw on a test that someone had a cherry red spot and they had central nervous system symptoms, then they probably don't have hepatosplenomegaly, which is Tay-Sachs.\"", "slide": "Lipid Breakdown Deficiencies: LYSOSOMAL STORAGE (full)"}, {"q": "A cherry-red spot can appear in more than one of these diseases. Which finding does Dr. Basso use to tell Tay-Sachs apart from Gaucher and Niemann-Pick?", "cat": "Lysosomal Storage Diseases", "o": ["Only Tay-Sachs shows hepatosplenomegaly", "Gaucher and Niemann-Pick show hepatosplenomegaly, whereas Tay-Sachs tends not to because it is more CNS-centered", "Only Tay-Sachs shows a cherry-red spot", "None of the three ever involves the liver or spleen"], "c": 1, "r": "Gaucher and Niemann-Pick both show hepatosplenomegaly, while Tay-Sachs usually does not because it is centered in the central nervous system.", "source": "Basso 117:46", "quote": "He said: \"Tay-Sachs tends not to have hepatosplenomegaly because it's more in the central nervous system.\"", "slide": "Lipid Breakdown Deficiencies: LYSOSOMAL STORAGE (full)"}, {"q": "Dr. Basso ranked how likely these are to appear on a board exam. What order did he give, most likely first?", "cat": "Lysosomal Storage Diseases", "o": ["Gaucher, then Niemann-Pick, then Tay-Sachs", "Niemann-Pick, then Tay-Sachs, then Gaucher", "Tay-Sachs, then Niemann-Pick, then Gaucher", "Tay-Sachs, then Gaucher, then Niemann-Pick"], "c": 2, "r": "Dr. Basso ranked board likelihood as Tay-Sachs first, then Niemann-Pick, then Gaucher.", "source": "Basso 118:35", "quote": "He said: \"Tay-Sachs probably number one, followed by Niemann-Pick, and then Gaucher.\"", "slide": "Missing or Faulty Enzymes: Tay-Sachs / Gaucher / Niemann-Pick"}, {"q": "What is Dr. Basso's mnemonic 'Cherry trees never grow tall in sand' meant to help you remember?", "cat": "Lysosomal Storage Diseases", "o": ["The steps of the COX cascade", "The components of the myelin sheath", "The order of fatty acid nomenclature", "The conditions that can cause a cherry-red spot in the eye"], "c": 3, "r": "Dr. Basso uses the phrase Cherry trees never grow tall in sand to remember the conditions that can cause a cherry-red spot in the eye.", "source": "Basso 113:12", "quote": "He said: \"Cherry trees never grow tall in sand. This is a way to remember cherry red spots.\"", "slide": "Lipid Breakdown Deficiencies: LYSOSOMAL STORAGE (full)"}] ;
+var BANK = Array.isArray(BANK_RAW) ? BANK_RAW : ((BANK_RAW && (BANK_RAW.q || BANK_RAW.questions)) || []);
+var SCOPE = [["prop", "How much energy does fat give per gram, and why?", "About 9 kcal/g \u2014 it's mostly high-energy carbon-hydrogen bonds.", "Basso 35:28"], ["prop", "Why are lipids insoluble in water?", "They're hydrophobic hydrocarbons; they dissolve instead in organic solvents (ether, chloroform, benzene, acetone).", "Slide 4"], ["prop", "Name the 7 functions of lipids.", "Energy (TAG), cell membranes (phospholipids), fat-soluble vitamin absorption (DEAK), steroid hormones (cholesterol), organ protection (adipose), axon insulation (myelin), lung surfactant (dipalmitoyl lecithin).", "Slide 5"], ["prop", "Which vitamins do lipids help absorb?", "The fat-soluble ones: D, E, A, K (DEAK).", "Slide 5"], ["tag", "What is a wax, structurally?", "An ester of a fatty acid with a long-chain monohydric (one-OH) alcohol.", "Slide 7"], ["tag", "What is a triacylglycerol made of?", "Glycerol + 3 fatty acids, joined by ester linkages.", "Basso 47:18"], ["tag", "What kind of molecule is glycerol?", "A three-carbon alcohol.", "Basso 47:34"], ["tag", "Where are triacylglycerols stored in animals?", "In adipocytes (fat cells).", "Basso 47:42"], ["sat", "What does 'saturated' mean?", "Saturated WITH hydrogens \u2014 no carbon-carbon double bonds.", "Basso 53:03"], ["sat", "The Four S's for a saturated fat?", "Sat, Single bonds, Straight, Solid at room temp.", "Basso 68:59"], ["sat", "The Four S's mirror for an unsaturated fat?", "Un, Double bonds, Bend, Liquid.", "Basso 68:59"], ["sat", "What does a double bond do to a fatty-acid chain?", "Puts a bend in it, so it can't pack tightly and stays liquid.", "Basso 59:43"], ["sat", "The two ends of a fatty acid?", "A carboxyl terminus and a methyl terminus.", "Basso 52:03"], ["sat", "Chain length range and general formula of a fatty acid?", "C4 to C24; R-COOH.", "Slide 8"], ["sat", "Two sub-types of unsaturated fatty acids?", "Monounsaturated and polyunsaturated.", "Slide 13"], ["nom", "Suffix for a saturated vs unsaturated fatty acid?", "Saturated = -anoic; unsaturated = -enoic.", "Slide 9"], ["nom", "How does omega naming work?", "By the position of the FIRST double bond, counting from the omega (methyl) end.", "Basso 65:30"], ["nom", "What does C18:3 mean?", "18 carbons long, 3 double bonds (alpha-linolenic acid).", "Basso 65:44"], ["nom", "Which carbon is the alpha carbon?", "The one adjacent to the -COOH (carboxyl) group.", "Slide 10"], ["nom", "Which carbon is the omega carbon?", "The terminal (methyl-end) carbon.", "Slide 10"], ["nom", "The three omega families?", "Omega-3, omega-6, omega-9.", "Slide 11"], ["nom", "Which fatty acids are essential, and why?", "Omega-3 and omega-6 (linolenic, linoleic, arachidonic) \u2014 the body can't make them, so they must be eaten.", "Basso 64:30"], ["nom", "What is EPA?", "Eicosapentaenoic acid \u2014 an omega-3 found in cold-water fish.", "Basso 66:34"], ["cis", "Cis configuration \u2014 where are the hydrogens?", "Both on the SAME side of the C=C; it bends the chain; common in nature.", "Slide 18"], ["cis", "Trans configuration \u2014 where are the hydrogens?", "Both on OPPOSITE sides; the chain stays straight and resembles a saturated fat.", "Slide 18"], ["cis", "How are trans fats created?", "Partial hydrogenation of oils (complete hydrogenation gives a saturated fat).", "Slide 20"], ["cis", "Health effect of trans and saturated fats?", "Increased risk of CVD and diabetes (mechanism unclear).", "Slide 21"], ["eic", "What is arachidonic acid the precursor for?", "Eicosanoids: prostaglandins, thromboxanes, leukotrienes.", "Slide 15"], ["eic", "Role of linolenic and linoleic acid in membranes?", "They maintain cell-membrane fluidity.", "Slide 15"], ["eic", "Two clinical effects of omega-3s?", "Lower serum triacylglycerols and reduce cardiovascular risk (they also cut arachidonic acid in membranes).", "Slide 16"], ["eic", "Omega-3 dietary sources?", "Cold-water fish (salmon, tuna, herring), walnuts, flaxseed.", "Slide 16"], ["eic", "What is the Western-diet imbalance?", "Too much omega-6.", "Basso 79:22"], ["phos", "General parts of a phospholipid?", "Alcohol + fatty acid + phosphate + amino alcohol.", "Slide 24"], ["phos", "Two phospholipid subtypes by backbone?", "Glycerophospholipid (glycerol) vs sphingophospholipid (sphingosine).", "Slide 24"], ["phos", "What is lecithin (phosphatidylcholine)?", "Glycerol + fatty acid + phosphate + choline.", "Slide 25"], ["phos", "Clinical role of dipalmitoyl lecithin?", "The lung surfactant \u2014 lowers alveolar surface tension and prevents alveolar collapse.", "Basso 106:19"], ["phos", "Sphingomyelin backbone and clinical role?", "Sphingosine backbone; makes up a large portion of the myelin sheath.", "Basso 108:25"], ["phos", "What is a glycolipid made of?", "Ceramide + carbohydrate.", "Slide 27"], ["phos", "Cerebroside \u2014 sugar and location?", "A single sugar (monosaccharide); found in myelin (brain and nerves).", "Slide 28"], ["phos", "Ganglioside \u2014 sugar and location?", "A sugar chain (oligosaccharide); found in the gray matter of the brain.", "Slide 28"], ["lyso", "Tay-Sachs: enzyme and substrate?", "Hexosaminidase A deficiency; GM2 ganglioside accumulates.", "Slide 30"], ["lyso", "Niemann-Pick: enzyme and substrate?", "Sphingomyelinase deficiency; sphingomyelin accumulates.", "Slide 30"], ["lyso", "Gaucher: enzyme and substrate?", "Glucocerebrosidase deficiency; glucocerebroside accumulates.", "Slide 30"], ["lyso", "What single sign separates Tay-Sachs from Niemann-Pick?", "Tay-Sachs has NO hepatosplenomegaly; Niemann-Pick does (both show a cherry-red spot).", "Basso 118:02"], ["lyso", "What are Gaucher's hallmark signs?", "Hepatosplenomegaly, bone erosion/fractures, and pancytopenia/thrombocytopenia \u2014 the bone involvement is the giveaway. (Note: his mnemonic still lists Gaucher as a cherry-red-spot cause.)", "Slide 30"], ["lyso", "The cherry-red-spot mnemonic?", "Cherry Trees Never Grow Tall In Sand = CRAO, Trauma, Niemann-Pick, Gaucher, Tay-Sachs, Sandhoff.", "Basso 111:47"], ["lyso", "Cherry-red spot + CNS signs + NO hepatosplenomegaly = ?", "Tay-Sachs (his board ranking: 1) Tay-Sachs 2) Niemann-Pick 3) Gaucher).", "Basso 118:02"]] ;
+
+/* ============================ RENDER: CRAM ============================ */
+function el(tag, cls, html){ var e=document.createElement(tag); if(cls)e.className=cls; if(html!=null)e.innerHTML=html; return e; }
+function srcChip(s){ var v=/^Basso/.test(s); var label = v ? ('Basso '+s.replace(/^Basso\s*/,'')) : s; return '<span class="src'+(v?' bui':'')+'">'+label+'</span>'; }
+
+function renderCram(){
+  var root=document.getElementById('cram'); root.innerHTML='';
+  root.appendChild(el('div','seclabel','The whole scope \u2014 7 buckets'));
+  var note=el('div',null,'Tap <b>\u25b6 Listen</b> on any section to hear Ava &amp; Emma walk it. Source tags: <span class="src">Slide N</span> = slide-only \u00b7 <span class="src bui">Basso MM:SS</span> = spoken.');
+  note.style.cssText='color:var(--textMid);font-size:12.5px;line-height:1.5;margin:-6px 0 18px'; root.appendChild(note);
+  root.appendChild(buildSpeedBar());
+
+  CRAM.forEach(function(sec, idx){
+    var card=el('div','card'); var spine=el('div','spine');
+    var bar=el('div','bar'); bar.style.background=sec.clr; spine.appendChild(bar);
+    var body=el('div','body');
+    body.appendChild(el('h3', null, '<span class="cnum" style="color:'+sec.clr+'">'+String(sec.id)+'</span> '+sec.title));
+    body.appendChild(el('div','intro',sec.intro));
+    sec.groups.forEach(function(g){
+      var gd=el('div','grp'); gd.appendChild(el('div','sub',g.sub));
+      g.facts.forEach(function(f){
+        var row=el('div','fact');
+        var dot=el('span','dot'); dot.style.background=sec.clr; row.appendChild(dot);
+        row.appendChild(el('div','ft', f[0]+' '+srcChip(f[1])));
+        gd.appendChild(row);
+      });
+      body.appendChild(gd);
+    });
+    // play button
+    var btn=el('button','playbtn','<span>\u25b6</span> Listen (Ava &amp; Emma)');
+    btn.setAttribute('data-sec', idx);
+    btn.onclick=function(){ toggleWalk(idx, btn); };
+    body.appendChild(btn);
+    body.appendChild(el('div','voicenote','Uses your device\u2019s voices (Edge Natural voices sound best). Tap again to stop.'));
+    spine.appendChild(body); card.appendChild(spine); root.appendChild(card);
+  });
+}
+
+/* ============================ RENDER: FLAGS ============================ */
+function renderFlags(){
+  var root=document.getElementById('flags'); root.innerHTML='';
+  root.appendChild(el('div','seclabel','What Basso hammered'));
+  var note=el('div',null,'His verbal emphasis, straight from the recordings and slides. The <span class="chip" style="color:var(--crimson);border:1px solid rgba(224,96,95,.4)">red</span> ones are where he said it\u2019s testable or set an obvious trap.');
+  note.style.cssText='color:var(--textMid);font-size:12.5px;line-height:1.5;margin:-6px 0 18px'; root.appendChild(note);
+  FLAGS.forEach(function(f){
+    var fl=el('div','flag'+(f.hot?' hot':''));
+    var tc=el('div','tagcol');
+    tc.appendChild(el('span','chip','&nbsp;'+f.tag+'&nbsp;'));
+    tc.firstChild.style.cssText='color:'+f.clr+';border:1px solid '+f.clr+'66;background:'+f.clr+'18';
+    fl.appendChild(tc);
+    var main=el('div',null,''); main.style.flex='1';
+    main.appendChild(el('div','ftitle',f.title));
+    main.appendChild(el('div','fbody',f.body+' '+srcChip(f.src)));
+    fl.appendChild(main);
+    root.appendChild(fl);
+  });
+}
+
+/* ============================ RENDER: RECALL (47 scope cards) ============================ */
+function bucketLabel(b){ var m={tag:'TAG & Wax',prop:'Properties',sat:'Sat/Unsat',nom:'Nomenclature',cis:'Cis/Trans',eic:'Essential/Eicosanoid',phos:'Phospholipids',lyso:'Lysosomal'}; return m[b]||b; }
+var RBUCKETS=[['all','All'],['tag','TAG & Wax'],['prop','Properties'],['sat','Sat/Unsat'],['nom','Nomenclature'],['cis','Cis/Trans'],['eic','Essential/Eicosanoid'],['phos','Phospholipids'],['lyso','Lysosomal']];
+var rstate={ i:0, filter:'all', order:[], revealed:false };
+function rBuildOrder(){ rstate.order=[]; for(var k=0;k<SCOPE.length;k++){ if(rstate.filter==='all'||SCOPE[k][0]===rstate.filter) rstate.order.push(k); } rstate.i=0; rstate.revealed=false; }
+function renderDrill(){
+  var root=document.getElementById('drill'); root.innerHTML='';
+  if(!SCOPE.length){ root.appendChild(el('div','intro','No recall cards loaded.')); return; }
+  if(!rstate.order.length) rBuildOrder();
+  root.appendChild(el('div','seclabel','Recall \u2014 test yourself'));
+  var note=el('div',null,'47 concept-recall cards drawn from the Cram content \u2014 one per key fact across the six objectives. Read the prompt, answer out loud, then reveal. (Your full 95-question multiple-choice drill lives on your hub and in the Answer Sheet file \u2014 this tab is the concept layer.)');
+  note.style.cssText='color:var(--textMid);font-size:12.5px;line-height:1.5;margin:-6px 0 16px'; root.appendChild(note);
+  var filt=el('div','filters');
+  RBUCKETS.forEach(function(b){ var n = b[0]==='all'?SCOPE.length:SCOPE.filter(function(s){return s[0]===b[0];}).length; if(n===0) return; var fb=el('button','fbtn'+(rstate.filter===b[0]?' on':''), b[1]+' ('+n+')'); fb.onclick=function(){ rstate.filter=b[0]; rBuildOrder(); renderDrill(); }; filt.appendChild(fb); });
+  root.appendChild(filt);
+  var bar=el('div','drillbar'); bar.appendChild(el('div','stat','Card '+(rstate.i+1)+' of '+rstate.order.length)); root.appendChild(bar);
+  var si=rstate.order[rstate.i]; var c=SCOPE[si];
+  var qc=el('div','qcard');
+  qc.appendChild(el('div','qcat','<span class="chip" style="color:'+GOLD+';border:1px solid '+GOLD+'66;background:'+GOLD+'18">&nbsp;'+bucketLabel(c[0])+'&nbsp;</span>'));
+  qc.appendChild(el('div','qstem', c[1]));
+  if(!rstate.revealed){
+    var rb=el('button','nb primary','Reveal answer'); rb.style.width='100%'; rb.onclick=function(){ rstate.revealed=true; renderDrill(); }; qc.appendChild(rb);
+  } else {
+    var ex=el('div','expl'); var lab=el('div','lab','ANSWER'); lab.style.color='var(--good)'; ex.appendChild(lab);
+    ex.appendChild(el('div','et', c[2]));
+    var sc=el('div',null, srcChip(c[3]||'\u2014')); sc.style.marginTop='9px'; ex.appendChild(sc);
+    qc.appendChild(ex);
+  }
+  root.appendChild(qc);
+  var nb=el('div','navbtns');
+  var prev=el('button','nb'+(rstate.i===0?' off':''),'\u2039 Prev'); prev.onclick=function(){ if(rstate.i>0){rstate.i--;rstate.revealed=false;renderDrill();} };
+  var next=el('button','nb primary'+(rstate.i>=rstate.order.length-1?' off':''),'Next \u203a'); next.onclick=function(){ if(rstate.i<rstate.order.length-1){rstate.i++;rstate.revealed=false;renderDrill();} };
+  nb.appendChild(prev); nb.appendChild(next); root.appendChild(nb);
+}
+
+/* ============================ AI COACH ============================ */
+var COACH_SYS = "You are a two-voice study coach - AVA and EMMA - helping a chiropractic student review Dr. Jory Basso's BN0213 Module 10 (Lipids). AVA prompts/quizzes; EMMA explains. Prefix each turn with the speaker name and a colon. Keep replies concise (usually under ~130 words). Use clean spoken prose and vivid analogies; no stage directions. Ground answers in Basso's material: lipids are hydrophobic high-energy (~9 kcal/g) compounds; 7 functions = energy (TAG), membranes (phospholipids), fat-soluble vitamin absorption (DEAK), steroid hormones (cholesterol), organ protection (adipose), axon insulation (myelin), lung surfactant (dipalmitoyl lecithin); wax = ester of fatty acid + monohydric alcohol. TAG = glycerol (a 3-carbon alcohol) + 3 fatty acids via ester linkages, stored in adipocytes. Fatty acid = long-chain carboxylic acid C4-C24, R-COOH, with a carboxyl terminus and a methyl terminus. THE FOUR S's: Saturated = Sat, Single bonds, Straight, Solid at room temp (saturated WITH hydrogens); Unsaturated = Un, Double bonds, Bend, Liquid. Nomenclature: suffix -anoic (saturated) vs -enoic (unsaturated); number carbons from the carboxyl end (alpha next to COOH, then beta); terminal carbon = omega. OMEGA NAMING (strongest cue - you WILL see it on a test): omega number = position of the first double bond counted from the omega/methyl end; three families omega-3, -6, -9. Shorthand C18:3 = 18 carbons, 3 double bonds (alpha-linolenic). Essential fatty acids = omega-3 and omega-6 (linolenic, linoleic, arachidonic) - cannot be synthesized, must be eaten; know EPA. CIS = both H on same side, causes a bend, natural; TRANS = both H on opposite sides, straight, resembles saturated, made by PARTIAL hydrogenation (complete hydrogenation = saturated); trans + saturated raise CVD/DM risk. Essential fats maintain membrane fluidity; ARACHIDONIC ACID is the precursor for eicosanoids (prostaglandins, thromboxanes, leukotrienes) - but the COX cascade itself is NOT testable. Omega-3s lower serum TAG and reduce arachidonic acid in membranes. PHOSPHOLIPIDS = alcohol + fatty acid + phosphate + amino alcohol; glycerophospholipid (glycerol backbone, e.g. lecithin/phosphatidylcholine) vs sphingophospholipid (sphingosine backbone, e.g. sphingomyelin). DIPALMITOYL LECITHIN = lung surfactant (lowers alveolar surface tension, prevents collapse). SPHINGOMYELIN = large portion of the myelin sheath. GLYCOLIPIDS = ceramide + carbohydrate: cerebrosides (one sugar, in myelin) vs gangliosides (sugar chain, in gray matter). LYSOSOMAL STORAGE DISEASES: Tay-Sachs (hexosaminidase A deficiency, GM2 ganglioside accumulates, cherry-red spot, NO hepatosplenomegaly, death <2yr); Niemann-Pick (sphingomyelinase deficiency, sphingomyelin accumulates, cherry-red spot WITH hepatosplenomegaly); Gaucher (glucocerebrosidase deficiency, glucocerebroside accumulates, hepatosplenomegaly + bone erosion + pancytopenia). Cherry-red-spot mnemonic: Cherry Trees Never Grow Tall In Sand = CRAO, Trauma, Niemann-Pick, Gaucher, Tay-Sachs, Sandhoff. EXAM TIP: cherry-red spot + CNS symptoms + NO hepatosplenomegaly = Tay-Sachs; board ranking 1) Tay-Sachs 2) Niemann-Pick 3) Gaucher. Do NOT quiz the COX cascade or the phospholipid-classification diagram - he stamped both not testable. If asked something outside this scope, say you would verify against his slides. Never invent a fact.";
+
+var chatMsgs=[{role:'assistant', content:"Ava: Ready to run Lipids? Ask me anything, or say \u201cquiz me.\u201d\nEmma: I\u2019ll keep the Four S\u2019s, omega nomenclature, and the cherry-red-spot set straight. Where do you want to start?"}];
+var voiceOn={coach:false};
+
+function renderCoach(){
+  var root=document.getElementById('coach'); root.innerHTML='';
+  var wrap=el('div','coachwrap');
+  wrap.appendChild(el('div','lead','Live tutoring from <b style="color:'+TEAL+'">Ava</b> + <b style="color:'+GOLD+'">Emma</b>, grounded in Basso\u2019s Lipids material. Ask anything, or have them quiz you.'));
+  var box=el('div','chatbox'); box.id='chatbox';
+  chatMsgs.forEach(function(m){ var d=el('div','msg '+(m.role==='user'?'user':'bot'), m.content); box.appendChild(d); });
+  wrap.appendChild(box);
+
+  var errslot=el('div',null,''); errslot.id='coacherr'; errslot.style.cssText='font-size:13px;color:var(--bad);margin-top:10px'; wrap.appendChild(errslot);
+
+  var quicks=el('div','quicks');
+  ['Quiz me','What are the Four S\u2019s?','How do I read C18:3?','Tay-Sachs vs Niemann-Pick vs Gaucher'].forEach(function(q){
+    var b=el('button','qk',q); b.onclick=function(){ document.getElementById('coachin').value=q; }; quicks.appendChild(b);
+  });
+  wrap.appendChild(quicks);
+
+  var inrow=el('div','inrow');
+  var inp=el('input'); inp.id='coachin'; inp.placeholder="Ask Ava & Emma, or type 'quiz me'\u2026";
+  inp.addEventListener('keydown',function(e){ if(e.key==='Enter'){ e.preventDefault(); sendCoach(); } });
+  var send=el('button',null,'Send'); send.id='coachsend'; send.onclick=sendCoach;
+  inrow.appendChild(inp); inrow.appendChild(send); wrap.appendChild(inrow);
+
+  var tog=el('label','togrow','<input type="checkbox" id="voicetog"> Read Emma\u2019s replies aloud');
+  wrap.appendChild(tog);
+  wrap.appendChild(el('div','tiny','Coach is grounded in Basso\u2019s slides + lecture. Cross-check anything surprising against the posted deck before it counts. (Endpoint: your BN0213 worker.)'));
+  root.appendChild(wrap);
+  var vt=document.getElementById('voicetog'); vt.checked=voiceOn.coach; vt.onchange=function(){ voiceOn.coach=vt.checked; };
+}
+
+function pushMsg(role, content){ chatMsgs.push({role:role, content:content}); var box=document.getElementById('chatbox'); if(box){ var d=el('div','msg '+(role==='user'?'user':'bot'), content); box.appendChild(d); box.scrollTop=box.scrollHeight; } }
+
+function sendCoach(){
+  var inp=document.getElementById('coachin'); var text=(inp.value||'').trim(); if(!text) return;
+  document.getElementById('coacherr').textContent='';
+  pushMsg('user', text); inp.value='';
+  var send=document.getElementById('coachsend'); send.disabled=true;
+  var box=document.getElementById('chatbox');
+  var thinking=el('div','msg bot','<span class="spin"><svg width="15" height="15" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="'+GOLD+'33" stroke-width="3"/><path d="M12 3 a9 9 0 0 1 9 9" fill="none" stroke="'+GOLD+'" stroke-width="3" stroke-linecap="round"/></svg></span> Ava &amp; Emma are thinking\u2026');
+  box.appendChild(thinking); box.scrollTop=box.scrollHeight;
+
+  var payload={ system: COACH_SYS, messages: chatMsgs.map(function(m){return {role:m.role, content:m.content};}), class_name: "BN0213" };
+  fetch("https://bn-ai.dgync1.workers.dev", { method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify(payload) })
+   .then(function(r){ if(!r.ok) throw new Error("status "+r.status); return r.json(); })
+   .then(function(data){
+      thinking.remove();
+      var out = extractText(data);
+      if(!out) out="Emma: Sorry \u2014 I blanked on that one. Try rephrasing?";
+      pushMsg('assistant', out);
+      if(voiceOn.coach) speakEmmaLine(out);
+   })
+   .catch(function(e){
+      thinking.remove();
+      document.getElementById('coacherr').textContent="Coach couldn\u2019t reach the BN0213 worker just now. Check the connection and try again.";
+      chatMsgs.pop(); // drop unsent user turn
+      inp.value=text;
+   })
+   .finally(function(){ document.getElementById('coachsend').disabled=false; });
+}
+function extractText(data){
+  if(typeof data==='string') return data.trim();
+  if(!data) return '';
+  if(typeof data.reply==='string') return data.reply.trim();
+  if(typeof data.text==='string') return data.text.trim();
+  if(typeof data.response==='string') return data.response.trim();
+  if(typeof data.completion==='string') return data.completion.trim();
+  if(data.message && typeof data.message.content==='string') return data.message.content.trim();
+  if(Array.isArray(data.content)) return data.content.filter(function(b){return b.type==='text'||typeof b.text==='string';}).map(function(b){return b.text||'';}).join('\n').trim();
+  if(data.choices && data.choices[0]){ var ch=data.choices[0]; if(ch.message&&ch.message.content) return ch.message.content.trim(); if(ch.text) return ch.text.trim(); }
+  return '';
+}
+
+/* ============================ TEXT-TO-SPEECH (Ava / Emma) ============================ */
+var TTS={ avail: ('speechSynthesis' in window), voices:[], ava:null, emma:null, queue:[], playing:false, curBtn:null, rate:1.0 };
+function loadVoices(){
+  if(!TTS.avail) return;
+  TTS.voices = window.speechSynthesis.getVoices()||[];
+  var en = TTS.voices.filter(function(v){ return /en(-|_)?/i.test(v.lang); });
+  var pool = en.length?en:TTS.voices;
+  function pick(names){ for(var n=0;n<names.length;n++){ for(var i=0;i<pool.length;i++){ if(pool[i].name.toLowerCase().indexOf(names[n])>-1) return pool[i]; } } return null; }
+  // Prefer Edge Natural voices; Ava-ish then Emma-ish, ensure two distinct
+  TTS.ava  = pick(['ava','aria','jenny','michelle','sonia','samantha','zira','female']) || pool[0] || null;
+  TTS.emma = pick(['emma','emily','clara','libby','natasha','eva','google us english']) || null;
+  if(!TTS.emma || TTS.emma===TTS.ava){ for(var i=0;i<pool.length;i++){ if(pool[i]!==TTS.ava){ TTS.emma=pool[i]; break; } } }
+  if(!TTS.emma) TTS.emma=TTS.ava;
+}
+if(TTS.avail){ loadVoices(); window.speechSynthesis.onvoiceschanged=loadVoices; }
+
+function speakSeq(lines, btn){
+  if(!TTS.avail){ alert('Your browser doesn\u2019t support speech. Try Edge or Chrome.'); return; }
+  stopSpeak();
+  TTS.curBtn=btn; TTS.playing=true;
+  if(btn){ btn.classList.add('playing'); btn.innerHTML='<span>\u25a0</span> Stop'; }
+  var idx=0;
+  function next(){
+    if(idx>=lines.length){ finishSpeak(); return; }
+    var ln=lines[idx++]; var who=ln[0]; var txt=ln[1];
+    var u=new SpeechSynthesisUtterance(txt);
+    if(who==='A'){ u.voice=TTS.ava; u.pitch=1.06; u.rate=TTS.rate; } else { u.voice=TTS.emma; u.pitch=0.96; u.rate=TTS.rate; }
+    u.onend=next; u.onerror=next;
+    window.speechSynthesis.speak(u);
+  }
+  next();
+}
+function resetBtn(b){ if(b){ b.classList.remove('playing'); b.innerHTML='<span>\u25b6</span> Listen (Ava &amp; Emma)'; } }
+function finishSpeak(){ TTS.playing=false; resetBtn(TTS.curBtn); TTS.curBtn=null; }
+function stopSpeak(){ if(TTS.avail){ window.speechSynthesis.cancel(); } resetBtn(TTS.curBtn); TTS.curBtn=null; TTS.playing=false; }
+function setRate(r, wrap){
+  TTS.rate=r;
+  if(wrap){ Array.prototype.forEach.call(wrap.querySelectorAll('button'), function(b){ b.classList.toggle('on', Math.abs(parseFloat(b.getAttribute('data-r'))-r)<0.01); }); }
+}
+function buildSpeedBar(){
+  var wrap=el('div',null,''); wrap.style.cssText='display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin:0 0 20px';
+  var lab=el('span',null,'Voice speed'); lab.style.cssText='font-family:var(--mono);font-size:11px;color:var(--textDim);letter-spacing:.5px;margin-right:2px'; wrap.appendChild(lab);
+  [['1\u00d7',1.0],['1.5\u00d7',1.5],['2\u00d7',2.0],['2.5\u00d7',2.5],['3\u00d7',3.0]].forEach(function(r){
+    var b=el('button','fbtn'+(Math.abs(TTS.rate-r[1])<0.01?' on':''), r[0]);
+    b.setAttribute('data-r', r[1]); b.onclick=function(){ setRate(r[1], wrap); };
+    wrap.appendChild(b);
+  });
+  return wrap;
+}
+function toggleWalk(idx, btn){
+  if(TTS.playing && TTS.curBtn===btn){ stopSpeak(); return; }
+  speakSeq(CRAM[idx].walk, btn);
+}
+function speakEmmaLine(text){
+  if(!TTS.avail) return;
+  stopSpeak();
+  // read only Emma lines from a coach reply
+  var emmaBits=[]; text.split(/\n+/).forEach(function(l){ var m=l.match(/^\s*emma\s*:\s*(.*)$/i); if(m) emmaBits.push(m[1]); });
+  var say = emmaBits.length? emmaBits.join(' ') : text.replace(/^(ava|emma)\s*:/i,'');
+  var u=new SpeechSynthesisUtterance(say); u.voice=TTS.emma; u.pitch=0.96; u.rate=TTS.rate; window.speechSynthesis.speak(u);
+}
+
+/* ============================ TABS + INIT ============================ */
+function switchTab(name){
+  document.querySelectorAll('.tab').forEach(function(t){ t.classList.toggle('active', t.getAttribute('data-tab')===name); });
+  document.querySelectorAll('.panel').forEach(function(p){ p.classList.toggle('active', p.id===name); });
+  if(name!=='cram') stopSpeak();
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+document.querySelectorAll('.tab').forEach(function(t){ t.onclick=function(){ switchTab(t.getAttribute('data-tab')); }; });
+
+document.getElementById('foot').innerHTML='Sources: Dr. Basso\u2019s Module-10 lecture recording (2026-07-06) + his PowerPoint, and his six printed objectives. The Recall tab’s 47 cards are drawn from these. Tagged <span class="src">Slide N</span> (slide) or <span class="src bui">Basso MM:SS</span> (spoken). Excludes the COX cascade + phospholipid-classification diagram (both stamped NOT testable). Cross-check anything surprising against the posted deck.';
+
+renderCram(); renderFlags(); renderDrill(); renderCoach();
+</script>
+<script id="fab-ai-companion-js">
+(function(){
+  const ENDPOINT = "https://fab-ai.dgync1.workers.dev";
+  const CLASS_NAME = "BN0213"; // e.g., "CP1" / "FAB101" / "GA0102" — empty = generic chiropractic tutor
+  let panel = null;
+  let history = []; // [{role:'user'|'model', content}]
+  let currentQKey = null; // to detect Q navigation
+
+  function readCurrentQ() {
+    const qText = (document.querySelector('.q-text')?.innerText || '').replace(/^Q\d+(\s+of\s+\d+)?:\s*/, '');
+    const optBtns = Array.from(document.querySelectorAll('.opt-btn'));
+    const options = optBtns.map(b => {
+      const clone = b.cloneNode(true);
+      clone.querySelectorAll('.rationale').forEach(r => r.remove());
+      clone.querySelectorAll('.letter').forEach(r => r.remove());
+      return clone.innerText.trim();
+    });
+    let picked = null, correct = null;
+    optBtns.forEach((b, i) => {
+      if (b.classList.contains('picked-correct') || b.classList.contains('picked-wrong')) picked = i;
+      if (b.classList.contains('picked-correct') || b.classList.contains('show-correct')) correct = i;
+    });
+    const profTip = document.querySelector('.prof-tip')?.innerText?.replace(/^Professor:\s*/i, '').trim() || '';
+    const source = document.querySelector('.source-line')?.innerText?.replace(/^Source:\s*/i, '').trim() || '';
+    const quote = document.querySelector('.quote-line')?.innerText?.trim() || '';
+    return { question: qText, options, picked, correct, profTip, source, quote };
+  }
+
+  function qKey(ctx){ return (ctx.question || '') + '|' + (ctx.options || []).join('|'); }
+
+  function mdToHtml(md){
+    let html = md
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+      .replace(/(^|\n)### (.+)/g, '$1<h3>$2</h3>')
+      .replace(/`([^`]+)`/g, '<code>$1</code>')
+      .replace(/^\s*[-*]\s+(.+)$/gm, '<li>$1</li>')
+      .replace(/(<li>.*?<\/li>(\s*<li>.*?<\/li>)*)/gs, '<ul>$1</ul>');
+    html = html.split(/\n{2,}/).map(p => {
+      if (p.trim().startsWith('<ul') || p.trim().startsWith('<h3')) return p;
+      if (p.trim() === '') return '';
+      return '<p>' + p.replace(/\n/g, '<br>') + '</p>';
+    }).join('');
+    return html;
+  }
+
+  function stripForTts(text){
+    // Remove markdown markers so TTS doesn't read them aloud
+    return text
+      .replace(/\*\*/g, '')
+      .replace(/`([^`]+)`/g, '$1')
+      .replace(/^\s*[-*]\s+/gm, '')
+      .replace(/^#+\s+/gm, '')
+      .replace(/\n{2,}/g, '. ')
+      .replace(/\s+/g, ' ')
+      .trim();
+  }
+
+  let currentUtter = null;
+  function speakToggle(btn, rawText){
+    if (!window.speechSynthesis) {
+      alert('Your browser does not support text-to-speech.');
+      return;
+    }
+    if (window.speechSynthesis.speaking && currentUtter && btn.classList.contains('playing')) {
+      window.speechSynthesis.cancel();
+      document.querySelectorAll('.fab-ai-tts-btn.playing').forEach(b => {
+        b.classList.remove('playing');
+        b.innerHTML = '🔊 Read';
+      });
+      currentUtter = null;
+      return;
+    }
+    window.speechSynthesis.cancel();
+    document.querySelectorAll('.fab-ai-tts-btn.playing').forEach(b => {
+      b.classList.remove('playing');
+      b.innerHTML = '🔊 Read';
+    });
+    const u = new SpeechSynthesisUtterance(stripForTts(rawText));
+    const rateSel = btn.parentElement.querySelector('.fab-ai-tts-rate');
+    u.rate = parseFloat(rateSel && rateSel.value || '1.0');
+    /*ava-tts*/try{var _vs=(window.speechSynthesis&&window.speechSynthesis.getVoices())||[];var _av=_vs.find(function(v){return /microsoft.*ava.*natural/i.test(v.name);})||_vs.find(function(v){return /microsoft.*emma.*natural/i.test(v.name);})||_vs.find(function(v){return /google us english female/i.test(v.name);});if(_av){u.voice=_av;u.lang=_av.lang||'en-US';}}catch(e){}
+    u.onend = () => {
+      btn.classList.remove('playing');
+      btn.innerHTML = '🔊 Read';
+      currentUtter = null;
+    };
+    u.onerror = () => {
+      btn.classList.remove('playing');
+      btn.innerHTML = '🔊 Read';
+      currentUtter = null;
+    };
+    currentUtter = u;
+    btn.classList.add('playing');
+    btn.innerHTML = '⏹ Stop';
+    window.speechSynthesis.speak(u);
+  }
+
+  function appendMsg(role, text) {
+    const body = document.getElementById('fabAiBody');
+    if (!body) return null;
+    const wrap = document.createElement('div');
+    wrap.className = 'fab-ai-msg ' + role;
+    const bub = document.createElement('div');
+    bub.className = 'fab-ai-bubble';
+    if (role === 'ai') {
+      bub.innerHTML = mdToHtml(text);
+      // Add TTS row
+      const row = document.createElement('div');
+      row.className = 'fab-ai-tts-row';
+      const btn = document.createElement('button');
+      btn.className = 'fab-ai-tts-btn';
+      btn.innerHTML = '🔊 Read';
+      btn.onclick = function(){ speakToggle(btn, text); };
+      const rate = document.createElement('select');
+      rate.className = 'fab-ai-tts-rate';
+      rate.title = 'Reading speed';
+      ['0.8','1.0','1.2','1.5','2.0'].forEach(function(r){
+        const o = document.createElement('option');
+        o.value = r; o.textContent = r + 'x';
+        if (r === '1.0') o.selected = true;
+        rate.appendChild(o);
+      });
+      row.appendChild(btn);
+      row.appendChild(rate);
+      bub.appendChild(row);
+    } else {
+      bub.textContent = text;
+    }
+    wrap.appendChild(bub);
+    body.appendChild(wrap);
+    body.scrollTop = body.scrollHeight;
+    return bub;
+  }
+
+  function appendLoading(){
+    const body = document.getElementById('fabAiBody');
+    if (!body) return null;
+    const wrap = document.createElement('div');
+    wrap.className = 'fab-ai-msg ai';
+    wrap.id = 'fabAiLoading';
+    const bub = document.createElement('div');
+    bub.className = 'fab-ai-bubble';
+    bub.innerHTML = '<div class="fab-ai-loading"><div class="fab-ai-spinner"></div> Thinking...</div>';
+    wrap.appendChild(bub);
+    body.appendChild(wrap);
+    body.scrollTop = body.scrollHeight;
+    return wrap;
+  }
+
+  function removeLoading(){
+    const el = document.getElementById('fabAiLoading');
+    if (el) el.remove();
+  }
+
+  function appendStatus(text, isErr){
+    const body = document.getElementById('fabAiBody');
+    if (!body) return;
+    const div = document.createElement('div');
+    div.className = 'fab-ai-status' + (isErr ? ' err' : '');
+    div.innerHTML = text;
+    body.appendChild(div);
+    body.scrollTop = body.scrollHeight;
+  }
+
+  function renderSuggestions(ctx){
+    const body = document.getElementById('fabAiBody');
+    if (!body) return;
+    // Q preview at top
+    if (ctx.question) {
+      const qp = document.createElement('div');
+      qp.className = 'fab-ai-qpreview';
+      qp.innerHTML = '<b>Q:</b> ' + ctx.question.substring(0, 240) + (ctx.question.length > 240 ? '...' : '');
+      body.appendChild(qp);
+    }
+    // Suggestion chips
+    const sug = document.createElement('div');
+    sug.className = 'fab-ai-suggestions';
+    const chips = [];
+    if (ctx.picked === null || ctx.picked === undefined) {
+      chips.push({ label: '💡 Give me a hint', q: 'Give me a hint for this question without revealing the answer.' });
+      chips.push({ label: '🧠 Explain the concept', q: 'Explain the core concept this question is testing.' });
+    } else if (ctx.picked !== ctx.correct && ctx.picked !== null) {
+      chips.push({ label: '❌ Why did I miss this?', q: 'I picked the wrong answer. Walk me through why my pick is wrong and why the correct answer is right.' });
+      chips.push({ label: '🧠 Explain the concept', q: 'Explain the concept this question is testing in simpler terms.' });
+      chips.push({ label: '🎯 Give me a mnemonic', q: 'Give me a memorable mnemonic for this topic.' });
+    } else if (ctx.picked === ctx.correct) {
+      chips.push({ label: '✅ Why is this right?', q: 'Confirm why the correct answer is right and flag any trap distractors to watch for.' });
+      chips.push({ label: '🎯 Give me a mnemonic', q: 'Give me a memorable mnemonic for this topic.' });
+    }
+    chips.push({ label: '🌟 Use an analogy', q: 'Explain this with a dumbed-down analogy.' });
+    chips.forEach(c => {
+      const btn = document.createElement('button');
+      btn.className = 'fab-ai-sug';
+      btn.textContent = c.label;
+      btn.onclick = () => sendMessage(c.q);
+      sug.appendChild(btn);
+    });
+    body.appendChild(sug);
+  }
+
+  function clearChat(preserveCtx){
+    const body = document.getElementById('fabAiBody');
+    if (body) body.innerHTML = '';
+    history = [];
+    if (preserveCtx) {
+      const ctx = readCurrentQ();
+      renderSuggestions(ctx);
+    }
+  }
+
+  function openPanel() {
+    if (!panel) panel = buildPanel();
+    panel.classList.add('open');
+    const ctx = readCurrentQ();
+    const key = qKey(ctx);
+    if (key !== currentQKey) {
+      // Q changed — reset chat and show suggestions for new Q
+      currentQKey = key;
+      clearChat(true);
+    }
+  }
+
+  function buildPanel() {
+    const el = document.createElement('div');
+    el.className = 'fab-ai-panel';
+    el.innerHTML = '<div class="fab-ai-header">'
+      + '<h3>🩺 Study Tutor</h3>'
+      + '<button class="fab-ai-hdr-btn" onclick="fabAiClear()">Clear</button>'
+      + '<button class="fab-ai-close" onclick="fabAiClose()">×</button>'
+      + '</div>'
+      + '<div class="fab-ai-body" id="fabAiBody"></div>'
+      + '<div class="fab-ai-followup">'
+      + '<button class="fab-ai-mini-close" title="Close panel" onclick="fabAiClose()">×</button>'
+      + '<textarea id="fabAiFollowup" placeholder="Ask a question about this Q..." rows="1" onkeydown="if(event.keyCode===13&&!event.shiftKey){event.preventDefault();fabAiFollowupSend();}"></textarea>'
+      + '<button onclick="fabAiFollowupSend()">Send</button>'
+      + '</div>';
+    document.body.appendChild(el);
+    return el;
+  }
+
+  window.fabAiClose = function(){ if(panel) panel.classList.remove('open'); };
+  window.fabAiClear = function(){ clearChat(true); };
+
+  async function callWorker(payload) {
+    if (!ENDPOINT) return { clipboardFallback: true };
+    try {
+      const res = await fetch(ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || ('HTTP ' + res.status));
+      return { reply: data.reply };
+    } catch (e) {
+      return { error: String(e.message || e) };
+    }
+  }
+
+  function clipboardFallback(ctx, userQ) {
+    const letter = (i) => String.fromCharCode(65 + i);
+    let prompt = "I'm studying FAB 101 with Dr. Bui at SCUHS. Drill question:\n\n";
+    prompt += 'Q: ' + ctx.question + '\n\n';
+    if (ctx.options && ctx.options.length) {
+      ctx.options.forEach((o, i) => {
+        const m = [];
+        if (i === ctx.picked) m.push('PICKED');
+        if (i === ctx.correct) m.push('CORRECT');
+        prompt += letter(i) + '. ' + o + (m.length ? ' ('+m.join(', ')+')' : '') + '\n';
+      });
+      prompt += '\n';
+    }
+    if (ctx.profTip) prompt += 'DRILL TIP: ' + ctx.profTip + '\n\n';
+    if (userQ) prompt += 'MY QUESTION: ' + userQ + '\n\n';
+    prompt += 'Explain using a dumbed-down analogy + mnemonic.';
+    navigator.clipboard.writeText(prompt).then(() => {
+      appendStatus('✓ Prompt copied to clipboard. Ask the Study Tutor (the 🩺 button).');
+    }).catch(() => {
+      appendStatus('Could not copy. Please select manually.', true);
+    });
+  }
+
+  async function sendMessage(userText) {
+    const ctx = readCurrentQ();
+    currentQKey = qKey(ctx);
+    appendMsg('user', userText);
+    history.push({ role: 'user', content: userText });
+    appendLoading();
+
+    const payload = Object.assign({}, ctx, {
+      userQuestion: userText,
+      history: history.slice(-10), // last 10 turns for context
+      className: CLASS_NAME, // worker uses this to load class-specific knowledge
+    });
+    const result = await callWorker(payload);
+    removeLoading();
+    if (result.clipboardFallback) {
+      clipboardFallback(ctx, userText);
+      return;
+    }
+    if (result.error) {
+      appendStatus('Error: ' + result.error, true);
+      return;
+    }
+    appendMsg('ai', result.reply);
+    history.push({ role: 'model', content: result.reply });
+  }
+
+  window.fabAiFollowupSend = function() {
+    const ta = document.getElementById('fabAiFollowup');
+    const q = (ta && ta.value || '').trim();
+    if (!q) return;
+    ta.value = '';
+    sendMessage(q);
+  };
+
+  // Button install — opens panel, does NOT auto-call AI
+  function install() {
+    if (document.getElementById('fabAiBtn')) return;
+    const btn = document.createElement('button');
+    btn.className = 'fab-ai-btn';
+    btn.id = 'fabAiBtn';
+    btn.textContent = '🩺';
+    btn.title = 'Open AI Study Tutor';
+    btn.onclick = () => openPanel();
+    document.body.appendChild(btn);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', install);
+  } else {
+    install();
+  }
+})();
+</script><div class="dc-study-watermark">DC Study Supply &mdash; Dr. David Gramling, PHD</div><a href="index.html" id="dc-hub-btn" style="position:fixed;top:12px;left:12px;z-index:2147483000;background:#0b3d2e;border:1.5px solid #10b981;color:#fff;text-decoration:none;padding:8px 13px;border-radius:10px;font:700 13px -apple-system,system-ui,sans-serif;box-shadow:0 4px 14px rgba(0,0,0,.4)">&larr; Hub</a></body>
+</html>
